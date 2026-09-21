@@ -1,0 +1,130 @@
+[gd_scene load_steps=9 format=3]
+
+[ext_resource type="Script" path="res://Scripts/Main.cs" id="1_main"]
+[ext_resource type="Script" path="res://Scripts/MockChatResponder.cs" id="2_mock"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_cube"]
+size = Vector3(1.6, 1.6, 1.6)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial_cube"]
+albedo_color = Color(0.22, 0.48, 0.88, 1)
+metallic = 0.05
+roughness = 0.35
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_floor"]
+size = Vector2(8, 8)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial_floor"]
+albedo_color = Color(0.08, 0.1, 0.14, 1)
+roughness = 0.9
+
+[sub_resource type="Environment" id="Environment_main"]
+background_mode = 1
+background_color = Color(0.025, 0.035, 0.06, 1)
+ambient_light_source = 3
+ambient_light_color = Color(0.45, 0.5, 0.65, 1)
+ambient_light_energy = 0.7
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_dialogue"]
+bg_color = Color(0.055, 0.075, 0.12, 0.96)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.2, 0.28, 0.42, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+content_margin_left = 18.0
+content_margin_top = 18.0
+content_margin_right = 18.0
+content_margin_bottom = 18.0
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_main")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_main")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+rotation_degrees = Vector3(-48, -32, 0)
+light_color = Color(0.82, 0.88, 1, 1)
+light_energy = 1.15
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+position = Vector3(0, 1.4, 5.5)
+rotation_degrees = Vector3(-6, 0, 0)
+current = true
+
+[node name="Cube" type="MeshInstance3D" parent="."]
+position = Vector3(0, 0.9, 0)
+mesh = SubResource("BoxMesh_cube")
+material_override = SubResource("StandardMaterial_cube")
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_floor")
+material_override = SubResource("StandardMaterial_floor")
+
+[node name="ChatResponder" type="Node" parent="."]
+script = ExtResource("2_mock")
+
+[node name="UiLayer" type="CanvasLayer" parent="."]
+
+[node name="DialoguePanel" type="PanelContainer" parent="UiLayer"]
+anchor_left = 0.66
+anchor_top = 0.06
+anchor_right = 0.97
+anchor_bottom = 0.94
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBox_dialogue")
+
+[node name="Margin" type="MarginContainer" parent="UiLayer/DialoguePanel"]
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="UiLayer/DialoguePanel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="UiLayer/DialoguePanel/Margin/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Диалог с персонажем"
+
+[node name="ResponseCaption" type="Label" parent="UiLayer/DialoguePanel/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.62, 0.7, 0.84, 1)
+text = "Ответ персонажа"
+
+[node name="ResponseText" type="RichTextLabel" parent="UiLayer/DialoguePanel/Margin/VBox"]
+custom_minimum_size = Vector2(0, 230)
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = false
+scroll_active = false
+fit_content = false
+autowrap_mode = 2
+text = "Ответ появится здесь."
+
+[node name="StatusLabel" type="Label" parent="UiLayer/DialoguePanel/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.62, 0.7, 0.84, 1)
+text = "Готов к диалогу."
+
+[node name="InputRow" type="HBoxContainer" parent="UiLayer/DialoguePanel/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="MessageInput" type="TextEdit" parent="UiLayer/DialoguePanel/Margin/VBox/InputRow"]
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Введите сообщение..."
+wrap_mode = 1
+
+[node name="SendButton" type="Button" parent="UiLayer/DialoguePanel/Margin/VBox/InputRow"]
+custom_minimum_size = Vector2(112, 0)
+layout_mode = 2
+text = "Отправить"
