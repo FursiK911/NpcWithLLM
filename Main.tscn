@@ -59,7 +59,7 @@ rotation_degrees = Vector3(-6, 0, 0)
 current = true
 
 [node name="Cube" type="MeshInstance3D" parent="."]
-position = Vector3(0, 0.9, 0)
+position = Vector3(-1.1, 0.9, 0)
 mesh = SubResource("BoxMesh_cube")
 material_override = SubResource("StandardMaterial_cube")
 
@@ -109,7 +109,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = false
 scroll_active = false
-fit_content = false
+fit_content = true
 autowrap_mode = 2
 text = "Ответ появится здесь."
 
