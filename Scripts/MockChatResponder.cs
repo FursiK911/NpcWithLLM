@@ -5,6 +5,7 @@ using Godot;
 public partial class MockChatResponder : ChatResponder
 {
     private const double ResponseDelaySeconds = 0.8;
+    private const string FailureTrigger = "/fail";
 
     public override void RequestResponse(string message)
     {
@@ -23,6 +24,13 @@ public partial class MockChatResponder : ChatResponder
         try
         {
             await ToSignal(GetTree().CreateTimer(ResponseDelaySeconds), SceneTreeTimer.SignalName.Timeout);
+
+            if (string.Equals(message, FailureTrigger, StringComparison.OrdinalIgnoreCase))
+            {
+                EmitSignal(SignalName.ResponseFailed, "Тестовая ошибка провайдера.");
+                return;
+            }
+
             EmitSignal(SignalName.ResponseReceived, $"Персонаж услышал: «{message}»");
         }
         catch (Exception exception)

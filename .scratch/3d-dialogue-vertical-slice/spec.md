@@ -51,6 +51,7 @@ The UI communicates with the response provider through one `ChatResponder` seam.
 - Use one `ChatResponder` seam between the scene controller and response generation.
 - The seam exposes a request operation and three lifecycle notifications: response started, response received, and response failed.
 - Implement the first provider as a deterministic mock that waits 800 milliseconds and returns an echo-style response containing the submitted message.
+- Reserve the mock-only message `/fail` as a deterministic way to exercise the provider failure and retry path during manual acceptance testing.
 - Replace the displayed response instead of accumulating chat history.
 - Handle provider failure in the UI even though the initial mock provider is expected to succeed; show an error status and re-enable retry.
 - Keep the seam at the highest useful level: test the player-facing submission flow through `ChatResponder`, rather than testing individual Godot nodes or layout properties separately.
@@ -74,6 +75,7 @@ The UI communicates with the response provider through one `ChatResponder` seam.
   - the previous response is replaced by the latest response;
   - the input clears after success;
   - a failure state re-enables retry without discarding the input.
+  - submitting `/fail` produces the failure status, re-enables the controls, and preserves the input for retry.
 - Verify that the C# project builds successfully with the installed Godot Mono toolchain before considering the slice complete.
 
 ## Out of Scope

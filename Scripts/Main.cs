@@ -14,7 +14,7 @@ public partial class Main : Node3D
         _chatResponder = GetNode<ChatResponder>("ChatResponder");
         _messageInput = GetNode<TextEdit>("UiLayer/DialoguePanel/Margin/VBox/InputRow/MessageInput");
         _sendButton = GetNode<Button>("UiLayer/DialoguePanel/Margin/VBox/InputRow/SendButton");
-        _responseText = GetNode<RichTextLabel>("UiLayer/DialoguePanel/Margin/VBox/ResponseText");
+        _responseText = GetNode<RichTextLabel>("UiLayer/DialoguePanel/Margin/VBox/ResponseScroll/ResponseText");
         _statusLabel = GetNode<Label>("UiLayer/DialoguePanel/Margin/VBox/StatusLabel");
 
         _sendButton.Pressed += OnSendButtonPressed;
