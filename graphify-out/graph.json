@@ -1,0 +1,1686 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "hitl-loop.template.sh",
+      "file_type": "code",
+      "source_file": ".qoder/skills/diagnosing-bugs/scripts/hitl-loop.template.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      },
+      "_origin": "ast",
+      "community": 5,
+      "norm_label": "hitl-loop.template.sh",
+      "id": "qoder_skills_diagnosing_bugs_scripts_hitl_loop_template",
+      "community_name": "hitl-loop.template.sh"
+    },
+    {
+      "label": "hitl-loop.template.sh script",
+      "file_type": "code",
+      "source_file": ".qoder/skills/diagnosing-bugs/scripts/hitl-loop.template.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      },
+      "_origin": "ast",
+      "community": 5,
+      "norm_label": "hitl-loop.template.sh script",
+      "id": "qoder_skills_diagnosing_bugs_scripts_hitl_loop_template_sh__entry",
+      "community_name": "hitl-loop.template.sh"
+    },
+    {
+      "label": "step()",
+      "file_type": "code",
+      "source_file": ".qoder/skills/diagnosing-bugs/scripts/hitl-loop.template.sh",
+      "source_location": "L20",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "community": 5,
+      "norm_label": "step()",
+      "id": "qoder_skills_diagnosing_bugs_scripts_hitl_loop_template_step",
+      "community_name": "hitl-loop.template.sh"
+    },
+    {
+      "label": "capture()",
+      "file_type": "code",
+      "source_file": ".qoder/skills/diagnosing-bugs/scripts/hitl-loop.template.sh",
+      "source_location": "L25",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "community": 5,
+      "norm_label": "capture()",
+      "id": "qoder_skills_diagnosing_bugs_scripts_hitl_loop_template_capture",
+      "community_name": "hitl-loop.template.sh"
+    },
+    {
+      "label": "template.sh",
+      "file_type": "code",
+      "source_file": ".qoder/skills/wizard/template.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      },
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "template.sh",
+      "id": "qoder_skills_wizard_template",
+      "community_name": "template.sh"
+    },
+    {
+      "label": "template.sh script",
+      "file_type": "code",
+      "source_file": ".qoder/skills/wizard/template.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      },
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "template.sh script",
+      "id": "qoder_skills_wizard_template_sh__entry",
+      "community_name": "template.sh script"
+    },
+    {
+      "label": "_clear()",
+      "file_type": "code",
+      "source_file": ".qoder/skills/wizard/template.sh",
+      "source_location": "L33",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "community": 6,
+      "norm_label": "_clear()",
+      "id": "qoder_skills_wizard_template_clear",
+      "community_name": "banner"
+    },
+    {
+      "label": "banner()",
+      "file_type": "code",
+      "source_file": ".qoder/skills/wizard/template.sh",
+      "source_location": "L39",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "community": 6,
+      "norm_label": "banner()",
+      "id": "qoder_skills_wizard_template_banner",
+      "community_name": "banner"
+    },
+    {
+      "label": "stage()",
+      "file_type": "code",
+      "source_file": ".qoder/skills/wizard/template.sh",
+      "source_location": "L51",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "community": 6,
+      "norm_label": "stage()",
+      "id": "qoder_skills_wizard_template_stage",
+      "community_name": "banner"
+    },
+    {
+      "label": "say()",
+      "file_type": "code",
+      "source_file": ".qoder/skills/wizard/template.sh",
+      "source_location": "L59",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "say()",
+      "id": "qoder_skills_wizard_template_say",
+      "community_name": "template.sh script"
+    },
+    {
+      "label": "step()",
+      "file_type": "code",
+      "source_file": ".qoder/skills/wizard/template.sh",
+      "source_location": "L61",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "step()",
+      "id": "qoder_skills_wizard_template_step",
+      "community_name": "template.sh script"
+    },
+    {
+      "label": "note()",
+      "file_type": "code",
+      "source_file": ".qoder/skills/wizard/template.sh",
+      "source_location": "L62",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "community": 9,
+      "norm_label": "note()",
+      "id": "qoder_skills_wizard_template_note",
+      "community_name": "finish"
+    },
+    {
+      "label": "warn()",
+      "file_type": "code",
+      "source_file": ".qoder/skills/wizard/template.sh",
+      "source_location": "L63",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "warn()",
+      "id": "qoder_skills_wizard_template_warn",
+      "community_name": "template.sh"
+    },
+    {
+      "label": "open_url()",
+      "file_type": "code",
+      "source_file": ".qoder/skills/wizard/template.sh",
+      "source_location": "L66",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "open_url()",
+      "id": "qoder_skills_wizard_template_open_url",
+      "community_name": "template.sh"
+    },
+    {
+      "label": "pause()",
+      "file_type": "code",
+      "source_file": ".qoder/skills/wizard/template.sh",
+      "source_location": "L78",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "community": 6,
+      "norm_label": "pause()",
+      "id": "qoder_skills_wizard_template_pause",
+      "community_name": "banner"
+    },
+    {
+      "label": "confirm()",
+      "file_type": "code",
+      "source_file": ".qoder/skills/wizard/template.sh",
+      "source_location": "L84",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "confirm()",
+      "id": "qoder_skills_wizard_template_confirm",
+      "community_name": "template.sh"
+    },
+    {
+      "label": "_existing()",
+      "file_type": "code",
+      "source_file": ".qoder/skills/wizard/template.sh",
+      "source_location": "L92",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "_existing()",
+      "id": "qoder_skills_wizard_template_existing",
+      "community_name": "template.sh"
+    },
+    {
+      "label": "ask()",
+      "file_type": "code",
+      "source_file": ".qoder/skills/wizard/template.sh",
+      "source_location": "L100",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "ask()",
+      "id": "qoder_skills_wizard_template_ask",
+      "community_name": "template.sh script"
+    },
+    {
+      "label": "ask_secret()",
+      "file_type": "code",
+      "source_file": ".qoder/skills/wizard/template.sh",
+      "source_location": "L114",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "ask_secret()",
+      "id": "qoder_skills_wizard_template_ask_secret",
+      "community_name": "template.sh script"
+    },
+    {
+      "label": "write_env()",
+      "file_type": "code",
+      "source_file": ".qoder/skills/wizard/template.sh",
+      "source_location": "L130",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "write_env()",
+      "id": "qoder_skills_wizard_template_write_env",
+      "community_name": "template.sh script"
+    },
+    {
+      "label": "set_secret()",
+      "file_type": "code",
+      "source_file": ".qoder/skills/wizard/template.sh",
+      "source_location": "L143",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "set_secret()",
+      "id": "qoder_skills_wizard_template_set_secret",
+      "community_name": "template.sh"
+    },
+    {
+      "label": "set_var()",
+      "file_type": "code",
+      "source_file": ".qoder/skills/wizard/template.sh",
+      "source_location": "L157",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "set_var()",
+      "id": "qoder_skills_wizard_template_set_var",
+      "community_name": "template.sh"
+    },
+    {
+      "label": "finish()",
+      "file_type": "code",
+      "source_file": ".qoder/skills/wizard/template.sh",
+      "source_location": "L170",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast",
+      "community": 9,
+      "norm_label": "finish()",
+      "id": "qoder_skills_wizard_template_finish",
+      "community_name": "finish"
+    },
+    {
+      "label": "NpcWithLLM.csproj",
+      "file_type": "code",
+      "source_file": "NpcWithLLM.csproj",
+      "source_location": null,
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "npcwithllm.csproj",
+      "id": "npcwithllm",
+      "community_name": "NpcWithLLM.csproj"
+    },
+    {
+      "label": "net8.0",
+      "file_type": "concept",
+      "source_file": "NpcWithLLM.csproj",
+      "source_location": null,
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "net8.0",
+      "id": "framework_net8_0",
+      "community_name": "NpcWithLLM.csproj"
+    },
+    {
+      "label": "Godot.NET.Sdk/4.7.2",
+      "file_type": "concept",
+      "source_file": "NpcWithLLM.csproj",
+      "source_location": null,
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "godot.net.sdk/4.7.2",
+      "id": "sdk_godot_net_sdk_4_7_2",
+      "community_name": "NpcWithLLM.csproj"
+    },
+    {
+      "label": "ChatResponder.cs",
+      "file_type": "code",
+      "source_file": "Scripts/ChatResponder.cs",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 1,
+      "norm_label": "chatresponder.cs",
+      "id": "scripts_chatresponder",
+      "community_name": "MockChatResponder"
+    },
+    {
+      "label": "ChatResponder",
+      "file_type": "code",
+      "source_file": "Scripts/ChatResponder.cs",
+      "source_location": "L3",
+      "_origin": "ast",
+      "community": 1,
+      "norm_label": "chatresponder",
+      "id": "scripts_chatresponder_chatresponder",
+      "community_name": "MockChatResponder"
+    },
+    {
+      "label": "Node",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "community": 1,
+      "norm_label": "node",
+      "id": "node",
+      "community_name": "MockChatResponder"
+    },
+    {
+      "label": ".RequestResponse()",
+      "file_type": "code",
+      "source_file": "Scripts/ChatResponder.cs",
+      "source_location": "L16",
+      "_origin": "ast",
+      "community": 1,
+      "norm_label": ".requestresponse()",
+      "id": "scripts_chatresponder_chatresponder_requestresponse",
+      "community_name": "MockChatResponder"
+    },
+    {
+      "label": "Main.cs",
+      "file_type": "code",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "main.cs",
+      "id": "scripts_main",
+      "community_name": "Main"
+    },
+    {
+      "label": "Main",
+      "file_type": "code",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L3",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "main",
+      "id": "scripts_main_main",
+      "community_name": "Main"
+    },
+    {
+      "label": "Node3D",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "node3d",
+      "id": "node3d",
+      "community_name": "Main"
+    },
+    {
+      "label": "TextEdit",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "textedit",
+      "id": "textedit",
+      "community_name": "Main"
+    },
+    {
+      "label": "Button",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "button",
+      "id": "button",
+      "community_name": "Main"
+    },
+    {
+      "label": "RichTextLabel",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "richtextlabel",
+      "id": "richtextlabel",
+      "community_name": "Main"
+    },
+    {
+      "label": "Label",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "label",
+      "id": "label",
+      "community_name": "Main"
+    },
+    {
+      "label": "bool",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "bool",
+      "id": "bool",
+      "community_name": "Main"
+    },
+    {
+      "label": "._Ready()",
+      "file_type": "code",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L12",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "._ready()",
+      "id": "scripts_main_main_ready",
+      "community_name": "Main"
+    },
+    {
+      "label": "._ExitTree()",
+      "file_type": "code",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L30",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": "._exittree()",
+      "id": "scripts_main_main_exittree",
+      "community_name": "Main"
+    },
+    {
+      "label": ".OnSendButtonPressed()",
+      "file_type": "code",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L39",
+      "_origin": "ast",
+      "community": 4,
+      "norm_label": ".onsendbuttonpressed()",
+      "id": "scripts_main_main_onsendbuttonpressed",
+      "community_name": ".SubmitMessage"
+    },
+    {
+      "label": ".OnMessageInputGuiInput()",
+      "file_type": "code",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L44",
+      "_origin": "ast",
+      "community": 4,
+      "norm_label": ".onmessageinputguiinput()",
+      "id": "scripts_main_main_onmessageinputguiinput",
+      "community_name": ".SubmitMessage"
+    },
+    {
+      "label": "InputEvent",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "community": 4,
+      "norm_label": "inputevent",
+      "id": "inputevent",
+      "community_name": ".SubmitMessage"
+    },
+    {
+      "label": ".SubmitMessage()",
+      "file_type": "code",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L60",
+      "_origin": "ast",
+      "community": 4,
+      "norm_label": ".submitmessage()",
+      "id": "scripts_main_main_submitmessage",
+      "community_name": ".SubmitMessage"
+    },
+    {
+      "label": ".OnResponseStarted()",
+      "file_type": "code",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L80",
+      "_origin": "ast",
+      "community": 0,
+      "norm_label": ".onresponsestarted()",
+      "id": "scripts_main_main_onresponsestarted",
+      "community_name": "Main"
+    },
+    {
+      "label": ".OnResponseReceived()",
+      "file_type": "code",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L85",
+      "_origin": "ast",
+      "community": 8,
+      "norm_label": ".onresponsereceived()",
+      "id": "scripts_main_main_onresponsereceived",
+      "community_name": ".FinishRequest"
+    },
+    {
+      "label": ".OnResponseFailed()",
+      "file_type": "code",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L93",
+      "_origin": "ast",
+      "community": 8,
+      "norm_label": ".onresponsefailed()",
+      "id": "scripts_main_main_onresponsefailed",
+      "community_name": ".FinishRequest"
+    },
+    {
+      "label": ".FinishRequest()",
+      "file_type": "code",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L99",
+      "_origin": "ast",
+      "community": 8,
+      "norm_label": ".finishrequest()",
+      "id": "scripts_main_main_finishrequest",
+      "community_name": ".FinishRequest"
+    },
+    {
+      "label": ".SetInteractionEnabled()",
+      "file_type": "code",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L106",
+      "_origin": "ast",
+      "community": 4,
+      "norm_label": ".setinteractionenabled()",
+      "id": "scripts_main_main_setinteractionenabled",
+      "community_name": ".SubmitMessage"
+    },
+    {
+      "label": "MockChatResponder.cs",
+      "file_type": "code",
+      "source_file": "Scripts/MockChatResponder.cs",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 1,
+      "norm_label": "mockchatresponder.cs",
+      "id": "scripts_mockchatresponder",
+      "community_name": "MockChatResponder"
+    },
+    {
+      "label": "MockChatResponder",
+      "file_type": "code",
+      "source_file": "Scripts/MockChatResponder.cs",
+      "source_location": "L5",
+      "_origin": "ast",
+      "community": 1,
+      "norm_label": "mockchatresponder",
+      "id": "scripts_mockchatresponder_mockchatresponder",
+      "community_name": "MockChatResponder"
+    },
+    {
+      "label": "double",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "community": 1,
+      "norm_label": "double",
+      "id": "double",
+      "community_name": "MockChatResponder"
+    },
+    {
+      "label": "string",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "community": 1,
+      "norm_label": "string",
+      "id": "string",
+      "community_name": "MockChatResponder"
+    },
+    {
+      "label": ".RequestResponse()",
+      "file_type": "code",
+      "source_file": "Scripts/MockChatResponder.cs",
+      "source_location": "L10",
+      "_origin": "ast",
+      "community": 1,
+      "norm_label": ".requestresponse()",
+      "id": "scripts_mockchatresponder_mockchatresponder_requestresponse",
+      "community_name": "MockChatResponder"
+    },
+    {
+      "label": ".RespondAfterDelayAsync()",
+      "file_type": "code",
+      "source_file": "Scripts/MockChatResponder.cs",
+      "source_location": "L22",
+      "_origin": "ast",
+      "community": 1,
+      "norm_label": ".respondafterdelayasync()",
+      "id": "scripts_mockchatresponder_mockchatresponder_respondafterdelayasync",
+      "community_name": "MockChatResponder"
+    },
+    {
+      "label": "Task",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "community": 1,
+      "norm_label": "task",
+      "id": "task",
+      "community_name": "MockChatResponder"
+    }
+  ],
+  "links": [
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": ".qoder/skills/diagnosing-bugs/scripts/hitl-loop.template.sh",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "qoder_skills_diagnosing_bugs_scripts_hitl_loop_template",
+      "target": "qoder_skills_diagnosing_bugs_scripts_hitl_loop_template_capture"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".qoder/skills/diagnosing-bugs/scripts/hitl-loop.template.sh",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "qoder_skills_diagnosing_bugs_scripts_hitl_loop_template",
+      "target": "qoder_skills_diagnosing_bugs_scripts_hitl_loop_template_sh__entry"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": ".qoder/skills/diagnosing-bugs/scripts/hitl-loop.template.sh",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "qoder_skills_diagnosing_bugs_scripts_hitl_loop_template",
+      "target": "qoder_skills_diagnosing_bugs_scripts_hitl_loop_template_step"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": ".qoder/skills/diagnosing-bugs/scripts/hitl-loop.template.sh",
+      "source_location": "L36",
+      "weight": 1.0,
+      "context": "call",
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "qoder_skills_diagnosing_bugs_scripts_hitl_loop_template_sh__entry",
+      "target": "qoder_skills_diagnosing_bugs_scripts_hitl_loop_template_capture"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": ".qoder/skills/diagnosing-bugs/scripts/hitl-loop.template.sh",
+      "source_location": "L34",
+      "weight": 1.0,
+      "context": "call",
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "qoder_skills_diagnosing_bugs_scripts_hitl_loop_template_sh__entry",
+      "target": "qoder_skills_diagnosing_bugs_scripts_hitl_loop_template_step"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": ".qoder/skills/wizard/template.sh",
+      "source_location": "L100",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "qoder_skills_wizard_template",
+      "target": "qoder_skills_wizard_template_ask"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": ".qoder/skills/wizard/template.sh",
+      "source_location": "L114",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "qoder_skills_wizard_template",
+      "target": "qoder_skills_wizard_template_ask_secret"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": ".qoder/skills/wizard/template.sh",
+      "source_location": "L39",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "qoder_skills_wizard_template",
+      "target": "qoder_skills_wizard_template_banner"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": ".qoder/skills/wizard/template.sh",
+      "source_location": "L33",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "qoder_skills_wizard_template",
+      "target": "qoder_skills_wizard_template_clear"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": ".qoder/skills/wizard/template.sh",
+      "source_location": "L84",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "qoder_skills_wizard_template",
+      "target": "qoder_skills_wizard_template_confirm"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": ".qoder/skills/wizard/template.sh",
+      "source_location": "L92",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "qoder_skills_wizard_template",
+      "target": "qoder_skills_wizard_template_existing"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": ".qoder/skills/wizard/template.sh",
+      "source_location": "L170",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "qoder_skills_wizard_template",
+      "target": "qoder_skills_wizard_template_finish"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": ".qoder/skills/wizard/template.sh",
+      "source_location": "L62",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "qoder_skills_wizard_template",
+      "target": "qoder_skills_wizard_template_note"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": ".qoder/skills/wizard/template.sh",
+      "source_location": "L66",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "qoder_skills_wizard_template",
+      "target": "qoder_skills_wizard_template_open_url"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": ".qoder/skills/wizard/template.sh",
+      "source_location": "L78",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "qoder_skills_wizard_template",
+      "target": "qoder_skills_wizard_template_pause"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": ".qoder/skills/wizard/template.sh",
+      "source_location": "L59",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "qoder_skills_wizard_template",
+      "target": "qoder_skills_wizard_template_say"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": ".qoder/skills/wizard/template.sh",
+      "source_location": "L143",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "qoder_skills_wizard_template",
+      "target": "qoder_skills_wizard_template_set_secret"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": ".qoder/skills/wizard/template.sh",
+      "source_location": "L157",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "qoder_skills_wizard_template",
+      "target": "qoder_skills_wizard_template_set_var"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".qoder/skills/wizard/template.sh",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "qoder_skills_wizard_template",
+      "target": "qoder_skills_wizard_template_sh__entry"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": ".qoder/skills/wizard/template.sh",
+      "source_location": "L51",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "qoder_skills_wizard_template",
+      "target": "qoder_skills_wizard_template_stage"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": ".qoder/skills/wizard/template.sh",
+      "source_location": "L61",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "qoder_skills_wizard_template",
+      "target": "qoder_skills_wizard_template_step"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": ".qoder/skills/wizard/template.sh",
+      "source_location": "L63",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "qoder_skills_wizard_template",
+      "target": "qoder_skills_wizard_template_warn"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": ".qoder/skills/wizard/template.sh",
+      "source_location": "L130",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "qoder_skills_wizard_template",
+      "target": "qoder_skills_wizard_template_write_env"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": ".qoder/skills/wizard/template.sh",
+      "source_location": "L196",
+      "weight": 1.0,
+      "context": "call",
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "qoder_skills_wizard_template_sh__entry",
+      "target": "qoder_skills_wizard_template_ask"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": ".qoder/skills/wizard/template.sh",
+      "source_location": "L198",
+      "weight": 1.0,
+      "context": "call",
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "qoder_skills_wizard_template_sh__entry",
+      "target": "qoder_skills_wizard_template_ask_secret"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": ".qoder/skills/wizard/template.sh",
+      "source_location": "L189",
+      "weight": 1.0,
+      "context": "call",
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "qoder_skills_wizard_template_sh__entry",
+      "target": "qoder_skills_wizard_template_banner"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": ".qoder/skills/wizard/template.sh",
+      "source_location": "L204",
+      "weight": 1.0,
+      "context": "call",
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "qoder_skills_wizard_template_sh__entry",
+      "target": "qoder_skills_wizard_template_finish"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": ".qoder/skills/wizard/template.sh",
+      "source_location": "L194",
+      "weight": 1.0,
+      "context": "call",
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "qoder_skills_wizard_template_sh__entry",
+      "target": "qoder_skills_wizard_template_open_url"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": ".qoder/skills/wizard/template.sh",
+      "source_location": "L193",
+      "weight": 1.0,
+      "context": "call",
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "qoder_skills_wizard_template_sh__entry",
+      "target": "qoder_skills_wizard_template_say"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": ".qoder/skills/wizard/template.sh",
+      "source_location": "L201",
+      "weight": 1.0,
+      "context": "call",
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "qoder_skills_wizard_template_sh__entry",
+      "target": "qoder_skills_wizard_template_set_secret"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": ".qoder/skills/wizard/template.sh",
+      "source_location": "L192",
+      "weight": 1.0,
+      "context": "call",
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "qoder_skills_wizard_template_sh__entry",
+      "target": "qoder_skills_wizard_template_stage"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": ".qoder/skills/wizard/template.sh",
+      "source_location": "L195",
+      "weight": 1.0,
+      "context": "call",
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "qoder_skills_wizard_template_sh__entry",
+      "target": "qoder_skills_wizard_template_step"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": ".qoder/skills/wizard/template.sh",
+      "source_location": "L199",
+      "weight": 1.0,
+      "context": "call",
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "qoder_skills_wizard_template_sh__entry",
+      "target": "qoder_skills_wizard_template_write_env"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": ".qoder/skills/wizard/template.sh",
+      "source_location": "L40",
+      "weight": 1.0,
+      "context": "call",
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "qoder_skills_wizard_template_banner",
+      "target": "qoder_skills_wizard_template_clear"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": ".qoder/skills/wizard/template.sh",
+      "source_location": "L171",
+      "weight": 1.0,
+      "context": "call",
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "qoder_skills_wizard_template_finish",
+      "target": "qoder_skills_wizard_template_clear"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": ".qoder/skills/wizard/template.sh",
+      "source_location": "L52",
+      "weight": 1.0,
+      "context": "call",
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "qoder_skills_wizard_template_stage",
+      "target": "qoder_skills_wizard_template_clear"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": ".qoder/skills/wizard/template.sh",
+      "source_location": "L46",
+      "weight": 1.0,
+      "context": "call",
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "qoder_skills_wizard_template_banner",
+      "target": "qoder_skills_wizard_template_pause"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": ".qoder/skills/wizard/template.sh",
+      "source_location": "L173",
+      "weight": 1.0,
+      "context": "call",
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "qoder_skills_wizard_template_finish",
+      "target": "qoder_skills_wizard_template_note"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": ".qoder/skills/wizard/template.sh",
+      "source_location": "L176",
+      "weight": 1.0,
+      "context": "call",
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "qoder_skills_wizard_template_finish",
+      "target": "qoder_skills_wizard_template_warn"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": ".qoder/skills/wizard/template.sh",
+      "source_location": "L73",
+      "weight": 1.0,
+      "context": "call",
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "qoder_skills_wizard_template_open_url",
+      "target": "qoder_skills_wizard_template_warn"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": ".qoder/skills/wizard/template.sh",
+      "source_location": "L153",
+      "weight": 1.0,
+      "context": "call",
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "qoder_skills_wizard_template_set_secret",
+      "target": "qoder_skills_wizard_template_warn"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": ".qoder/skills/wizard/template.sh",
+      "source_location": "L166",
+      "weight": 1.0,
+      "context": "call",
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "qoder_skills_wizard_template_set_var",
+      "target": "qoder_skills_wizard_template_warn"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "NpcWithLLM.csproj",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "npcwithllm",
+      "target": "framework_net8_0"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "NpcWithLLM.csproj",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "npcwithllm",
+      "target": "sdk_godot_net_sdk_4_7_2"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/ChatResponder.cs",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "scripts_chatresponder",
+      "target": "scripts_chatresponder_chatresponder"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/ChatResponder.cs",
+      "source_location": "L3",
+      "weight": 1.0,
+      "metadata": {
+        "ref_token": "Node"
+      },
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "scripts_chatresponder_chatresponder",
+      "target": "node"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/ChatResponder.cs",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "scripts_chatresponder_chatresponder",
+      "target": "scripts_chatresponder_chatresponder_requestresponse"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L5",
+      "weight": 1.0,
+      "context": "field",
+      "metadata": {
+        "ref_token": "ChatResponder"
+      },
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "scripts_main_main",
+      "target": "scripts_chatresponder_chatresponder"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/MockChatResponder.cs",
+      "source_location": "L5",
+      "weight": 1.0,
+      "metadata": {
+        "ref_token": "ChatResponder"
+      },
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "scripts_mockchatresponder_mockchatresponder",
+      "target": "scripts_chatresponder_chatresponder"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L77",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_main_main_submitmessage",
+      "target": "scripts_chatresponder_chatresponder_requestresponse"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "scripts_main",
+      "target": "scripts_main_main"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L10",
+      "weight": 1.0,
+      "context": "field",
+      "metadata": {
+        "ref_token": "bool"
+      },
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "scripts_main_main",
+      "target": "bool"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L7",
+      "weight": 1.0,
+      "context": "field",
+      "metadata": {
+        "ref_token": "Button"
+      },
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "scripts_main_main",
+      "target": "button"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "field",
+      "metadata": {
+        "ref_token": "Label"
+      },
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "scripts_main_main",
+      "target": "label"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L3",
+      "weight": 1.0,
+      "metadata": {
+        "ref_token": "Node3D"
+      },
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "scripts_main_main",
+      "target": "node3d"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "field",
+      "metadata": {
+        "ref_token": "RichTextLabel"
+      },
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "scripts_main_main",
+      "target": "richtextlabel"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L30",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "scripts_main_main",
+      "target": "scripts_main_main_exittree"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L99",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "scripts_main_main",
+      "target": "scripts_main_main_finishrequest"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L44",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "scripts_main_main",
+      "target": "scripts_main_main_onmessageinputguiinput"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L93",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "scripts_main_main",
+      "target": "scripts_main_main_onresponsefailed"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L85",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "scripts_main_main",
+      "target": "scripts_main_main_onresponsereceived"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L80",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "scripts_main_main",
+      "target": "scripts_main_main_onresponsestarted"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L39",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "scripts_main_main",
+      "target": "scripts_main_main_onsendbuttonpressed"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "scripts_main_main",
+      "target": "scripts_main_main_ready"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L106",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "scripts_main_main",
+      "target": "scripts_main_main_setinteractionenabled"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L60",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "scripts_main_main",
+      "target": "scripts_main_main_submitmessage"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L6",
+      "weight": 1.0,
+      "context": "field",
+      "metadata": {
+        "ref_token": "TextEdit"
+      },
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "scripts_main_main",
+      "target": "textedit"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L41",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "scripts_main_main_onsendbuttonpressed",
+      "target": "scripts_main_main_submitmessage"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L44",
+      "weight": 1.0,
+      "context": "parameter_type",
+      "metadata": {
+        "ref_token": "InputEvent"
+      },
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "scripts_main_main_onmessageinputguiinput",
+      "target": "inputevent"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L57",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "scripts_main_main_onmessageinputguiinput",
+      "target": "scripts_main_main_submitmessage"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L75",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "scripts_main_main_submitmessage",
+      "target": "scripts_main_main_setinteractionenabled"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L90",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "scripts_main_main_onresponsereceived",
+      "target": "scripts_main_main_finishrequest"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L96",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "scripts_main_main_onresponsefailed",
+      "target": "scripts_main_main_finishrequest"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L102",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "scripts_main_main_finishrequest",
+      "target": "scripts_main_main_setinteractionenabled"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/MockChatResponder.cs",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "scripts_mockchatresponder",
+      "target": "scripts_mockchatresponder_mockchatresponder"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/MockChatResponder.cs",
+      "source_location": "L7",
+      "weight": 1.0,
+      "context": "field",
+      "metadata": {
+        "ref_token": "double"
+      },
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "scripts_mockchatresponder_mockchatresponder",
+      "target": "double"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/MockChatResponder.cs",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "scripts_mockchatresponder_mockchatresponder",
+      "target": "scripts_mockchatresponder_mockchatresponder_requestresponse"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/MockChatResponder.cs",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "scripts_mockchatresponder_mockchatresponder",
+      "target": "scripts_mockchatresponder_mockchatresponder_respondafterdelayasync"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/MockChatResponder.cs",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "field",
+      "metadata": {
+        "ref_token": "string"
+      },
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "scripts_mockchatresponder_mockchatresponder",
+      "target": "string"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/MockChatResponder.cs",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "scripts_mockchatresponder_mockchatresponder_requestresponse",
+      "target": "scripts_mockchatresponder_mockchatresponder_respondafterdelayasync"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/MockChatResponder.cs",
+      "source_location": "L22",
+      "weight": 1.0,
+      "context": "return_type",
+      "metadata": {
+        "ref_token": "Task"
+      },
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "scripts_mockchatresponder_mockchatresponder_respondafterdelayasync",
+      "target": "task"
+    }
+  ],
+  "hyperedges": [],
+  "built_at_commit": "bd98888404cfec0c4a447f54d6c97b8f0faf335a"
+}

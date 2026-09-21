@@ -1,0 +1,52 @@
+{
+  ".agents/skills/diagnosing-bugs/scripts/hitl-loop.template.sh": {
+    "mtime": 1790028024.1212094,
+    "ast_hash": "798a4f0d6a526f8dda2494b6f6d39d79",
+    "semantic_hash": "798a4f0d6a526f8dda2494b6f6d39d79"
+  },
+  ".agents/skills/wizard/template.sh": {
+    "mtime": 1790028024.1458187,
+    "ast_hash": "a355842d1be697f4115d7075f372d6d1",
+    "semantic_hash": "a355842d1be697f4115d7075f372d6d1"
+  },
+  ".qoder/skills/diagnosing-bugs/scripts/hitl-loop.template.sh": {
+    "mtime": 1790028024.1212094,
+    "ast_hash": "798a4f0d6a526f8dda2494b6f6d39d79",
+    "semantic_hash": "798a4f0d6a526f8dda2494b6f6d39d79"
+  },
+  ".qoder/skills/wizard/template.sh": {
+    "mtime": 1790028024.1458187,
+    "ast_hash": "a355842d1be697f4115d7075f372d6d1",
+    "semantic_hash": "a355842d1be697f4115d7075f372d6d1"
+  },
+  "NpcWithLLM.csproj": {
+    "mtime": 1790032355.1998448,
+    "ast_hash": "041611b00e653767e666c1288a52b7c0",
+    "semantic_hash": "041611b00e653767e666c1288a52b7c0"
+  },
+  "Scripts/ChatResponder.cs": {
+    "mtime": 1790032355.2008476,
+    "ast_hash": "ad86495703eab1d274c05c2499dbdaf9",
+    "semantic_hash": "ad86495703eab1d274c05c2499dbdaf9"
+  },
+  "Scripts/Main.cs": {
+    "mtime": 1790032905.7197554,
+    "ast_hash": "880eccfc15ff530cf529dc4366cf95e2",
+    "semantic_hash": "880eccfc15ff530cf529dc4366cf95e2"
+  },
+  "Scripts/MockChatResponder.cs": {
+    "mtime": 1790032905.7207532,
+    "ast_hash": "3927ace37c85ce73ee03e597321441f8",
+    "semantic_hash": "3927ace37c85ce73ee03e597321441f8"
+  },
+  "skills-lock.json": {
+    "mtime": 1790028119.5107448,
+    "ast_hash": "25be229386c78a5590387d8878680ec3",
+    "semantic_hash": "25be229386c78a5590387d8878680ec3"
+  },
+  ".codex/hooks.json": {
+    "mtime": 1790033052.2415607,
+    "ast_hash": "af542c94a3ec298ddf9b2c9d30fa032f",
+    "semantic_hash": "af542c94a3ec298ddf9b2c9d30fa032f"
+  }
+}

@@ -1,0 +1,172 @@
+{
+  "communities": {
+    "0": [
+      "bool",
+      "button",
+      "label",
+      "node3d",
+      "richtextlabel",
+      "scripts_main",
+      "scripts_main_main",
+      "scripts_main_main_exittree",
+      "scripts_main_main_onresponsestarted",
+      "scripts_main_main_ready",
+      "textedit"
+    ],
+    "1": [
+      "double",
+      "node",
+      "scripts_chatresponder",
+      "scripts_chatresponder_chatresponder",
+      "scripts_chatresponder_chatresponder_requestresponse",
+      "scripts_mockchatresponder",
+      "scripts_mockchatresponder_mockchatresponder",
+      "scripts_mockchatresponder_mockchatresponder_requestresponse",
+      "scripts_mockchatresponder_mockchatresponder_respondafterdelayasync",
+      "string",
+      "task"
+    ],
+    "2": [
+      "qoder_skills_wizard_template",
+      "qoder_skills_wizard_template_confirm",
+      "qoder_skills_wizard_template_existing",
+      "qoder_skills_wizard_template_open_url",
+      "qoder_skills_wizard_template_set_secret",
+      "qoder_skills_wizard_template_set_var",
+      "qoder_skills_wizard_template_warn"
+    ],
+    "3": [
+      "qoder_skills_wizard_template_ask",
+      "qoder_skills_wizard_template_ask_secret",
+      "qoder_skills_wizard_template_say",
+      "qoder_skills_wizard_template_sh__entry",
+      "qoder_skills_wizard_template_step",
+      "qoder_skills_wizard_template_write_env"
+    ],
+    "4": [
+      "inputevent",
+      "scripts_main_main_onmessageinputguiinput",
+      "scripts_main_main_onsendbuttonpressed",
+      "scripts_main_main_setinteractionenabled",
+      "scripts_main_main_submitmessage"
+    ],
+    "5": [
+      "qoder_skills_diagnosing_bugs_scripts_hitl_loop_template",
+      "qoder_skills_diagnosing_bugs_scripts_hitl_loop_template_capture",
+      "qoder_skills_diagnosing_bugs_scripts_hitl_loop_template_sh__entry",
+      "qoder_skills_diagnosing_bugs_scripts_hitl_loop_template_step"
+    ],
+    "6": [
+      "qoder_skills_wizard_template_banner",
+      "qoder_skills_wizard_template_clear",
+      "qoder_skills_wizard_template_pause",
+      "qoder_skills_wizard_template_stage"
+    ],
+    "7": [
+      "framework_net8_0",
+      "npcwithllm",
+      "sdk_godot_net_sdk_4_7_2"
+    ],
+    "8": [
+      "scripts_main_main_finishrequest",
+      "scripts_main_main_onresponsefailed",
+      "scripts_main_main_onresponsereceived"
+    ],
+    "9": [
+      "qoder_skills_wizard_template_finish",
+      "qoder_skills_wizard_template_note"
+    ]
+  },
+  "cohesion": {
+    "0": 0.18181818181818182,
+    "1": 0.2,
+    "2": 0.42857142857142855,
+    "3": 0.3333333333333333,
+    "4": 0.4,
+    "5": 0.8333333333333334,
+    "6": 0.5,
+    "7": 0.6666666666666666,
+    "8": 0.6666666666666666,
+    "9": 1.0
+  },
+  "gods": [
+    {
+      "id": "scripts_main_main",
+      "label": "Main",
+      "degree": 18
+    },
+    {
+      "id": "qoder_skills_wizard_template_sh__entry",
+      "label": "template.sh script",
+      "degree": 11
+    },
+    {
+      "id": "scripts_mockchatresponder_mockchatresponder",
+      "label": "MockChatResponder",
+      "degree": 6
+    },
+    {
+      "id": "qoder_skills_wizard_template_warn",
+      "label": "warn()",
+      "degree": 5
+    },
+    {
+      "id": "qoder_skills_wizard_template_finish",
+      "label": "finish()",
+      "degree": 5
+    },
+    {
+      "id": "scripts_chatresponder_chatresponder",
+      "label": "ChatResponder",
+      "degree": 5
+    },
+    {
+      "id": "qoder_skills_wizard_template_clear",
+      "label": "_clear()",
+      "degree": 4
+    },
+    {
+      "id": "qoder_skills_wizard_template_banner",
+      "label": "banner()",
+      "degree": 4
+    },
+    {
+      "id": "qoder_skills_diagnosing_bugs_scripts_hitl_loop_template_sh__entry",
+      "label": "hitl-loop.template.sh script",
+      "degree": 3
+    },
+    {
+      "id": "qoder_skills_wizard_template_stage",
+      "label": "stage()",
+      "degree": 3
+    }
+  ],
+  "surprises": [
+    {
+      "source": "Main",
+      "target": "ChatResponder",
+      "source_files": [
+        "Scripts/Main.cs",
+        "Scripts/ChatResponder.cs"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "bridges separate communities"
+    },
+    {
+      "source": "MockChatResponder",
+      "target": "ChatResponder",
+      "source_files": [
+        "Scripts/MockChatResponder.cs",
+        "Scripts/ChatResponder.cs"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "inherits",
+      "why": "cross-file semantic connection"
+    }
+  ],
+  "tokens": {
+    "input": 0,
+    "output": 0
+  }
+}
