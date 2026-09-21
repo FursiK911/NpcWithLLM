@@ -1,1 +1,20 @@
-{"0": "Main", "1": "MockChatResponder", "2": "template.sh", "3": "template.sh script", "4": ".SubmitMessage", "5": "hitl-loop.template.sh", "6": "banner", "7": "NpcWithLLM.csproj", "8": ".FinishRequest", "9": "finish"}
+{
+  "0": "Main",
+  "1": "MockChatResponder",
+  "2": "template.sh",
+  "3": "What You Must Do When Invoked",
+  "4": "Matt Pocock workflow integration",
+  "5": "hitl-loop.template.sh",
+  "6": "/graphify",
+  "7": "NpcWithLLM.csproj",
+  "8": "graphify reference: extra exports and benchmark",
+  "9": "graphify reference: query, path, explain",
+  "10": "graphify reference: add a URL and watch a folder",
+  "11": "graphify reference: commit hook and native CLAUDE.md integration",
+  "12": "graphify reference: incremental update and cluster-only",
+  "13": "Диалог с NPC",
+  "14": "Граница подключения локальной языковой модели",
+  "15": "graphify reference: GitHub clone and cross-repo merge",
+  "16": "graphify reference: transcribe video and audio",
+  "17": "extraction-spec.md"
+}
