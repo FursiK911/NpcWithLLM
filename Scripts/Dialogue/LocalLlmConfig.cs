@@ -31,6 +31,12 @@ public partial class LocalLlmConfig : Resource
     [Export(PropertyHint.Range, "-2,2,0.1")]
     public float PresencePenalty { get; set; } = 0;
 
+    [Export(PropertyHint.Range, "2,200,2")]
+    public int MaxHistoryMessages { get; set; } = 32;
+
+    [Export(PropertyHint.Range, "200,60000,100")]
+    public int MaxHistoryCharacters { get; set; } = 8000;
+
     public Uri GetEndpointUri()
     {
         if (!Uri.TryCreate(BaseUrl?.TrimEnd('/') + "/", UriKind.Absolute, out Uri baseUri) ||
@@ -88,6 +94,18 @@ public partial class LocalLlmConfig : Resource
         if (!float.IsFinite(PresencePenalty) || PresencePenalty < -2 || PresencePenalty > 2)
         {
             throw new ArgumentException("PresencePenalty должен быть в диапазоне [-2, 2].", nameof(PresencePenalty));
+        }
+
+        if (MaxHistoryMessages < 2 || MaxHistoryMessages % 2 != 0)
+        {
+            throw new ArgumentException(
+                "MaxHistoryMessages должен быть чётным и не меньше двух: история обрезается парами.",
+                nameof(MaxHistoryMessages));
+        }
+
+        if (MaxHistoryCharacters < 200)
+        {
+            throw new ArgumentException("MaxHistoryCharacters должен быть не меньше 200.", nameof(MaxHistoryCharacters));
         }
 
         Uri endpoint = new(baseUri, EndpointPath.TrimStart('/'));

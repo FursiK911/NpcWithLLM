@@ -8,6 +8,7 @@ public sealed class NpcPersona
         string character,
         string speechStyle,
         string playerAttitude,
+        string knowledge,
         string behaviorConstraints)
     {
         Name = Require(name, nameof(name));
@@ -15,6 +16,7 @@ public sealed class NpcPersona
         Character = Require(character, nameof(character));
         SpeechStyle = Require(speechStyle, nameof(speechStyle));
         PlayerAttitude = Require(playerAttitude, nameof(playerAttitude));
+        Knowledge = Require(knowledge, nameof(knowledge));
         BehaviorConstraints = Require(behaviorConstraints, nameof(behaviorConstraints));
     }
 
@@ -23,6 +25,7 @@ public sealed class NpcPersona
     public string Character { get; }
     public string SpeechStyle { get; }
     public string PlayerAttitude { get; }
+    public string Knowledge { get; }
     public string BehaviorConstraints { get; }
 
     public string ToContextText()
@@ -32,6 +35,7 @@ public sealed class NpcPersona
                $"Характер: {Character}\n" +
                $"Стиль речи: {SpeechStyle}\n" +
                $"Отношение к игроку: {PlayerAttitude}\n" +
+               $"Что знает и чего не знает: {Knowledge}\n" +
                $"Ограничения поведения: {BehaviorConstraints}";
     }
 

@@ -8,6 +8,15 @@ Describe 'Dialogue regression' {
             (Join-Path $PSScriptRoot '..\Scripts\Dialogue\NpcPersona.cs'),
             (Join-Path $PSScriptRoot '..\Scripts\Dialogue\ContextBuilder.cs')
         )
+
+        $script:persona = [NpcPersona]::new(
+            'Иван',
+            'механик в мастерской',
+            'наблюдательный и практичный',
+            'короткие фразы',
+            'настороженно, но разговаривает',
+            'знает мастерскую; не знает, кто вошедший',
+            'не выдумывает факты')
     }
 
     It 'sends system context as a chat message before the player message' {
@@ -55,6 +64,7 @@ Describe 'Dialogue regression' {
             'наблюдательный и практичный',
             'коротко и спокойно',
             'сдержанное любопытство',
+            'знает мастерскую и инструменты; не знает, кто вошедший',
             'не выдумывай факты')
 
         $context = [ContextBuilder]::new().Build(
@@ -79,6 +89,7 @@ Describe 'Dialogue regression' {
             'наблюдательный и практичный',
             'коротко и спокойно',
             'сдержанное любопытство',
+            'знает мастерскую и инструменты; не знает, кто вошедший',
             'не выдумывай факты')
 
         $context = [ContextBuilder]::new().Build(
@@ -107,6 +118,7 @@ Describe 'Dialogue regression' {
             'наблюдательный и практичный',
             'коротко и спокойно',
             'сдержанное любопытство',
+            'знает мастерскую и инструменты; не знает, кто вошедший',
             'не выдумывай факты')
 
         $context = [ContextBuilder]::new().Build(
@@ -127,6 +139,7 @@ Describe 'Dialogue regression' {
             'наблюдательный и практичный',
             'коротко и спокойно',
             'сдержанное любопытство',
+            'знает мастерскую и инструменты; не знает, кто вошедший',
             'не выдумывай факты')
 
         $context = [ContextBuilder]::new().Build(
@@ -154,5 +167,71 @@ Describe 'Dialogue regression' {
         $memory.PlayerProfession | Should Be 'программистом'
         $memory.LearnFrom('Я слышал странный стук.')
         $memory.PlayerProfession | Should Be 'программистом'
+    }
+
+    It 'states what the character knows and does not know' {
+        $persona = [NpcPersona]::new(
+            'Иван',
+            'механик; сам принимает машины в ремонт в своей мастерской',
+            'недоверчивый, наблюдательный и практичный',
+            'короткие спокойные фразы, по делу',
+            'незнакомца встречает настороженно',
+            'знает мастерскую и машину в ремзоне; не знает, кто вошедший',
+            'не выдумывает факты о мире')
+
+        $context = [ContextBuilder]::new().Build(
+            $persona,
+            'Иван в мастерской.',
+            [NpcMemory]::new(),
+            [DialogueHistory]::new(),
+            'Кто ты?')
+
+        ($context.Messages[0].Content) |
+            Should Match 'Что знает и чего не знает: знает мастерскую и машину в ремзоне'
+    }
+
+    It 'asks for the language the visitor wrote in' {
+        $context = [ContextBuilder]::new().Build(
+            $persona, 'Иван в мастерской.', [NpcMemory]::new(), [DialogueHistory]::new(), 'Привет.')
+
+        ($context.Messages[0].Content) | Should Match 'Reply in the language the visitor'
+        ($context.Messages[0].Content) | Should Not Match 'natural Russian conversation'
+    }
+
+    It 'keeps generic character traits out of the instructions' {
+        $context = [ContextBuilder]::new().Build(
+            $persona, 'Иван в мастерской.', [NpcMemory]::new(), [DialogueHistory]::new(), 'Привет.')
+
+        ($context.Messages[0].Content) | Should Not Match 'The character is an ordinary person'
+        ($context.Messages[0].Content) | Should Not Match 'A mechanic can talk about life'
+        ($context.Messages[0].Content) | Should Match 'not a service function'
+    }
+
+    It 'lets the character revise a guess about the visitor' {
+        $context = [ContextBuilder]::new().Build(
+            $persona, 'Иван в мастерской.', [NpcMemory]::new(), [DialogueHistory]::new(), 'Привет.')
+
+        ($context.Messages[0].Content) | Should Match 'guess is his own opinion'
+    }
+
+    It 'keeps the newest 32 messages and drops whole old pairs' {
+        $history = [DialogueHistory]::new()
+        1..25 | ForEach-Object { $history.AddPair("ход $_", "ответ $_") }
+
+        $history.MessageCount | Should Be 32
+        $history.Messages[0].Content | Should Be 'ход 10'
+        $history.Messages[31].Content | Should Be 'ответ 25'
+    }
+
+    It 'honours limits passed in' {
+        $byMessages = [DialogueHistory]::new(4, 8000)
+        1..5 | ForEach-Object { $byMessages.AddPair("ход $_", "ответ $_") }
+        $byMessages.MessageCount | Should Be 4
+        $byMessages.Messages[0].Content | Should Be 'ход 4'
+
+        $byCharacters = [DialogueHistory]::new(32, 40)
+        $long = 'с' * 30
+        1..4 | ForEach-Object { $byCharacters.AddPair($long, $long) }
+        ($byCharacters.CharacterCount -le 40) | Should Be $true
     }
 }

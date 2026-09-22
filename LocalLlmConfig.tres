@@ -4,12 +4,14 @@
 
 [resource]
 script = ExtResource("1_config")
-base_url = "http://127.0.0.1:11434"
-endpoint_path = "/api/chat"
-model_name = "qwen3.5:4b"
-timeout_seconds = 60.0
-temperature = 0.7
-top_p = 0.8
-max_tokens = 256
-context_tokens = 8192
-presence_penalty = 0.0
+BaseUrl = "http://127.0.0.1:11434"
+EndpointPath = "/api/chat"
+ModelName = "qwen3.5:4b"
+TimeoutSeconds = 60.0
+Temperature = 0.7
+TopP = 0.8
+MaxTokens = 256
+ContextTokens = 8192
+PresencePenalty = 0.0
+MaxHistoryMessages = 32
+MaxHistoryCharacters = 8000

@@ -4,10 +4,15 @@ using System.Linq;
 
 public sealed class DialogueHistory
 {
-    public const int MaxMessages = 12;
-    public const int MaxCharacters = 8000;
-
+    private readonly int _maxMessages;
+    private readonly int _maxCharacters;
     private readonly List<(DialogueMessage Player, DialogueMessage Character)> _pairs = new();
+
+    public DialogueHistory(int maxMessages = 32, int maxCharacters = 8000)
+    {
+        _maxMessages = maxMessages;
+        _maxCharacters = maxCharacters;
+    }
 
     public int MessageCount => _pairs.Count * 2;
     public int CharacterCount => _pairs.Sum(pair => pair.Player.Content.Length + pair.Character.Content.Length);
@@ -40,7 +45,7 @@ public sealed class DialogueHistory
 
     private void TrimToLimits()
     {
-        while (_pairs.Count * 2 > MaxMessages || CharacterCount > MaxCharacters)
+        while (_pairs.Count * 2 > _maxMessages || CharacterCount > _maxCharacters)
         {
             _pairs.RemoveAt(0);
         }
