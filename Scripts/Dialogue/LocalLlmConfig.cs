@@ -41,6 +41,14 @@ public partial class LocalLlmConfig : Resource
             throw new ArgumentException("EndpointPath не может быть пустым.", nameof(EndpointPath));
         }
 
+        if (!Uri.TryCreate(EndpointPath, UriKind.RelativeOrAbsolute, out Uri endpointPath) ||
+            endpointPath.IsAbsoluteUri)
+        {
+            throw new ArgumentException(
+                "EndpointPath должен быть относительным путём локального API.",
+                nameof(EndpointPath));
+        }
+
         if (string.IsNullOrWhiteSpace(ModelName))
         {
             throw new ArgumentException("ModelName не может быть пустым.", nameof(ModelName));
@@ -66,6 +74,14 @@ public partial class LocalLlmConfig : Resource
             throw new ArgumentException("MaxTokens должен быть больше нуля.", nameof(MaxTokens));
         }
 
-        return new Uri(baseUri, EndpointPath.TrimStart('/'));
+        Uri endpoint = new(baseUri, EndpointPath.TrimStart('/'));
+        if (!endpoint.IsLoopback)
+        {
+            throw new ArgumentException(
+                "EndpointPath не должен указывать за пределы loopback-сервиса.",
+                nameof(EndpointPath));
+        }
+
+        return endpoint;
     }
 }

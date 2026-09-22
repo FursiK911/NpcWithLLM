@@ -33,7 +33,7 @@ public sealed class LocalLlmRuntime : ILocalLlmRuntime
     {
         if (context == null || context.Count == 0)
         {
-            throw LocalLlmRuntimeException.For(
+            throw LocalLlmRuntimeException.CreateForKind(
                 LocalLlmFailureKind.Configuration,
                 "Контекст запроса пуст.");
         }
@@ -149,7 +149,7 @@ public sealed class LocalLlmRuntime : ILocalLlmRuntime
     {
         if (string.IsNullOrWhiteSpace(responseJson))
         {
-            throw LocalLlmRuntimeException.For(
+            throw LocalLlmRuntimeException.CreateForKind(
                 LocalLlmFailureKind.EmptyResponse,
                 "The HTTP response body was empty.");
         }
@@ -162,14 +162,14 @@ public sealed class LocalLlmRuntime : ILocalLlmRuntime
             string content = TryReadOllamaContent(root);
             if (content == null)
             {
-                throw LocalLlmRuntimeException.For(
+                throw LocalLlmRuntimeException.CreateForKind(
                     LocalLlmFailureKind.InvalidJson,
                     "The response did not contain message.content.");
             }
 
             if (string.IsNullOrWhiteSpace(content))
             {
-                throw LocalLlmRuntimeException.For(
+                throw LocalLlmRuntimeException.CreateForKind(
                     LocalLlmFailureKind.EmptyResponse,
                     "The response content was empty.");
             }

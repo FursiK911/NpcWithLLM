@@ -56,7 +56,7 @@ public partial class LocalLlmResponder : ChatResponder
             string response = await GetRuntime().GenerateAsync(context.Messages);
             if (string.IsNullOrWhiteSpace(response))
             {
-                throw LocalLlmRuntimeException.For(
+                throw LocalLlmRuntimeException.CreateForKind(
                     LocalLlmFailureKind.EmptyResponse,
                     "Responder received an empty response.");
             }

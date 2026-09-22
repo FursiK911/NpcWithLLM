@@ -29,7 +29,7 @@ public sealed class LocalLlmRuntimeException : Exception
     public string UserMessage { get; }
     public string TechnicalDetails { get; }
 
-    public static LocalLlmRuntimeException For(
+    public static LocalLlmRuntimeException CreateForKind(
         LocalLlmFailureKind kind,
         string technicalDetails = "fake runtime failure")
     {

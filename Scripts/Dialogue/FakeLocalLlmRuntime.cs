@@ -34,7 +34,7 @@ public sealed class FakeLocalLlmRuntime : ILocalLlmRuntime
 
         if (FailureKind.HasValue)
         {
-            throw LocalLlmRuntimeException.For(FailureKind.Value, "Configured fake runtime failure.");
+            throw LocalLlmRuntimeException.CreateForKind(FailureKind.Value, "Configured fake runtime failure.");
         }
 
         return Response;
