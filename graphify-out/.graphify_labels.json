@@ -18,5 +18,13 @@
   "16": "graphify reference: transcribe video and audio",
   "17": "extraction-spec.md",
   "18": "NpcWithLLM",
-  "19": "Project-local Godot MCP"
+  "19": "Project-local Godot MCP",
+  "20": "Local LLM Connection",
+  "21": "Локальная LLM в диалоге с NPC",
+  "22": "Bundled локальный runtime для LLM",
+  "23": "01-2d-dialogue-scene.md",
+  "24": "02-memory-aware-context.md",
+  "25": "03-real-local-llm-response.md",
+  "26": "04-silent-bundled-ollama.md",
+  "27": "05-windows-delivery-and-smoke-test.md"
 }

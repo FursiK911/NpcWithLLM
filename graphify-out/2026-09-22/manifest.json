@@ -825,18 +825,18 @@
     "semantic_hash": ""
   },
   "CONTEXT.md": {
-    "mtime": 1790033397.3946972,
-    "ast_hash": "9971e14716e75e8ce87f8471127b812a",
+    "mtime": 1790077556.948836,
+    "ast_hash": "47c0e1524e6131e3ca5d797d0b2979ba",
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1790028827.343151,
-    "ast_hash": "8f76fcd43552119deb618ea646007c7a",
+    "mtime": 1790077560.9755352,
+    "ast_hash": "0e2244cc33dc07af16e3025594cfe5e0",
     "semantic_hash": ""
   },
   "docs/adr/0001-local-llm-dialogue-boundary.md": {
-    "mtime": 1790033908.682145,
-    "ast_hash": "71d60ceca535d90fb71d887fae0a4f07",
+    "mtime": 1790034202.145779,
+    "ast_hash": "84f9e5c662c84f096d0d1b4e272da8eb",
     "semantic_hash": ""
   },
   "docs/agents/domain.md": {
@@ -862,6 +862,16 @@
   "icon.svg": {
     "mtime": 1789988632.4616947,
     "ast_hash": "a16f2eed1b4496c4abf03d329708ba09",
+    "semantic_hash": ""
+  },
+  ".scratch/local-llm-connection/spec.md": {
+    "mtime": 1790076487.9572332,
+    "ast_hash": "c5a07fcdf916d43ebe159eebf3f1f98c",
+    "semantic_hash": ""
+  },
+  "docs/adr/0002-project-local-godot-mcp.md": {
+    "mtime": 1790077560.9750054,
+    "ast_hash": "52548c0e0a6ace44098847facc7f284c",
     "semantic_hash": ""
   }
 }

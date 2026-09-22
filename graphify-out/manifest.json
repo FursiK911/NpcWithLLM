@@ -835,8 +835,8 @@
     "semantic_hash": ""
   },
   "docs/adr/0001-local-llm-dialogue-boundary.md": {
-    "mtime": 1790034202.145779,
-    "ast_hash": "84f9e5c662c84f096d0d1b4e272da8eb",
+    "mtime": 1790079436.059976,
+    "ast_hash": "7d1fdebe547e5859228c86b1e52c450c",
     "semantic_hash": ""
   },
   "docs/agents/domain.md": {
@@ -872,6 +872,41 @@
   "docs/adr/0002-project-local-godot-mcp.md": {
     "mtime": 1790077560.9750054,
     "ast_hash": "52548c0e0a6ace44098847facc7f284c",
+    "semantic_hash": ""
+  },
+  ".scratch/npc-local-llm-demo/issues/01-2d-dialogue-scene.md": {
+    "mtime": 1790079577.8147712,
+    "ast_hash": "468d5bf88d10f027bbc035f0b19588f0",
+    "semantic_hash": ""
+  },
+  ".scratch/npc-local-llm-demo/issues/02-memory-aware-context.md": {
+    "mtime": 1790079577.815772,
+    "ast_hash": "0f1bf9ed6b53d5cf86644dd7f7dae53f",
+    "semantic_hash": ""
+  },
+  ".scratch/npc-local-llm-demo/issues/03-real-local-llm-response.md": {
+    "mtime": 1790079577.8167708,
+    "ast_hash": "d5421e8275e0fd10a0548ef3ffacdc6b",
+    "semantic_hash": ""
+  },
+  ".scratch/npc-local-llm-demo/issues/04-silent-bundled-ollama.md": {
+    "mtime": 1790079577.8167708,
+    "ast_hash": "28e4300cba9533bdf8c994e205a0f203",
+    "semantic_hash": ""
+  },
+  ".scratch/npc-local-llm-demo/issues/05-windows-delivery-and-smoke-test.md": {
+    "mtime": 1790079577.8178575,
+    "ast_hash": "2886fb635c784b25a71ce0da4e172a40",
+    "semantic_hash": ""
+  },
+  ".scratch/npc-local-llm-demo/spec.md": {
+    "mtime": 1790079445.8585198,
+    "ast_hash": "98f60bc067d9bcd0b992704425ce346f",
+    "semantic_hash": ""
+  },
+  "docs/adr/0002-bundled-local-llm-runtime.md": {
+    "mtime": 1790079436.0605125,
+    "ast_hash": "e7a208c6e46e958b980569f07495114a",
     "semantic_hash": ""
   }
 }
