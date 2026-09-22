@@ -12,9 +12,11 @@ public partial class LocalLlmResponder : ChatResponder
     private NpcPersona _persona;
     private string _sceneState = "готов к диалогу";
 
+    [Export]
+    public LocalLlmConfig Config { get; set; } = new();
+
     public LocalLlmResponder()
     {
-        _runtime = new FakeLocalLlmRuntime();
         _persona = DefaultPersona;
     }
 
@@ -51,10 +53,12 @@ public partial class LocalLlmResponder : ChatResponder
         try
         {
             DialogueContext context = _contextBuilder.Build(_persona, _sceneState, _memory, _history, message);
-            string response = await _runtime.GenerateAsync(context.Messages);
+            string response = await GetRuntime().GenerateAsync(context.Messages);
             if (string.IsNullOrWhiteSpace(response))
             {
-                throw new InvalidOperationException("Runtime вернул пустой ответ.");
+                throw LocalLlmRuntimeException.For(
+                    LocalLlmFailureKind.EmptyResponse,
+                    "Responder received an empty response.");
             }
 
             // Фиксируем состояние только после успешной генерации.
@@ -66,12 +70,25 @@ public partial class LocalLlmResponder : ChatResponder
         catch (Exception exception)
         {
             _sceneState = "ошибка ответа";
-            EmitSignal(SignalName.ResponseFailed, exception.Message);
+            if (exception is not LocalLlmRuntimeException)
+            {
+                GD.PrintErr($"LocalLlmResponder failure: {exception.GetType().Name}: {exception.Message}");
+            }
+
+            string userMessage = exception is LocalLlmRuntimeException runtimeException
+                ? runtimeException.UserMessage
+                : "Не удалось получить ответ от локальной модели.";
+            EmitSignal(SignalName.ResponseFailed, userMessage);
         }
         finally
         {
             IsBusy = false;
         }
+    }
+
+    private ILocalLlmRuntime GetRuntime()
+    {
+        return _runtime ??= new LocalLlmRuntime(Config ?? new LocalLlmConfig());
     }
 
     public static NpcPersona DefaultPersona => new(

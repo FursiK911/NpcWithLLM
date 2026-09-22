@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -10,11 +11,32 @@ public sealed class FakeLocalLlmRuntime : ILocalLlmRuntime
     }
 
     public string Response { get; set; }
+    public Exception Failure { get; set; }
+    public LocalLlmFailureKind? FailureKind { get; set; }
+    public int DelayMilliseconds { get; set; }
+    public int RequestCount { get; private set; }
     public IReadOnlyList<DialogueMessage> LastContext { get; private set; }
 
-    public Task<string> GenerateAsync(IReadOnlyList<DialogueMessage> context, CancellationToken cancellationToken = default)
+    public async Task<string> GenerateAsync(IReadOnlyList<DialogueMessage> context, CancellationToken cancellationToken = default)
     {
         LastContext = context;
-        return Task.FromResult(Response);
+        RequestCount++;
+
+        if (DelayMilliseconds > 0)
+        {
+            await Task.Delay(DelayMilliseconds, cancellationToken);
+        }
+
+        if (Failure != null)
+        {
+            throw Failure;
+        }
+
+        if (FailureKind.HasValue)
+        {
+            throw LocalLlmRuntimeException.For(FailureKind.Value, "Configured fake runtime failure.");
+        }
+
+        return Response;
     }
 }

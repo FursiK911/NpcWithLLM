@@ -1,7 +1,8 @@
 [gd_scene load_steps=5 format=3]
 
 [ext_resource type="Script" path="res://Scripts/Main.cs" id="1_main"]
-[ext_resource type="Script" path="res://Scripts/MockChatResponder.cs" id="2_mock"]
+[ext_resource type="Script" path="res://Scripts/Dialogue/LocalLlmResponder.cs" id="2_local"]
+[ext_resource type="Resource" path="res://LocalLlmConfig.tres" id="3_config"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBox_dialogue"]
 bg_color = Color(0.055, 0.075, 0.12, 0.97)
@@ -35,7 +36,8 @@ corner_radius_bottom_left = 8
 script = ExtResource("1_main")
 
 [node name="ChatResponder" type="Node" parent="."]
-script = ExtResource("2_mock")
+script = ExtResource("2_local")
+config = ExtResource("3_config")
 
 [node name="UiLayer" type="CanvasLayer" parent="."]
 
