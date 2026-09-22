@@ -1,27 +1,27 @@
 # Graph Report - NpcWithLLM  (2026-09-22)
 
 ## Corpus Check
-- 131 files · ~81,305 words
+- 151 files · ~97,039 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 181 nodes · 184 edges · 28 communities (18 shown, 10 thin omitted)
-- Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.8)
+- 339 nodes · 384 edges · 50 communities (27 shown, 23 thin omitted)
+- Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 6 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `3b342a69`
+- Built from commit: `1a16cb39`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
 - Main
-- MockChatResponder
+- LocalLlmResponder
 - template.sh
 - What You Must Do When Invoked
 - Matt Pocock workflow integration
 - hitl-loop.template.sh
-- /graphify
+- FakeLocalLlmRuntime
 - NpcWithLLM.csproj
 - graphify reference: extra exports and benchmark
 - graphify reference: query, path, explain
@@ -34,54 +34,80 @@
 - graphify reference: transcribe video and audio
 - extraction-spec.md
 - NpcWithLLM
-- Project-local Godot MCP
+- .GenerateAsync
 - Local LLM Connection
 - Локальная LLM в диалоге с NPC
 - Bundled локальный runtime для LLM
 - 01-2d-dialogue-scene.md
-- 02-memory-aware-context.md
-- 03-real-local-llm-response.md
+- 02: Память персонажа и ограниченный контекст
+- 03: Настоящий ответ локальной LLM
 - 04-silent-bundled-ollama.md
 - 05-windows-delivery-and-smoke-test.md
+- DelayedStream
+- NpcMemory
+- DialogueSmoke
+- MockChatResponder
+- LocalLlmRuntimeException
+- NpcPersona
+- bool
+- ChatResponder
+- ContextBuilder
+- DialogueHistory
+- Quality gate для естественного диалога NPC
+- JsonElement
+- Node3D
+- NpcMemory
+- NpcPersona
+- Uri
+- ILocalLlmRuntime
+- Exception
+- Uri
+- Project-local Godot MCP
 
 ## God Nodes (most connected - your core abstractions)
-1. `Main` - 18 edges
-2. `What You Must Do When Invoked` - 12 edges
-3. `template.sh script` - 11 edges
-4. `/graphify` - 10 edges
-5. `Matt Pocock workflow integration` - 9 edges
-6. `Local LLM Connection` - 8 edges
-7. `Локальная LLM в диалоге с NPC` - 8 edges
-8. `graphify reference: extra exports and benchmark` - 8 edges
-9. `Граница подключения локальной языковой модели` - 6 edges
-10. `MockChatResponder` - 6 edges
+1. `Main` - 23 edges
+2. `LocalLlmResponder` - 18 edges
+3. `DialogueSmoke` - 13 edges
+4. `What You Must Do When Invoked` - 12 edges
+5. `NpcMemory` - 11 edges
+6. `template.sh script` - 11 edges
+7. `/graphify` - 10 edges
+8. `DelayedStream` - 9 edges
+9. `Matt Pocock workflow integration` - 9 edges
+10. `Локальная LLM в диалоге с NPC` - 8 edges
 
 ## Surprising Connections (you probably didn't know these)
+- `LocalLlmResponder` --inherits--> `ChatResponder`  [EXTRACTED]
+  Scripts/Dialogue/LocalLlmResponder.cs → Scripts/ChatResponder.cs
 - `MockChatResponder` --inherits--> `ChatResponder`  [EXTRACTED]
   Scripts/MockChatResponder.cs → Scripts/ChatResponder.cs
-- `Main` --references--> `ChatResponder`  [EXTRACTED]
-  Scripts/Main.cs → Scripts/ChatResponder.cs
+- `LocalLlmResponder` --references--> `ContextBuilder`  [EXTRACTED]
+  Scripts/Dialogue/LocalLlmResponder.cs → Scripts/Dialogue/ContextBuilder.cs
+- `FakeLocalLlmRuntime` --implements--> `ILocalLlmRuntime`  [EXTRACTED]
+  Scripts/Dialogue/FakeLocalLlmRuntime.cs → Scripts/Dialogue/ILocalLlmRuntime.cs
+- `LocalLlmRuntime` --implements--> `ILocalLlmRuntime`  [EXTRACTED]
+  Scripts/Dialogue/LocalLlmRuntime.cs → Scripts/Dialogue/ILocalLlmRuntime.cs
 
 ## Import Cycles
 - None detected.
 
-## Communities (28 total, 10 thin omitted)
+## Communities (50 total, 23 thin omitted)
 
 ### Community 0 - "Main"
-Cohesion: 0.11
-Nodes (10): bool, Button, InputEvent, Label, Node, Node3D, RichTextLabel, ChatResponder (+2 more)
+Cohesion: 0.10
+Nodes (11): Button, InputEvent, Label, Node, Node2D, RichTextLabel, ChatResponder, bool (+3 more)
 
-### Community 1 - "MockChatResponder"
-Cohesion: 0.33
-Nodes (4): double, MockChatResponder, string, Task
+### Community 1 - "LocalLlmResponder"
+Cohesion: 0.12
+Nodes (13): CancellationTokenSource, Action, CancellationToken, DialogueMessage, IReadOnlyList, Task, ILocalLlmRuntime, bool (+5 more)
 
 ### Community 2 - "template.sh"
 Cohesion: 0.22
 Nodes (16): ask(), ask_secret(), banner(), _clear(), finish(), note(), open_url(), pause() (+8 more)
 
 ### Community 3 - "What You Must Do When Invoked"
-Cohesion: 0.13
-Nodes (15): Part A - Structural extraction for code files, Part B - Semantic extraction (parallel subagents), Part C - Merge AST + semantic into final extraction, Step 0 - GitHub repos and multi-path merge (only if a URL or several paths), Step 1 - Ensure graphify is installed, Step 2.5 - Video and audio (only if video files detected), Step 2 - Detect files, Step 3 - Extract entities and relationships (+7 more)
+Cohesion: 0.08
+Nodes (24): For /graphify add and --watch, For /graphify query, For the commit hook and native CLAUDE.md integration, For --update and --cluster-only, /graphify, Honesty Rules, Interpreter guard for subcommands, Part A - Structural extraction for code files (+16 more)
 
 ### Community 4 - "Matt Pocock workflow integration"
 Cohesion: 0.14
@@ -91,9 +117,9 @@ Nodes (13): `code-review`, `diagnosing-bugs`, Graphify integration, `grill-with-
 Cohesion: 0.83
 Nodes (3): capture(), hitl-loop.template.sh script, step()
 
-### Community 6 - "/graphify"
+### Community 6 - "FakeLocalLlmRuntime"
 Cohesion: 0.20
-Nodes (9): For /graphify add and --watch, For /graphify query, For the commit hook and native CLAUDE.md integration, For --update and --cluster-only, /graphify, Honesty Rules, Interpreter guard for subcommands, Usage (+1 more)
+Nodes (10): Exception, Action, CancellationToken, DialogueMessage, Exception, IReadOnlyList, Task, FakeLocalLlmRuntime (+2 more)
 
 ### Community 8 - "graphify reference: extra exports and benchmark"
 Cohesion: 0.22
@@ -124,38 +150,68 @@ Cohesion: 0.29
 Nodes (6): Consequences, Considered Options, Module Shape, Request Sequence, Test Surface, Граница подключения локальной языковой модели
 
 ### Community 18 - "NpcWithLLM"
-Cohesion: 0.40
-Nodes (4): Godot MCP для Codex, NpcWithLLM, Направление проекта, Текущий статус
+Cohesion: 0.29
+Nodes (6): Godot MCP для Codex, NpcWithLLM, Направление проекта, Ручной запуск Ollama, Текущий статус, Тесты и проверка качества
+
+### Community 19 - ".GenerateAsync"
+Cohesion: 0.11
+Nodes (16): JsonSerializerOptions, NetHttpClient, Resource, LocalLlmConfig, DialogueMessage, IReadOnlyList, LocalLlmGenerationOptions, LocalLlmRequestBuilder (+8 more)
 
 ### Community 20 - "Local LLM Connection"
 Cohesion: 0.22
 Nodes (8): Further Notes, Implementation Decisions, Local LLM Connection, Out of Scope, Problem Statement, Solution, Testing Decisions, User Stories
 
 ### Community 21 - "Локальная LLM в диалоге с NPC"
-Cohesion: 0.22
-Nodes (8): Further Notes, Implementation Decisions, Out of Scope, Problem Statement, Solution, Testing Decisions, User Stories, Локальная LLM в диалоге с NPC
+Cohesion: 0.20
+Nodes (9): Further Notes, Implementation Decisions, Out of Scope, Problem Statement, Solution, Testing Decisions, User Stories, Локальная LLM в диалоге с NPC (+1 more)
 
 ### Community 22 - "Bundled локальный runtime для LLM"
 Cohesion: 0.50
 Nodes (3): Bundled локальный runtime для LLM, Consequences, Considered Options
 
+### Community 25 - "03: Настоящий ответ локальной LLM"
+Cohesion: 0.50
+Nodes (3): 03: Настоящий ответ локальной LLM, 2026-09-22 — проверяемость тестов на текущей машине, Comments
+
+### Community 28 - "DelayedStream"
+Cohesion: 0.12
+Nodes (8): int, List, IReadOnlyList, DialogueHistory, DialogueMessage, SeekOrigin, Stream, DelayedStream
+
+### Community 29 - "NpcMemory"
+Cohesion: 0.14
+Nodes (10): Dictionary, IReadOnlyDictionary, Regex, ContextBuilder, DialogueHistory, DialogueMessage, IReadOnlyList, NpcPersona (+2 more)
+
+### Community 30 - "DialogueSmoke"
+Cohesion: 0.13
+Nodes (15): Action, CancellationToken, DialogueMessage, HttpMessageHandler, HttpRequestMessage, HttpResponseMessage, ILocalLlmRuntime, IReadOnlyList (+7 more)
+
+### Community 33 - "MockChatResponder"
+Cohesion: 0.40
+Nodes (3): double, MockChatResponder, string
+
+### Community 40 - "Quality gate для естественного диалога NPC"
+Cohesion: 0.50
+Nodes (3): Quality gate для естественного диалога NPC, Исторические последствия (до уточнения), Уточнение от 2026-09-22
+
 ## Knowledge Gaps
-- **86 isolated node(s):** `Problem Statement`, `Solution`, `User Stories`, `Implementation Decisions`, `Testing Decisions` (+81 more)
+- **90 isolated node(s):** `2026-09-22 — проверяемость тестов на текущей машине`, `04: Тихая подготовка bundled Ollama`, `05: Windows-поставка и финальная проверка`, `Problem Statement`, `Solution` (+85 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **10 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **23 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `What You Must Do When Invoked` connect `What You Must Do When Invoked` to `/graphify`?**
-  _High betweenness centrality (0.014) - this node is a cross-community bridge._
-- **Why does `ChatResponder` connect `Main` to `MockChatResponder`?**
-  _High betweenness centrality (0.013) - this node is a cross-community bridge._
-- **What connects `Problem Statement`, `Solution`, `User Stories` to the rest of the system?**
-  _86 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Why does `ChatResponder` connect `Main` to `LocalLlmResponder`, `MockChatResponder`?**
+  _High betweenness centrality (0.136) - this node is a cross-community bridge._
+- **Why does `LocalLlmResponder` connect `LocalLlmResponder` to `Main`, `.GenerateAsync`, `NpcMemory`?**
+  _High betweenness centrality (0.131) - this node is a cross-community bridge._
+- **Why does `DialogueSmoke` connect `DialogueSmoke` to `Main`, `DelayedStream`?**
+  _High betweenness centrality (0.084) - this node is a cross-community bridge._
+- **What connects `2026-09-22 — проверяемость тестов на текущей машине`, `04: Тихая подготовка bundled Ollama`, `05: Windows-поставка и финальная проверка` to the rest of the system?**
+  _90 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Main` be split into smaller, more focused modules?**
-  _Cohesion score 0.11462450592885376 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.0960591133004926 - nodes in this community are weakly interconnected._
+- **Should `LocalLlmResponder` be split into smaller, more focused modules?**
+  _Cohesion score 0.12 - nodes in this community are weakly interconnected._
 - **Should `What You Must Do When Invoked` be split into smaller, more focused modules?**
-  _Cohesion score 0.13333333333333333 - nodes in this community are weakly interconnected._
-- **Should `Matt Pocock workflow integration` be split into smaller, more focused modules?**
-  _Cohesion score 0.14285714285714285 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.08 - nodes in this community are weakly interconnected._
