@@ -10,7 +10,37 @@ public partial class LocalLlmResponder : ChatResponder
     private readonly ContextBuilder _contextBuilder = new();
     private ILocalLlmRuntime _runtime;
     private NpcPersona _persona;
-    private string _sceneState = "готов к диалогу";
+    private readonly CancellationTokenSource _lifetime = new();
+    private bool _prepared;
+
+    [Export]
+    public string SceneState { get; set; } = "Иван находится в мастерской. Других событий не задано.";
+
+    public override void _ExitTree() => _lifetime.Cancel();
+
+    public override void Prepare()
+    {
+        if (IsBusy) return;
+        IsBusy = true;
+        EmitSignal(SignalName.PreparationStarted);
+        _ = PrepareRuntimeAsync();
+    }
+
+    private async Task PrepareRuntimeAsync()
+    {
+        try
+        {
+            await GetRuntime().PrepareAsync(_lifetime.Token);
+            _prepared = true;
+            IsBusy = false;
+            if (!_lifetime.IsCancellationRequested) EmitSignal(SignalName.PreparationFinished);
+        }
+        catch (Exception exception)
+        {
+            IsBusy = false;
+            ReportFailure(exception);
+        }
+    }
 
     [Export]
     public LocalLlmConfig Config { get; set; } = new();
@@ -43,7 +73,6 @@ public partial class LocalLlmResponder : ChatResponder
         }
 
         IsBusy = true;
-        _sceneState = "персонаж думает";
         EmitSignal(SignalName.ResponseStarted);
         _ = GenerateResponseAsync(message.Trim());
     }
@@ -52,8 +81,15 @@ public partial class LocalLlmResponder : ChatResponder
     {
         try
         {
-            DialogueContext context = _contextBuilder.Build(_persona, _sceneState, _memory, _history, message);
-            string response = await GetRuntime().GenerateAsync(context.Messages);
+            if (!_prepared)
+            {
+                await GetRuntime().PrepareAsync(_lifetime.Token);
+                _prepared = true;
+            }
+            DialogueContext context = _contextBuilder.Build(_persona, SceneState, _memory, _history, message);
+            string response = await GetRuntime().GenerateAsync(context.Messages, _lifetime.Token,
+                text => { if (!_lifetime.IsCancellationRequested) EmitSignal(SignalName.ResponseChunkReceived, text); });
+            _lifetime.Token.ThrowIfCancellationRequested();
             if (string.IsNullOrWhiteSpace(response))
             {
                 throw LocalLlmRuntimeException.CreateForKind(
@@ -64,26 +100,22 @@ public partial class LocalLlmResponder : ChatResponder
             // Фиксируем состояние только после успешной генерации.
             _memory.LearnFrom(message);
             _history.AddPair(message, response);
-            _sceneState = "готов к диалогу";
+            IsBusy = false;
             EmitSignal(SignalName.ResponseReceived, response.Trim());
         }
         catch (Exception exception)
         {
-            _sceneState = "ошибка ответа";
-            if (exception is not LocalLlmRuntimeException)
-            {
-                GD.PrintErr($"LocalLlmResponder failure: {exception.GetType().Name}: {exception.Message}");
-            }
-
-            string userMessage = exception is LocalLlmRuntimeException runtimeException
-                ? runtimeException.UserMessage
-                : "Не удалось получить ответ от локальной модели.";
-            EmitSignal(SignalName.ResponseFailed, userMessage);
-        }
-        finally
-        {
             IsBusy = false;
+            ReportFailure(exception);
         }
+    }
+
+    private void ReportFailure(Exception exception)
+    {
+        if (_lifetime.IsCancellationRequested) return;
+        string userMessage = exception is LocalLlmRuntimeException runtimeException
+            ? runtimeException.UserMessage : "Не удалось получить ответ от локальной модели.";
+        EmitSignal(SignalName.ResponseFailed, userMessage);
     }
 
     private ILocalLlmRuntime GetRuntime()

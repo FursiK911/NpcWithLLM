@@ -1,8 +1,12 @@
 using System.Collections.Generic;
+using System;
 using System.Threading;
 using System.Threading.Tasks;
 
 public interface ILocalLlmRuntime
 {
-    Task<string> GenerateAsync(IReadOnlyList<DialogueMessage> context, CancellationToken cancellationToken = default);
+    Task<string> GenerateAsync(IReadOnlyList<DialogueMessage> context, CancellationToken cancellationToken = default,
+        Action<string> onText = null);
+
+    Task PrepareAsync(CancellationToken cancellationToken = default) => Task.CompletedTask;
 }

@@ -1,11 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
+using System.IO;
 using System.Net.Http;
 using System.Text;
 using System.Text.Json;
-using System.Text.Json.Serialization;
 using System.Threading;
 using System.Threading.Tasks;
 using Godot;
@@ -13,219 +12,107 @@ using NetHttpClient = System.Net.Http.HttpClient;
 
 public sealed class LocalLlmRuntime : ILocalLlmRuntime
 {
-    private static readonly NetHttpClient HttpClient = new();
-    private static readonly JsonSerializerOptions JsonOptions = new()
-    {
-        PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
-        PropertyNameCaseInsensitive = true,
-    };
-
+    private static readonly NetHttpClient SharedClient = new() { Timeout = Timeout.InfiniteTimeSpan };
+    private static readonly JsonSerializerOptions JsonOptions = new() { PropertyNamingPolicy = JsonNamingPolicy.CamelCase };
     private readonly LocalLlmConfig _config;
+    private readonly NetHttpClient _http;
 
-    public LocalLlmRuntime(LocalLlmConfig config)
+    public LocalLlmRuntime(LocalLlmConfig config, NetHttpClient http = null)
     {
         _config = config ?? throw new ArgumentNullException(nameof(config));
+        _http = http ?? SharedClient;
     }
 
-    public async Task<string> GenerateAsync(
-        IReadOnlyList<DialogueMessage> context,
-        CancellationToken cancellationToken = default)
+    public async Task PrepareAsync(CancellationToken cancellationToken = default)
     {
-        if (context == null || context.Count == 0)
-        {
-            throw LocalLlmRuntimeException.CreateForKind(
-                LocalLlmFailureKind.Configuration,
-                "Контекст запроса пуст.");
-        }
+        // A real short generation loads weights and initializes the same context budget as dialogue.
+        await GenerateAsync(new[] { new DialogueMessage("user", "Ответь одним словом: готов.") },
+            cancellationToken, null);
+    }
 
-        Uri endpoint;
+    public async Task<string> GenerateAsync(IReadOnlyList<DialogueMessage> context,
+        CancellationToken cancellationToken = default, Action<string> onText = null)
+    {
+        Uri endpoint = null;
+        var stopwatch = Stopwatch.StartNew();
         try
         {
-            endpoint = _config.GetEndpointUri();
-        }
-        catch (Exception exception) when (exception is ArgumentException || exception is UriFormatException)
-        {
-            LocalLlmRuntimeException failure = new(
-                LocalLlmFailureKind.Configuration,
-                "Неверно настроено подключение к локальной модели.",
-                exception.Message,
-                exception);
-            LogFailure(endpoint: null, failure);
-            throw failure;
-        }
-
-        Stopwatch stopwatch = Stopwatch.StartNew();
-        try
-        {
-            OllamaChatRequest requestPayload = new(
-                _config.ModelName.Trim(),
-                context.Select(message => new OllamaMessage(message.Role, message.Content)).ToArray(),
-                false,
-                new OllamaOptions(_config.Temperature, _config.TopP, _config.MaxTokens));
-
-            using HttpRequestMessage request = new(HttpMethod.Post, endpoint)
+            try { endpoint = _config.GetEndpointUri(); }
+            catch (ArgumentException exception)
             {
-                Content = new StringContent(
-                    JsonSerializer.Serialize(requestPayload, JsonOptions),
-                    Encoding.UTF8,
-                    "application/json"),
+                throw LocalLlmRuntimeException.CreateForKind(LocalLlmFailureKind.Configuration, exception.Message);
+            }
+            var payload = LocalLlmRequestBuilder.Create(_config.ModelName, context,
+                _config.Temperature, _config.TopP, _config.MaxTokens, think: false, stream: true,
+                contextTokens: _config.ContextTokens, presencePenalty: _config.PresencePenalty);
+            using var timeout = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
+            timeout.CancelAfter(TimeSpan.FromSeconds(_config.TimeoutSeconds));
+            using var request = new HttpRequestMessage(HttpMethod.Post, endpoint)
+            {
+                Content = new StringContent(JsonSerializer.Serialize(payload, JsonOptions), Encoding.UTF8, "application/json"),
             };
+            using var response = await _http.SendAsync(request, HttpCompletionOption.ResponseHeadersRead, timeout.Token);
+            if (!response.IsSuccessStatusCode)
+                throw LocalLlmRuntimeException.CreateForKind(LocalLlmFailureKind.HttpError, $"HTTP {(int)response.StatusCode}");
 
-            using CancellationTokenSource timeoutSource = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
-            timeoutSource.CancelAfter(TimeSpan.FromSeconds(_config.TimeoutSeconds));
-
-            HttpResponseMessage response;
-            try
+            using var stream = await response.Content.ReadAsStreamAsync(timeout.Token);
+            using var reader = new StreamReader(stream, Encoding.UTF8);
+            var result = new StringBuilder();
+            bool firstText = true;
+            while (await reader.ReadLineAsync(timeout.Token) is string line)
             {
-                response = await HttpClient.SendAsync(
-                    request,
-                    HttpCompletionOption.ResponseContentRead,
-                    timeoutSource.Token);
-            }
-            catch (OperationCanceledException exception) when (!cancellationToken.IsCancellationRequested)
-            {
-                throw CreateTimeoutFailure("during request", exception);
-            }
-            catch (HttpRequestException exception)
-            {
-                throw new LocalLlmRuntimeException(
-                    LocalLlmFailureKind.NetworkError,
-                    "Не удалось подключиться к локальной модели. Проверьте, запущен ли Ollama.",
-                    exception.Message,
-                    exception);
-            }
-
-            using (response)
-            {
-                if (!response.IsSuccessStatusCode)
+                if (string.IsNullOrWhiteSpace(line)) continue;
+                using var document = JsonDocument.Parse(line);
+                var root = document.RootElement;
+                if (root.ValueKind != JsonValueKind.Object)
+                    throw new JsonException("Expected a stream object.");
+                if (root.TryGetProperty("error", out _))
+                    throw LocalLlmRuntimeException.CreateForKind(LocalLlmFailureKind.HttpError, "Ollama stream error.");
+                if (!root.TryGetProperty("done", out var done) ||
+                    (done.ValueKind != JsonValueKind.True && done.ValueKind != JsonValueKind.False))
+                    throw new JsonException("Missing stream completion flag.");
+                if (root.TryGetProperty("message", out var message))
                 {
-                    string status = $"HTTP {(int)response.StatusCode} {response.ReasonPhrase}".Trim();
-                    throw new LocalLlmRuntimeException(
-                        LocalLlmFailureKind.HttpError,
-                        $"Сервис локальной модели вернул ошибку: {(int)response.StatusCode}.",
-                        status);
+                    if (message.ValueKind != JsonValueKind.Object ||
+                        !message.TryGetProperty("content", out var content) || content.ValueKind != JsonValueKind.String)
+                        throw new JsonException("Missing message.content.");
+                    string text = content.GetString();
+                    if (!string.IsNullOrEmpty(text))
+                    {
+                        result.Append(text);
+                        if (firstText && !string.IsNullOrWhiteSpace(result.ToString()))
+                        {
+                            GD.Print($"LocalLlmRuntime first text: {stopwatch.ElapsedMilliseconds} ms.");
+                            firstText = false;
+                        }
+                        onText?.Invoke(text);
+                    }
                 }
-
-                string responseJson;
-                try
+                if (done.GetBoolean())
                 {
-                    responseJson = await response.Content.ReadAsStringAsync(timeoutSource.Token);
+                    if (root.TryGetProperty("done_reason", out var reason) && reason.GetString() == "length")
+                        throw LocalLlmRuntimeException.CreateForKind(LocalLlmFailureKind.IncompleteResponse, "Generation token limit reached.");
+                    if (string.IsNullOrWhiteSpace(result.ToString()))
+                        throw LocalLlmRuntimeException.CreateForKind(LocalLlmFailureKind.EmptyResponse, "No visible content.");
+                    return result.ToString().Trim();
                 }
-                catch (OperationCanceledException exception) when (!cancellationToken.IsCancellationRequested)
-                {
-                    throw CreateTimeoutFailure("while reading response", exception);
-                }
-
-                return ParseResponse(responseJson);
             }
+            throw LocalLlmRuntimeException.CreateForKind(LocalLlmFailureKind.IncompleteResponse, "Stream ended without done=true.");
         }
-        catch (LocalLlmRuntimeException failure)
-        {
-            LogFailure(endpoint, failure);
-            throw;
-        }
-        catch (OperationCanceledException) when (cancellationToken.IsCancellationRequested)
-        {
-            throw;
-        }
+        catch (OperationCanceledException) when (cancellationToken.IsCancellationRequested) { throw; }
         catch (Exception exception)
         {
-            LocalLlmRuntimeException failure = new(
-                LocalLlmFailureKind.Unknown,
-                "Не удалось получить ответ от локальной модели.",
-                $"{exception.GetType().Name}: {exception.Message}",
-                exception);
-            LogFailure(endpoint, failure);
+            var failure = exception as LocalLlmRuntimeException ?? exception switch
+            {
+                OperationCanceledException => LocalLlmRuntimeException.CreateForKind(LocalLlmFailureKind.Timeout, "Request timed out."),
+                HttpRequestException or IOException => LocalLlmRuntimeException.CreateForKind(LocalLlmFailureKind.NetworkError, "Connection interrupted."),
+                JsonException => LocalLlmRuntimeException.CreateForKind(LocalLlmFailureKind.InvalidJson, "Invalid stream JSON."),
+                _ => LocalLlmRuntimeException.CreateForKind(LocalLlmFailureKind.Unknown, exception.GetType().Name),
+            };
+            // Do not log response bodies: they can contain player dialogue or internal instructions.
+            GD.PrintErr($"LocalLlmRuntime failure: kind={failure.Kind}; endpoint={endpoint}; details={failure.TechnicalDetails}");
             throw failure;
         }
-        finally
-        {
-            stopwatch.Stop();
-            GD.Print($"LocalLlmRuntime request completed in {stopwatch.ElapsedMilliseconds} ms.");
-        }
+        finally { GD.Print($"LocalLlmRuntime completed in {stopwatch.ElapsedMilliseconds} ms."); }
     }
-
-    private static string ParseResponse(string responseJson)
-    {
-        if (string.IsNullOrWhiteSpace(responseJson))
-        {
-            throw LocalLlmRuntimeException.CreateForKind(
-                LocalLlmFailureKind.EmptyResponse,
-                "The HTTP response body was empty.");
-        }
-
-        try
-        {
-            using JsonDocument document = JsonDocument.Parse(responseJson);
-            JsonElement root = document.RootElement;
-
-            string content = TryReadOllamaContent(root);
-            if (content == null)
-            {
-                throw LocalLlmRuntimeException.CreateForKind(
-                    LocalLlmFailureKind.InvalidJson,
-                    "The response did not contain message.content.");
-            }
-
-            if (string.IsNullOrWhiteSpace(content))
-            {
-                throw LocalLlmRuntimeException.CreateForKind(
-                    LocalLlmFailureKind.EmptyResponse,
-                    "The response content was empty.");
-            }
-
-            return content.Trim();
-        }
-        catch (JsonException exception)
-        {
-            throw new LocalLlmRuntimeException(
-                LocalLlmFailureKind.InvalidJson,
-                "Локальная модель вернула ответ неожиданного формата.",
-                exception.Message,
-                exception);
-        }
-    }
-
-    private static string TryReadOllamaContent(JsonElement root)
-    {
-        if (root.ValueKind != JsonValueKind.Object ||
-            !root.TryGetProperty("message", out JsonElement message) ||
-            message.ValueKind != JsonValueKind.Object ||
-            !message.TryGetProperty("content", out JsonElement content) ||
-            content.ValueKind != JsonValueKind.String)
-        {
-            return null;
-        }
-
-        return content.GetString();
-    }
-
-    private LocalLlmRuntimeException CreateTimeoutFailure(string phase, Exception exception)
-    {
-        return new LocalLlmRuntimeException(
-            LocalLlmFailureKind.Timeout,
-            "Локальная модель не ответила вовремя. Попробуйте ещё раз.",
-            $"Timeout {phase} after {_config.TimeoutSeconds:0.##} seconds.",
-            exception);
-    }
-
-    private static void LogFailure(Uri endpoint, LocalLlmRuntimeException failure)
-    {
-        string endpointText = endpoint == null ? "<invalid endpoint>" : endpoint.ToString();
-        GD.PrintErr(
-            $"LocalLlmRuntime failure: kind={failure.Kind}; endpoint={endpointText}; details={failure.TechnicalDetails}");
-    }
-
-    private sealed record OllamaChatRequest(
-        string Model,
-        IReadOnlyList<OllamaMessage> Messages,
-        bool Stream,
-        OllamaOptions Options);
-
-    private sealed record OllamaMessage(string Role, string Content);
-
-    private sealed record OllamaOptions(
-        [property: JsonPropertyName("temperature")] float Temperature,
-        [property: JsonPropertyName("top_p")] float TopP,
-        [property: JsonPropertyName("num_predict")] int MaxTokens);
 }

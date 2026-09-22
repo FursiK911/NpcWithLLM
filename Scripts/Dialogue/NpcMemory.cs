@@ -9,7 +9,7 @@ public sealed class NpcMemory
         RegexOptions.IgnoreCase | RegexOptions.CultureInvariant | RegexOptions.Compiled);
 
     private static readonly Regex PlayerProfessionPattern = new(
-        @"(?:\bя\b\s+(?:работаю\s+(?:как\s+)?|как\s+)?|моя профессия\s*[—–:-]?\s*)([А-ЯЁA-Z][А-ЯЁA-Zа-яёa-z-]{2,})",
+        @"(?:\bя\b\s+работаю\s+(?:как\s+)?|моя профессия\s*[—–:-]?\s*)([А-ЯЁA-Z][А-ЯЁA-Zа-яёa-z-]{2,})",
         RegexOptions.IgnoreCase | RegexOptions.CultureInvariant | RegexOptions.Compiled);
 
     private readonly Dictionary<string, string> _facts = new(StringComparer.OrdinalIgnoreCase);

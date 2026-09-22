@@ -8,6 +8,7 @@ public enum LocalLlmFailureKind
     Timeout,
     InvalidJson,
     EmptyResponse,
+    IncompleteResponse,
     Unknown,
 }
 
@@ -41,6 +42,7 @@ public sealed class LocalLlmRuntimeException : Exception
             LocalLlmFailureKind.Timeout => "Локальная модель не ответила вовремя. Попробуйте ещё раз.",
             LocalLlmFailureKind.InvalidJson => "Локальная модель вернула ответ неожиданного формата.",
             LocalLlmFailureKind.EmptyResponse => "Локальная модель вернула пустой ответ.",
+            LocalLlmFailureKind.IncompleteResponse => "Ответ персонажа оборвался. Попробуйте ещё раз.",
             _ => "Не удалось получить ответ от локальной модели.",
         };
 

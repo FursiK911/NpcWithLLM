@@ -11,7 +11,7 @@ public partial class LocalLlmConfig : Resource
     public string EndpointPath { get; set; } = "/api/chat";
 
     [Export]
-    public string ModelName { get; set; } = "gemma3:270m";
+    public string ModelName { get; set; } = "qwen3.5:4b";
 
     [Export(PropertyHint.Range, "1,300,1")]
     public float TimeoutSeconds { get; set; } = 60.0f;
@@ -20,10 +20,16 @@ public partial class LocalLlmConfig : Resource
     public float Temperature { get; set; } = 0.7f;
 
     [Export(PropertyHint.Range, "0,1,0.05")]
-    public float TopP { get; set; } = 0.9f;
+    public float TopP { get; set; } = 0.8f;
 
     [Export(PropertyHint.Range, "1,4096,1")]
     public int MaxTokens { get; set; } = 256;
+
+    [Export(PropertyHint.Range, "2048,16384,1024")]
+    public int ContextTokens { get; set; } = 8192;
+
+    [Export(PropertyHint.Range, "-2,2,0.1")]
+    public float PresencePenalty { get; set; } = 0;
 
     public Uri GetEndpointUri()
     {
@@ -72,6 +78,16 @@ public partial class LocalLlmConfig : Resource
         if (MaxTokens <= 0)
         {
             throw new ArgumentException("MaxTokens должен быть больше нуля.", nameof(MaxTokens));
+        }
+
+        if (ContextTokens < 2048 || ContextTokens > 16384 || MaxTokens >= ContextTokens)
+        {
+            throw new ArgumentException("Неверный бюджет контекста или ответа.", nameof(ContextTokens));
+        }
+
+        if (!float.IsFinite(PresencePenalty) || PresencePenalty < -2 || PresencePenalty > 2)
+        {
+            throw new ArgumentException("PresencePenalty должен быть в диапазоне [-2, 2].", nameof(PresencePenalty));
         }
 
         Uri endpoint = new(baseUri, EndpointPath.TrimStart('/'));

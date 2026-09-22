@@ -8,6 +8,8 @@ public partial class Main : Node2D
     private RichTextLabel _responseText = null!;
     private Label _statusLabel = null!;
     private bool _requestInFlight;
+    private bool _hasPartialText;
+    private readonly System.Diagnostics.Stopwatch _responseTimer = new();
 
     public override void _Ready()
     {
@@ -20,6 +22,9 @@ public partial class Main : Node2D
         _sendButton.Pressed += OnSendButtonPressed;
         _messageInput.GuiInput += OnMessageInputGuiInput;
         _chatResponder.ResponseStarted += OnResponseStarted;
+        _chatResponder.ResponseChunkReceived += OnResponseChunkReceived;
+        _chatResponder.PreparationStarted += OnPreparationStarted;
+        _chatResponder.PreparationFinished += OnPreparationFinished;
         _chatResponder.ResponseReceived += OnResponseReceived;
         _chatResponder.ResponseFailed += OnResponseFailed;
         GetViewport().SizeChanged += QueueRedraw;
@@ -27,6 +32,7 @@ public partial class Main : Node2D
         _statusLabel.Text = "Готов к диалогу.";
         _messageInput.GrabFocus();
         QueueRedraw();
+        _chatResponder.Prepare();
     }
 
     public override void _ExitTree()
@@ -34,6 +40,9 @@ public partial class Main : Node2D
         _sendButton.Pressed -= OnSendButtonPressed;
         _messageInput.GuiInput -= OnMessageInputGuiInput;
         _chatResponder.ResponseStarted -= OnResponseStarted;
+        _chatResponder.ResponseChunkReceived -= OnResponseChunkReceived;
+        _chatResponder.PreparationStarted -= OnPreparationStarted;
+        _chatResponder.PreparationFinished -= OnPreparationFinished;
         _chatResponder.ResponseReceived -= OnResponseReceived;
         _chatResponder.ResponseFailed -= OnResponseFailed;
         GetViewport().SizeChanged -= QueueRedraw;
@@ -96,8 +105,35 @@ public partial class Main : Node2D
 
     private void OnResponseStarted()
     {
+        _responseTimer.Restart();
+        _hasPartialText = false;
         _statusLabel.Text = "Иван думает…";
         SetInteractionEnabled(false);
+    }
+
+    private void OnPreparationStarted()
+    {
+        _statusLabel.Text = "Подготовка персонажа…";
+        SetInteractionEnabled(false);
+    }
+
+    private void OnPreparationFinished()
+    {
+        _statusLabel.Text = "Готов к диалогу.";
+        SetInteractionEnabled(true);
+    }
+
+    private void OnResponseChunkReceived(string text)
+    {
+        if (!_hasPartialText)
+        {
+            if (string.IsNullOrWhiteSpace(text)) return;
+            _responseText.Text = string.Empty;
+            _hasPartialText = true;
+            GD.Print($"Dialogue first visible text: {_responseTimer.ElapsedMilliseconds} ms.");
+        }
+        _responseText.Text += text;
+        _statusLabel.Text = "Иван отвечает…";
     }
 
     private void OnResponseReceived(string response)
@@ -110,7 +146,9 @@ public partial class Main : Node2D
 
     private void OnResponseFailed(string error)
     {
-        _statusLabel.Text = $"Не удалось получить ответ: {error}";
+        _statusLabel.Text = _hasPartialText
+            ? $"Ответ не завершён: {error}"
+            : $"Не удалось получить ответ: {error}";
         FinishRequest();
     }
 

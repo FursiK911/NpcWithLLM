@@ -17,7 +17,8 @@ public sealed class FakeLocalLlmRuntime : ILocalLlmRuntime
     public int RequestCount { get; private set; }
     public IReadOnlyList<DialogueMessage> LastContext { get; private set; }
 
-    public async Task<string> GenerateAsync(IReadOnlyList<DialogueMessage> context, CancellationToken cancellationToken = default)
+    public async Task<string> GenerateAsync(IReadOnlyList<DialogueMessage> context, CancellationToken cancellationToken = default,
+        Action<string> onText = null)
     {
         LastContext = context;
         RequestCount++;
@@ -37,6 +38,7 @@ public sealed class FakeLocalLlmRuntime : ILocalLlmRuntime
             throw LocalLlmRuntimeException.CreateForKind(FailureKind.Value, "Configured fake runtime failure.");
         }
 
+        onText?.Invoke(Response);
         return Response;
     }
 }
