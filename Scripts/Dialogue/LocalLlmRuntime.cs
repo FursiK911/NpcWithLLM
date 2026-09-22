@@ -84,11 +84,7 @@ public sealed class LocalLlmRuntime : ILocalLlmRuntime
             }
             catch (OperationCanceledException exception) when (!cancellationToken.IsCancellationRequested)
             {
-                throw new LocalLlmRuntimeException(
-                    LocalLlmFailureKind.Timeout,
-                    "Локальная модель не ответила вовремя. Попробуйте ещё раз.",
-                    $"Timeout after {_config.TimeoutSeconds:0.##} seconds.",
-                    exception);
+                throw CreateTimeoutFailure("during request", exception);
             }
             catch (HttpRequestException exception)
             {
@@ -117,11 +113,7 @@ public sealed class LocalLlmRuntime : ILocalLlmRuntime
                 }
                 catch (OperationCanceledException exception) when (!cancellationToken.IsCancellationRequested)
                 {
-                    throw new LocalLlmRuntimeException(
-                        LocalLlmFailureKind.Timeout,
-                        "Локальная модель не ответила вовремя. Попробуйте ещё раз.",
-                        $"Timeout while reading response after {_config.TimeoutSeconds:0.##} seconds.",
-                        exception);
+                    throw CreateTimeoutFailure("while reading response", exception);
                 }
 
                 return ParseResponse(responseJson);
@@ -167,12 +159,12 @@ public sealed class LocalLlmRuntime : ILocalLlmRuntime
             using JsonDocument document = JsonDocument.Parse(responseJson);
             JsonElement root = document.RootElement;
 
-            string content = TryReadOllamaContent(root) ?? TryReadOpenAiContent(root);
+            string content = TryReadOllamaContent(root);
             if (content == null)
             {
                 throw LocalLlmRuntimeException.For(
                     LocalLlmFailureKind.InvalidJson,
-                    "The response did not contain message.content or choices[0].message.content.");
+                    "The response did not contain message.content.");
             }
 
             if (string.IsNullOrWhiteSpace(content))
@@ -208,27 +200,13 @@ public sealed class LocalLlmRuntime : ILocalLlmRuntime
         return content.GetString();
     }
 
-    private static string TryReadOpenAiContent(JsonElement root)
+    private LocalLlmRuntimeException CreateTimeoutFailure(string phase, Exception exception)
     {
-        if (root.ValueKind != JsonValueKind.Object ||
-            !root.TryGetProperty("choices", out JsonElement choices) ||
-            choices.ValueKind != JsonValueKind.Array ||
-            choices.GetArrayLength() == 0)
-        {
-            return null;
-        }
-
-        JsonElement choice = choices[0];
-        if (choice.ValueKind != JsonValueKind.Object ||
-            !choice.TryGetProperty("message", out JsonElement message) ||
-            message.ValueKind != JsonValueKind.Object ||
-            !message.TryGetProperty("content", out JsonElement content) ||
-            content.ValueKind != JsonValueKind.String)
-        {
-            return null;
-        }
-
-        return content.GetString();
+        return new LocalLlmRuntimeException(
+            LocalLlmFailureKind.Timeout,
+            "Локальная модель не ответила вовремя. Попробуйте ещё раз.",
+            $"Timeout {phase} after {_config.TimeoutSeconds:0.##} seconds.",
+            exception);
     }
 
     private static void LogFailure(Uri endpoint, LocalLlmRuntimeException failure)

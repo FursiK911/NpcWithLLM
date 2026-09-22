@@ -28,9 +28,12 @@ public partial class LocalLlmConfig : Resource
     public Uri GetEndpointUri()
     {
         if (!Uri.TryCreate(BaseUrl?.TrimEnd('/') + "/", UriKind.Absolute, out Uri baseUri) ||
-            (baseUri.Scheme != Uri.UriSchemeHttp && baseUri.Scheme != Uri.UriSchemeHttps))
+            (baseUri.Scheme != Uri.UriSchemeHttp && baseUri.Scheme != Uri.UriSchemeHttps) ||
+            !baseUri.IsLoopback)
         {
-            throw new ArgumentException("BaseUrl должен быть абсолютным HTTP(S)-адресом.", nameof(BaseUrl));
+            throw new ArgumentException(
+                "BaseUrl должен быть loopback HTTP(S)-адресом локального сервиса.",
+                nameof(BaseUrl));
         }
 
         if (string.IsNullOrWhiteSpace(EndpointPath))
