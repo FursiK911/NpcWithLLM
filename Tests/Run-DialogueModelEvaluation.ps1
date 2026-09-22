@@ -39,7 +39,7 @@ $cases = @(
     [pscustomobject]@{
         Name = 'identity'
         Message = 'Как тебя зовут?'
-        ReviewHint = '(?i)\bиван\b'
+        ReviewHint = 'Называет своё имя — Иван'
         SceneState = 'персонаж думает'
         MemoryMessages = @()
         HistoryPairs = @()
@@ -47,7 +47,7 @@ $cases = @(
     [pscustomobject]@{
         Name = 'role'
         Message = 'Кем ты работаешь?'
-        ReviewHint = '(?i)механик|мастерск'
+        ReviewHint = 'Называет роль: механик, мастер по ремонту, мастерская'
         SceneState = 'персонаж думает'
         MemoryMessages = @()
         HistoryPairs = @()
@@ -55,7 +55,7 @@ $cases = @(
     [pscustomobject]@{
         Name = 'who'
         Message = 'Кто ты?'
-        ReviewHint = '(?i)\bиван\b|механик|мастерск'
+        ReviewHint = 'Называет имя или роль'
         SceneState = 'персонаж думает'
         MemoryMessages = @()
         HistoryPairs = @()
@@ -63,7 +63,7 @@ $cases = @(
     [pscustomobject]@{
         Name = 'greeting'
         Message = 'Привет, как дела?'
-        ReviewHint = '(?i)привет|дела|мастерск|работ|норм|хорош'
+        ReviewHint = 'Отвечает на приветствие в манере персонажа, не как ассистент'
         SceneState = 'персонаж думает'
         MemoryMessages = @()
         HistoryPairs = @()
@@ -71,7 +71,7 @@ $cases = @(
     [pscustomobject]@{
         Name = 'open_dialogue'
         Message = 'Я впервые в этом городе и ищу ночлег.'
-        ReviewHint = '(?i)город|ночлег|ноч|помощ|ищ'
+        ReviewHint = 'Реагирует на просьбу про ночлег в роли, не выдумывает сведений о мире'
         SceneState = 'персонаж думает'
         MemoryMessages = @()
         HistoryPairs = @()
@@ -79,7 +79,7 @@ $cases = @(
     [pscustomobject]@{
         Name = 'remembered_name'
         Message = 'Как меня зовут?'
-        ReviewHint = '(?i)дмитри'
+        ReviewHint = 'Вспоминает имя игрока: Дмитрий'
         SceneState = 'персонаж думает'
         MemoryMessages = @('Меня зовут Дмитрий.')
         HistoryPairs = @()
@@ -87,7 +87,7 @@ $cases = @(
     [pscustomobject]@{
         Name = 'remembered_profession'
         Message = 'Кем я работаю?'
-        ReviewHint = '(?i)программист'
+        ReviewHint = 'Вспоминает, что игрок программист — своими словами тоже годится'
         SceneState = 'персонаж думает'
         MemoryMessages = @('Я работаю программистом.')
         HistoryPairs = @()
@@ -95,7 +95,7 @@ $cases = @(
     [pscustomobject]@{
         Name = 'scene_state'
         Message = 'Что происходит в мастерской?'
-        ReviewHint = '(?i)генератор|мастерск|заклин|свет'
+        ReviewHint = 'Опирается на состояние сцены: мастерская, генератор, свет'
         SceneState = 'в мастерской заклинил генератор'
         MemoryMessages = @()
         HistoryPairs = @()
@@ -103,7 +103,7 @@ $cases = @(
     [pscustomobject]@{
         Name = 'dialogue_history'
         Message = 'Что сначала проверить?'
-        ReviewHint = '(?i)двигател|рем|масл|провер|шум|слуш|мотор|натяж'
+        ReviewHint = 'Продолжает тему предыдущих реплик про двигатель и шум'
         SceneState = 'персонаж думает'
         MemoryMessages = @()
         HistoryPairs = @(
@@ -116,7 +116,7 @@ $cases = @(
     [pscustomobject]@{
         Name = 'free_observation'
         Message = 'Я слышал странный стук за мастерской.'
-        ReviewHint = '(?i)стук|мастерск|провер|ноч'
+        ReviewHint = 'Относится к замеченному стуку в мастерской'
         SceneState = 'персонаж думает'
         MemoryMessages = @()
         HistoryPairs = @()
@@ -147,7 +147,7 @@ $longPairs = @(1..6 | ForEach-Object { [pscustomobject]@{
     Player = ('Я осматриваю свою старую машину. На холостом ходу слышен гул, но я пока не знаю, откуда именно он идёт. ' * 10)
     Character = 'Сначала нужно понять, откуда идёт звук. Без осмотра не скажу, что сломалось.'
 } })
-$cases += [pscustomobject]@{ Name = 'full_context'; Message = 'Как тебя зовут и с чем я к тебе пришёл?'; ReviewHint = '(?i)иван';
+$cases += [pscustomobject]@{ Name = 'full_context'; Message = 'Как тебя зовут и с чем я к тебе пришёл?'; ReviewHint = 'Называет имя и использует память о приходе игрока';
     SceneState = 'Иван находится в мастерской.'; MemoryMessages = @(); HistoryPairs = $longPairs }
 
 . (Join-Path $PSScriptRoot 'DialogueResponseFault.ps1')
@@ -172,6 +172,10 @@ foreach ($case in $cases) {
         foreach ($playerMessage in @($case.Message)) {
         $turn++
 
+        # Отсчёт времени до первого текста начинается до построения контекста:
+        # spec.md требует замерять его вместе с сборкой запроса, как это делает игровой UI.
+        $timer = [Diagnostics.Stopwatch]::StartNew()
+
         $context = $builder.Build(
             $persona,
             $case.SceneState,
@@ -192,7 +196,6 @@ foreach ($case in $cases) {
         $request = [System.Net.Http.HttpRequestMessage]::new([System.Net.Http.HttpMethod]::Post, $Endpoint)
         $request.Content = [System.Net.Http.StringContent]::new($body, [Text.Encoding]::UTF8, 'application/json')
         $deadline = [Threading.CancellationTokenSource]::new([TimeSpan]::FromSeconds(60))
-        $timer = [Diagnostics.Stopwatch]::StartNew()
         $firstTextMs = $null
         $content = ''
         $completed = $false
@@ -234,7 +237,7 @@ foreach ($case in $cases) {
             MechanicallyClean = ($faults.Count -eq 0)
             MechanicalFaults = ($faults -join ', ')
             Response = $normalizedContent
-            FirstTextMs = [Math]::Round($firstTextMs, 1)
+            FirstTextMs = if ($null -eq $firstTextMs) { $null } else { [Math]::Round($firstTextMs, 1) }
             TotalMs = [Math]::Round($timer.Elapsed.TotalMilliseconds, 1)
         })
         if ($completed -and -not [string]::IsNullOrWhiteSpace($content)) {
