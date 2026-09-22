@@ -1,16 +1,16 @@
 # Graph Report - NpcWithLLM  (2026-09-22)
 
 ## Corpus Check
-- 122 files · ~76,876 words
+- 124 files · ~78,727 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 138 nodes · 151 edges · 18 communities (14 shown, 4 thin omitted)
+- 146 nodes · 157 edges · 20 communities (15 shown, 5 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `d0457d6a`
+- Built from commit: `ff03897b`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -33,6 +33,8 @@
 - graphify reference: GitHub clone and cross-repo merge
 - graphify reference: transcribe video and audio
 - extraction-spec.md
+- NpcWithLLM
+- Project-local Godot MCP
 
 ## God Nodes (most connected - your core abstractions)
 1. `Main` - 18 edges
@@ -55,7 +57,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (18 total, 4 thin omitted)
+## Communities (20 total, 5 thin omitted)
 
 ### Community 0 - "Main"
 Cohesion: 0.14
@@ -113,22 +115,26 @@ Nodes (3): Диалог, Диалог с NPC, Локальная генерац�
 Cohesion: 0.50
 Nodes (3): Consequences, Considered Options, Граница подключения локальной языковой модели
 
+### Community 18 - "NpcWithLLM"
+Cohesion: 0.40
+Nodes (4): Godot MCP для Codex, NpcWithLLM, Направление проекта, Текущий статус
+
 ## Knowledge Gaps
-- **58 isolated node(s):** `Usage`, `What graphify is for`, `Step 0 - GitHub repos and multi-path merge (only if a URL or several paths)`, `Step 1 - Ensure graphify is installed`, `Step 2 - Detect files` (+53 more)
+- **62 isolated node(s):** `Текущий статус`, `Направление проекта`, `Godot MCP для Codex`, `Consequences`, `Usage` (+57 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **4 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **5 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `Main` connect `Main` to `MockChatResponder`?**
-  _High betweenness centrality (0.035) - this node is a cross-community bridge._
+  _High betweenness centrality (0.031) - this node is a cross-community bridge._
 - **Why does `What You Must Do When Invoked` connect `What You Must Do When Invoked` to `/graphify`?**
-  _High betweenness centrality (0.024) - this node is a cross-community bridge._
-- **Why does `ChatResponder` connect `MockChatResponder` to `Main`?**
   _High betweenness centrality (0.022) - this node is a cross-community bridge._
-- **What connects `Usage`, `What graphify is for`, `Step 0 - GitHub repos and multi-path merge (only if a URL or several paths)` to the rest of the system?**
-  _58 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Why does `ChatResponder` connect `MockChatResponder` to `Main`?**
+  _High betweenness centrality (0.019) - this node is a cross-community bridge._
+- **What connects `Текущий статус`, `Направление проекта`, `Godot MCP для Codex` to the rest of the system?**
+  _62 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Main` be split into smaller, more focused modules?**
   _Cohesion score 0.14035087719298245 - nodes in this community are weakly interconnected._
 - **Should `What You Must Do When Invoked` be split into smaller, more focused modules?**

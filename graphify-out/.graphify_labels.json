@@ -16,5 +16,7 @@
   "14": "Граница подключения локальной языковой модели",
   "15": "graphify reference: GitHub clone and cross-repo merge",
   "16": "graphify reference: transcribe video and audio",
-  "17": "extraction-spec.md"
+  "17": "extraction-spec.md",
+  "18": "NpcWithLLM",
+  "19": "Project-local Godot MCP"
 }
