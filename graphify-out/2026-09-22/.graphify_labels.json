@@ -32,12 +32,14 @@
   "30": "DialogueSmoke",
   "31": "DialogueRegression.Tests.ps1",
   "32": "Run-DialogueModelEvaluation.ps1",
+  "33": "MockChatResponder",
   "34": "LocalLlmRuntimeException",
   "35": "NpcPersona",
   "36": "bool",
   "37": "ChatResponder",
   "38": "ContextBuilder",
   "39": "DialogueHistory",
+  "40": "Quality gate для естественного диалога NPC",
   "41": "JsonElement",
   "42": "Node3D",
   "43": "NpcMemory",
@@ -45,5 +47,6 @@
   "45": "Uri",
   "46": "ILocalLlmRuntime",
   "47": "Exception",
-  "48": "Uri"
+  "48": "Uri",
+  "49": "Project-local Godot MCP"
 }

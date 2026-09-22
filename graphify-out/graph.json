@@ -4,15 +4,59 @@
   "graph": {},
   "nodes": [
     {
+      "label": "DialogueGateRules.Tests.ps1",
+      "file_type": "code",
+      "source_file": "Tests/DialogueGateRules.Tests.ps1",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "tests_dialoguegaterules_tests",
+      "community": 50,
+      "community_name": "DialogueGateRules.Tests.ps1",
+      "norm_label": "dialoguegaterules.tests.ps1"
+    },
+    {
+      "label": "DialogueGateRules.ps1",
+      "file_type": "code",
+      "source_file": "Tests/DialogueGateRules.ps1",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "tests_dialoguegaterules",
+      "community": 33,
+      "community_name": "DialogueGateRules.ps1",
+      "norm_label": "dialoguegaterules.ps1"
+    },
+    {
+      "label": "Get-DialogueGateFailure()",
+      "file_type": "code",
+      "source_file": "Tests/DialogueGateRules.ps1",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "tests_dialoguegaterules_get_dialoguegatefailure",
+      "community": 33,
+      "community_name": "DialogueGateRules.ps1",
+      "norm_label": "get-dialoguegatefailure()"
+    },
+    {
+      "label": "Run-DialogueModelEvaluation.ps1",
+      "file_type": "code",
+      "source_file": "Tests/Run-DialogueModelEvaluation.ps1",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "tests_run_dialoguemodelevaluation",
+      "community": 32,
+      "community_name": "Run-DialogueModelEvaluation.ps1",
+      "norm_label": "run-dialoguemodelevaluation.ps1"
+    },
+    {
       "label": "03-real-local-llm-response.md",
       "file_type": "document",
       "source_file": ".scratch/npc-local-llm-demo/issues/03-real-local-llm-response.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "scratch_npc_local_llm_demo_issues_03_real_local_llm_response",
       "community": 25,
       "community_name": "03: \u041d\u0430\u0441\u0442\u043e\u044f\u0449\u0438\u0439 \u043e\u0442\u0432\u0435\u0442 \u043b\u043e\u043a\u0430\u043b\u044c\u043d\u043e\u0439 LLM",
-      "norm_label": "03-real-local-llm-response.md"
+      "norm_label": "03-real-local-llm-response.md",
+      "id": "scratch_npc_local_llm_demo_issues_03_real_local_llm_response"
     },
     {
       "label": "03: \u041d\u0430\u0441\u0442\u043e\u044f\u0449\u0438\u0439 \u043e\u0442\u0432\u0435\u0442 \u043b\u043e\u043a\u0430\u043b\u044c\u043d\u043e\u0439 LLM",
@@ -20,10 +64,10 @@
       "source_file": ".scratch/npc-local-llm-demo/issues/03-real-local-llm-response.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "scratch_npc_local_llm_demo_issues_03_real_local_llm_response_03_\u043d\u0430\u0441\u0442\u043e\u044f\u0449\u0438\u0439_\u043e\u0442\u0432\u0435\u0442_\u043b\u043e\u043a\u0430\u043b\u044c\u043d\u043e\u0439_llm",
       "community": 25,
       "community_name": "03: \u041d\u0430\u0441\u0442\u043e\u044f\u0449\u0438\u0439 \u043e\u0442\u0432\u0435\u0442 \u043b\u043e\u043a\u0430\u043b\u044c\u043d\u043e\u0439 LLM",
-      "norm_label": "03: \u043d\u0430\u0441\u0442\u043e\u044f\u0449\u0438\u0438 \u043e\u0442\u0432\u0435\u0442 \u043b\u043e\u043a\u0430\u043b\u044c\u043d\u043e\u0438 llm"
+      "norm_label": "03: \u043d\u0430\u0441\u0442\u043e\u044f\u0449\u0438\u0438 \u043e\u0442\u0432\u0435\u0442 \u043b\u043e\u043a\u0430\u043b\u044c\u043d\u043e\u0438 llm",
+      "id": "scratch_npc_local_llm_demo_issues_03_real_local_llm_response_03_\u043d\u0430\u0441\u0442\u043e\u044f\u0449\u0438\u0439_\u043e\u0442\u0432\u0435\u0442_\u043b\u043e\u043a\u0430\u043b\u044c\u043d\u043e\u0439_llm"
     },
     {
       "label": "Comments",
@@ -31,219 +75,21 @@
       "source_file": ".scratch/npc-local-llm-demo/issues/03-real-local-llm-response.md",
       "source_location": "L21",
       "_origin": "ast",
-      "id": "scratch_npc_local_llm_demo_issues_03_real_local_llm_response_comments",
       "community": 25,
       "community_name": "03: \u041d\u0430\u0441\u0442\u043e\u044f\u0449\u0438\u0439 \u043e\u0442\u0432\u0435\u0442 \u043b\u043e\u043a\u0430\u043b\u044c\u043d\u043e\u0439 LLM",
-      "norm_label": "comments"
+      "norm_label": "comments",
+      "id": "scratch_npc_local_llm_demo_issues_03_real_local_llm_response_comments"
     },
     {
-      "label": "2026-09-22 \u2014 \u043f\u0440\u043e\u0432\u0435\u0440\u044f\u0435\u043c\u043e\u0441\u0442\u044c \u0442\u0435\u0441\u0442\u043e\u0432 \u043d\u0430 \u0442\u0435\u043a\u0443\u0449\u0435\u0439 \u043c\u0430\u0448\u0438\u043d\u0435",
+      "label": "2026-09-22 \u2014 \u043f\u0440\u043e\u0432\u0435\u0440\u044f\u0435\u043c\u043e\u0441\u0442\u044c \u0442\u0435\u0441\u0442\u043e\u0432 \u0438 \u043f\u043e\u0432\u0442\u043e\u0440\u043d\u044b\u0439 \u043f\u0440\u043e\u0433\u043e\u043d \u0433\u0435\u0439\u0442\u0430",
       "file_type": "document",
       "source_file": ".scratch/npc-local-llm-demo/issues/03-real-local-llm-response.md",
       "source_location": "L63",
       "_origin": "ast",
-      "id": "scratch_npc_local_llm_demo_issues_03_real_local_llm_response_2026_09_22_\u043f\u0440\u043e\u0432\u0435\u0440\u044f\u0435\u043c\u043e\u0441\u0442\u044c_\u0442\u0435\u0441\u0442\u043e\u0432_\u043d\u0430_\u0442\u0435\u043a\u0443\u0449\u0435\u0439_\u043c\u0430\u0448\u0438\u043d\u0435",
       "community": 25,
       "community_name": "03: \u041d\u0430\u0441\u0442\u043e\u044f\u0449\u0438\u0439 \u043e\u0442\u0432\u0435\u0442 \u043b\u043e\u043a\u0430\u043b\u044c\u043d\u043e\u0439 LLM",
-      "norm_label": "2026-09-22 \u2014 \u043f\u0440\u043e\u0432\u0435\u0440\u044f\u0435\u043c\u043e\u0441\u0442\u044c \u0442\u0435\u0441\u0442\u043e\u0432 \u043d\u0430 \u0442\u0435\u043a\u0443\u0449\u0435\u0438 \u043c\u0430\u0448\u0438\u043d\u0435"
-    },
-    {
-      "label": "04-silent-bundled-ollama.md",
-      "file_type": "document",
-      "source_file": ".scratch/npc-local-llm-demo/issues/04-silent-bundled-ollama.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "scratch_npc_local_llm_demo_issues_04_silent_bundled_ollama",
-      "community": 26,
-      "community_name": "04-silent-bundled-ollama.md",
-      "norm_label": "04-silent-bundled-ollama.md"
-    },
-    {
-      "label": "04: \u0422\u0438\u0445\u0430\u044f \u043f\u043e\u0434\u0433\u043e\u0442\u043e\u0432\u043a\u0430 bundled Ollama",
-      "file_type": "document",
-      "source_file": ".scratch/npc-local-llm-demo/issues/04-silent-bundled-ollama.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "scratch_npc_local_llm_demo_issues_04_silent_bundled_ollama_04_\u0442\u0438\u0445\u0430\u044f_\u043f\u043e\u0434\u0433\u043e\u0442\u043e\u0432\u043a\u0430_bundled_ollama",
-      "community": 26,
-      "community_name": "04-silent-bundled-ollama.md",
-      "norm_label": "04: \u0442\u0438\u0445\u0430\u044f \u043f\u043e\u0434\u0433\u043e\u0442\u043e\u0432\u043a\u0430 bundled ollama"
-    },
-    {
-      "label": "05-windows-delivery-and-smoke-test.md",
-      "file_type": "document",
-      "source_file": ".scratch/npc-local-llm-demo/issues/05-windows-delivery-and-smoke-test.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "scratch_npc_local_llm_demo_issues_05_windows_delivery_and_smoke_test",
-      "community": 27,
-      "community_name": "05-windows-delivery-and-smoke-test.md",
-      "norm_label": "05-windows-delivery-and-smoke-test.md"
-    },
-    {
-      "label": "05: Windows-\u043f\u043e\u0441\u0442\u0430\u0432\u043a\u0430 \u0438 \u0444\u0438\u043d\u0430\u043b\u044c\u043d\u0430\u044f \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430",
-      "file_type": "document",
-      "source_file": ".scratch/npc-local-llm-demo/issues/05-windows-delivery-and-smoke-test.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "scratch_npc_local_llm_demo_issues_05_windows_delivery_and_smoke_test_05_windows_\u043f\u043e\u0441\u0442\u0430\u0432\u043a\u0430_\u0438_\u0444\u0438\u043d\u0430\u043b\u044c\u043d\u0430\u044f_\u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430",
-      "community": 27,
-      "community_name": "05-windows-delivery-and-smoke-test.md",
-      "norm_label": "05: windows-\u043f\u043e\u0441\u0442\u0430\u0432\u043a\u0430 \u0438 \u0444\u0438\u043d\u0430\u043b\u044c\u043d\u0430\u044f \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430"
-    },
-    {
-      "label": "npc-local-llm-demo/spec.md",
-      "file_type": "document",
-      "source_file": ".scratch/npc-local-llm-demo/spec.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "scratch_npc_local_llm_demo_spec",
-      "community": 21,
-      "community_name": "\u041b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f LLM \u0432 \u0434\u0438\u0430\u043b\u043e\u0433\u0435 \u0441 NPC",
-      "norm_label": "npc-local-llm-demo/spec.md"
-    },
-    {
-      "label": "\u041b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f LLM \u0432 \u0434\u0438\u0430\u043b\u043e\u0433\u0435 \u0441 NPC",
-      "file_type": "document",
-      "source_file": ".scratch/npc-local-llm-demo/spec.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "scratch_npc_local_llm_demo_spec_\u043b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f_llm_\u0432_\u0434\u0438\u0430\u043b\u043e\u0433\u0435_\u0441_npc",
-      "community": 21,
-      "community_name": "\u041b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f LLM \u0432 \u0434\u0438\u0430\u043b\u043e\u0433\u0435 \u0441 NPC",
-      "norm_label": "\u043b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f llm \u0432 \u0434\u0438\u0430\u043b\u043e\u0433\u0435 \u0441 npc"
-    },
-    {
-      "label": "Problem Statement",
-      "file_type": "document",
-      "source_file": ".scratch/npc-local-llm-demo/spec.md",
-      "source_location": "L5",
-      "_origin": "ast",
-      "id": "scratch_npc_local_llm_demo_spec_problem_statement",
-      "community": 21,
-      "community_name": "\u041b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f LLM \u0432 \u0434\u0438\u0430\u043b\u043e\u0433\u0435 \u0441 NPC",
-      "norm_label": "problem statement"
-    },
-    {
-      "label": "Solution",
-      "file_type": "document",
-      "source_file": ".scratch/npc-local-llm-demo/spec.md",
-      "source_location": "L11",
-      "_origin": "ast",
-      "id": "scratch_npc_local_llm_demo_spec_solution",
-      "community": 21,
-      "community_name": "\u041b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f LLM \u0432 \u0434\u0438\u0430\u043b\u043e\u0433\u0435 \u0441 NPC",
-      "norm_label": "solution"
-    },
-    {
-      "label": "User Stories",
-      "file_type": "document",
-      "source_file": ".scratch/npc-local-llm-demo/spec.md",
-      "source_location": "L19",
-      "_origin": "ast",
-      "id": "scratch_npc_local_llm_demo_spec_user_stories",
-      "community": 21,
-      "community_name": "\u041b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f LLM \u0432 \u0434\u0438\u0430\u043b\u043e\u0433\u0435 \u0441 NPC",
-      "norm_label": "user stories"
-    },
-    {
-      "label": "Implementation Decisions",
-      "file_type": "document",
-      "source_file": ".scratch/npc-local-llm-demo/spec.md",
-      "source_location": "L48",
-      "_origin": "ast",
-      "id": "scratch_npc_local_llm_demo_spec_implementation_decisions",
-      "community": 21,
-      "community_name": "\u041b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f LLM \u0432 \u0434\u0438\u0430\u043b\u043e\u0433\u0435 \u0441 NPC",
-      "norm_label": "implementation decisions"
-    },
-    {
-      "label": "Testing Decisions",
-      "file_type": "document",
-      "source_file": ".scratch/npc-local-llm-demo/spec.md",
-      "source_location": "L77",
-      "_origin": "ast",
-      "id": "scratch_npc_local_llm_demo_spec_testing_decisions",
-      "community": 21,
-      "community_name": "\u041b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f LLM \u0432 \u0434\u0438\u0430\u043b\u043e\u0433\u0435 \u0441 NPC",
-      "norm_label": "testing decisions"
-    },
-    {
-      "label": "Out of Scope",
-      "file_type": "document",
-      "source_file": ".scratch/npc-local-llm-demo/spec.md",
-      "source_location": "L92",
-      "_origin": "ast",
-      "id": "scratch_npc_local_llm_demo_spec_out_of_scope",
-      "community": 21,
-      "community_name": "\u041b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f LLM \u0432 \u0434\u0438\u0430\u043b\u043e\u0433\u0435 \u0441 NPC",
-      "norm_label": "out of scope"
-    },
-    {
-      "label": "Further Notes",
-      "file_type": "document",
-      "source_file": ".scratch/npc-local-llm-demo/spec.md",
-      "source_location": "L105",
-      "_origin": "ast",
-      "id": "scratch_npc_local_llm_demo_spec_further_notes",
-      "community": 21,
-      "community_name": "\u041b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f LLM \u0432 \u0434\u0438\u0430\u043b\u043e\u0433\u0435 \u0441 NPC",
-      "norm_label": "further notes"
-    },
-    {
-      "label": "\u0423\u0441\u043b\u043e\u0432\u0438\u0435 \u0441\u043c\u0435\u043d\u044b \u043c\u043e\u0434\u0435\u043b\u0438 (2026-09-22)",
-      "file_type": "document",
-      "source_file": ".scratch/npc-local-llm-demo/spec.md",
-      "source_location": "L107",
-      "_origin": "ast",
-      "id": "scratch_npc_local_llm_demo_spec_\u0443\u0441\u043b\u043e\u0432\u0438\u0435_\u0441\u043c\u0435\u043d\u044b_\u043c\u043e\u0434\u0435\u043b\u0438_2026_09_22",
-      "community": 21,
-      "community_name": "\u041b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f LLM \u0432 \u0434\u0438\u0430\u043b\u043e\u0433\u0435 \u0441 NPC",
-      "norm_label": "\u0443\u0441\u043b\u043e\u0432\u0438\u0435 \u0441\u043c\u0435\u043d\u044b \u043c\u043e\u0434\u0435\u043b\u0438 (2026-09-22)"
-    },
-    {
-      "label": "CONTEXT.md",
-      "file_type": "document",
-      "source_file": "CONTEXT.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "context",
-      "community": 13,
-      "community_name": "\u0414\u0438\u0430\u043b\u043e\u0433 \u0441 NPC",
-      "norm_label": "context.md"
-    },
-    {
-      "label": "\u0414\u0438\u0430\u043b\u043e\u0433 \u0441 NPC",
-      "file_type": "document",
-      "source_file": "CONTEXT.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "context_\u0434\u0438\u0430\u043b\u043e\u0433_\u0441_npc",
-      "community": 13,
-      "community_name": "\u0414\u0438\u0430\u043b\u043e\u0433 \u0441 NPC",
-      "norm_label": "\u0434\u0438\u0430\u043b\u043e\u0433 \u0441 npc"
-    },
-    {
-      "label": "\u0414\u0438\u0430\u043b\u043e\u0433",
-      "file_type": "document",
-      "source_file": "CONTEXT.md",
-      "source_location": "L5",
-      "_origin": "ast",
-      "id": "context_\u0434\u0438\u0430\u043b\u043e\u0433",
-      "community": 13,
-      "community_name": "\u0414\u0438\u0430\u043b\u043e\u0433 \u0441 NPC",
-      "norm_label": "\u0434\u0438\u0430\u043b\u043e\u0433"
-    },
-    {
-      "label": "\u041b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f \u0433\u0435\u043d\u0435\u0440\u0430\u0446\u0438\u044f",
-      "file_type": "document",
-      "source_file": "CONTEXT.md",
-      "source_location": "L43",
-      "_origin": "ast",
-      "id": "context_\u043b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f_\u0433\u0435\u043d\u0435\u0440\u0430\u0446\u0438\u044f",
-      "community": 13,
-      "community_name": "\u0414\u0438\u0430\u043b\u043e\u0433 \u0441 NPC",
-      "norm_label": "\u043b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f \u0433\u0435\u043d\u0435\u0440\u0430\u0446\u0438\u044f"
+      "norm_label": "2026-09-22 \u2014 \u043f\u0440\u043e\u0432\u0435\u0440\u044f\u0435\u043c\u043e\u0441\u0442\u044c \u0442\u0435\u0441\u0442\u043e\u0432 \u0438 \u043f\u043e\u0432\u0442\u043e\u0440\u043d\u044b\u0438 \u043f\u0440\u043e\u0433\u043e\u043d \u0433\u0435\u0438\u0442\u0430",
+      "id": "scratch_npc_local_llm_demo_issues_03_real_local_llm_response_2026_09_22_\u043f\u0440\u043e\u0432\u0435\u0440\u044f\u0435\u043c\u043e\u0441\u0442\u044c_\u0442\u0435\u0441\u0442\u043e\u0432_\u0438_\u043f\u043e\u0432\u0442\u043e\u0440\u043d\u044b\u0439_\u043f\u0440\u043e\u0433\u043e\u043d_\u0433\u0435\u0439\u0442\u0430"
     },
     {
       "label": "README.md",
@@ -251,10 +97,10 @@
       "source_file": "README.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "readme",
       "community": 18,
       "community_name": "NpcWithLLM",
-      "norm_label": "readme.md"
+      "norm_label": "readme.md",
+      "id": "readme"
     },
     {
       "label": "NpcWithLLM",
@@ -262,10 +108,10 @@
       "source_file": "README.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "readme_npcwithllm",
       "community": 18,
       "community_name": "NpcWithLLM",
-      "norm_label": "npcwithllm"
+      "norm_label": "npcwithllm",
+      "id": "readme_npcwithllm"
     },
     {
       "label": "\u0422\u0435\u043a\u0443\u0449\u0438\u0439 \u0441\u0442\u0430\u0442\u0443\u0441",
@@ -273,10 +119,10 @@
       "source_file": "README.md",
       "source_location": "L5",
       "_origin": "ast",
-      "id": "readme_\u0442\u0435\u043a\u0443\u0449\u0438\u0439_\u0441\u0442\u0430\u0442\u0443\u0441",
       "community": 18,
       "community_name": "NpcWithLLM",
-      "norm_label": "\u0442\u0435\u043a\u0443\u0449\u0438\u0438 \u0441\u0442\u0430\u0442\u0443\u0441"
+      "norm_label": "\u0442\u0435\u043a\u0443\u0449\u0438\u0438 \u0441\u0442\u0430\u0442\u0443\u0441",
+      "id": "readme_\u0442\u0435\u043a\u0443\u0449\u0438\u0439_\u0441\u0442\u0430\u0442\u0443\u0441"
     },
     {
       "label": "\u0420\u0443\u0447\u043d\u043e\u0439 \u0437\u0430\u043f\u0443\u0441\u043a Ollama",
@@ -284,10 +130,10 @@
       "source_file": "README.md",
       "source_location": "L18",
       "_origin": "ast",
-      "id": "readme_\u0440\u0443\u0447\u043d\u043e\u0439_\u0437\u0430\u043f\u0443\u0441\u043a_ollama",
       "community": 18,
       "community_name": "NpcWithLLM",
-      "norm_label": "\u0440\u0443\u0447\u043d\u043e\u0438 \u0437\u0430\u043f\u0443\u0441\u043a ollama"
+      "norm_label": "\u0440\u0443\u0447\u043d\u043e\u0438 \u0437\u0430\u043f\u0443\u0441\u043a ollama",
+      "id": "readme_\u0440\u0443\u0447\u043d\u043e\u0439_\u0437\u0430\u043f\u0443\u0441\u043a_ollama"
     },
     {
       "label": "\u0422\u0435\u0441\u0442\u044b \u0438 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u043a\u0430\u0447\u0435\u0441\u0442\u0432\u0430",
@@ -295,32 +141,230 @@
       "source_file": "README.md",
       "source_location": "L39",
       "_origin": "ast",
-      "id": "readme_\u0442\u0435\u0441\u0442\u044b_\u0438_\u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430_\u043a\u0430\u0447\u0435\u0441\u0442\u0432\u0430",
       "community": 18,
       "community_name": "NpcWithLLM",
-      "norm_label": "\u0442\u0435\u0441\u0442\u044b \u0438 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u043a\u0430\u0447\u0435\u0441\u0442\u0432\u0430"
+      "norm_label": "\u0442\u0435\u0441\u0442\u044b \u0438 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u043a\u0430\u0447\u0435\u0441\u0442\u0432\u0430",
+      "id": "readme_\u0442\u0435\u0441\u0442\u044b_\u0438_\u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430_\u043a\u0430\u0447\u0435\u0441\u0442\u0432\u0430"
     },
     {
       "label": "\u041d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435 \u043f\u0440\u043e\u0435\u043a\u0442\u0430",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L54",
+      "source_location": "L66",
       "_origin": "ast",
-      "id": "readme_\u043d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435_\u043f\u0440\u043e\u0435\u043a\u0442\u0430",
       "community": 18,
       "community_name": "NpcWithLLM",
-      "norm_label": "\u043d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435 \u043f\u0440\u043e\u0435\u043a\u0442\u0430"
+      "norm_label": "\u043d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435 \u043f\u0440\u043e\u0435\u043a\u0442\u0430",
+      "id": "readme_\u043d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435_\u043f\u0440\u043e\u0435\u043a\u0442\u0430"
     },
     {
       "label": "Godot MCP \u0434\u043b\u044f Codex",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L60",
+      "source_location": "L72",
       "_origin": "ast",
-      "id": "readme_godot_mcp_\u0434\u043b\u044f_codex",
       "community": 18,
       "community_name": "NpcWithLLM",
-      "norm_label": "godot mcp \u0434\u043b\u044f codex"
+      "norm_label": "godot mcp \u0434\u043b\u044f codex",
+      "id": "readme_godot_mcp_\u0434\u043b\u044f_codex"
+    },
+    {
+      "label": "04-silent-bundled-ollama.md",
+      "file_type": "document",
+      "source_file": ".scratch/npc-local-llm-demo/issues/04-silent-bundled-ollama.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 26,
+      "community_name": "04-silent-bundled-ollama.md",
+      "norm_label": "04-silent-bundled-ollama.md",
+      "id": "scratch_npc_local_llm_demo_issues_04_silent_bundled_ollama"
+    },
+    {
+      "label": "04: \u0422\u0438\u0445\u0430\u044f \u043f\u043e\u0434\u0433\u043e\u0442\u043e\u0432\u043a\u0430 bundled Ollama",
+      "file_type": "document",
+      "source_file": ".scratch/npc-local-llm-demo/issues/04-silent-bundled-ollama.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 26,
+      "community_name": "04-silent-bundled-ollama.md",
+      "norm_label": "04: \u0442\u0438\u0445\u0430\u044f \u043f\u043e\u0434\u0433\u043e\u0442\u043e\u0432\u043a\u0430 bundled ollama",
+      "id": "scratch_npc_local_llm_demo_issues_04_silent_bundled_ollama_04_\u0442\u0438\u0445\u0430\u044f_\u043f\u043e\u0434\u0433\u043e\u0442\u043e\u0432\u043a\u0430_bundled_ollama"
+    },
+    {
+      "label": "05-windows-delivery-and-smoke-test.md",
+      "file_type": "document",
+      "source_file": ".scratch/npc-local-llm-demo/issues/05-windows-delivery-and-smoke-test.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 27,
+      "community_name": "05-windows-delivery-and-smoke-test.md",
+      "norm_label": "05-windows-delivery-and-smoke-test.md",
+      "id": "scratch_npc_local_llm_demo_issues_05_windows_delivery_and_smoke_test"
+    },
+    {
+      "label": "05: Windows-\u043f\u043e\u0441\u0442\u0430\u0432\u043a\u0430 \u0438 \u0444\u0438\u043d\u0430\u043b\u044c\u043d\u0430\u044f \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430",
+      "file_type": "document",
+      "source_file": ".scratch/npc-local-llm-demo/issues/05-windows-delivery-and-smoke-test.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 27,
+      "community_name": "05-windows-delivery-and-smoke-test.md",
+      "norm_label": "05: windows-\u043f\u043e\u0441\u0442\u0430\u0432\u043a\u0430 \u0438 \u0444\u0438\u043d\u0430\u043b\u044c\u043d\u0430\u044f \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430",
+      "id": "scratch_npc_local_llm_demo_issues_05_windows_delivery_and_smoke_test_05_windows_\u043f\u043e\u0441\u0442\u0430\u0432\u043a\u0430_\u0438_\u0444\u0438\u043d\u0430\u043b\u044c\u043d\u0430\u044f_\u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430"
+    },
+    {
+      "label": "npc-local-llm-demo/spec.md",
+      "file_type": "document",
+      "source_file": ".scratch/npc-local-llm-demo/spec.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 21,
+      "community_name": "\u041b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f LLM \u0432 \u0434\u0438\u0430\u043b\u043e\u0433\u0435 \u0441 NPC",
+      "norm_label": "npc-local-llm-demo/spec.md",
+      "id": "scratch_npc_local_llm_demo_spec"
+    },
+    {
+      "label": "\u041b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f LLM \u0432 \u0434\u0438\u0430\u043b\u043e\u0433\u0435 \u0441 NPC",
+      "file_type": "document",
+      "source_file": ".scratch/npc-local-llm-demo/spec.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 21,
+      "community_name": "\u041b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f LLM \u0432 \u0434\u0438\u0430\u043b\u043e\u0433\u0435 \u0441 NPC",
+      "norm_label": "\u043b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f llm \u0432 \u0434\u0438\u0430\u043b\u043e\u0433\u0435 \u0441 npc",
+      "id": "scratch_npc_local_llm_demo_spec_\u043b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f_llm_\u0432_\u0434\u0438\u0430\u043b\u043e\u0433\u0435_\u0441_npc"
+    },
+    {
+      "label": "Problem Statement",
+      "file_type": "document",
+      "source_file": ".scratch/npc-local-llm-demo/spec.md",
+      "source_location": "L5",
+      "_origin": "ast",
+      "community": 21,
+      "community_name": "\u041b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f LLM \u0432 \u0434\u0438\u0430\u043b\u043e\u0433\u0435 \u0441 NPC",
+      "norm_label": "problem statement",
+      "id": "scratch_npc_local_llm_demo_spec_problem_statement"
+    },
+    {
+      "label": "Solution",
+      "file_type": "document",
+      "source_file": ".scratch/npc-local-llm-demo/spec.md",
+      "source_location": "L11",
+      "_origin": "ast",
+      "community": 21,
+      "community_name": "\u041b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f LLM \u0432 \u0434\u0438\u0430\u043b\u043e\u0433\u0435 \u0441 NPC",
+      "norm_label": "solution",
+      "id": "scratch_npc_local_llm_demo_spec_solution"
+    },
+    {
+      "label": "User Stories",
+      "file_type": "document",
+      "source_file": ".scratch/npc-local-llm-demo/spec.md",
+      "source_location": "L19",
+      "_origin": "ast",
+      "community": 21,
+      "community_name": "\u041b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f LLM \u0432 \u0434\u0438\u0430\u043b\u043e\u0433\u0435 \u0441 NPC",
+      "norm_label": "user stories",
+      "id": "scratch_npc_local_llm_demo_spec_user_stories"
+    },
+    {
+      "label": "Implementation Decisions",
+      "file_type": "document",
+      "source_file": ".scratch/npc-local-llm-demo/spec.md",
+      "source_location": "L48",
+      "_origin": "ast",
+      "community": 21,
+      "community_name": "\u041b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f LLM \u0432 \u0434\u0438\u0430\u043b\u043e\u0433\u0435 \u0441 NPC",
+      "norm_label": "implementation decisions",
+      "id": "scratch_npc_local_llm_demo_spec_implementation_decisions"
+    },
+    {
+      "label": "Testing Decisions",
+      "file_type": "document",
+      "source_file": ".scratch/npc-local-llm-demo/spec.md",
+      "source_location": "L77",
+      "_origin": "ast",
+      "community": 21,
+      "community_name": "\u041b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f LLM \u0432 \u0434\u0438\u0430\u043b\u043e\u0433\u0435 \u0441 NPC",
+      "norm_label": "testing decisions",
+      "id": "scratch_npc_local_llm_demo_spec_testing_decisions"
+    },
+    {
+      "label": "Out of Scope",
+      "file_type": "document",
+      "source_file": ".scratch/npc-local-llm-demo/spec.md",
+      "source_location": "L92",
+      "_origin": "ast",
+      "community": 21,
+      "community_name": "\u041b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f LLM \u0432 \u0434\u0438\u0430\u043b\u043e\u0433\u0435 \u0441 NPC",
+      "norm_label": "out of scope",
+      "id": "scratch_npc_local_llm_demo_spec_out_of_scope"
+    },
+    {
+      "label": "Further Notes",
+      "file_type": "document",
+      "source_file": ".scratch/npc-local-llm-demo/spec.md",
+      "source_location": "L105",
+      "_origin": "ast",
+      "community": 21,
+      "community_name": "\u041b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f LLM \u0432 \u0434\u0438\u0430\u043b\u043e\u0433\u0435 \u0441 NPC",
+      "norm_label": "further notes",
+      "id": "scratch_npc_local_llm_demo_spec_further_notes"
+    },
+    {
+      "label": "\u0423\u0441\u043b\u043e\u0432\u0438\u0435 \u0441\u043c\u0435\u043d\u044b \u043c\u043e\u0434\u0435\u043b\u0438 (2026-09-22)",
+      "file_type": "document",
+      "source_file": ".scratch/npc-local-llm-demo/spec.md",
+      "source_location": "L107",
+      "_origin": "ast",
+      "community": 21,
+      "community_name": "\u041b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f LLM \u0432 \u0434\u0438\u0430\u043b\u043e\u0433\u0435 \u0441 NPC",
+      "norm_label": "\u0443\u0441\u043b\u043e\u0432\u0438\u0435 \u0441\u043c\u0435\u043d\u044b \u043c\u043e\u0434\u0435\u043b\u0438 (2026-09-22)",
+      "id": "scratch_npc_local_llm_demo_spec_\u0443\u0441\u043b\u043e\u0432\u0438\u0435_\u0441\u043c\u0435\u043d\u044b_\u043c\u043e\u0434\u0435\u043b\u0438_2026_09_22"
+    },
+    {
+      "label": "CONTEXT.md",
+      "file_type": "document",
+      "source_file": "CONTEXT.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "\u0414\u0438\u0430\u043b\u043e\u0433 \u0441 NPC",
+      "norm_label": "context.md",
+      "id": "context"
+    },
+    {
+      "label": "\u0414\u0438\u0430\u043b\u043e\u0433 \u0441 NPC",
+      "file_type": "document",
+      "source_file": "CONTEXT.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "\u0414\u0438\u0430\u043b\u043e\u0433 \u0441 NPC",
+      "norm_label": "\u0434\u0438\u0430\u043b\u043e\u0433 \u0441 npc",
+      "id": "context_\u0434\u0438\u0430\u043b\u043e\u0433_\u0441_npc"
+    },
+    {
+      "label": "\u0414\u0438\u0430\u043b\u043e\u0433",
+      "file_type": "document",
+      "source_file": "CONTEXT.md",
+      "source_location": "L5",
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "\u0414\u0438\u0430\u043b\u043e\u0433 \u0441 NPC",
+      "norm_label": "\u0434\u0438\u0430\u043b\u043e\u0433",
+      "id": "context_\u0434\u0438\u0430\u043b\u043e\u0433"
+    },
+    {
+      "label": "\u041b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f \u0433\u0435\u043d\u0435\u0440\u0430\u0446\u0438\u044f",
+      "file_type": "document",
+      "source_file": "CONTEXT.md",
+      "source_location": "L43",
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "\u0414\u0438\u0430\u043b\u043e\u0433 \u0441 NPC",
+      "norm_label": "\u043b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f \u0433\u0435\u043d\u0435\u0440\u0430\u0446\u0438\u044f",
+      "id": "context_\u043b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f_\u0433\u0435\u043d\u0435\u0440\u0430\u0446\u0438\u044f"
     },
     {
       "label": "0002-bundled-local-llm-runtime.md",
@@ -328,10 +372,10 @@
       "source_file": "docs/adr/0002-bundled-local-llm-runtime.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "docs_adr_0002_bundled_local_llm_runtime",
       "community": 22,
       "community_name": "Bundled \u043b\u043e\u043a\u0430\u043b\u044c\u043d\u044b\u0439 runtime \u0434\u043b\u044f LLM",
-      "norm_label": "0002-bundled-local-llm-runtime.md"
+      "norm_label": "0002-bundled-local-llm-runtime.md",
+      "id": "docs_adr_0002_bundled_local_llm_runtime"
     },
     {
       "label": "Bundled \u043b\u043e\u043a\u0430\u043b\u044c\u043d\u044b\u0439 runtime \u0434\u043b\u044f LLM",
@@ -339,10 +383,10 @@
       "source_file": "docs/adr/0002-bundled-local-llm-runtime.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "docs_adr_0002_bundled_local_llm_runtime_bundled_\u043b\u043e\u043a\u0430\u043b\u044c\u043d\u044b\u0439_runtime_\u0434\u043b\u044f_llm",
       "community": 22,
       "community_name": "Bundled \u043b\u043e\u043a\u0430\u043b\u044c\u043d\u044b\u0439 runtime \u0434\u043b\u044f LLM",
-      "norm_label": "bundled \u043b\u043e\u043a\u0430\u043b\u044c\u043d\u044b\u0438 runtime \u0434\u043b\u044f llm"
+      "norm_label": "bundled \u043b\u043e\u043a\u0430\u043b\u044c\u043d\u044b\u0438 runtime \u0434\u043b\u044f llm",
+      "id": "docs_adr_0002_bundled_local_llm_runtime_bundled_\u043b\u043e\u043a\u0430\u043b\u044c\u043d\u044b\u0439_runtime_\u0434\u043b\u044f_llm"
     },
     {
       "label": "Considered Options",
@@ -350,10 +394,10 @@
       "source_file": "docs/adr/0002-bundled-local-llm-runtime.md",
       "source_location": "L7",
       "_origin": "ast",
-      "id": "docs_adr_0002_bundled_local_llm_runtime_considered_options",
       "community": 22,
       "community_name": "Bundled \u043b\u043e\u043a\u0430\u043b\u044c\u043d\u044b\u0439 runtime \u0434\u043b\u044f LLM",
-      "norm_label": "considered options"
+      "norm_label": "considered options",
+      "id": "docs_adr_0002_bundled_local_llm_runtime_considered_options"
     },
     {
       "label": "Consequences",
@@ -361,10 +405,10 @@
       "source_file": "docs/adr/0002-bundled-local-llm-runtime.md",
       "source_location": "L14",
       "_origin": "ast",
-      "id": "docs_adr_0002_bundled_local_llm_runtime_consequences",
       "community": 22,
       "community_name": "Bundled \u043b\u043e\u043a\u0430\u043b\u044c\u043d\u044b\u0439 runtime \u0434\u043b\u044f LLM",
-      "norm_label": "consequences"
+      "norm_label": "consequences",
+      "id": "docs_adr_0002_bundled_local_llm_runtime_consequences"
     },
     {
       "label": "0003-natural-dialogue-model-quality-gate.md",
@@ -372,10 +416,10 @@
       "source_file": "docs/adr/0003-natural-dialogue-model-quality-gate.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "docs_adr_0003_natural_dialogue_model_quality_gate",
       "community": 40,
       "community_name": "Quality gate \u0434\u043b\u044f \u0435\u0441\u0442\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u043e\u0433\u043e \u0434\u0438\u0430\u043b\u043e\u0433\u0430 NPC",
-      "norm_label": "0003-natural-dialogue-model-quality-gate.md"
+      "norm_label": "0003-natural-dialogue-model-quality-gate.md",
+      "id": "docs_adr_0003_natural_dialogue_model_quality_gate"
     },
     {
       "label": "Quality gate \u0434\u043b\u044f \u0435\u0441\u0442\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u043e\u0433\u043e \u0434\u0438\u0430\u043b\u043e\u0433\u0430 NPC",
@@ -383,10 +427,10 @@
       "source_file": "docs/adr/0003-natural-dialogue-model-quality-gate.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "docs_adr_0003_natural_dialogue_model_quality_gate_quality_gate_\u0434\u043b\u044f_\u0435\u0441\u0442\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u043e\u0433\u043e_\u0434\u0438\u0430\u043b\u043e\u0433\u0430_npc",
       "community": 40,
       "community_name": "Quality gate \u0434\u043b\u044f \u0435\u0441\u0442\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u043e\u0433\u043e \u0434\u0438\u0430\u043b\u043e\u0433\u0430 NPC",
-      "norm_label": "quality gate \u0434\u043b\u044f \u0435\u0441\u0442\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u043e\u0433\u043e \u0434\u0438\u0430\u043b\u043e\u0433\u0430 npc"
+      "norm_label": "quality gate \u0434\u043b\u044f \u0435\u0441\u0442\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u043e\u0433\u043e \u0434\u0438\u0430\u043b\u043e\u0433\u0430 npc",
+      "id": "docs_adr_0003_natural_dialogue_model_quality_gate_quality_gate_\u0434\u043b\u044f_\u0435\u0441\u0442\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u043e\u0433\u043e_\u0434\u0438\u0430\u043b\u043e\u0433\u0430_npc"
     },
     {
       "label": "\u0423\u0442\u043e\u0447\u043d\u0435\u043d\u0438\u0435 \u043e\u0442 2026-09-22",
@@ -394,10 +438,10 @@
       "source_file": "docs/adr/0003-natural-dialogue-model-quality-gate.md",
       "source_location": "L9",
       "_origin": "ast",
-      "id": "docs_adr_0003_natural_dialogue_model_quality_gate_\u0443\u0442\u043e\u0447\u043d\u0435\u043d\u0438\u0435_\u043e\u0442_2026_09_22",
       "community": 40,
       "community_name": "Quality gate \u0434\u043b\u044f \u0435\u0441\u0442\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u043e\u0433\u043e \u0434\u0438\u0430\u043b\u043e\u0433\u0430 NPC",
-      "norm_label": "\u0443\u0442\u043e\u0447\u043d\u0435\u043d\u0438\u0435 \u043e\u0442 2026-09-22"
+      "norm_label": "\u0443\u0442\u043e\u0447\u043d\u0435\u043d\u0438\u0435 \u043e\u0442 2026-09-22",
+      "id": "docs_adr_0003_natural_dialogue_model_quality_gate_\u0443\u0442\u043e\u0447\u043d\u0435\u043d\u0438\u0435_\u043e\u0442_2026_09_22"
     },
     {
       "label": "\u0418\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u043f\u043e\u0441\u043b\u0435\u0434\u0441\u0442\u0432\u0438\u044f (\u0434\u043e \u0443\u0442\u043e\u0447\u043d\u0435\u043d\u0438\u044f)",
@@ -405,10 +449,10 @@
       "source_file": "docs/adr/0003-natural-dialogue-model-quality-gate.md",
       "source_location": "L17",
       "_origin": "ast",
-      "id": "docs_adr_0003_natural_dialogue_model_quality_gate_\u0438\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0438\u0435_\u043f\u043e\u0441\u043b\u0435\u0434\u0441\u0442\u0432\u0438\u044f_\u0434\u043e_\u0443\u0442\u043e\u0447\u043d\u0435\u043d\u0438\u044f",
       "community": 40,
       "community_name": "Quality gate \u0434\u043b\u044f \u0435\u0441\u0442\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u043e\u0433\u043e \u0434\u0438\u0430\u043b\u043e\u0433\u0430 NPC",
-      "norm_label": "\u0438\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u043f\u043e\u0441\u043b\u0435\u0434\u0441\u0442\u0432\u0438\u044f (\u0434\u043e \u0443\u0442\u043e\u0447\u043d\u0435\u043d\u0438\u044f)"
+      "norm_label": "\u0438\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u043f\u043e\u0441\u043b\u0435\u0434\u0441\u0442\u0432\u0438\u044f (\u0434\u043e \u0443\u0442\u043e\u0447\u043d\u0435\u043d\u0438\u044f)",
+      "id": "docs_adr_0003_natural_dialogue_model_quality_gate_\u0438\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0438\u0435_\u043f\u043e\u0441\u043b\u0435\u0434\u0441\u0442\u0432\u0438\u044f_\u0434\u043e_\u0443\u0442\u043e\u0447\u043d\u0435\u043d\u0438\u044f"
     },
     {
       "label": "0004-project-local-godot-mcp.md",
@@ -416,10 +460,10 @@
       "source_file": "docs/adr/0004-project-local-godot-mcp.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "docs_adr_0004_project_local_godot_mcp",
       "community": 49,
       "community_name": "Project-local Godot MCP",
-      "norm_label": "0004-project-local-godot-mcp.md"
+      "norm_label": "0004-project-local-godot-mcp.md",
+      "id": "docs_adr_0004_project_local_godot_mcp"
     },
     {
       "label": "Project-local Godot MCP",
@@ -427,10 +471,10 @@
       "source_file": "docs/adr/0004-project-local-godot-mcp.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "docs_adr_0004_project_local_godot_mcp_project_local_godot_mcp",
       "community": 49,
       "community_name": "Project-local Godot MCP",
-      "norm_label": "project-local godot mcp"
+      "norm_label": "project-local godot mcp",
+      "id": "docs_adr_0004_project_local_godot_mcp_project_local_godot_mcp"
     },
     {
       "label": "Consequences",
@@ -438,10 +482,10 @@
       "source_file": "docs/adr/0004-project-local-godot-mcp.md",
       "source_location": "L7",
       "_origin": "ast",
-      "id": "docs_adr_0004_project_local_godot_mcp_consequences",
       "community": 49,
       "community_name": "Project-local Godot MCP",
-      "norm_label": "consequences"
+      "norm_label": "consequences",
+      "id": "docs_adr_0004_project_local_godot_mcp_consequences"
     },
     {
       "label": "DialogueRegression.Tests.ps1",
@@ -869,17 +913,6 @@
       "community_name": "DelayedStream",
       "norm_label": ".write()",
       "id": "tests_dialoguesmoke_delayedstream_write"
-    },
-    {
-      "label": "Run-DialogueModelEvaluation.ps1",
-      "file_type": "code",
-      "source_file": "Tests/Run-DialogueModelEvaluation.ps1",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 32,
-      "community_name": "Run-DialogueModelEvaluation.ps1",
-      "norm_label": "run-dialoguemodelevaluation.ps1",
-      "id": "tests_run_dialoguemodelevaluation"
     },
     {
       "label": "ChatResponder.cs",
@@ -2152,8 +2185,8 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 33,
-      "community_name": "MockChatResponder",
+      "community": 0,
+      "community_name": "Main",
       "norm_label": "string",
       "id": "string"
     },
@@ -3784,9 +3817,9 @@
       "source_file": "Scripts/MockChatResponder.cs",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 33,
+      "community": 0,
       "norm_label": "mockchatresponder.cs",
-      "community_name": "MockChatResponder",
+      "community_name": "Main",
       "id": "scripts_mockchatresponder"
     },
     {
@@ -3795,9 +3828,9 @@
       "source_file": "Scripts/MockChatResponder.cs",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 33,
+      "community": 0,
       "norm_label": "mockchatresponder",
-      "community_name": "MockChatResponder",
+      "community_name": "Main",
       "id": "scripts_mockchatresponder_mockchatresponder"
     },
     {
@@ -3806,9 +3839,9 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 33,
+      "community": 0,
       "norm_label": "double",
-      "community_name": "MockChatResponder",
+      "community_name": "Main",
       "id": "double"
     },
     {
@@ -3817,9 +3850,9 @@
       "source_file": "Scripts/MockChatResponder.cs",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 33,
+      "community": 0,
       "norm_label": ".requestresponse()",
-      "community_name": "MockChatResponder",
+      "community_name": "Main",
       "id": "scripts_mockchatresponder_mockchatresponder_requestresponse"
     },
     {
@@ -3828,9 +3861,9 @@
       "source_file": "Scripts/MockChatResponder.cs",
       "source_location": "L22",
       "_origin": "ast",
-      "community": 33,
+      "community": 0,
       "norm_label": ".respondafterdelayasync()",
-      "community_name": "MockChatResponder",
+      "community_name": "Main",
       "id": "scripts_mockchatresponder_mockchatresponder_respondafterdelayasync"
     }
   ],
@@ -3838,13 +3871,24 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "Tests/DialogueGateRules.ps1",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_dialoguegaterules",
+      "target": "tests_dialoguegaterules_get_dialoguegatefailure",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": ".scratch/npc-local-llm-demo/issues/03-real-local-llm-response.md",
       "source_location": "L1",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "scratch_npc_local_llm_demo_issues_03_real_local_llm_response",
-      "target": "scratch_npc_local_llm_demo_issues_03_real_local_llm_response_03_\u043d\u0430\u0441\u0442\u043e\u044f\u0449\u0438\u0439_\u043e\u0442\u0432\u0435\u0442_\u043b\u043e\u043a\u0430\u043b\u044c\u043d\u043e\u0439_llm",
-      "confidence_score": 1.0
+      "target": "scratch_npc_local_llm_demo_issues_03_real_local_llm_response_03_\u043d\u0430\u0441\u0442\u043e\u044f\u0449\u0438\u0439_\u043e\u0442\u0432\u0435\u0442_\u043b\u043e\u043a\u0430\u043b\u044c\u043d\u043e\u0439_llm"
     },
     {
       "relation": "contains",
@@ -3853,9 +3897,9 @@
       "source_location": "L21",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "scratch_npc_local_llm_demo_issues_03_real_local_llm_response_03_\u043d\u0430\u0441\u0442\u043e\u044f\u0449\u0438\u0439_\u043e\u0442\u0432\u0435\u0442_\u043b\u043e\u043a\u0430\u043b\u044c\u043d\u043e\u0439_llm",
-      "target": "scratch_npc_local_llm_demo_issues_03_real_local_llm_response_comments",
-      "confidence_score": 1.0
+      "target": "scratch_npc_local_llm_demo_issues_03_real_local_llm_response_comments"
     },
     {
       "relation": "contains",
@@ -3864,163 +3908,9 @@
       "source_location": "L63",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "scratch_npc_local_llm_demo_issues_03_real_local_llm_response_comments",
-      "target": "scratch_npc_local_llm_demo_issues_03_real_local_llm_response_2026_09_22_\u043f\u0440\u043e\u0432\u0435\u0440\u044f\u0435\u043c\u043e\u0441\u0442\u044c_\u0442\u0435\u0441\u0442\u043e\u0432_\u043d\u0430_\u0442\u0435\u043a\u0443\u0449\u0435\u0439_\u043c\u0430\u0448\u0438\u043d\u0435",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".scratch/npc-local-llm-demo/issues/04-silent-bundled-ollama.md",
-      "source_location": "L1",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "scratch_npc_local_llm_demo_issues_04_silent_bundled_ollama",
-      "target": "scratch_npc_local_llm_demo_issues_04_silent_bundled_ollama_04_\u0442\u0438\u0445\u0430\u044f_\u043f\u043e\u0434\u0433\u043e\u0442\u043e\u0432\u043a\u0430_bundled_ollama",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".scratch/npc-local-llm-demo/issues/05-windows-delivery-and-smoke-test.md",
-      "source_location": "L1",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "scratch_npc_local_llm_demo_issues_05_windows_delivery_and_smoke_test",
-      "target": "scratch_npc_local_llm_demo_issues_05_windows_delivery_and_smoke_test_05_windows_\u043f\u043e\u0441\u0442\u0430\u0432\u043a\u0430_\u0438_\u0444\u0438\u043d\u0430\u043b\u044c\u043d\u0430\u044f_\u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".scratch/npc-local-llm-demo/spec.md",
-      "source_location": "L1",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "scratch_npc_local_llm_demo_spec",
-      "target": "scratch_npc_local_llm_demo_spec_\u043b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f_llm_\u0432_\u0434\u0438\u0430\u043b\u043e\u0433\u0435_\u0441_npc",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".scratch/npc-local-llm-demo/spec.md",
-      "source_location": "L105",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "scratch_npc_local_llm_demo_spec_\u043b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f_llm_\u0432_\u0434\u0438\u0430\u043b\u043e\u0433\u0435_\u0441_npc",
-      "target": "scratch_npc_local_llm_demo_spec_further_notes",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".scratch/npc-local-llm-demo/spec.md",
-      "source_location": "L48",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "scratch_npc_local_llm_demo_spec_\u043b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f_llm_\u0432_\u0434\u0438\u0430\u043b\u043e\u0433\u0435_\u0441_npc",
-      "target": "scratch_npc_local_llm_demo_spec_implementation_decisions",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".scratch/npc-local-llm-demo/spec.md",
-      "source_location": "L92",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "scratch_npc_local_llm_demo_spec_\u043b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f_llm_\u0432_\u0434\u0438\u0430\u043b\u043e\u0433\u0435_\u0441_npc",
-      "target": "scratch_npc_local_llm_demo_spec_out_of_scope",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".scratch/npc-local-llm-demo/spec.md",
-      "source_location": "L5",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "scratch_npc_local_llm_demo_spec_\u043b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f_llm_\u0432_\u0434\u0438\u0430\u043b\u043e\u0433\u0435_\u0441_npc",
-      "target": "scratch_npc_local_llm_demo_spec_problem_statement",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".scratch/npc-local-llm-demo/spec.md",
-      "source_location": "L11",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "scratch_npc_local_llm_demo_spec_\u043b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f_llm_\u0432_\u0434\u0438\u0430\u043b\u043e\u0433\u0435_\u0441_npc",
-      "target": "scratch_npc_local_llm_demo_spec_solution",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".scratch/npc-local-llm-demo/spec.md",
-      "source_location": "L77",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "scratch_npc_local_llm_demo_spec_\u043b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f_llm_\u0432_\u0434\u0438\u0430\u043b\u043e\u0433\u0435_\u0441_npc",
-      "target": "scratch_npc_local_llm_demo_spec_testing_decisions",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".scratch/npc-local-llm-demo/spec.md",
-      "source_location": "L19",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "scratch_npc_local_llm_demo_spec_\u043b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f_llm_\u0432_\u0434\u0438\u0430\u043b\u043e\u0433\u0435_\u0441_npc",
-      "target": "scratch_npc_local_llm_demo_spec_user_stories",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": ".scratch/npc-local-llm-demo/spec.md",
-      "source_location": "L107",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "scratch_npc_local_llm_demo_spec_further_notes",
-      "target": "scratch_npc_local_llm_demo_spec_\u0443\u0441\u043b\u043e\u0432\u0438\u0435_\u0441\u043c\u0435\u043d\u044b_\u043c\u043e\u0434\u0435\u043b\u0438_2026_09_22",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "CONTEXT.md",
-      "source_location": "L1",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "context",
-      "target": "context_\u0434\u0438\u0430\u043b\u043e\u0433_\u0441_npc",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "CONTEXT.md",
-      "source_location": "L5",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "context_\u0434\u0438\u0430\u043b\u043e\u0433_\u0441_npc",
-      "target": "context_\u0434\u0438\u0430\u043b\u043e\u0433",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "CONTEXT.md",
-      "source_location": "L43",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "context_\u0434\u0438\u0430\u043b\u043e\u0433_\u0441_npc",
-      "target": "context_\u043b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f_\u0433\u0435\u043d\u0435\u0440\u0430\u0446\u0438\u044f",
-      "confidence_score": 1.0
+      "target": "scratch_npc_local_llm_demo_issues_03_real_local_llm_response_2026_09_22_\u043f\u0440\u043e\u0432\u0435\u0440\u044f\u0435\u043c\u043e\u0441\u0442\u044c_\u0442\u0435\u0441\u0442\u043e\u0432_\u0438_\u043f\u043e\u0432\u0442\u043e\u0440\u043d\u044b\u0439_\u043f\u0440\u043e\u0433\u043e\u043d_\u0433\u0435\u0439\u0442\u0430"
     },
     {
       "relation": "contains",
@@ -4029,31 +3919,31 @@
       "source_location": "L1",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "readme",
-      "target": "readme_npcwithllm",
-      "confidence_score": 1.0
+      "target": "readme_npcwithllm"
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "README.md",
-      "source_location": "L60",
+      "source_location": "L72",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "readme_npcwithllm",
-      "target": "readme_godot_mcp_\u0434\u043b\u044f_codex",
-      "confidence_score": 1.0
+      "target": "readme_godot_mcp_\u0434\u043b\u044f_codex"
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "README.md",
-      "source_location": "L54",
+      "source_location": "L66",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "readme_npcwithllm",
-      "target": "readme_\u043d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435_\u043f\u0440\u043e\u0435\u043a\u0442\u0430",
-      "confidence_score": 1.0
+      "target": "readme_\u043d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435_\u043f\u0440\u043e\u0435\u043a\u0442\u0430"
     },
     {
       "relation": "contains",
@@ -4062,9 +3952,9 @@
       "source_location": "L5",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "readme_npcwithllm",
-      "target": "readme_\u0442\u0435\u043a\u0443\u0449\u0438\u0439_\u0441\u0442\u0430\u0442\u0443\u0441",
-      "confidence_score": 1.0
+      "target": "readme_\u0442\u0435\u043a\u0443\u0449\u0438\u0439_\u0441\u0442\u0430\u0442\u0443\u0441"
     },
     {
       "relation": "contains",
@@ -4073,9 +3963,9 @@
       "source_location": "L39",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "readme_npcwithllm",
-      "target": "readme_\u0442\u0435\u0441\u0442\u044b_\u0438_\u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430_\u043a\u0430\u0447\u0435\u0441\u0442\u0432\u0430",
-      "confidence_score": 1.0
+      "target": "readme_\u0442\u0435\u0441\u0442\u044b_\u0438_\u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430_\u043a\u0430\u0447\u0435\u0441\u0442\u0432\u0430"
     },
     {
       "relation": "contains",
@@ -4084,9 +3974,163 @@
       "source_location": "L18",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "readme_\u0442\u0435\u043a\u0443\u0449\u0438\u0439_\u0441\u0442\u0430\u0442\u0443\u0441",
-      "target": "readme_\u0440\u0443\u0447\u043d\u043e\u0439_\u0437\u0430\u043f\u0443\u0441\u043a_ollama",
-      "confidence_score": 1.0
+      "target": "readme_\u0440\u0443\u0447\u043d\u043e\u0439_\u0437\u0430\u043f\u0443\u0441\u043a_ollama"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".scratch/npc-local-llm-demo/issues/04-silent-bundled-ollama.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "scratch_npc_local_llm_demo_issues_04_silent_bundled_ollama",
+      "target": "scratch_npc_local_llm_demo_issues_04_silent_bundled_ollama_04_\u0442\u0438\u0445\u0430\u044f_\u043f\u043e\u0434\u0433\u043e\u0442\u043e\u0432\u043a\u0430_bundled_ollama"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".scratch/npc-local-llm-demo/issues/05-windows-delivery-and-smoke-test.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "scratch_npc_local_llm_demo_issues_05_windows_delivery_and_smoke_test",
+      "target": "scratch_npc_local_llm_demo_issues_05_windows_delivery_and_smoke_test_05_windows_\u043f\u043e\u0441\u0442\u0430\u0432\u043a\u0430_\u0438_\u0444\u0438\u043d\u0430\u043b\u044c\u043d\u0430\u044f_\u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".scratch/npc-local-llm-demo/spec.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "scratch_npc_local_llm_demo_spec",
+      "target": "scratch_npc_local_llm_demo_spec_\u043b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f_llm_\u0432_\u0434\u0438\u0430\u043b\u043e\u0433\u0435_\u0441_npc"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".scratch/npc-local-llm-demo/spec.md",
+      "source_location": "L105",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "scratch_npc_local_llm_demo_spec_\u043b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f_llm_\u0432_\u0434\u0438\u0430\u043b\u043e\u0433\u0435_\u0441_npc",
+      "target": "scratch_npc_local_llm_demo_spec_further_notes"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".scratch/npc-local-llm-demo/spec.md",
+      "source_location": "L48",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "scratch_npc_local_llm_demo_spec_\u043b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f_llm_\u0432_\u0434\u0438\u0430\u043b\u043e\u0433\u0435_\u0441_npc",
+      "target": "scratch_npc_local_llm_demo_spec_implementation_decisions"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".scratch/npc-local-llm-demo/spec.md",
+      "source_location": "L92",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "scratch_npc_local_llm_demo_spec_\u043b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f_llm_\u0432_\u0434\u0438\u0430\u043b\u043e\u0433\u0435_\u0441_npc",
+      "target": "scratch_npc_local_llm_demo_spec_out_of_scope"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".scratch/npc-local-llm-demo/spec.md",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "scratch_npc_local_llm_demo_spec_\u043b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f_llm_\u0432_\u0434\u0438\u0430\u043b\u043e\u0433\u0435_\u0441_npc",
+      "target": "scratch_npc_local_llm_demo_spec_problem_statement"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".scratch/npc-local-llm-demo/spec.md",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "scratch_npc_local_llm_demo_spec_\u043b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f_llm_\u0432_\u0434\u0438\u0430\u043b\u043e\u0433\u0435_\u0441_npc",
+      "target": "scratch_npc_local_llm_demo_spec_solution"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".scratch/npc-local-llm-demo/spec.md",
+      "source_location": "L77",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "scratch_npc_local_llm_demo_spec_\u043b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f_llm_\u0432_\u0434\u0438\u0430\u043b\u043e\u0433\u0435_\u0441_npc",
+      "target": "scratch_npc_local_llm_demo_spec_testing_decisions"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".scratch/npc-local-llm-demo/spec.md",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "scratch_npc_local_llm_demo_spec_\u043b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f_llm_\u0432_\u0434\u0438\u0430\u043b\u043e\u0433\u0435_\u0441_npc",
+      "target": "scratch_npc_local_llm_demo_spec_user_stories"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".scratch/npc-local-llm-demo/spec.md",
+      "source_location": "L107",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "scratch_npc_local_llm_demo_spec_further_notes",
+      "target": "scratch_npc_local_llm_demo_spec_\u0443\u0441\u043b\u043e\u0432\u0438\u0435_\u0441\u043c\u0435\u043d\u044b_\u043c\u043e\u0434\u0435\u043b\u0438_2026_09_22"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CONTEXT.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "context",
+      "target": "context_\u0434\u0438\u0430\u043b\u043e\u0433_\u0441_npc"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CONTEXT.md",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "context_\u0434\u0438\u0430\u043b\u043e\u0433_\u0441_npc",
+      "target": "context_\u0434\u0438\u0430\u043b\u043e\u0433"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CONTEXT.md",
+      "source_location": "L43",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "context_\u0434\u0438\u0430\u043b\u043e\u0433_\u0441_npc",
+      "target": "context_\u043b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f_\u0433\u0435\u043d\u0435\u0440\u0430\u0446\u0438\u044f"
     },
     {
       "relation": "contains",
@@ -4095,9 +4139,9 @@
       "source_location": "L1",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "docs_adr_0002_bundled_local_llm_runtime",
-      "target": "docs_adr_0002_bundled_local_llm_runtime_bundled_\u043b\u043e\u043a\u0430\u043b\u044c\u043d\u044b\u0439_runtime_\u0434\u043b\u044f_llm",
-      "confidence_score": 1.0
+      "target": "docs_adr_0002_bundled_local_llm_runtime_bundled_\u043b\u043e\u043a\u0430\u043b\u044c\u043d\u044b\u0439_runtime_\u0434\u043b\u044f_llm"
     },
     {
       "relation": "contains",
@@ -4106,9 +4150,9 @@
       "source_location": "L14",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "docs_adr_0002_bundled_local_llm_runtime_bundled_\u043b\u043e\u043a\u0430\u043b\u044c\u043d\u044b\u0439_runtime_\u0434\u043b\u044f_llm",
-      "target": "docs_adr_0002_bundled_local_llm_runtime_consequences",
-      "confidence_score": 1.0
+      "target": "docs_adr_0002_bundled_local_llm_runtime_consequences"
     },
     {
       "relation": "contains",
@@ -4117,9 +4161,9 @@
       "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "docs_adr_0002_bundled_local_llm_runtime_bundled_\u043b\u043e\u043a\u0430\u043b\u044c\u043d\u044b\u0439_runtime_\u0434\u043b\u044f_llm",
-      "target": "docs_adr_0002_bundled_local_llm_runtime_considered_options",
-      "confidence_score": 1.0
+      "target": "docs_adr_0002_bundled_local_llm_runtime_considered_options"
     },
     {
       "relation": "contains",
@@ -4128,9 +4172,9 @@
       "source_location": "L1",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "docs_adr_0003_natural_dialogue_model_quality_gate",
-      "target": "docs_adr_0003_natural_dialogue_model_quality_gate_quality_gate_\u0434\u043b\u044f_\u0435\u0441\u0442\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u043e\u0433\u043e_\u0434\u0438\u0430\u043b\u043e\u0433\u0430_npc",
-      "confidence_score": 1.0
+      "target": "docs_adr_0003_natural_dialogue_model_quality_gate_quality_gate_\u0434\u043b\u044f_\u0435\u0441\u0442\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u043e\u0433\u043e_\u0434\u0438\u0430\u043b\u043e\u0433\u0430_npc"
     },
     {
       "relation": "contains",
@@ -4139,9 +4183,9 @@
       "source_location": "L17",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "docs_adr_0003_natural_dialogue_model_quality_gate_quality_gate_\u0434\u043b\u044f_\u0435\u0441\u0442\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u043e\u0433\u043e_\u0434\u0438\u0430\u043b\u043e\u0433\u0430_npc",
-      "target": "docs_adr_0003_natural_dialogue_model_quality_gate_\u0438\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0438\u0435_\u043f\u043e\u0441\u043b\u0435\u0434\u0441\u0442\u0432\u0438\u044f_\u0434\u043e_\u0443\u0442\u043e\u0447\u043d\u0435\u043d\u0438\u044f",
-      "confidence_score": 1.0
+      "target": "docs_adr_0003_natural_dialogue_model_quality_gate_\u0438\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0438\u0435_\u043f\u043e\u0441\u043b\u0435\u0434\u0441\u0442\u0432\u0438\u044f_\u0434\u043e_\u0443\u0442\u043e\u0447\u043d\u0435\u043d\u0438\u044f"
     },
     {
       "relation": "contains",
@@ -4150,9 +4194,9 @@
       "source_location": "L9",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "docs_adr_0003_natural_dialogue_model_quality_gate_quality_gate_\u0434\u043b\u044f_\u0435\u0441\u0442\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u043e\u0433\u043e_\u0434\u0438\u0430\u043b\u043e\u0433\u0430_npc",
-      "target": "docs_adr_0003_natural_dialogue_model_quality_gate_\u0443\u0442\u043e\u0447\u043d\u0435\u043d\u0438\u0435_\u043e\u0442_2026_09_22",
-      "confidence_score": 1.0
+      "target": "docs_adr_0003_natural_dialogue_model_quality_gate_\u0443\u0442\u043e\u0447\u043d\u0435\u043d\u0438\u0435_\u043e\u0442_2026_09_22"
     },
     {
       "relation": "contains",
@@ -4161,9 +4205,9 @@
       "source_location": "L1",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "docs_adr_0004_project_local_godot_mcp",
-      "target": "docs_adr_0004_project_local_godot_mcp_project_local_godot_mcp",
-      "confidence_score": 1.0
+      "target": "docs_adr_0004_project_local_godot_mcp_project_local_godot_mcp"
     },
     {
       "relation": "contains",
@@ -4172,9 +4216,9 @@
       "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "docs_adr_0004_project_local_godot_mcp_project_local_godot_mcp",
-      "target": "docs_adr_0004_project_local_godot_mcp_consequences",
-      "confidence_score": 1.0
+      "target": "docs_adr_0004_project_local_godot_mcp_consequences"
     },
     {
       "relation": "contains",
@@ -8531,5 +8575,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "1a16cb39959a90d78de758aa7e4f86ba17e63f6c"
+  "built_at_commit": "cbf53783debb9676a15cda3e60bcd434954eb4e2"
 }

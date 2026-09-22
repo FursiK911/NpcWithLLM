@@ -830,8 +830,8 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1790098588.4560218,
-    "ast_hash": "71de643a1b61bf14aacaa622abf5b2b8",
+    "mtime": 1790100852.853203,
+    "ast_hash": "2f3b6b9d354e92a76e2c06945542d7a7",
     "semantic_hash": ""
   },
   "docs/adr/0001-local-llm-dialogue-boundary.md": {
@@ -880,8 +880,8 @@
     "semantic_hash": ""
   },
   ".scratch/npc-local-llm-demo/issues/03-real-local-llm-response.md": {
-    "mtime": 1790098600.3943458,
-    "ast_hash": "07fa5c8320b1c12fc75a32b136114a48",
+    "mtime": 1790101027.8604565,
+    "ast_hash": "da3776acd879e5fdeb015f1bcb65d7ad",
     "semantic_hash": ""
   },
   ".scratch/npc-local-llm-demo/issues/04-silent-bundled-ollama.md": {
@@ -985,7 +985,7 @@
     "semantic_hash": ""
   },
   "Tests/DialogueRegression.Tests.ps1": {
-    "mtime": 1790098525.1714413,
+    "mtime": 1790100795.4269748,
     "ast_hash": "47369fa9f523f3e940b46a03f9ca6fe9",
     "semantic_hash": ""
   },
@@ -995,8 +995,8 @@
     "semantic_hash": ""
   },
   "Tests/Run-DialogueModelEvaluation.ps1": {
-    "mtime": 1790098492.9550862,
-    "ast_hash": "aeaa6a457d184956cdc8c2fb870e7fff",
+    "mtime": 1790101478.568961,
+    "ast_hash": "93dd3c124337139d37ec6fb8cf74ec51",
     "semantic_hash": ""
   },
   ".scratch/npc-local-llm-demo/ContextBuilder.concise.txt": {
@@ -1012,6 +1012,21 @@
   "docs/adr/0004-project-local-godot-mcp.md": {
     "mtime": 1790077560.9750054,
     "ast_hash": "52548c0e0a6ace44098847facc7f284c",
+    "semantic_hash": ""
+  },
+  ".scratch/npc-local-llm-demo/evaluation-qwen35-rerun.json": {
+    "mtime": 1790100837.217948,
+    "ast_hash": "b2707feeda444a502b4790b708da973d",
+    "semantic_hash": ""
+  },
+  "Tests/DialogueGateRules.Tests.ps1": {
+    "mtime": 1790101733.1275501,
+    "ast_hash": "dc9dfd0cf32a226f84b38457d09528d3",
+    "semantic_hash": ""
+  },
+  "Tests/DialogueGateRules.ps1": {
+    "mtime": 1790101432.277571,
+    "ast_hash": "56d583405bed257a413bd8b687f1e61c",
     "semantic_hash": ""
   }
 }
