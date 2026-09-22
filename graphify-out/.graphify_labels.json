@@ -24,7 +24,7 @@
   "22": "Bundled локальный runtime для LLM",
   "23": "01-2d-dialogue-scene.md",
   "24": "02: Память персонажа и ограниченный контекст",
-  "25": "03: Настоящий ответ локальной LLM",
+  "25": "Comments",
   "26": "04-silent-bundled-ollama.md",
   "27": "05-windows-delivery-and-smoke-test.md",
   "28": "DelayedStream",
@@ -32,7 +32,7 @@
   "30": "DialogueSmoke",
   "31": "DialogueRegression.Tests.ps1",
   "32": "Run-DialogueModelEvaluation.ps1",
-  "33": "DialogueGateRules.ps1",
+  "33": "DialogueResponseFault.ps1",
   "34": "LocalLlmRuntimeException",
   "35": "NpcPersona",
   "36": "bool",
@@ -49,5 +49,7 @@
   "47": "Exception",
   "48": "Uri",
   "49": "Project-local Godot MCP",
-  "50": "DialogueGateRules.Tests.ps1"
+  "50": "DialogueResponseFault.Tests.ps1",
+  "51": "Лист просмотра ответов персонажа",
+  "52": "MockChatResponder"
 }

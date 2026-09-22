@@ -825,13 +825,13 @@
     "semantic_hash": ""
   },
   "CONTEXT.md": {
-    "mtime": 1790095651.364051,
-    "ast_hash": "d8083a5d9d014cb2b8ef581f171f255e",
+    "mtime": 1790103565.3645208,
+    "ast_hash": "4fc67b3c1c84fc00136f7fc55d5d86aa",
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1790100852.853203,
-    "ast_hash": "2f3b6b9d354e92a76e2c06945542d7a7",
+    "mtime": 1790103564.7076762,
+    "ast_hash": "8b2023560e1fed8da53587bede9daf65",
     "semantic_hash": ""
   },
   "docs/adr/0001-local-llm-dialogue-boundary.md": {
@@ -880,8 +880,8 @@
     "semantic_hash": ""
   },
   ".scratch/npc-local-llm-demo/issues/03-real-local-llm-response.md": {
-    "mtime": 1790101027.8604565,
-    "ast_hash": "da3776acd879e5fdeb015f1bcb65d7ad",
+    "mtime": 1790103586.2012,
+    "ast_hash": "4d7948fe6289e0e00ff010f0ab2efc49",
     "semantic_hash": ""
   },
   ".scratch/npc-local-llm-demo/issues/04-silent-bundled-ollama.md": {
@@ -895,8 +895,8 @@
     "semantic_hash": ""
   },
   ".scratch/npc-local-llm-demo/spec.md": {
-    "mtime": 1790096095.2814016,
-    "ast_hash": "3e7827674e2dc0c2cccbe81dab3dfd64",
+    "mtime": 1790103512.622322,
+    "ast_hash": "7916b3c45ecd1015d2a034a78f124552",
     "semantic_hash": ""
   },
   "docs/adr/0002-bundled-local-llm-runtime.md": {
@@ -995,8 +995,8 @@
     "semantic_hash": ""
   },
   "Tests/Run-DialogueModelEvaluation.ps1": {
-    "mtime": 1790098492.9550862,
-    "ast_hash": "aeaa6a457d184956cdc8c2fb870e7fff",
+    "mtime": 1790103361.5974188,
+    "ast_hash": "dcfa8059858197e1e51d3cdca2816268",
     "semantic_hash": ""
   },
   ".scratch/npc-local-llm-demo/ContextBuilder.concise.txt": {
@@ -1005,8 +1005,8 @@
     "semantic_hash": ""
   },
   "docs/adr/0003-natural-dialogue-model-quality-gate.md": {
-    "mtime": 1790096095.2824028,
-    "ast_hash": "25834dd50ed50c62a67bba6a35872938",
+    "mtime": 1790103456.4250753,
+    "ast_hash": "f9920cdd0a1aa71e3e586ff07f19581a",
     "semantic_hash": ""
   },
   "docs/adr/0004-project-local-godot-mcp.md": {
@@ -1017,6 +1017,26 @@
   ".scratch/npc-local-llm-demo/evaluation-qwen35-rerun.json": {
     "mtime": 1790100837.217948,
     "ast_hash": "b2707feeda444a502b4790b708da973d",
+    "semantic_hash": ""
+  },
+  ".scratch/npc-local-llm-demo/evaluation-qwen35-review.json": {
+    "mtime": 1790103357.9940426,
+    "ast_hash": "22222331b40ab413cb807979bce87c19",
+    "semantic_hash": ""
+  },
+  "Tests/DialogueResponseFault.Tests.ps1": {
+    "mtime": 1790103361.610533,
+    "ast_hash": "fbbc2baca546dc782e3d48e0b28976b3",
+    "semantic_hash": ""
+  },
+  "Tests/DialogueResponseFault.ps1": {
+    "mtime": 1790103102.7454338,
+    "ast_hash": "3e89a9d4556597426c251e1183f48829",
+    "semantic_hash": ""
+  },
+  ".scratch/npc-local-llm-demo/review-qwen35.md": {
+    "mtime": 1790103358.020325,
+    "ast_hash": "54be3d7c894ebc627090428e271d3c20",
     "semantic_hash": ""
   }
 }

@@ -1,16 +1,16 @@
 # Graph Report - NpcWithLLM  (2026-09-22)
 
 ## Corpus Check
-- 152 files · ~100,176 words
+- 156 files · ~108,043 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 339 nodes · 384 edges · 50 communities (27 shown, 23 thin omitted)
+- 342 nodes · 385 edges · 51 communities (28 shown, 23 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 6 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `88929173`
+- Built from commit: `b2bb056b`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -46,7 +46,6 @@
 - DelayedStream
 - NpcMemory
 - DialogueSmoke
-- MockChatResponder
 - LocalLlmRuntimeException
 - NpcPersona
 - bool
@@ -79,23 +78,23 @@
 ## Surprising Connections (you probably didn't know these)
 - `LocalLlmResponder` --inherits--> `ChatResponder`  [EXTRACTED]
   Scripts/Dialogue/LocalLlmResponder.cs → Scripts/ChatResponder.cs
-- `MockChatResponder` --inherits--> `ChatResponder`  [EXTRACTED]
-  Scripts/MockChatResponder.cs → Scripts/ChatResponder.cs
 - `LocalLlmResponder` --references--> `ContextBuilder`  [EXTRACTED]
   Scripts/Dialogue/LocalLlmResponder.cs → Scripts/Dialogue/ContextBuilder.cs
 - `FakeLocalLlmRuntime` --implements--> `ILocalLlmRuntime`  [EXTRACTED]
   Scripts/Dialogue/FakeLocalLlmRuntime.cs → Scripts/Dialogue/ILocalLlmRuntime.cs
 - `LocalLlmRuntime` --implements--> `ILocalLlmRuntime`  [EXTRACTED]
   Scripts/Dialogue/LocalLlmRuntime.cs → Scripts/Dialogue/ILocalLlmRuntime.cs
+- `LocalLlmResponder` --references--> `LocalLlmConfig`  [EXTRACTED]
+  Scripts/Dialogue/LocalLlmResponder.cs → Scripts/Dialogue/LocalLlmConfig.cs
 
 ## Import Cycles
 - None detected.
 
-## Communities (50 total, 23 thin omitted)
+## Communities (51 total, 23 thin omitted)
 
 ### Community 0 - "Main"
-Cohesion: 0.10
-Nodes (11): Button, InputEvent, Label, Node, Node2D, RichTextLabel, ChatResponder, bool (+3 more)
+Cohesion: 0.08
+Nodes (14): Button, double, InputEvent, Label, Node, Node2D, RichTextLabel, ChatResponder (+6 more)
 
 ### Community 1 - "LocalLlmResponder"
 Cohesion: 0.12
@@ -185,10 +184,6 @@ Nodes (10): Dictionary, IReadOnlyDictionary, Regex, ContextBuilder, DialogueHist
 Cohesion: 0.13
 Nodes (15): Action, CancellationToken, DialogueMessage, HttpMessageHandler, HttpRequestMessage, HttpResponseMessage, ILocalLlmRuntime, IReadOnlyList (+7 more)
 
-### Community 33 - "MockChatResponder"
-Cohesion: 0.40
-Nodes (3): double, MockChatResponder, string
-
 ### Community 40 - "Quality gate для естественного диалога NPC"
 Cohesion: 0.50
 Nodes (3): Quality gate для естественного диалога NPC, Исторические последствия (до уточнения), Уточнение от 2026-09-22
@@ -201,16 +196,16 @@ Nodes (3): Quality gate для естественного диалога NPC, И
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `ChatResponder` connect `Main` to `LocalLlmResponder`, `MockChatResponder`?**
-  _High betweenness centrality (0.136) - this node is a cross-community bridge._
+- **Why does `ChatResponder` connect `Main` to `LocalLlmResponder`?**
+  _High betweenness centrality (0.134) - this node is a cross-community bridge._
 - **Why does `LocalLlmResponder` connect `LocalLlmResponder` to `Main`, `.GenerateAsync`, `NpcMemory`?**
-  _High betweenness centrality (0.131) - this node is a cross-community bridge._
+  _High betweenness centrality (0.129) - this node is a cross-community bridge._
 - **Why does `DialogueSmoke` connect `DialogueSmoke` to `Main`, `DelayedStream`?**
-  _High betweenness centrality (0.084) - this node is a cross-community bridge._
+  _High betweenness centrality (0.082) - this node is a cross-community bridge._
 - **What connects `2026-09-22 — проверяемость тестов и повторный прогон гейта`, `Ручной запуск Ollama`, `Тесты и проверка качества` to the rest of the system?**
   _90 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Main` be split into smaller, more focused modules?**
-  _Cohesion score 0.0960591133004926 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.0773109243697479 - nodes in this community are weakly interconnected._
 - **Should `LocalLlmResponder` be split into smaller, more focused modules?**
   _Cohesion score 0.12 - nodes in this community are weakly interconnected._
 - **Should `What You Must Do When Invoked` be split into smaller, more focused modules?**

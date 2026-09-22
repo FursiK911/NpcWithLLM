@@ -32,7 +32,7 @@
   "30": "DialogueSmoke",
   "31": "DialogueRegression.Tests.ps1",
   "32": "Run-DialogueModelEvaluation.ps1",
-  "33": "MockChatResponder",
+  "33": "DialogueResponseFault.ps1",
   "34": "LocalLlmRuntimeException",
   "35": "NpcPersona",
   "36": "bool",
@@ -48,5 +48,6 @@
   "46": "ILocalLlmRuntime",
   "47": "Exception",
   "48": "Uri",
-  "49": "Project-local Godot MCP"
+  "49": "Project-local Godot MCP",
+  "50": "DialogueResponseFault.Tests.ps1"
 }
