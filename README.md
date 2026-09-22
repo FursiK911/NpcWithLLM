@@ -43,9 +43,21 @@ URL принимает только loopback;
 `Tests/DialogueRegression.Tests.ps1` (Pester) и `Tests/Run-DialogueModelEvaluation.ps1`
 требуют **PowerShell 7**: оба компилируют исходники `Scripts/Dialogue` через `Add-Type`, а там C# 9
 (records, target-typed new) и `System.Text.Json`. Windows PowerShell 5.1 останавливается на компиляции,
-поэтому запускайте их из `pwsh`. На машине без PowerShell 7 эти проверки неприменимы — результат
-оценивок в `.scratch/npc-local-llm-demo/evaluation-qwen35*.json` получен в другой среде и требует
-повтора перед сменой статуса тикета.
+поэтому запускайте их из `pwsh`, например
+`pwsh -NoProfile -File Tests/Run-DialogueModelEvaluation.ps1 -ReportPath <файл>`.
+
+Утверждения в `Tests/DialogueRegression.Tests.ps1` написаны позиционным синтаксисом Pester
+(`Should Be`, `Should Not Match`). Он работает на Pester 3.4/4.x и не работает на Pester 5, где эти
+формы удалены; `Should -Be` в свою очередь не принимает Pester 3.4. На этой машине доступен
+Pester 3.4.0 из `C:\Program Files\WindowsPowerShell\Modules`.
+
+Перед прогоном оценки прогрейте модель и удержите её в VRAM (`keep_alive`): сам harness прогрев не
+выполняет, и без него первый же замер не пройдёт критерий «первый текст < 5 секунд».
+
+Отчёты `.scratch/npc-local-llm-demo/evaluation-qwen35*.json` порождены разными версиями harness'а.
+Актуален только отчёт с полем `ContextBuilderSha256` — оно сверяется с текущим `ContextBuilder.cs`.
+В четырёх файлах от 22 сентября этого поля нет, поэтому они остаются историческим материалом, а не
+вердиктом.
 
 `Tests/Run-DialogueModelEvaluation.ps1` прогоняет фиксированные сценарии по три раза через реальный
 Ollama и пишет отчёт по `-ReportPath`; критерии приёмки — в ADR-0003 и `spec.md`.
