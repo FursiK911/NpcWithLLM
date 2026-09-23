@@ -1,27 +1,27 @@
 # Graph Report - NpcWithLLM  (2026-09-23)
 
 ## Corpus Check
-- 162 files · ~117,840 words
+- 173 files · ~127,723 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 406 nodes · 439 edges · 62 communities (33 shown, 29 thin omitted)
-- Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 6 edges (avg confidence: 0.8)
+- 552 nodes · 612 edges · 65 communities (40 shown, 25 thin omitted)
+- Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 8 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `9df414c1`
+- Built from commit: `4577e213`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
 - Main
-- LocalLlmResponder
+- DialogueHistory
 - template.sh
 - What You Must Do When Invoked
 - Matt Pocock workflow integration
 - hitl-loop.template.sh
-- FakeLocalLlmRuntime
+- LocalLlmResponder
 - NpcWithLLM.csproj
 - graphify reference: extra exports and benchmark
 - graphify reference: query, path, explain
@@ -34,23 +34,23 @@
 - graphify reference: transcribe video and audio
 - extraction-spec.md
 - NpcWithLLM
-- .GenerateAsync
+- OllamaServerController
 - Local LLM Connection
 - Локальная LLM в диалоге с NPC
 - Bundled локальный runtime для LLM
 - 01-2d-dialogue-scene.md
 - 02: Память персонажа и ограниченный контекст
 - Comments
-- 04-silent-bundled-ollama.md
-- 05-windows-delivery-and-smoke-test.md
+- FakeLocalLlmRuntime
+- .Create
 - DialogueMessage.cs
 - NpcMemory
 - DialogueSmoke
 - LocalLlmRuntimeException
 - Лист просмотра ответов персонажа
 - Пороги приёмки снимаются, роль переезжает в профиль
-- ContextBuilder
-- DialogueHistory
+- bool
+- ILocalLlmRuntime
 - Quality gate для естественного диалога NPC
 - JsonElement
 - Node3D
@@ -67,47 +67,49 @@
 - IReadOnlyList
 - DialogueHistory
 - NpcPersona
-- bool
 - DialogueHistory
-- Exception
+- Полная беседа
 - NpcPersona
+- Полная беседа
+- Полная беседа
+- Живая оценка `qwen3.5:4b`
 
 ## God Nodes (most connected - your core abstractions)
-1. `Main` - 23 edges
-2. `Лист просмотра ответов персонажа` - 21 edges
-3. `LocalLlmResponder` - 19 edges
-4. `Лист просмотра ответов персонажа` - 19 edges
-5. `DialogueSmoke` - 13 edges
-6. `What You Must Do When Invoked` - 12 edges
-7. `template.sh script` - 11 edges
-8. `/graphify` - 10 edges
-9. `DialogueHistory` - 9 edges
-10. `DelayedStream` - 9 edges
+1. `Полная беседа` - 33 edges
+2. `Полная беседа` - 33 edges
+3. `Полная беседа` - 33 edges
+4. `OllamaServerController` - 23 edges
+5. `Main` - 23 edges
+6. `Лист просмотра ответов персонажа` - 21 edges
+7. `LocalLlmResponder` - 19 edges
+8. `Лист просмотра ответов персонажа` - 19 edges
+9. `DialogueSmoke` - 13 edges
+10. `What You Must Do When Invoked` - 12 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `LocalLlmResponder` --references--> `LocalLlmConfig`  [EXTRACTED]
-  Scripts/Dialogue/LocalLlmResponder.cs → Scripts/Dialogue/LocalLlmConfig.cs
-- `MockChatResponder` --inherits--> `ChatResponder`  [EXTRACTED]
-  Scripts/MockChatResponder.cs → Scripts/ChatResponder.cs
+- `FakeLocalLlmRuntime` --implements--> `ILocalLlmRuntime`  [EXTRACTED]
+  Scripts/Dialogue/FakeLocalLlmRuntime.cs → Scripts/Dialogue/ILocalLlmRuntime.cs
 - `LocalLlmRuntime` --implements--> `ILocalLlmRuntime`  [EXTRACTED]
   Scripts/Dialogue/LocalLlmRuntime.cs → Scripts/Dialogue/ILocalLlmRuntime.cs
-- `LocalLlmResponder` --references--> `ContextBuilder`  [EXTRACTED]
-  Scripts/Dialogue/LocalLlmResponder.cs → Scripts/Dialogue/ContextBuilder.cs
-- `LocalLlmResponder` --references--> `DialogueHistory`  [EXTRACTED]
-  Scripts/Dialogue/LocalLlmResponder.cs → Scripts/Dialogue/DialogueHistory.cs
+- `FakeLocalLlmRuntime` --references--> `LocalLlmFailureKind`  [EXTRACTED]
+  Scripts/Dialogue/FakeLocalLlmRuntime.cs → Scripts/Dialogue/LocalLlmRuntimeException.cs
+- `MockChatResponder` --inherits--> `ChatResponder`  [EXTRACTED]
+  Scripts/MockChatResponder.cs → Scripts/ChatResponder.cs
+- `LocalLlmResponder` --references--> `ILocalLlmRuntime`  [EXTRACTED]
+  Scripts/Dialogue/LocalLlmResponder.cs → Scripts/Dialogue/ILocalLlmRuntime.cs
 
 ## Import Cycles
 - None detected.
 
-## Communities (62 total, 29 thin omitted)
+## Communities (65 total, 25 thin omitted)
 
 ### Community 0 - "Main"
 Cohesion: 0.10
 Nodes (11): Button, InputEvent, Label, Node, Node2D, RichTextLabel, ChatResponder, bool (+3 more)
 
-### Community 1 - "LocalLlmResponder"
-Cohesion: 0.08
-Nodes (20): bool, CancellationTokenSource, ChatResponder, Exception, List, ContextBuilder, DialogueMessage, IReadOnlyList (+12 more)
+### Community 1 - "DialogueHistory"
+Cohesion: 0.09
+Nodes (14): List, Resource, ContextBuilder, DialogueMessage, IReadOnlyList, NpcMemory, DialogueContext, DialogueMessage (+6 more)
 
 ### Community 2 - "template.sh"
 Cohesion: 0.22
@@ -125,9 +127,9 @@ Nodes (13): `code-review`, `diagnosing-bugs`, Graphify integration, `grill-with-
 Cohesion: 0.83
 Nodes (3): capture(), hitl-loop.template.sh script, step()
 
-### Community 6 - "FakeLocalLlmRuntime"
-Cohesion: 0.12
-Nodes (15): Action, CancellationToken, DialogueMessage, Exception, IReadOnlyList, Task, FakeLocalLlmRuntime, Action (+7 more)
+### Community 6 - "LocalLlmResponder"
+Cohesion: 0.09
+Nodes (17): CancellationTokenSource, ChatResponder, ContextBuilder, DialogueHistory, NpcMemory, NpcProfile, Action, CancellationToken (+9 more)
 
 ### Community 8 - "graphify reference: extra exports and benchmark"
 Cohesion: 0.22
@@ -161,9 +163,9 @@ Nodes (6): Consequences, Considered Options, Module Shape, Request Sequence, Tes
 Cohesion: 0.29
 Nodes (6): Godot MCP для Codex, NpcWithLLM, Направление проекта, Ручной запуск Ollama, Текущий статус, Тесты и проверка качества
 
-### Community 19 - ".GenerateAsync"
-Cohesion: 0.11
-Nodes (16): JsonSerializerOptions, NetHttpClient, Resource, LocalLlmConfig, DialogueMessage, IReadOnlyList, LocalLlmGenerationOptions, LocalLlmRequestBuilder (+8 more)
+### Community 19 - "OllamaServerController"
+Cohesion: 0.09
+Nodes (23): Exception, HttpClient, IDisposable, JsonSerializerOptions, NetHttpClient, object, Process, Action (+15 more)
 
 ### Community 20 - "Local LLM Connection"
 Cohesion: 0.22
@@ -178,8 +180,16 @@ Cohesion: 0.50
 Nodes (3): Bundled локальный runtime для LLM, Consequences, Considered Options
 
 ### Community 25 - "Comments"
+Cohesion: 0.25
+Nodes (7): 03: Настоящий ответ локальной LLM, 2026-09-22 — приёмка разделена: механика автоматически, смысл за человеком, 2026-09-22 — проверяемость тестов и повторный прогон гейта, 2026-09-23 — попытка UI smoke через Godot MCP, 2026-09-23 — роль в профиле, числовые пороги сняты (ADR-0005), 2026-09-23 — успешный end-to-end smoke через headless harness, Comments
+
+### Community 26 - "FakeLocalLlmRuntime"
+Cohesion: 0.28
+Nodes (7): Action, CancellationToken, DialogueMessage, Exception, IReadOnlyList, Task, FakeLocalLlmRuntime
+
+### Community 27 - ".Create"
 Cohesion: 0.33
-Nodes (5): 03: Настоящий ответ локальной LLM, 2026-09-22 — приёмка разделена: механика автоматически, смысл за человеком, 2026-09-22 — проверяемость тестов и повторный прогон гейта, 2026-09-23 — роль в профиле, числовые пороги сняты (ADR-0005), Comments
+Nodes (5): DialogueMessage, IReadOnlyList, LocalLlmGenerationOptions, LocalLlmRequestBuilder, LocalLlmRequestPayload
 
 ### Community 29 - "NpcMemory"
 Cohesion: 0.24
@@ -209,25 +219,41 @@ Nodes (19): attack_identity, attack_memory, attack_progressive, attack_prompt, a
 Cohesion: 0.33
 Nodes (4): double, MockChatResponder, string, Task
 
+### Community 59 - "Полная беседа"
+Cohesion: 0.06
+Nodes (33): Полная беседа, Ход 1, Ход 10, Ход 11, Ход 12, Ход 13, Ход 14, Ход 15 (+25 more)
+
+### Community 62 - "Полная беседа"
+Cohesion: 0.05
+Nodes (38): Вывод и рекомендация, Живая оценка `qwen3:4b-instruct`, Оценки, Полная беседа, Проверка памяти, Условия прогона, Ход 1, Ход 10 (+30 more)
+
+### Community 63 - "Полная беседа"
+Cohesion: 0.06
+Nodes (33): Полная беседа, Ход 1, Ход 10, Ход 11, Ход 12, Ход 13, Ход 14, Ход 15 (+25 more)
+
+### Community 64 - "Живая оценка `qwen3.5:4b`"
+Cohesion: 0.15
+Nodes (10): 06: Живая оценка локальной модели, Comments, Вывод и рекомендация, Живая оценка `qwen3.5:4b`, Оценки, Условия прогона, Живая оценка `ministral-3:8b-instruct-2512-q4_K_M`, Оценки (+2 more)
+
 ## Knowledge Gaps
-- **134 isolated node(s):** `Comments`, `2026-09-22 — проверяемость тестов и повторный прогон гейта`, `2026-09-22 — приёмка разделена: механика автоматически, смысл за человеком`, `2026-09-23 — роль в профиле, числовые пороги сняты (ADR-0005)`, `assumption_correction` (+129 more)
+- **240 isolated node(s):** `Comments`, `Условия прогона`, `Оценки`, `Сравнение и рекомендация`, `Ход 1` (+235 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **29 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **25 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `LocalLlmResponder` connect `LocalLlmResponder` to `.GenerateAsync`?**
-  _High betweenness centrality (0.023) - this node is a cross-community bridge._
-- **Why does `DialogueSmoke` connect `DialogueSmoke` to `Main`?**
-  _High betweenness centrality (0.019) - this node is a cross-community bridge._
-- **Why does `LocalLlmConfig` connect `.GenerateAsync` to `LocalLlmResponder`?**
-  _High betweenness centrality (0.019) - this node is a cross-community bridge._
-- **What connects `Comments`, `2026-09-22 — проверяемость тестов и повторный прогон гейта`, `2026-09-22 — приёмка разделена: механика автоматически, смысл за человеком` to the rest of the system?**
-  _134 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Why does `OllamaServerController` connect `OllamaServerController` to `MockChatResponder`?**
+  _High betweenness centrality (0.070) - this node is a cross-community bridge._
+- **Why does `ChatResponder` connect `Main` to `MockChatResponder`?**
+  _High betweenness centrality (0.056) - this node is a cross-community bridge._
+- **Why does `MockChatResponder` connect `MockChatResponder` to `Main`?**
+  _High betweenness centrality (0.053) - this node is a cross-community bridge._
+- **What connects `Comments`, `Условия прогона`, `Оценки` to the rest of the system?**
+  _240 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Main` be split into smaller, more focused modules?**
   _Cohesion score 0.0960591133004926 - nodes in this community are weakly interconnected._
-- **Should `LocalLlmResponder` be split into smaller, more focused modules?**
-  _Cohesion score 0.07564102564102564 - nodes in this community are weakly interconnected._
+- **Should `DialogueHistory` be split into smaller, more focused modules?**
+  _Cohesion score 0.08615384615384615 - nodes in this community are weakly interconnected._
 - **Should `What You Must Do When Invoked` be split into smaller, more focused modules?**
   _Cohesion score 0.08 - nodes in this community are weakly interconnected._

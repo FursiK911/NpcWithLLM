@@ -4,9 +4,10 @@
 
 [resource]
 script = ExtResource("1_config")
-BaseUrl = "http://127.0.0.1:11434"
-EndpointPath = "/api/chat"
-ModelName = "qwen3.5:4b"
+Provider = 1
+BaseUrl = "http://127.0.0.1:8080"
+EndpointPath = "/v1/chat/completions"
+ModelName = "Bonsai-2-27B-PTQ1_0"
 TimeoutSeconds = 60.0
 Temperature = 0.7
 TopP = 0.8

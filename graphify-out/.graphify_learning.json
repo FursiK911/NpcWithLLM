@@ -1,0 +1,38 @@
+{
+  "generated_at": "2026-09-23T14:33:44.485421+00:00",
+  "nodes": {
+    "scripts_dialogue_localllmresponder_localllmresponder": {
+      "code_fingerprint": "8fa4afcadc1ae0e76a2b4f501cce8c1151f9091b3f4e4a1c4f2637cbe81e29de",
+      "label": "LocalLlmResponder",
+      "last": "2026-09-23T00:34:47.195246+00:00",
+      "provenance": [
+        {
+          "date": "2026-09-23T00:34:47.195246+00:00",
+          "outcome": "useful",
+          "q": "How do the current game profile, context, memory, history, and generation settings flow into the local model request?"
+        }
+      ],
+      "score": 0.986629103,
+      "source_file": "Scripts/Dialogue/LocalLlmResponder.cs",
+      "status": "tentative",
+      "uses": 1
+    },
+    "scripts_dialogue_localllmruntime_localllmruntime": {
+      "code_fingerprint": "78b058f1bff0dc30e2ebdc3e2088ceb2c76abe9d63c4cf46512f535170914f06",
+      "label": "LocalLlmRuntime",
+      "last": "2026-09-23T00:34:47.195246+00:00",
+      "provenance": [
+        {
+          "date": "2026-09-23T00:34:47.195246+00:00",
+          "outcome": "useful",
+          "q": "How do the current game profile, context, memory, history, and generation settings flow into the local model request?"
+        }
+      ],
+      "score": 0.986629103,
+      "source_file": "Scripts/Dialogue/LocalLlmRuntime.cs",
+      "status": "tentative",
+      "uses": 1
+    }
+  },
+  "version": 1
+}

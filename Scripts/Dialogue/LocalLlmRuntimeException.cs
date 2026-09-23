@@ -13,6 +13,7 @@ public enum LocalLlmFailureKind
     OllamaExecutableIntegrity,
     OllamaProcessStart,
     OllamaServerUnavailable,
+    PrismServerUnavailable,
     Unknown,
 }
 
@@ -42,7 +43,7 @@ public sealed class LocalLlmRuntimeException : Exception
         {
             LocalLlmFailureKind.Configuration => "Неверно настроено подключение к локальной модели.",
             LocalLlmFailureKind.HttpError => "Сервис локальной модели вернул ошибку HTTP.",
-            LocalLlmFailureKind.NetworkError => "Не удалось подключиться к локальной модели. Проверьте, запущен ли Ollama.",
+            LocalLlmFailureKind.NetworkError => "Не удалось подключиться к локальному сервису модели. Проверьте, запущен ли он.",
             LocalLlmFailureKind.Timeout => "Локальная модель не ответила вовремя. Попробуйте ещё раз.",
             LocalLlmFailureKind.InvalidJson => "Локальная модель вернула ответ неожиданного формата.",
             LocalLlmFailureKind.EmptyResponse => "Локальная модель вернула пустой ответ.",
@@ -51,6 +52,7 @@ public sealed class LocalLlmRuntimeException : Exception
             LocalLlmFailureKind.OllamaExecutableIntegrity => "Файл Ollama повреждён или изменён. Восстановите файл поставки.",
             LocalLlmFailureKind.OllamaProcessStart => "Не удалось запустить локальный сервис Ollama.",
             LocalLlmFailureKind.OllamaServerUnavailable => "Локальный сервис Ollama не запустился вовремя.",
+            LocalLlmFailureKind.PrismServerUnavailable => "Локальный сервер PrismML не запущен. Запустите его и повторите попытку.",
             _ => "Не удалось получить ответ от локальной модели.",
         };
 
