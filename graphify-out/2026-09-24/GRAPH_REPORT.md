@@ -1,16 +1,16 @@
-# Graph Report - NpcWithLLM  (2026-09-24)
+# Graph Report - NpcWithLLM  (2026-09-23)
 
 ## Corpus Check
-- 184 files · ~138,854 words
+- 173 files · ~127,723 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 744 nodes · 907 edges · 74 communities (47 shown, 27 thin omitted)
-- Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 21 edges (avg confidence: 0.8)
+- 552 nodes · 612 edges · 65 communities (40 shown, 25 thin omitted)
+- Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 8 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `5eb0f030`
+- Built from commit: `4577e213`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -33,7 +33,7 @@
 - graphify reference: GitHub clone and cross-repo merge
 - graphify reference: transcribe video and audio
 - extraction-spec.md
-- Локальная оценка `Bonsai 2 27B PTQ1_0`
+- NpcWithLLM
 - OllamaServerController
 - Local LLM Connection
 - Локальная LLM в диалоге с NPC
@@ -50,21 +50,21 @@
 - Лист просмотра ответов персонажа
 - Пороги приёмки снимаются, роль переезжает в профиль
 - bool
-- Полная беседа
+- ILocalLlmRuntime
 - Quality gate для естественного диалога NPC
 - JsonElement
 - Node3D
 - NpcMemory
 - NpcPersona
-- Полная беседа
+- Uri
 - DialogueMessage
 - Exception
 - Uri
 - Project-local Godot MCP
 - Лист просмотра ответов персонажа
 - MockChatResponder
-- Bonsai2PrismRuntime
-- Bonsai2PrismRuntimeSmoke
+- int
+- IReadOnlyList
 - DialogueHistory
 - NpcPersona
 - DialogueHistory
@@ -72,53 +72,44 @@
 - NpcPersona
 - Полная беседа
 - Полная беседа
-- Bonsai 2 временно выбрана провайдером игры по умолчанию
-- Q: How do the current game profile, context, memory, history, and generation settings flow into the local model request?
-- Q: How does the game select the local LLM provider and where is the runtime seam?
-- Оценивать локальную модель живым диалогом
-- 04-hidden-ollama-lifecycle.md
-- 05-verified-model-provisioning.md
-- 07-startup-readiness-ui.md
-- 08-windows-package-and-docs.md
-- 09-clean-windows-smoke.md
-- LocalLlmConfig
+- Живая оценка `qwen3.5:4b`
 
 ## God Nodes (most connected - your core abstractions)
 1. `Полная беседа` - 33 edges
 2. `Полная беседа` - 33 edges
 3. `Полная беседа` - 33 edges
-4. `Полная беседа` - 33 edges
-5. `Полная беседа` - 33 edges
-6. `Bonsai2PrismRuntime` - 29 edges
-7. `OllamaServerController` - 23 edges
-8. `Main` - 23 edges
-9. `Лист просмотра ответов персонажа` - 21 edges
-10. `LocalLlmResponder` - 19 edges
+4. `OllamaServerController` - 23 edges
+5. `Main` - 23 edges
+6. `Лист просмотра ответов персонажа` - 21 edges
+7. `LocalLlmResponder` - 19 edges
+8. `Лист просмотра ответов персонажа` - 19 edges
+9. `DialogueSmoke` - 13 edges
+10. `What You Must Do When Invoked` - 12 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `Bonsai2PrismRuntime` --references--> `LocalLlmConfig`  [EXTRACTED]
-  Scripts/Dialogue/Bonsai2PrismRuntime.cs → Scripts/Dialogue/LocalLlmConfig.cs
-- `LocalLlmResponder` --references--> `LocalLlmConfig`  [EXTRACTED]
-  Scripts/Dialogue/LocalLlmResponder.cs → Scripts/Dialogue/LocalLlmConfig.cs
-- `FakeLocalLlmRuntime` --references--> `LocalLlmFailureKind`  [EXTRACTED]
-  Scripts/Dialogue/FakeLocalLlmRuntime.cs → Scripts/Dialogue/LocalLlmRuntimeException.cs
+- `FakeLocalLlmRuntime` --implements--> `ILocalLlmRuntime`  [EXTRACTED]
+  Scripts/Dialogue/FakeLocalLlmRuntime.cs → Scripts/Dialogue/ILocalLlmRuntime.cs
 - `LocalLlmRuntime` --implements--> `ILocalLlmRuntime`  [EXTRACTED]
   Scripts/Dialogue/LocalLlmRuntime.cs → Scripts/Dialogue/ILocalLlmRuntime.cs
+- `FakeLocalLlmRuntime` --references--> `LocalLlmFailureKind`  [EXTRACTED]
+  Scripts/Dialogue/FakeLocalLlmRuntime.cs → Scripts/Dialogue/LocalLlmRuntimeException.cs
 - `MockChatResponder` --inherits--> `ChatResponder`  [EXTRACTED]
   Scripts/MockChatResponder.cs → Scripts/ChatResponder.cs
+- `LocalLlmResponder` --references--> `ILocalLlmRuntime`  [EXTRACTED]
+  Scripts/Dialogue/LocalLlmResponder.cs → Scripts/Dialogue/ILocalLlmRuntime.cs
 
 ## Import Cycles
 - None detected.
 
-## Communities (74 total, 27 thin omitted)
+## Communities (65 total, 25 thin omitted)
 
 ### Community 0 - "Main"
-Cohesion: 0.05
-Nodes (20): Button, InputEvent, Label, Node, Node2D, RichTextLabel, ChatResponder, bool (+12 more)
+Cohesion: 0.10
+Nodes (11): Button, InputEvent, Label, Node, Node2D, RichTextLabel, ChatResponder, bool (+3 more)
 
 ### Community 1 - "DialogueHistory"
 Cohesion: 0.09
-Nodes (15): Resource, ContextBuilder, DialogueMessage, IReadOnlyList, NpcMemory, DialogueContext, DialogueMessage, int (+7 more)
+Nodes (14): List, Resource, ContextBuilder, DialogueMessage, IReadOnlyList, NpcMemory, DialogueContext, DialogueMessage (+6 more)
 
 ### Community 2 - "template.sh"
 Cohesion: 0.22
@@ -137,8 +128,8 @@ Cohesion: 0.83
 Nodes (3): capture(), hitl-loop.template.sh script, step()
 
 ### Community 6 - "LocalLlmResponder"
-Cohesion: 0.15
-Nodes (11): CancellationTokenSource, ChatResponder, ContextBuilder, DialogueHistory, NpcMemory, NpcProfile, bool, Exception (+3 more)
+Cohesion: 0.09
+Nodes (17): CancellationTokenSource, ChatResponder, ContextBuilder, DialogueHistory, NpcMemory, NpcProfile, Action, CancellationToken (+9 more)
 
 ### Community 8 - "graphify reference: extra exports and benchmark"
 Cohesion: 0.22
@@ -168,9 +159,9 @@ Nodes (3): Диалог, Диалог с NPC, Локальная генерац�
 Cohesion: 0.29
 Nodes (6): Consequences, Considered Options, Module Shape, Request Sequence, Test Surface, Граница подключения локальной языковой модели
 
-### Community 18 - "Локальная оценка `Bonsai 2 27B PTQ1_0`"
-Cohesion: 0.09
-Nodes (20): Godot MCP для Codex, NpcWithLLM, Направление проекта, Ручной запуск Bonsai через PrismML, Текущий статус, Тесты и проверка качества, 10: Локальная оценка Bonsai 2 27B, Comments (+12 more)
+### Community 18 - "NpcWithLLM"
+Cohesion: 0.29
+Nodes (6): Godot MCP для Codex, NpcWithLLM, Направление проекта, Ручной запуск Ollama, Текущий статус, Тесты и проверка качества
 
 ### Community 19 - "OllamaServerController"
 Cohesion: 0.09
@@ -193,8 +184,8 @@ Cohesion: 0.25
 Nodes (7): 03: Настоящий ответ локальной LLM, 2026-09-22 — приёмка разделена: механика автоматически, смысл за человеком, 2026-09-22 — проверяемость тестов и повторный прогон гейта, 2026-09-23 — попытка UI smoke через Godot MCP, 2026-09-23 — роль в профиле, числовые пороги сняты (ADR-0005), 2026-09-23 — успешный end-to-end smoke через headless harness, Comments
 
 ### Community 26 - "FakeLocalLlmRuntime"
-Cohesion: 0.13
-Nodes (13): Action, CancellationToken, DialogueMessage, Exception, IReadOnlyList, Task, FakeLocalLlmRuntime, Action (+5 more)
+Cohesion: 0.28
+Nodes (7): Action, CancellationToken, DialogueMessage, Exception, IReadOnlyList, Task, FakeLocalLlmRuntime
 
 ### Community 27 - ".Create"
 Cohesion: 0.33
@@ -205,8 +196,8 @@ Cohesion: 0.24
 Nodes (4): Dictionary, IReadOnlyDictionary, Regex, NpcMemory
 
 ### Community 30 - "DialogueSmoke"
-Cohesion: 0.11
-Nodes (14): CancellationToken, ILocalLlmRuntime, Memory, SeekOrigin, Stream, TaskCompletionSource, ControlledRuntime, DialogueMessage (+6 more)
+Cohesion: 0.09
+Nodes (19): Action, CancellationToken, HttpMessageHandler, HttpRequestMessage, HttpResponseMessage, ILocalLlmRuntime, Memory, SeekOrigin (+11 more)
 
 ### Community 35 - "Лист просмотра ответов персонажа"
 Cohesion: 0.09
@@ -216,17 +207,9 @@ Nodes (21): assumption_correction, attack_identity, attack_memory, attack_progre
 Cohesion: 0.50
 Nodes (3): Consequences, Considered Options, Пороги приёмки снимаются, роль переезжает в профиль
 
-### Community 39 - "Полная беседа"
-Cohesion: 0.05
-Nodes (38): Вывод и рекомендация, Живая оценка `gemma4-12b-it-q2k-eval` (Gemma 4 12B IT, Q2_K), Оценки, Полная беседа, Сравнение с предыдущими прогонами, Условия прогона, Ход 1, Ход 10 (+30 more)
-
 ### Community 40 - "Quality gate для естественного диалога NPC"
 Cohesion: 0.40
 Nodes (4): Quality gate для естественного диалога NPC, Исторические последствия (до уточнения), Уточнение (2) от 2026-09-22: смысловую часть критерия проверяет человек, Уточнение от 2026-09-22
-
-### Community 45 - "Полная беседа"
-Cohesion: 0.06
-Nodes (33): Полная беседа, Ход 1, Ход 10, Ход 11, Ход 12, Ход 13, Ход 14, Ход 15 (+25 more)
 
 ### Community 51 - "Лист просмотра ответов персонажа"
 Cohesion: 0.10
@@ -236,61 +219,41 @@ Nodes (19): attack_identity, attack_memory, attack_progressive, attack_prompt, a
 Cohesion: 0.33
 Nodes (4): double, MockChatResponder, string, Task
 
-### Community 53 - "Bonsai2PrismRuntime"
-Cohesion: 0.13
-Nodes (15): Action, GenerationResult, int, IReadOnlyList, Bonsai2PrismRuntime, bool, CancellationToken, DialogueMessage (+7 more)
-
-### Community 54 - "Bonsai2PrismRuntimeSmoke"
-Cohesion: 0.19
-Nodes (12): Func, HttpMessageHandler, HttpRequestMessage, HttpResponseMessage, List, Queue, Bonsai2PrismRuntimeSmoke, CancellationToken (+4 more)
-
 ### Community 59 - "Полная беседа"
-Cohesion: 0.05
-Nodes (37): Вывод и рекомендация, Живая оценка `qwen3.5:4b`, Оценки, Полная беседа, Условия прогона, Ход 1, Ход 10, Ход 11 (+29 more)
+Cohesion: 0.06
+Nodes (33): Полная беседа, Ход 1, Ход 10, Ход 11, Ход 12, Ход 13, Ход 14, Ход 15 (+25 more)
 
 ### Community 62 - "Полная беседа"
 Cohesion: 0.05
 Nodes (38): Вывод и рекомендация, Живая оценка `qwen3:4b-instruct`, Оценки, Полная беседа, Проверка памяти, Условия прогона, Ход 1, Ход 10 (+30 more)
 
 ### Community 63 - "Полная беседа"
-Cohesion: 0.05
-Nodes (39): 06: Живая оценка локальной модели, Comments, Живая оценка `ministral-3:8b-instruct-2512-q4_K_M`, Оценки, Полная беседа, Сравнение и рекомендация, Условия прогона, Ход 1 (+31 more)
+Cohesion: 0.06
+Nodes (33): Полная беседа, Ход 1, Ход 10, Ход 11, Ход 12, Ход 13, Ход 14, Ход 15 (+25 more)
 
-### Community 64 - "Bonsai 2 временно выбрана провайдером игры по умолчанию"
-Cohesion: 0.33
-Nodes (5): Bonsai 2 временно выбрана провайдером игры по умолчанию, Контекст, Ограничения и эксплуатация, Последствия, Решение
-
-### Community 65 - "Q: How do the current game profile, context, memory, history, and generation settings flow into the local model request?"
-Cohesion: 0.40
-Nodes (4): Answer, Outcome, Q: How do the current game profile, context, memory, history, and generation settings flow into the local model request?, Source Nodes
-
-### Community 66 - "Q: How does the game select the local LLM provider and where is the runtime seam?"
-Cohesion: 0.40
-Nodes (4): Answer, Outcome, Q: How does the game select the local LLM provider and where is the runtime seam?, Source Nodes
-
-### Community 67 - "Оценивать локальную модель живым диалогом"
-Cohesion: 0.50
-Nodes (3): Оценивать локальную модель живым диалогом, Последствия, Рассматриваемые варианты
+### Community 64 - "Живая оценка `qwen3.5:4b`"
+Cohesion: 0.15
+Nodes (10): 06: Живая оценка локальной модели, Comments, Вывод и рекомендация, Живая оценка `qwen3.5:4b`, Оценки, Условия прогона, Живая оценка `ministral-3:8b-instruct-2512-q4_K_M`, Оценки (+2 more)
 
 ## Knowledge Gaps
-- **338 isolated node(s):** `04: Скрытый жизненный цикл Ollama`, `05: Проверенная подготовка модели`, `Comments`, `07: Состояние подготовки модели в игре`, `08: Windows-поставка и документация` (+333 more)
+- **240 isolated node(s):** `Comments`, `Условия прогона`, `Оценки`, `Сравнение и рекомендация`, `Ход 1` (+235 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **27 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **25 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `Bonsai2PrismRuntimeSmoke` connect `Bonsai2PrismRuntimeSmoke` to `Main`?**
-  _High betweenness centrality (0.034) - this node is a cross-community bridge._
-- **Why does `Bonsai2PrismRuntime` connect `Bonsai2PrismRuntime` to `Bonsai2PrismRuntimeSmoke`, `DialogueHistory`, `OllamaServerController`, `DialogueSmoke`?**
-  _High betweenness centrality (0.032) - this node is a cross-community bridge._
+- **Why does `OllamaServerController` connect `OllamaServerController` to `MockChatResponder`?**
+  _High betweenness centrality (0.070) - this node is a cross-community bridge._
 - **Why does `ChatResponder` connect `Main` to `MockChatResponder`?**
-  _High betweenness centrality (0.029) - this node is a cross-community bridge._
-- **What connects `04: Скрытый жизненный цикл Ollama`, `05: Проверенная подготовка модели`, `Comments` to the rest of the system?**
-  _338 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _High betweenness centrality (0.056) - this node is a cross-community bridge._
+- **Why does `MockChatResponder` connect `MockChatResponder` to `Main`?**
+  _High betweenness centrality (0.053) - this node is a cross-community bridge._
+- **What connects `Comments`, `Условия прогона`, `Оценки` to the rest of the system?**
+  _240 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Main` be split into smaller, more focused modules?**
-  _Cohesion score 0.05176470588235294 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.0960591133004926 - nodes in this community are weakly interconnected._
 - **Should `DialogueHistory` be split into smaller, more focused modules?**
-  _Cohesion score 0.08547008547008547 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.08615384615384615 - nodes in this community are weakly interconnected._
 - **Should `What You Must Do When Invoked` be split into smaller, more focused modules?**
   _Cohesion score 0.08 - nodes in this community are weakly interconnected._
