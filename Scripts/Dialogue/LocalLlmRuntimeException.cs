@@ -9,6 +9,10 @@ public enum LocalLlmFailureKind
     InvalidJson,
     EmptyResponse,
     IncompleteResponse,
+    OllamaExecutableMissing,
+    OllamaExecutableIntegrity,
+    OllamaProcessStart,
+    OllamaServerUnavailable,
     Unknown,
 }
 
@@ -43,6 +47,10 @@ public sealed class LocalLlmRuntimeException : Exception
             LocalLlmFailureKind.InvalidJson => "Локальная модель вернула ответ неожиданного формата.",
             LocalLlmFailureKind.EmptyResponse => "Локальная модель вернула пустой ответ.",
             LocalLlmFailureKind.IncompleteResponse => "Ответ персонажа оборвался. Попробуйте ещё раз.",
+            LocalLlmFailureKind.OllamaExecutableMissing => "Не найден локальный runtime Ollama. Восстановите файлы поставки.",
+            LocalLlmFailureKind.OllamaExecutableIntegrity => "Файл Ollama повреждён или изменён. Восстановите файл поставки.",
+            LocalLlmFailureKind.OllamaProcessStart => "Не удалось запустить локальный сервис Ollama.",
+            LocalLlmFailureKind.OllamaServerUnavailable => "Локальный сервис Ollama не запустился вовремя.",
             _ => "Не удалось получить ответ от локальной модели.",
         };
 

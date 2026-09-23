@@ -9,4 +9,6 @@ public interface ILocalLlmRuntime
         Action<string> onText = null);
 
     Task PrepareAsync(CancellationToken cancellationToken = default) => Task.CompletedTask;
+
+    void Shutdown() { }
 }

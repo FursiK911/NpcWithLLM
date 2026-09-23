@@ -16,7 +16,11 @@ public partial class LocalLlmResponder : ChatResponder
     [Export]
     public NpcProfile Profile { get; set; }
 
-    public override void _ExitTree() => _lifetime.Cancel();
+    public override void _ExitTree()
+    {
+        _lifetime.Cancel();
+        _runtime?.Shutdown();
+    }
 
     public override void Prepare()
     {

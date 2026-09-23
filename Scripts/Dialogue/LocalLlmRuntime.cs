@@ -10,25 +10,53 @@ using System.Threading.Tasks;
 using Godot;
 using NetHttpClient = System.Net.Http.HttpClient;
 
-public sealed class LocalLlmRuntime : ILocalLlmRuntime
+public sealed class LocalLlmRuntime : ILocalLlmRuntime, IDisposable
 {
     private static readonly NetHttpClient SharedClient = new() { Timeout = Timeout.InfiniteTimeSpan };
     private static readonly JsonSerializerOptions JsonOptions = new() { PropertyNamingPolicy = JsonNamingPolicy.CamelCase };
     private readonly LocalLlmConfig _config;
     private readonly NetHttpClient _http;
+    private readonly OllamaServerController _server;
 
-    public LocalLlmRuntime(LocalLlmConfig config, NetHttpClient http = null)
+    public LocalLlmRuntime(LocalLlmConfig config, NetHttpClient http = null,
+        OllamaServerController server = null)
     {
         _config = config ?? throw new ArgumentNullException(nameof(config));
         _http = http ?? SharedClient;
+        string bundledExecutable = ProjectSettings.GlobalizePath("res://tools/ollama/ollama.exe");
+        _server = server ?? new OllamaServerController(_config.BaseUrl, bundledExecutable, http: _http);
     }
 
     public async Task PrepareAsync(CancellationToken cancellationToken = default)
     {
-        // A real short generation loads weights and initializes the same context budget as dialogue.
-        await GenerateAsync(new[] { new DialogueMessage("user", "Ответь одним словом: готов.") },
-            cancellationToken, null);
+        try
+        {
+            await _server.EnsureServerAvailableAsync(cancellationToken);
+        }
+        catch (Exception exception)
+        {
+            _server.StopOwnedProcess();
+            if (!cancellationToken.IsCancellationRequested)
+                GD.PrintErr($"LocalLlmRuntime preparation failed: {exception.GetType().Name}; {exception.Message}");
+            throw;
+        }
+
+        try
+        {
+            // A real short generation loads weights and initializes the same context budget as dialogue.
+            await GenerateAsync(new[] { new DialogueMessage("user", "Ответь одним словом: готов.") },
+                cancellationToken, null);
+        }
+        catch
+        {
+            _server.StopOwnedProcess();
+            throw;
+        }
     }
+
+    public void Shutdown() => Dispose();
+
+    public void Dispose() => _server.Dispose();
 
     public async Task<string> GenerateAsync(IReadOnlyList<DialogueMessage> context,
         CancellationToken cancellationToken = default, Action<string> onText = null)
@@ -42,6 +70,7 @@ public sealed class LocalLlmRuntime : ILocalLlmRuntime
             {
                 throw LocalLlmRuntimeException.CreateForKind(LocalLlmFailureKind.Configuration, exception.Message);
             }
+            await _server.EnsureServerAvailableAsync(cancellationToken);
             var payload = LocalLlmRequestBuilder.Create(_config.ModelName, context,
                 _config.Temperature, _config.TopP, _config.MaxTokens, think: false, stream: true,
                 contextTokens: _config.ContextTokens, presencePenalty: _config.PresencePenalty);
@@ -109,6 +138,8 @@ public sealed class LocalLlmRuntime : ILocalLlmRuntime
                 JsonException => LocalLlmRuntimeException.CreateForKind(LocalLlmFailureKind.InvalidJson, "Invalid stream JSON."),
                 _ => LocalLlmRuntimeException.CreateForKind(LocalLlmFailureKind.Unknown, exception.GetType().Name),
             };
+            if (failure.Kind == LocalLlmFailureKind.NetworkError)
+                _server.MarkServerUnavailable();
             // Do not log response bodies: they can contain player dialogue or internal instructions.
             GD.PrintErr($"LocalLlmRuntime failure: kind={failure.Kind}; endpoint={endpoint}; details={failure.TechnicalDetails}");
             throw failure;
