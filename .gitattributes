@@ -1,3 +1,6 @@
 # Normalize EOL for all files that Git considers text files.
 * text=auto eol=lf
 graphify-out/graph.json merge=graphify
+
+# Ollama runtime binaries are large; model weights are never stored in this repo.
+tools/ollama/** filter=lfs diff=lfs merge=lfs -text
