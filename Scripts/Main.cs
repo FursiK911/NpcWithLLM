@@ -7,6 +7,14 @@ public partial class Main : Node2D
     private Button _sendButton = null!;
     private RichTextLabel _responseText = null!;
     private Label _statusLabel = null!;
+    private Control _introOverlay = null!;
+    private Label _introCharacterLabel = null!;
+    private Label _introSituationLabel = null!;
+    private Button _introOkButton = null!;
+    private Control.FocusModeEnum _messageInputFocusMode;
+    private Control.FocusModeEnum _sendButtonFocusMode;
+    private bool _introDismissed;
+    private bool _preparationComplete;
     private bool _requestInFlight;
     private bool _hasPartialText;
     private readonly System.Diagnostics.Stopwatch _responseTimer = new();
@@ -18,8 +26,24 @@ public partial class Main : Node2D
         _sendButton = GetNode<Button>("UiLayer/DialoguePanel/Margin/VBox/Input/SendButton");
         _responseText = GetNode<RichTextLabel>("UiLayer/DialoguePanel/Margin/VBox/ResponseScroll/ResponseText");
         _statusLabel = GetNode<Label>("UiLayer/DialoguePanel/Margin/VBox/StatusLabel");
+        _introOverlay = GetNode<Control>("UiLayer/IntroOverlay");
+        _introCharacterLabel = GetNode<Label>("UiLayer/IntroOverlay/CenterContainer/IntroPanel/Margin/VBox/IntroCharacter");
+        _introSituationLabel = GetNode<Label>("UiLayer/IntroOverlay/CenterContainer/IntroPanel/Margin/VBox/IntroSituation");
+        _introOkButton = GetNode<Button>("UiLayer/IntroOverlay/CenterContainer/IntroPanel/Margin/VBox/OkRow/IntroOkButton");
+        _introOverlay.Visible = true;
+
+        _messageInputFocusMode = _messageInput.FocusMode;
+        _sendButtonFocusMode = _sendButton.FocusMode;
+        _messageInput.FocusMode = Control.FocusModeEnum.None;
+        _sendButton.FocusMode = Control.FocusModeEnum.None;
+
+        NpcProfile profile = _chatResponder.ActiveProfile ?? throw new System.InvalidOperationException(
+            "Для вступления не назначен профиль персонажа.");
+        _introCharacterLabel.Text = $"{profile.Name} — {profile.Role}";
+        _introSituationLabel.Text = profile.Situation;
 
         _sendButton.Pressed += OnSendButtonPressed;
+        _introOkButton.Pressed += OnIntroOkPressed;
         _messageInput.GuiInput += OnMessageInputGuiInput;
         _chatResponder.ResponseStarted += OnResponseStarted;
         _chatResponder.ResponseChunkReceived += OnResponseChunkReceived;
@@ -30,7 +54,7 @@ public partial class Main : Node2D
         GetViewport().SizeChanged += QueueRedraw;
 
         _statusLabel.Text = "Готов к диалогу.";
-        _messageInput.GrabFocus();
+        UpdateInteractionEnabled();
         QueueRedraw();
         _chatResponder.Prepare();
     }
@@ -38,6 +62,7 @@ public partial class Main : Node2D
     public override void _ExitTree()
     {
         _sendButton.Pressed -= OnSendButtonPressed;
+        _introOkButton.Pressed -= OnIntroOkPressed;
         _messageInput.GuiInput -= OnMessageInputGuiInput;
         _chatResponder.ResponseStarted -= OnResponseStarted;
         _chatResponder.ResponseChunkReceived -= OnResponseChunkReceived;
@@ -66,6 +91,20 @@ public partial class Main : Node2D
 
     private void OnSendButtonPressed() => SubmitMessage();
 
+    private void OnIntroOkPressed()
+    {
+        _introDismissed = true;
+        _introOverlay.Visible = false;
+        _messageInput.FocusMode = _messageInputFocusMode;
+        _sendButton.FocusMode = _sendButtonFocusMode;
+        UpdateInteractionEnabled();
+
+        if (CanInteract)
+        {
+            _messageInput.GrabFocus();
+        }
+    }
+
     private void OnMessageInputGuiInput(InputEvent inputEvent)
     {
         if (inputEvent is not InputEventKey keyEvent || !keyEvent.Pressed || keyEvent.Echo)
@@ -85,7 +124,7 @@ public partial class Main : Node2D
 
     private void SubmitMessage()
     {
-        if (_requestInFlight || _chatResponder.IsBusy)
+        if (!CanInteract || _chatResponder.IsBusy)
         {
             return;
         }
@@ -98,7 +137,7 @@ public partial class Main : Node2D
         }
 
         _requestInFlight = true;
-        SetInteractionEnabled(false);
+        UpdateInteractionEnabled();
         _statusLabel.Text = "Иван думает…";
         _chatResponder.RequestResponse(message);
     }
@@ -108,19 +147,26 @@ public partial class Main : Node2D
         _responseTimer.Restart();
         _hasPartialText = false;
         _statusLabel.Text = "Иван думает…";
-        SetInteractionEnabled(false);
+        UpdateInteractionEnabled();
     }
 
     private void OnPreparationStarted()
     {
+        _preparationComplete = false;
         _statusLabel.Text = "Подготовка персонажа…";
-        SetInteractionEnabled(false);
+        UpdateInteractionEnabled();
     }
 
     private void OnPreparationFinished()
     {
+        _preparationComplete = true;
         _statusLabel.Text = "Готов к диалогу.";
-        SetInteractionEnabled(true);
+        UpdateInteractionEnabled();
+
+        if (CanInteract)
+        {
+            _messageInput.GrabFocus();
+        }
     }
 
     private void OnResponseChunkReceived(string text)
@@ -155,13 +201,25 @@ public partial class Main : Node2D
     private void FinishRequest()
     {
         _requestInFlight = false;
-        SetInteractionEnabled(true);
-        _messageInput.GrabFocus();
+        UpdateInteractionEnabled();
+
+        if (CanInteract)
+        {
+            _messageInput.GrabFocus();
+        }
     }
 
-    private void SetInteractionEnabled(bool enabled)
+    private bool CanInteract => _introDismissed && _preparationComplete && !_requestInFlight;
+
+    private void UpdateInteractionEnabled()
     {
+        bool enabled = CanInteract;
         _messageInput.Editable = enabled;
         _sendButton.Disabled = !enabled;
+
+        if (!enabled)
+        {
+            _messageInput.ReleaseFocus();
+        }
     }
 }

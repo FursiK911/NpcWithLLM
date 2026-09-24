@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3]
+[gd_scene load_steps=7 format=3]
 
 [ext_resource type="Script" path="res://Scripts/Main.cs" id="1_main"]
 [ext_resource type="Script" path="res://Scripts/Dialogue/LocalLlmResponder.cs" id="2_local"]
@@ -32,6 +32,22 @@ corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_intro"]
+bg_color = Color(0.055, 0.075, 0.12, 0.99)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.26, 0.37, 0.54, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+content_margin_left = 26.0
+content_margin_top = 24.0
+content_margin_right = 26.0
+content_margin_bottom = 20.0
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_main")
@@ -123,3 +139,64 @@ wrap_mode = 1
 custom_minimum_size = Vector2(0, 42)
 layout_mode = 2
 text = "Отправить  (Enter)"
+
+[node name="IntroOverlay" type="ColorRect" parent="UiLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.025, 0.035, 0.06, 0.82)
+mouse_filter = 0
+z_index = 10
+
+[node name="CenterContainer" type="CenterContainer" parent="UiLayer/IntroOverlay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+
+[node name="IntroPanel" type="PanelContainer" parent="UiLayer/IntroOverlay/CenterContainer"]
+custom_minimum_size = Vector2(620, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBox_intro")
+
+[node name="Margin" type="MarginContainer" parent="UiLayer/IntroOverlay/CenterContainer/IntroPanel"]
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="UiLayer/IntroOverlay/CenterContainer/IntroPanel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="IntroTitle" type="Label" parent="UiLayer/IntroOverlay/CenterContainer/IntroPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 27
+text = "Вы в мастерской"
+
+[node name="IntroCharacter" type="Label" parent="UiLayer/IntroOverlay/CenterContainer/IntroPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.68, 0.78, 0.92, 1)
+theme_override_font_sizes/font_size = 16
+autowrap_mode = 2
+
+[node name="IntroSituation" type="Label" parent="UiLayer/IntroOverlay/CenterContainer/IntroPanel/Margin/VBox"]
+custom_minimum_size = Vector2(0, 130)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 17
+autowrap_mode = 2
+
+[node name="OkRow" type="HBoxContainer" parent="UiLayer/IntroOverlay/CenterContainer/IntroPanel/Margin/VBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="IntroOkButton" type="Button" parent="UiLayer/IntroOverlay/CenterContainer/IntroPanel/Margin/VBox/OkRow"]
+custom_minimum_size = Vector2(140, 44)
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 18
+text = "OK"

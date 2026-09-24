@@ -2,6 +2,11 @@ using Godot;
 
 public partial class ChatResponder : Node
 {
+    [Export]
+    public NpcProfile Profile { get; set; }
+
+    public virtual NpcProfile ActiveProfile => Profile;
+
     [Signal]
     public delegate void ResponseStartedEventHandler();
 

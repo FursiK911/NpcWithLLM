@@ -13,8 +13,7 @@ public partial class LocalLlmResponder : ChatResponder
     private readonly CancellationTokenSource _lifetime = new();
     private bool _prepared;
 
-    [Export]
-    public NpcProfile Profile { get; set; }
+    public override NpcProfile ActiveProfile => _profile ?? Profile;
 
     public override void _ExitTree()
     {
@@ -133,7 +132,7 @@ public partial class LocalLlmResponder : ChatResponder
 
     private NpcProfile RequireProfile()
     {
-        return _profile ?? Profile ?? throw new ArgumentException(
+        return ActiveProfile ?? throw new ArgumentException(
             "Персонажу не назначен профиль: узел ChatResponder должен ссылаться на res://NpcProfile.tres.",
             nameof(Profile));
     }

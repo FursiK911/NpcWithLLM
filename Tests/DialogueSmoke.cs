@@ -25,6 +25,7 @@ public partial class DialogueSmoke : Node
             }
             await StreamsBeforeCompletion();
             await RejectsBrokenStreams();
+            await IntroModalBlocksDialogueUntilDismissedAndReady();
             await UiStreamsAndPreservesFailedInput();
             if (Array.Exists(userArgs, value => value == "--real")) await RealSceneDialogue();
             GD.Print("PASS: dialogue smoke");
@@ -93,20 +94,91 @@ public partial class DialogueSmoke : Node
         Check(timedOut, "Timeout did not cover stream reads");
     }
 
+    private async Task IntroModalBlocksDialogueUntilDismissedAndReady()
+    {
+        var scene = GD.Load<PackedScene>("res://Main.tscn").Instantiate<Main>();
+        var responder = scene.GetNode<LocalLlmResponder>("ChatResponder");
+        NpcProfile profile = responder.Profile
+            ?? throw new Exception("NpcProfile.tres did not deserialize into the scene");
+        var runtime = new ControlledRuntime { HoldPreparation = true };
+        responder.Configure(runtime, profile);
+        AddChild(scene);
+
+        var overlay = scene.GetNode<Control>("UiLayer/IntroOverlay");
+        var character = scene.GetNode<Label>("UiLayer/IntroOverlay/CenterContainer/IntroPanel/Margin/VBox/IntroCharacter");
+        var situation = scene.GetNode<Label>("UiLayer/IntroOverlay/CenterContainer/IntroPanel/Margin/VBox/IntroSituation");
+        var okButton = scene.GetNode<Button>("UiLayer/IntroOverlay/CenterContainer/IntroPanel/Margin/VBox/OkRow/IntroOkButton");
+        var input = scene.GetNode<TextEdit>("UiLayer/DialoguePanel/Margin/VBox/Input/MessageInput");
+        var sendButton = scene.GetNode<Button>("UiLayer/DialoguePanel/Margin/VBox/Input/SendButton");
+
+        Check(overlay.Visible, "Intro modal was not visible when the game started");
+        Check(character.Text == $"{profile.Name} — {profile.Role}", "Intro did not use the active NPC name and role");
+        Check(situation.Text == profile.Situation
+            && situation.Text.Contains("серый фургон")
+            && situation.Text.Contains("Иван предполагает"),
+            "Intro did not show the shared scene facts and attributed assumption");
+        Check(!input.Editable && sendButton.Disabled, "Dialogue was available behind the intro modal");
+
+        var outsideClick = new InputEventMouseButton
+        {
+            ButtonIndex = MouseButton.Left,
+            Position = sendButton.GetGlobalRect().GetCenter(),
+            Pressed = true,
+        };
+        GetViewport().PushInput(outsideClick);
+        GetViewport().PushInput(new InputEventMouseButton
+        {
+            ButtonIndex = MouseButton.Left,
+            Position = outsideClick.Position,
+            Pressed = false,
+        });
+        GetViewport().PushInput(new InputEventKey { Keycode = Key.Escape, Pressed = true });
+        Check(overlay.Visible && runtime.RequestCount == 0,
+            "A click on the covered dialogue or Escape dismissed the intro or sent a message");
+
+        sendButton.EmitSignal(Button.SignalName.Pressed);
+        Check(runtime.RequestCount == 0, "Programmatic send bypassed the intro gate");
+
+        okButton.EmitSignal(Button.SignalName.Pressed);
+        Check(!overlay.Visible && !input.Editable && sendButton.Disabled,
+            "Closing the intro enabled dialogue before NPC preparation finished");
+        sendButton.EmitSignal(Button.SignalName.Pressed);
+        Check(runtime.RequestCount == 0, "Dialogue was sent before NPC preparation finished");
+
+        runtime.PreparationCompletion.SetResult();
+        await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
+        await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
+        Check(input.Editable && !sendButton.Disabled,
+            "Dialogue did not become available after the intro was dismissed and NPC preparation finished");
+
+        scene.QueueFree();
+    }
+
     private async Task UiStreamsAndPreservesFailedInput()
     {
         var scene = GD.Load<PackedScene>("res://Main.tscn").Instantiate<Main>();
         var responder = scene.GetNode<LocalLlmResponder>("ChatResponder");
         Check(responder.Profile?.Name == "Иван" && responder.Profile.Situation.Length > 0,
             "NpcProfile.tres did not deserialize into the scene");
+        NpcProfile profile = responder.Profile;
         var runtime = new ControlledRuntime();
-        responder.Configure(runtime, LocalLlmResponder.DefaultProfile);
+        responder.Configure(runtime, profile);
         AddChild(scene);
         var input = scene.GetNode<TextEdit>("UiLayer/DialoguePanel/Margin/VBox/Input/MessageInput");
         var button = scene.GetNode<Button>("UiLayer/DialoguePanel/Margin/VBox/Input/SendButton");
         var output = scene.GetNode<RichTextLabel>("UiLayer/DialoguePanel/Margin/VBox/ResponseScroll/ResponseText");
+        var overlay = scene.GetNode<Control>("UiLayer/IntroOverlay");
+        var okButton = scene.GetNode<Button>("UiLayer/IntroOverlay/CenterContainer/IntroPanel/Margin/VBox/OkRow/IntroOkButton");
+        Check(overlay.Visible && !input.Editable && button.Disabled,
+            "Intro did not block the dialogue when NPC preparation finished first");
+        okButton.EmitSignal(Button.SignalName.Pressed);
+        Check(!overlay.Visible && input.Editable && !button.Disabled,
+            "Intro button did not open the dialogue after NPC preparation finished");
         input.Text = "Меня зовут Дмитрий.";
         button.EmitSignal(Button.SignalName.Pressed);
+        Check(runtime.LastContext != null
+            && runtime.LastContext[0].Content.Contains(profile.Situation),
+            "The NPC request did not receive the same situation shown in the intro");
         runtime.OnText("Слышу.");
         Check(output.Text == "Слышу.", "UI has not displayed partial response");
         Check(button.Disabled && responder.History.MessageCount == 0, "Incomplete dialogue was committed");
@@ -130,9 +202,19 @@ public partial class DialogueSmoke : Node
     {
         public Action<string> OnText;
         public TaskCompletionSource<string> Completion = new();
+        public TaskCompletionSource PreparationCompletion = new();
+        public bool HoldPreparation { get; init; }
+        public int RequestCount { get; private set; }
+        public IReadOnlyList<DialogueMessage> LastContext { get; private set; }
+
+        public Task PrepareAsync(CancellationToken cancellationToken = default)
+            => HoldPreparation ? PreparationCompletion.Task : Task.CompletedTask;
+
         public Task<string> GenerateAsync(IReadOnlyList<DialogueMessage> context,
             CancellationToken cancellationToken = default, Action<string> onText = null)
         {
+            RequestCount++;
+            LastContext = context;
             OnText = onText;
             return Completion.Task;
         }
