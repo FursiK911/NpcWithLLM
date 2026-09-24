@@ -1,10 +1,15 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 
 public static class LocalLlmRequestBuilder
 {
+    private static readonly JsonElement CharacterResponseFormat = JsonDocument.Parse(
+        "{\"type\":\"object\",\"properties\":{\"message\":{\"type\":\"string\"},\"emotion\":{\"type\":\"string\",\"enum\":[\"angry\",\"happy\",\"sad\",\"thinking\",\"neutral\"]}},\"required\":[\"message\",\"emotion\"],\"additionalProperties\":false}")
+        .RootElement.Clone();
+
     public static LocalLlmRequestPayload Create(
         string model,
         IReadOnlyList<DialogueMessage> context,
@@ -45,7 +50,8 @@ public static class LocalLlmRequestBuilder
             chatMessages,
             stream,
             new LocalLlmGenerationOptions(temperature, topP, maxTokens, contextTokens, presencePenalty),
-            think);
+            think,
+            CharacterResponseFormat);
     }
 }
 
@@ -54,7 +60,8 @@ public sealed record LocalLlmRequestPayload(
     IReadOnlyList<DialogueMessage> Messages,
     bool Stream,
     LocalLlmGenerationOptions Options,
-    bool Think);
+    bool Think,
+    [property: JsonPropertyName("format")] JsonElement Format);
 
 public sealed record LocalLlmGenerationOptions(
     float Temperature,

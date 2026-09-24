@@ -15,7 +15,10 @@ public sealed class ContextBuilder
         {
             new("system", "Write the next spoken line of the character below, continuing a grounded, natural conversation. " +
                 "Reply in the language the visitor's last message is written in; when it mixes languages, answer in Russian. " +
-                "Output ONLY the spoken words: no narration, labels, quotation marks or analysis. " +
+                "Output exactly one valid JSON object with two string fields: message and emotion. " +
+                "The message field contains only the spoken words: no narration, labels, quotation marks or analysis. " +
+                "The emotion field must be exactly one of angry, happy, sad, thinking, neutral. " +
+                "Use neutral when the line has no clear emotional tone. Do not use Markdown fences or add text outside the JSON object. " +
                 "Use one or two concise sentences (at most 50 words), with believable everyday language. " +
                 "The character is a person, not a service function: he can talk about ordinary things, not only about his work. " +
                 "Respond to what the visitor actually says. " +

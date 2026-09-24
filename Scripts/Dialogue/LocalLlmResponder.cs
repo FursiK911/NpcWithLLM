@@ -89,21 +89,17 @@ public partial class LocalLlmResponder : ChatResponder
             NpcProfile profile = RequireProfile();
             DialogueContext context = _contextBuilder.Build(
                 profile.ToPersona(), profile.Situation, _memory, History, message);
-            string response = await GetRuntime().GenerateAsync(context.Messages, _lifetime.Token,
-                text => { if (!_lifetime.IsCancellationRequested) EmitSignal(SignalName.ResponseChunkReceived, text); });
+            string rawResponse = await GetRuntime().GenerateAsync(context.Messages, _lifetime.Token);
             _lifetime.Token.ThrowIfCancellationRequested();
-            if (string.IsNullOrWhiteSpace(response))
-            {
-                throw LocalLlmRuntimeException.CreateForKind(
-                    LocalLlmFailureKind.EmptyResponse,
-                    "Responder received an empty response.");
-            }
+            GeneratedCharacterResponse response = GeneratedCharacterResponse.Parse(rawResponse);
 
             // Фиксируем состояние только после успешной генерации.
             _memory.LearnFrom(message);
-            History.AddPair(message, response);
+            History.AddPair(message, response.Message);
             IsBusy = false;
-            EmitSignal(SignalName.ResponseReceived, response.Trim());
+            EmitSignal(SignalName.ResponseEmotionReceived, response.Emotion);
+            EmitSignal(SignalName.ResponseChunkReceived, response.Message);
+            EmitSignal(SignalName.ResponseReceived, response.Message);
         }
         catch (Exception exception)
         {

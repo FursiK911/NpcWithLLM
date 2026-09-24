@@ -19,7 +19,9 @@ $sourceFiles = @(
     'DialogueHistory.cs',
     'NpcMemory.cs',
     'NpcPersona.cs',
-    'ContextBuilder.cs'
+    'ContextBuilder.cs',
+    'LocalLlmRuntimeException.cs',
+    'GeneratedCharacterResponse.cs'
 ) | ForEach-Object { Join-Path $PSScriptRoot "..\Scripts\Dialogue\$_" }
 
 Add-Type -Path $sourceFiles
@@ -181,8 +183,7 @@ foreach ($case in $cases) {
         foreach ($playerMessage in @($case.Message)) {
         $turn++
 
-        # Отсчёт времени до первого текста начинается до построения контекста:
-        # spec.md требует замерять его вместе с сборкой запроса, как это делает игровой UI.
+        # Отсчёт времени до готовой реплики начинается до построения контекста.
         $timer = [Diagnostics.Stopwatch]::StartNew()
 
         $context = $builder.Build(
@@ -205,7 +206,6 @@ foreach ($case in $cases) {
         $request = [System.Net.Http.HttpRequestMessage]::new([System.Net.Http.HttpMethod]::Post, $Endpoint)
         $request.Content = [System.Net.Http.StringContent]::new($body, [Text.Encoding]::UTF8, 'application/json')
         $deadline = [Threading.CancellationTokenSource]::new([TimeSpan]::FromSeconds(60))
-        $firstTextMs = $null
         $content = ''
         $completed = $false
         $response = $null
@@ -219,7 +219,6 @@ foreach ($case in $cases) {
                 $chunk = $line | ConvertFrom-Json
                 if ($chunk.PSObject.Properties['error']) { throw 'Ollama stream error' }
                 if ($chunk.PSObject.Properties['message']) { $content += [string]$chunk.message.content }
-                if ($null -eq $firstTextMs -and -not [string]::IsNullOrWhiteSpace($content)) { $firstTextMs = $timer.Elapsed.TotalMilliseconds }
                 if ($chunk.done) {
                     $completed = -not ($chunk.PSObject.Properties['done_reason'] -and $chunk.done_reason -eq 'length')
                     break
@@ -230,12 +229,25 @@ foreach ($case in $cases) {
             if ($null -ne $response) { $response.Dispose() }
             $request.Dispose(); $deadline.Dispose()
         }
-        $normalizedContent = ($content -replace '\s+', ' ').Trim()
+        $characterResponse = $null
+        $parseFault = $null
+        $responseVisibleMs = $null
+        if ($completed) {
+            try {
+                $characterResponse = [GeneratedCharacterResponse]::Parse($content)
+                $responseVisibleMs = $timer.Elapsed.TotalMilliseconds
+            } catch {
+                $parseFault = 'invalid structured response'
+            }
+        }
+        $normalizedContent = if ($null -eq $characterResponse) { '' } else { ($characterResponse.Message -replace '\s+', ' ').Trim() }
+        $responseEmotion = if ($null -eq $characterResponse) { '' } else { $characterResponse.Emotion }
         $wordCount = if ([string]::IsNullOrWhiteSpace($normalizedContent)) { 0 } else { ($normalizedContent -split ' ').Count }
         $faults = Get-DialogueResponseFault `
             -PlayerMessage $playerMessage `
             -Content $normalizedContent `
-            -Completed $completed
+            -Completed ($completed -and $null -ne $characterResponse)
+        if ($parseFault) { $faults += $parseFault }
 
         $results.Add([pscustomobject]@{
             Case = $case.Name
@@ -246,13 +258,14 @@ foreach ($case in $cases) {
             MechanicallyClean = ($faults.Count -eq 0)
             MechanicalFaults = ($faults -join ', ')
             Response = $normalizedContent
+            Emotion = $responseEmotion
             WordCount = $wordCount
-            FirstTextMs = if ($null -eq $firstTextMs) { $null } else { [Math]::Round($firstTextMs, 1) }
+            ResponseVisibleMs = if ($null -eq $responseVisibleMs) { $null } else { [Math]::Round($responseVisibleMs, 1) }
             TotalMs = [Math]::Round($timer.Elapsed.TotalMilliseconds, 1)
         })
-        if ($completed -and -not [string]::IsNullOrWhiteSpace($content)) {
+        if ($completed -and $null -ne $characterResponse) {
             $memory.LearnFrom($playerMessage)
-            $history.AddPair($playerMessage, $content)
+            $history.AddPair($playerMessage, $characterResponse.Message)
         }
         }
     }
@@ -275,8 +288,8 @@ if ($ReviewPath) {
     $sheet.Add("Модель: ``$Model``. Температура $Temperature, top_p $TopP, num_ctx $ContextTokens.")
     $sheet.Add("Прогон: $timestamp. Билдер контекста: ``$builderHash``.")
     $sheet.Add('')
-    $sheet.Add('Автоматически проверены только механические свойства ответа: поток завершился, ответ')
-    $sheet.Add('непустой, в нём нет дословного повтора сообщения игрока. Время до первого текста и длина')
+    $sheet.Add('Автоматически проверены только механические свойства ответа: полный JSON разобран, реплика')
+    $sheet.Add('непустая, в ней нет дословного повтора сообщения игрока. Время до показа и длина')
     $sheet.Add('ответа записаны как замеры без вердикта: числовые пороги приёмки сняты (ADR-0005).')
     $sheet.Add('Пригодность ответа по смыслу, сохранение роли и манеру речи оценивает человек — одна отметка на сценарий.')
     $sheet.Add('')
@@ -287,7 +300,7 @@ if ($ReviewPath) {
         $sheet.Add('')
         foreach ($record in $group.Group) {
             $faultNote = if ([string]::IsNullOrWhiteSpace($record.MechanicalFaults)) { 'механически чисто' } else { "механика: $($record.MechanicalFaults)" }
-            $sheet.Add("- прогон $($record.Run), реплика $($record.Turn): «$($record.Player)» → $($record.FirstTextMs) мс до первого текста, $($record.TotalMs) мс всего, $($record.WordCount) слов; $faultNote")
+            $sheet.Add("- прогон $($record.Run), реплика $($record.Turn): «$($record.Player)» → $($record.ResponseVisibleMs) мс до готовой реплики, $($record.TotalMs) мс всего, $($record.WordCount) слов, эмоция $($record.Emotion); $faultNote")
             $sheet.Add("  - $($record.Response)")
         }
         $sheet.Add('')

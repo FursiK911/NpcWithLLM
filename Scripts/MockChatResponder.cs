@@ -31,6 +31,7 @@ public partial class MockChatResponder : ChatResponder
                 return;
             }
 
+            EmitSignal(SignalName.ResponseEmotionReceived, "neutral");
             EmitSignal(SignalName.ResponseReceived, $"Персонаж услышал: «{message}»");
         }
         catch (Exception exception)

@@ -14,6 +14,9 @@ public partial class ChatResponder : Node
     public delegate void ResponseChunkReceivedEventHandler(string text);
 
     [Signal]
+    public delegate void ResponseEmotionReceivedEventHandler(string emotion);
+
+    [Signal]
     public delegate void PreparationStartedEventHandler();
 
     [Signal]

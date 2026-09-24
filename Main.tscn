@@ -59,23 +59,24 @@ Profile = ExtResource("4_profile")
 
 [node name="UiLayer" type="CanvasLayer" parent="."]
 
-[node name="SceneCaption" type="Label" parent="UiLayer"]
-offset_left = 36.0
-offset_top = 30.0
-offset_right = 520.0
-offset_bottom = 64.0
-theme_override_colors/font_color = Color(0.72, 0.81, 0.94, 1)
-theme_override_font_sizes/font_size = 22
-text = "МАСТЕРСКАЯ"
+[node name="Background" type="TextureRect" parent="UiLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 6
 
-[node name="SceneHint" type="Label" parent="UiLayer"]
-offset_left = 38.0
-offset_top = 68.0
-offset_right = 500.0
-offset_bottom = 96.0
-theme_override_colors/font_color = Color(0.45, 0.56, 0.7, 1)
-theme_override_font_sizes/font_size = 15
-text = "Рядом с серым фургоном стоит механик."
+[node name="MechanicPortrait" type="TextureRect" parent="UiLayer"]
+offset_left = 24.0
+offset_top = 100.0
+offset_right = 489.0
+offset_bottom = 720.0
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
 
 [node name="DialoguePanel" type="PanelContainer" parent="UiLayer"]
 anchor_left = 0.56
@@ -115,7 +116,6 @@ size_flags_horizontal = 3
 bbcode_enabled = false
 fit_content = true
 autowrap_mode = 2
-text = "Механик отвлекается от машины и смотрит на вас."
 
 [node name="StatusLabel" type="Label" parent="UiLayer/DialoguePanel/Margin/VBox"]
 layout_mode = 2

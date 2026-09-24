@@ -26,7 +26,7 @@ public partial class DialogueSmoke : Node
             await StreamsBeforeCompletion();
             await RejectsBrokenStreams();
             await IntroModalBlocksDialogueUntilDismissedAndReady();
-            await UiStreamsAndPreservesFailedInput();
+            await UiWaitsForCompleteJsonAndPreservesFailedInput();
             if (Array.Exists(userArgs, value => value == "--real")) await RealSceneDialogue();
             GD.Print("PASS: dialogue smoke");
             GetTree().Quit();
@@ -107,17 +107,21 @@ public partial class DialogueSmoke : Node
         var overlay = scene.GetNode<Control>("UiLayer/IntroOverlay");
         var introTitle = scene.GetNode<Label>("UiLayer/IntroOverlay/CenterContainer/IntroPanel/Margin/VBox/IntroTitle");
         var introduction = scene.GetNode<Label>("UiLayer/IntroOverlay/CenterContainer/IntroPanel/Margin/VBox/IntroNarrative");
-        var sceneCaption = scene.GetNode<Label>("UiLayer/SceneCaption");
         var dialogueTitle = scene.GetNode<Label>("UiLayer/DialoguePanel/Margin/VBox/Title");
         var initialResponse = scene.GetNode<RichTextLabel>("UiLayer/DialoguePanel/Margin/VBox/ResponseScroll/ResponseText");
+        var portrait = scene.GetNode<TextureRect>("UiLayer/MechanicPortrait");
+        var background = scene.GetNode<TextureRect>("UiLayer/Background");
         var okButton = scene.GetNode<Button>("UiLayer/IntroOverlay/CenterContainer/IntroPanel/Margin/VBox/OkRow/IntroOkButton");
         var input = scene.GetNode<TextEdit>("UiLayer/DialoguePanel/Margin/VBox/Input/MessageInput");
         var sendButton = scene.GetNode<Button>("UiLayer/DialoguePanel/Margin/VBox/Input/SendButton");
 
         Check(overlay.Visible, "Intro modal was not visible when the game started");
+        Check(initialResponse.Text == string.Empty, "The response panel showed placeholder text before the first reply");
+        Check(HasPortrait(portrait, "idle.png"), "The mechanic did not start in the idle pose");
+        Check(background.Texture?.ResourcePath.EndsWith("background.png", StringComparison.OrdinalIgnoreCase) == true,
+            "The workshop background image was not loaded");
         Check(introTitle.Text == "В мастерской", "Intro title revealed details beyond the setting");
-        Check(!sceneCaption.Text.Contains(profile.Name)
-            && !dialogueTitle.Text.Contains(profile.Name)
+        Check(!dialogueTitle.Text.Contains(profile.Name)
             && !initialResponse.Text.Contains(profile.Name),
             "The initial game UI revealed the unknown mechanic's name");
         Check(introduction.Text == profile.PlayerIntroduction,
@@ -171,7 +175,7 @@ public partial class DialogueSmoke : Node
         scene.QueueFree();
     }
 
-    private async Task UiStreamsAndPreservesFailedInput()
+    private async Task UiWaitsForCompleteJsonAndPreservesFailedInput()
     {
         var scene = GD.Load<PackedScene>("res://Main.tscn").Instantiate<Main>();
         var responder = scene.GetNode<LocalLlmResponder>("ChatResponder");
@@ -184,6 +188,7 @@ public partial class DialogueSmoke : Node
         var input = scene.GetNode<TextEdit>("UiLayer/DialoguePanel/Margin/VBox/Input/MessageInput");
         var button = scene.GetNode<Button>("UiLayer/DialoguePanel/Margin/VBox/Input/SendButton");
         var output = scene.GetNode<RichTextLabel>("UiLayer/DialoguePanel/Margin/VBox/ResponseScroll/ResponseText");
+        var portrait = scene.GetNode<TextureRect>("UiLayer/MechanicPortrait");
         var overlay = scene.GetNode<Control>("UiLayer/IntroOverlay");
         var okButton = scene.GetNode<Button>("UiLayer/IntroOverlay/CenterContainer/IntroPanel/Margin/VBox/OkRow/IntroOkButton");
         Check(overlay.Visible && !input.Editable && button.Disabled,
@@ -195,25 +200,63 @@ public partial class DialogueSmoke : Node
         button.EmitSignal(Button.SignalName.Pressed);
         Check(runtime.LastContext != null
             && runtime.LastContext[0].Content.Contains(profile.Situation)
-            && !runtime.LastContext[0].Content.Contains(profile.PlayerIntroduction),
-            "The NPC request did not keep its richer situation context separate from the intro");
-        runtime.OnText("Слышу.");
-        Check(output.Text == "Слышу.", "UI has not displayed partial response");
+            && !runtime.LastContext[0].Content.Contains(profile.PlayerIntroduction)
+            && runtime.LastContext[0].Content.Contains("valid JSON object")
+            && runtime.LastContext[0].Content.Contains("message and emotion"),
+            "The NPC request did not preserve its scene context and JSON response contract");
+        Check(HasPortrait(portrait, "thinking.png"), "The mechanic did not show the thinking pose while generating");
+        runtime.OnText?.Invoke("{\"message\":\"Слышу.\",\"emotion\":\"happy\"");
+        Check(output.Text == string.Empty, "UI displayed response text before a complete JSON response");
         Check(button.Disabled && responder.History.MessageCount == 0, "Incomplete dialogue was committed");
         runtime.Completion.SetException(LocalLlmRuntimeException.CreateForKind(LocalLlmFailureKind.NetworkError));
         await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
         await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
         Check(input.Text == "Меня зовут Дмитрий." && !button.Disabled, "Failure lost input or blocked retry");
+        Check(output.Text == string.Empty && HasPortrait(portrait, "idle.png"),
+            "A failed first response changed the empty reply or idle portrait");
         Check(responder.History.MessageCount == 0 && responder.Memory.PlayerName == null, "Failure changed memory");
         runtime.Completion = new TaskCompletionSource<string>();
         button.EmitSignal(Button.SignalName.Pressed);
-        runtime.OnText("Приятно познакомиться.");
-        runtime.Completion.SetResult("Приятно познакомиться.");
+        runtime.Completion.SetResult("{\"message\":\"Приятно познакомиться.\",\"emotion\":\"happy\"}");
         await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
         await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
         Check(input.Text == "" && output.Text == "Приятно познакомиться.", "Retry did not finish");
+        Check(HasPortrait(portrait, "happy.png"), "The response emotion did not select the matching portrait");
         Check(responder.Memory.PlayerName == "Дмитрий" && responder.History.MessageCount == 2, "Success not committed once");
+
+        runtime.Completion = new TaskCompletionSource<string>();
+        input.Text = "Что скажешь?";
+        button.EmitSignal(Button.SignalName.Pressed);
+        runtime.Completion.SetResult("{\"message\":\"Посмотрим.\",\"emotion\":\"surprised\"}");
+        await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
+        await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
+        Check(output.Text == "Посмотрим." && HasSpeakingPortrait(portrait),
+            "A neutral or unknown emotion did not select a random speaking portrait");
+
+        runtime.Completion = new TaskCompletionSource<string>();
+        input.Text = "Продолжим?";
+        button.EmitSignal(Button.SignalName.Pressed);
+        runtime.Completion.SetResult("not valid JSON");
+        await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
+        await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
+        Check(input.Text == "Продолжим?" && output.Text == "Посмотрим.",
+            "Invalid JSON replaced the previous reply or discarded the player's input");
+        Check(HasSpeakingPortrait(portrait) && responder.History.MessageCount == 4,
+            "Invalid JSON changed the previous portrait or dialogue history");
         scene.QueueFree();
+    }
+
+    private static bool HasPortrait(TextureRect portrait, string fileName)
+        => portrait.Texture?.ResourcePath.EndsWith(fileName, StringComparison.OrdinalIgnoreCase) == true;
+
+    private static bool HasSpeakingPortrait(TextureRect portrait)
+    {
+        string path = portrait.Texture?.ResourcePath ?? string.Empty;
+        for (int index = 1; index <= 5; index++)
+        {
+            if (path.EndsWith($"speak_{index}.png", StringComparison.OrdinalIgnoreCase)) return true;
+        }
+        return false;
     }
 
     private sealed class ControlledRuntime : ILocalLlmRuntime

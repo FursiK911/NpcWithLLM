@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using Godot;
 
 public partial class Main : Node2D
@@ -7,6 +9,8 @@ public partial class Main : Node2D
     private Button _sendButton = null!;
     private RichTextLabel _responseText = null!;
     private Label _statusLabel = null!;
+    private TextureRect _background = null!;
+    private TextureRect _mechanicPortrait = null!;
     private Control _introOverlay = null!;
     private Label _introNarrativeLabel = null!;
     private Button _introOkButton = null!;
@@ -15,8 +19,12 @@ public partial class Main : Node2D
     private bool _introDismissed;
     private bool _preparationComplete;
     private bool _requestInFlight;
-    private bool _hasPartialText;
-    private readonly System.Diagnostics.Stopwatch _responseTimer = new();
+    private Texture2D _idlePortrait = null!;
+    private Texture2D _thinkingPortrait = null!;
+    private Texture2D _portraitBeforeRequest = null!;
+    private Texture2D[] _speakingPortraits = null!;
+    private Dictionary<string, Texture2D> _emotionPortraits = null!;
+    private readonly RandomNumberGenerator _random = new();
 
     public override void _Ready()
     {
@@ -25,10 +33,37 @@ public partial class Main : Node2D
         _sendButton = GetNode<Button>("UiLayer/DialoguePanel/Margin/VBox/Input/SendButton");
         _responseText = GetNode<RichTextLabel>("UiLayer/DialoguePanel/Margin/VBox/ResponseScroll/ResponseText");
         _statusLabel = GetNode<Label>("UiLayer/DialoguePanel/Margin/VBox/StatusLabel");
+        _background = GetNode<TextureRect>("UiLayer/Background");
+        _mechanicPortrait = GetNode<TextureRect>("UiLayer/MechanicPortrait");
         _introOverlay = GetNode<Control>("UiLayer/IntroOverlay");
         _introNarrativeLabel = GetNode<Label>("UiLayer/IntroOverlay/CenterContainer/IntroPanel/Margin/VBox/IntroNarrative");
         _introOkButton = GetNode<Button>("UiLayer/IntroOverlay/CenterContainer/IntroPanel/Margin/VBox/OkRow/IntroOkButton");
         _introOverlay.Visible = true;
+
+        _background.Texture = LoadTexture("res://Art/Background/background.png");
+        _idlePortrait = LoadTexture("res://Art/Mechanic/idle.png");
+        _thinkingPortrait = LoadTexture("res://Art/Mechanic/thinking.png");
+        Texture2D angryPortrait = LoadTexture("res://Art/Mechanic/angry.png");
+        Texture2D happyPortrait = LoadTexture("res://Art/Mechanic/happy.png");
+        Texture2D sadPortrait = LoadTexture("res://Art/Mechanic/sad.png");
+        _speakingPortraits = new[]
+        {
+            LoadTexture("res://Art/Mechanic/speak_1.png"),
+            LoadTexture("res://Art/Mechanic/speak_2.png"),
+            LoadTexture("res://Art/Mechanic/speak_3.png"),
+            LoadTexture("res://Art/Mechanic/speak_4.png"),
+            LoadTexture("res://Art/Mechanic/speak_5.png"),
+        };
+        _emotionPortraits = new Dictionary<string, Texture2D>(StringComparer.OrdinalIgnoreCase)
+        {
+            ["angry"] = angryPortrait,
+            ["happy"] = happyPortrait,
+            ["sad"] = sadPortrait,
+            ["thinking"] = _thinkingPortrait,
+        };
+        _mechanicPortrait.Texture = _idlePortrait;
+        _responseText.Text = string.Empty;
+        _random.Randomize();
 
         _messageInputFocusMode = _messageInput.FocusMode;
         _sendButtonFocusMode = _sendButton.FocusMode;
@@ -43,16 +78,13 @@ public partial class Main : Node2D
         _introOkButton.Pressed += OnIntroOkPressed;
         _messageInput.GuiInput += OnMessageInputGuiInput;
         _chatResponder.ResponseStarted += OnResponseStarted;
-        _chatResponder.ResponseChunkReceived += OnResponseChunkReceived;
+        _chatResponder.ResponseEmotionReceived += OnResponseEmotionReceived;
         _chatResponder.PreparationStarted += OnPreparationStarted;
         _chatResponder.PreparationFinished += OnPreparationFinished;
         _chatResponder.ResponseReceived += OnResponseReceived;
         _chatResponder.ResponseFailed += OnResponseFailed;
-        GetViewport().SizeChanged += QueueRedraw;
-
         _statusLabel.Text = "Готов к диалогу.";
         UpdateInteractionEnabled();
-        QueueRedraw();
         _chatResponder.Prepare();
     }
 
@@ -62,28 +94,11 @@ public partial class Main : Node2D
         _introOkButton.Pressed -= OnIntroOkPressed;
         _messageInput.GuiInput -= OnMessageInputGuiInput;
         _chatResponder.ResponseStarted -= OnResponseStarted;
-        _chatResponder.ResponseChunkReceived -= OnResponseChunkReceived;
+        _chatResponder.ResponseEmotionReceived -= OnResponseEmotionReceived;
         _chatResponder.PreparationStarted -= OnPreparationStarted;
         _chatResponder.PreparationFinished -= OnPreparationFinished;
         _chatResponder.ResponseReceived -= OnResponseReceived;
         _chatResponder.ResponseFailed -= OnResponseFailed;
-        GetViewport().SizeChanged -= QueueRedraw;
-    }
-
-    public override void _Draw()
-    {
-        Vector2 size = GetViewportRect().Size;
-        DrawRect(new Rect2(Vector2.Zero, size), new Color("101827"));
-        DrawRect(new Rect2(0, size.Y * 0.78f, size.X, size.Y * 0.22f), new Color("18263a"));
-
-        float npcX = size.X * 0.29f;
-        float npcY = size.Y * 0.48f;
-        DrawCircle(new Vector2(npcX, npcY - 86), 44, new Color("e5b08b"));
-        DrawCircle(new Vector2(npcX, npcY - 95), 45, new Color("4c342d"));
-        DrawRect(new Rect2(npcX - 58, npcY - 40, 116, 150), new Color("3f7094"));
-        DrawRect(new Rect2(npcX - 74, npcY + 100, 148, 18), new Color("26394c"));
-        DrawLine(new Vector2(npcX - 24, npcY - 82), new Vector2(npcX - 14, npcY - 82), new Color("202b36"), 4);
-        DrawLine(new Vector2(npcX + 14, npcY - 82), new Vector2(npcX + 24, npcY - 82), new Color("202b36"), 4);
     }
 
     private void OnSendButtonPressed() => SubmitMessage();
@@ -141,8 +156,8 @@ public partial class Main : Node2D
 
     private void OnResponseStarted()
     {
-        _responseTimer.Restart();
-        _hasPartialText = false;
+        _portraitBeforeRequest = _mechanicPortrait.Texture;
+        _mechanicPortrait.Texture = _thinkingPortrait;
         _statusLabel.Text = "Механик думает…";
         UpdateInteractionEnabled();
     }
@@ -166,17 +181,9 @@ public partial class Main : Node2D
         }
     }
 
-    private void OnResponseChunkReceived(string text)
+    private void OnResponseEmotionReceived(string emotion)
     {
-        if (!_hasPartialText)
-        {
-            if (string.IsNullOrWhiteSpace(text)) return;
-            _responseText.Text = string.Empty;
-            _hasPartialText = true;
-            GD.Print($"Dialogue first visible text: {_responseTimer.ElapsedMilliseconds} ms.");
-        }
-        _responseText.Text += text;
-        _statusLabel.Text = "Механик отвечает…";
+        _mechanicPortrait.Texture = GetPortraitForEmotion(emotion);
     }
 
     private void OnResponseReceived(string response)
@@ -184,15 +191,33 @@ public partial class Main : Node2D
         _responseText.Text = response;
         _messageInput.Text = string.Empty;
         _statusLabel.Text = "Готово.";
+        _portraitBeforeRequest = null;
         FinishRequest();
     }
 
     private void OnResponseFailed(string error)
     {
-        _statusLabel.Text = _hasPartialText
-            ? $"Ответ не завершён: {error}"
-            : $"Не удалось получить ответ: {error}";
+        _mechanicPortrait.Texture = _portraitBeforeRequest ?? _idlePortrait;
+        _portraitBeforeRequest = null;
+        _statusLabel.Text = $"Не удалось получить ответ: {error}";
         FinishRequest();
+    }
+
+    private Texture2D GetPortraitForEmotion(string emotion)
+    {
+        string normalized = emotion?.Trim() ?? string.Empty;
+        if (_emotionPortraits.TryGetValue(normalized, out Texture2D portrait))
+        {
+            return portrait;
+        }
+
+        return _speakingPortraits[_random.RandiRange(0, _speakingPortraits.Length - 1)];
+    }
+
+    private static Texture2D LoadTexture(string path)
+    {
+        return GD.Load<Texture2D>(path) ?? throw new InvalidOperationException(
+            $"Не удалось загрузить изображение персонажа: {path}");
     }
 
     private void FinishRequest()
