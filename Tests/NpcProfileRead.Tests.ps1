@@ -9,7 +9,7 @@ Describe 'Npc profile reader' {
         $profile.Name | Should Be 'Иван'
         $profile.Role | Should Match 'механик'
         $profile.Knowledge | Should Match 'не знает'
-        ($profile.Situation -split "`n").Count | Should Be 2
+        ($profile.Situation -split "`n`n").Count | Should Be 2
     }
 
     It 'refuses a profile that lost a field name' {
