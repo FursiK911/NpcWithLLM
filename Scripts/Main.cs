@@ -8,8 +8,7 @@ public partial class Main : Node2D
     private RichTextLabel _responseText = null!;
     private Label _statusLabel = null!;
     private Control _introOverlay = null!;
-    private Label _introCharacterLabel = null!;
-    private Label _introSituationLabel = null!;
+    private Label _introNarrativeLabel = null!;
     private Button _introOkButton = null!;
     private Control.FocusModeEnum _messageInputFocusMode;
     private Control.FocusModeEnum _sendButtonFocusMode;
@@ -27,8 +26,7 @@ public partial class Main : Node2D
         _responseText = GetNode<RichTextLabel>("UiLayer/DialoguePanel/Margin/VBox/ResponseScroll/ResponseText");
         _statusLabel = GetNode<Label>("UiLayer/DialoguePanel/Margin/VBox/StatusLabel");
         _introOverlay = GetNode<Control>("UiLayer/IntroOverlay");
-        _introCharacterLabel = GetNode<Label>("UiLayer/IntroOverlay/CenterContainer/IntroPanel/Margin/VBox/IntroCharacter");
-        _introSituationLabel = GetNode<Label>("UiLayer/IntroOverlay/CenterContainer/IntroPanel/Margin/VBox/IntroSituation");
+        _introNarrativeLabel = GetNode<Label>("UiLayer/IntroOverlay/CenterContainer/IntroPanel/Margin/VBox/IntroNarrative");
         _introOkButton = GetNode<Button>("UiLayer/IntroOverlay/CenterContainer/IntroPanel/Margin/VBox/OkRow/IntroOkButton");
         _introOverlay.Visible = true;
 
@@ -39,8 +37,7 @@ public partial class Main : Node2D
 
         NpcProfile profile = _chatResponder.ActiveProfile ?? throw new System.InvalidOperationException(
             "Для вступления не назначен профиль персонажа.");
-        _introCharacterLabel.Text = $"{profile.Name} — {profile.Role}";
-        _introSituationLabel.Text = profile.Situation;
+        _introNarrativeLabel.Text = profile.PlayerIntroduction;
 
         _sendButton.Pressed += OnSendButtonPressed;
         _introOkButton.Pressed += OnIntroOkPressed;
@@ -138,7 +135,7 @@ public partial class Main : Node2D
 
         _requestInFlight = true;
         UpdateInteractionEnabled();
-        _statusLabel.Text = "Иван думает…";
+        _statusLabel.Text = "Механик думает…";
         _chatResponder.RequestResponse(message);
     }
 
@@ -146,7 +143,7 @@ public partial class Main : Node2D
     {
         _responseTimer.Restart();
         _hasPartialText = false;
-        _statusLabel.Text = "Иван думает…";
+        _statusLabel.Text = "Механик думает…";
         UpdateInteractionEnabled();
     }
 
@@ -179,7 +176,7 @@ public partial class Main : Node2D
             GD.Print($"Dialogue first visible text: {_responseTimer.ElapsedMilliseconds} ms.");
         }
         _responseText.Text += text;
-        _statusLabel.Text = "Иван отвечает…";
+        _statusLabel.Text = "Механик отвечает…";
     }
 
     private void OnResponseReceived(string response)

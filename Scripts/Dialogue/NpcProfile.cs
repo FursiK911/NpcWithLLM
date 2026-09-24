@@ -9,6 +9,9 @@ public partial class NpcProfile : Resource
     [Export]
     public string Role { get; set; } = "";
 
+    [Export(PropertyHint.MultilineText)]
+    public string PlayerIntroduction { get; set; } = "";
+
     [Export]
     public string Character { get; set; } = "";
 

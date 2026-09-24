@@ -7,7 +7,7 @@ function Read-NpcProfile {
     )
 
     $required = @(
-        'Name', 'Role', 'Character', 'SpeechStyle',
+        'Name', 'Role', 'PlayerIntroduction', 'Character', 'SpeechStyle',
         'PlayerAttitude', 'Knowledge', 'BehaviorConstraints', 'Situation'
     )
     $values = @{}
@@ -26,6 +26,7 @@ function Read-NpcProfile {
     [pscustomobject]@{
         Name               = $values['Name']
         Role               = $values['Role']
+        PlayerIntroduction = $values['PlayerIntroduction']
         Character          = $values['Character']
         SpeechStyle        = $values['SpeechStyle']
         PlayerAttitude     = $values['PlayerAttitude']

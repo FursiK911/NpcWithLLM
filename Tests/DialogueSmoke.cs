@@ -105,19 +105,35 @@ public partial class DialogueSmoke : Node
         AddChild(scene);
 
         var overlay = scene.GetNode<Control>("UiLayer/IntroOverlay");
-        var character = scene.GetNode<Label>("UiLayer/IntroOverlay/CenterContainer/IntroPanel/Margin/VBox/IntroCharacter");
-        var situation = scene.GetNode<Label>("UiLayer/IntroOverlay/CenterContainer/IntroPanel/Margin/VBox/IntroSituation");
+        var introTitle = scene.GetNode<Label>("UiLayer/IntroOverlay/CenterContainer/IntroPanel/Margin/VBox/IntroTitle");
+        var introduction = scene.GetNode<Label>("UiLayer/IntroOverlay/CenterContainer/IntroPanel/Margin/VBox/IntroNarrative");
+        var sceneCaption = scene.GetNode<Label>("UiLayer/SceneCaption");
+        var dialogueTitle = scene.GetNode<Label>("UiLayer/DialoguePanel/Margin/VBox/Title");
+        var initialResponse = scene.GetNode<RichTextLabel>("UiLayer/DialoguePanel/Margin/VBox/ResponseScroll/ResponseText");
         var okButton = scene.GetNode<Button>("UiLayer/IntroOverlay/CenterContainer/IntroPanel/Margin/VBox/OkRow/IntroOkButton");
         var input = scene.GetNode<TextEdit>("UiLayer/DialoguePanel/Margin/VBox/Input/MessageInput");
         var sendButton = scene.GetNode<Button>("UiLayer/DialoguePanel/Margin/VBox/Input/SendButton");
 
         Check(overlay.Visible, "Intro modal was not visible when the game started");
-        Check(character.Text == $"{profile.Name} — {profile.Role}", "Intro did not use the active NPC name and role");
-        Check(situation.Text == profile.Situation
-            && situation.Text.StartsWith("Вы переступаете порог мастерской Ивана.")
-            && situation.Text.Contains("серый фургон")
-            && situation.Text.Contains("только догадка"),
-            "Intro did not show a narrative of the shared scene facts and attributed assumption");
+        Check(introTitle.Text == "В мастерской", "Intro title revealed details beyond the setting");
+        Check(!sceneCaption.Text.Contains(profile.Name)
+            && !dialogueTitle.Text.Contains(profile.Name)
+            && !initialResponse.Text.Contains(profile.Name),
+            "The initial game UI revealed the unknown mechanic's name");
+        Check(introduction.Text == profile.PlayerIntroduction,
+            "Intro did not use the separate player-facing profile text");
+        Check(introduction.Text.Contains("мастерской")
+            && introduction.Text.Contains("механик")
+            && introduction.Text.Contains("серым фургоном"),
+            "Intro did not describe the workshop, mechanic, and van");
+        Check(!introduction.Text.Contains(profile.Name)
+            && !introduction.Text.Contains("догадка")
+            && !introduction.Text.Contains("цене"),
+            "Intro exposed the NPC name or hidden scene context");
+        Check(profile.PlayerIntroduction != profile.Situation
+            && profile.Situation.Contains("Иван")
+            && profile.Situation.Contains("о деньгах не говорит"),
+            "NPC situation context was not kept separate from the player introduction");
         Check(!input.Editable && sendButton.Disabled, "Dialogue was available behind the intro modal");
 
         var outsideClick = new InputEventMouseButton
@@ -178,8 +194,9 @@ public partial class DialogueSmoke : Node
         input.Text = "Меня зовут Дмитрий.";
         button.EmitSignal(Button.SignalName.Pressed);
         Check(runtime.LastContext != null
-            && runtime.LastContext[0].Content.Contains(profile.Situation),
-            "The NPC request did not receive the same situation shown in the intro");
+            && runtime.LastContext[0].Content.Contains(profile.Situation)
+            && !runtime.LastContext[0].Content.Contains(profile.PlayerIntroduction),
+            "The NPC request did not keep its richer situation context separate from the intro");
         runtime.OnText("Слышу.");
         Check(output.Text == "Слышу.", "UI has not displayed partial response");
         Check(button.Disabled && responder.History.MessageCount == 0, "Incomplete dialogue was committed");

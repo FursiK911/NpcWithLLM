@@ -3,13 +3,15 @@ Describe 'Npc profile reader' {
         . (Join-Path $PSScriptRoot 'Read-NpcProfile.ps1')
     }
 
-    It 'reads the persona fields and the situation from the game profile' {
+    It 'reads the player introduction and NPC context from the game profile' {
         $profile = Read-NpcProfile
 
         $profile.Name | Should Be 'Иван'
         $profile.Role | Should Match 'механик'
         $profile.Knowledge | Should Match 'не знает'
-        ($profile.Situation -split "`n`n").Count | Should Be 2
+        $profile.PlayerIntroduction | Should Match 'Вы переступаете порог мастерской'
+        $profile.PlayerIntroduction | Should Not Match 'Иван|цена|догадка'
+        $profile.Situation | Should Match 'о деньгах не говорит'
     }
 
     It 'refuses a profile that lost a field name' {
