@@ -9,7 +9,7 @@ Describe 'Npc profile reader' {
         $profile.Name | Should Be 'Иван'
         $profile.Role | Should Match 'механик'
         $profile.Knowledge | Should Match 'не знает'
-        $profile.PlayerIntroduction | Should Match 'Вы переступаете порог мастерской'
+        $profile.PlayerIntroduction | Should Match 'взгляд сразу цепляется за серый фургон'
         $profile.PlayerIntroduction | Should Not Match 'Иван|цена|догадка'
         $profile.Situation | Should Match 'о деньгах не говорит'
     }
