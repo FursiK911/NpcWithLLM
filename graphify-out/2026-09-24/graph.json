@@ -11,19 +11,19 @@
       "_origin": "ast",
       "id": "scratch_npc_local_llm_demo_issues_11_startup_situation_intro_modal",
       "community": 74,
-      "community_name": "11: \u0412\u0441\u0442\u0443\u043f\u0438\u0442\u0435\u043b\u044c\u043d\u0430\u044f \u043c\u043e\u0434\u0430\u043b\u043a\u0430 \u043e \u0441\u0438\u0442\u0443\u0430\u0446\u0438\u0438 NPC",
+      "community_name": "11: \u0412\u0441\u0442\u0443\u043f\u0438\u0442\u0435\u043b\u044c\u043d\u0430\u044f \u043c\u043e\u0434\u0430\u043b\u043a\u0430 \u0434\u043b\u044f \u0438\u0433\u0440\u043e\u043a\u0430",
       "norm_label": "11-startup-situation-intro-modal.md"
     },
     {
-      "label": "11: \u0412\u0441\u0442\u0443\u043f\u0438\u0442\u0435\u043b\u044c\u043d\u0430\u044f \u043c\u043e\u0434\u0430\u043b\u043a\u0430 \u043e \u0441\u0438\u0442\u0443\u0430\u0446\u0438\u0438 NPC",
+      "label": "11: \u0412\u0441\u0442\u0443\u043f\u0438\u0442\u0435\u043b\u044c\u043d\u0430\u044f \u043c\u043e\u0434\u0430\u043b\u043a\u0430 \u0434\u043b\u044f \u0438\u0433\u0440\u043e\u043a\u0430",
       "file_type": "document",
       "source_file": ".scratch/npc-local-llm-demo/issues/11-startup-situation-intro-modal.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "scratch_npc_local_llm_demo_issues_11_startup_situation_intro_modal_11_\u0432\u0441\u0442\u0443\u043f\u0438\u0442\u0435\u043b\u044c\u043d\u0430\u044f_\u043c\u043e\u0434\u0430\u043b\u043a\u0430_\u043e_\u0441\u0438\u0442\u0443\u0430\u0446\u0438\u0438_npc",
+      "id": "scratch_npc_local_llm_demo_issues_11_startup_situation_intro_modal_11_\u0432\u0441\u0442\u0443\u043f\u0438\u0442\u0435\u043b\u044c\u043d\u0430\u044f_\u043c\u043e\u0434\u0430\u043b\u043a\u0430_\u0434\u043b\u044f_\u0438\u0433\u0440\u043e\u043a\u0430",
       "community": 74,
-      "community_name": "11: \u0412\u0441\u0442\u0443\u043f\u0438\u0442\u0435\u043b\u044c\u043d\u0430\u044f \u043c\u043e\u0434\u0430\u043b\u043a\u0430 \u043e \u0441\u0438\u0442\u0443\u0430\u0446\u0438\u0438 NPC",
-      "norm_label": "11: \u0432\u0441\u0442\u0443\u043f\u0438\u0442\u0435\u043b\u044c\u043d\u0430\u044f \u043c\u043e\u0434\u0430\u043b\u043a\u0430 \u043e \u0441\u0438\u0442\u0443\u0430\u0446\u0438\u0438 npc"
+      "community_name": "11: \u0412\u0441\u0442\u0443\u043f\u0438\u0442\u0435\u043b\u044c\u043d\u0430\u044f \u043c\u043e\u0434\u0430\u043b\u043a\u0430 \u0434\u043b\u044f \u0438\u0433\u0440\u043e\u043a\u0430",
+      "norm_label": "11: \u0432\u0441\u0442\u0443\u043f\u0438\u0442\u0435\u043b\u044c\u043d\u0430\u044f \u043c\u043e\u0434\u0430\u043b\u043a\u0430 \u0434\u043b\u044f \u0438\u0433\u0440\u043e\u043a\u0430"
     },
     {
       "label": "\u0422\u0440\u0435\u0431\u043e\u0432\u0430\u043d\u0438\u044f",
@@ -33,7 +33,7 @@
       "_origin": "ast",
       "id": "scratch_npc_local_llm_demo_issues_11_startup_situation_intro_modal_\u0442\u0440\u0435\u0431\u043e\u0432\u0430\u043d\u0438\u044f",
       "community": 74,
-      "community_name": "11: \u0412\u0441\u0442\u0443\u043f\u0438\u0442\u0435\u043b\u044c\u043d\u0430\u044f \u043c\u043e\u0434\u0430\u043b\u043a\u0430 \u043e \u0441\u0438\u0442\u0443\u0430\u0446\u0438\u0438 NPC",
+      "community_name": "11: \u0412\u0441\u0442\u0443\u043f\u0438\u0442\u0435\u043b\u044c\u043d\u0430\u044f \u043c\u043e\u0434\u0430\u043b\u043a\u0430 \u0434\u043b\u044f \u0438\u0433\u0440\u043e\u043a\u0430",
       "norm_label": "\u0442\u0440\u0435\u0431\u043e\u0432\u0430\u043d\u0438\u044f"
     },
     {
@@ -44,7 +44,7 @@
       "_origin": "ast",
       "id": "scratch_npc_local_llm_demo_issues_11_startup_situation_intro_modal_\u043a\u043e\u043d\u0442\u0435\u043a\u0441\u0442",
       "community": 74,
-      "community_name": "11: \u0412\u0441\u0442\u0443\u043f\u0438\u0442\u0435\u043b\u044c\u043d\u0430\u044f \u043c\u043e\u0434\u0430\u043b\u043a\u0430 \u043e \u0441\u0438\u0442\u0443\u0430\u0446\u0438\u0438 NPC",
+      "community_name": "11: \u0412\u0441\u0442\u0443\u043f\u0438\u0442\u0435\u043b\u044c\u043d\u0430\u044f \u043c\u043e\u0434\u0430\u043b\u043a\u0430 \u0434\u043b\u044f \u0438\u0433\u0440\u043e\u043a\u0430",
       "norm_label": "\u043a\u043e\u043d\u0442\u0435\u043a\u0441\u0442"
     },
     {
@@ -55,7 +55,7 @@
       "_origin": "ast",
       "id": "scratch_npc_local_llm_demo_issues_11_startup_situation_intro_modal_comments",
       "community": 74,
-      "community_name": "11: \u0412\u0441\u0442\u0443\u043f\u0438\u0442\u0435\u043b\u044c\u043d\u0430\u044f \u043c\u043e\u0434\u0430\u043b\u043a\u0430 \u043e \u0441\u0438\u0442\u0443\u0430\u0446\u0438\u0438 NPC",
+      "community_name": "11: \u0412\u0441\u0442\u0443\u043f\u0438\u0442\u0435\u043b\u044c\u043d\u0430\u044f \u043c\u043e\u0434\u0430\u043b\u043a\u0430 \u0434\u043b\u044f \u0438\u0433\u0440\u043e\u043a\u0430",
       "norm_label": "comments"
     },
     {
@@ -169,928 +169,6 @@
       "norm_label": "\u0443\u0441\u043b\u043e\u0432\u0438\u0435 \u0441\u043c\u0435\u043d\u044b \u043c\u043e\u0434\u0435\u043b\u0438 \u0438 \u0436\u0438\u0432\u0430\u044f \u043e\u0446\u0435\u043d\u043a\u0430 (2026-09-23)"
     },
     {
-      "label": "CONTEXT.md",
-      "file_type": "document",
-      "source_file": "CONTEXT.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "context",
-      "community": 13,
-      "community_name": "\u0414\u0438\u0430\u043b\u043e\u0433 \u0441 NPC",
-      "norm_label": "context.md"
-    },
-    {
-      "label": "\u0414\u0438\u0430\u043b\u043e\u0433 \u0441 NPC",
-      "file_type": "document",
-      "source_file": "CONTEXT.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "context_\u0434\u0438\u0430\u043b\u043e\u0433_\u0441_npc",
-      "community": 13,
-      "community_name": "\u0414\u0438\u0430\u043b\u043e\u0433 \u0441 NPC",
-      "norm_label": "\u0434\u0438\u0430\u043b\u043e\u0433 \u0441 npc"
-    },
-    {
-      "label": "\u0414\u0438\u0430\u043b\u043e\u0433",
-      "file_type": "document",
-      "source_file": "CONTEXT.md",
-      "source_location": "L5",
-      "_origin": "ast",
-      "id": "context_\u0434\u0438\u0430\u043b\u043e\u0433",
-      "community": 13,
-      "community_name": "\u0414\u0438\u0430\u043b\u043e\u0433 \u0441 NPC",
-      "norm_label": "\u0434\u0438\u0430\u043b\u043e\u0433"
-    },
-    {
-      "label": "\u041b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f \u0433\u0435\u043d\u0435\u0440\u0430\u0446\u0438\u044f",
-      "file_type": "document",
-      "source_file": "CONTEXT.md",
-      "source_location": "L68",
-      "_origin": "ast",
-      "id": "context_\u043b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f_\u0433\u0435\u043d\u0435\u0440\u0430\u0446\u0438\u044f",
-      "community": 13,
-      "community_name": "\u0414\u0438\u0430\u043b\u043e\u0433 \u0441 NPC",
-      "norm_label": "\u043b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f \u0433\u0435\u043d\u0435\u0440\u0430\u0446\u0438\u044f"
-    },
-    {
-      "label": "README.md",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "readme",
-      "community": 18,
-      "community_name": "\u041b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f \u043e\u0446\u0435\u043d\u043a\u0430 `Bonsai 2 27B PTQ1_0`",
-      "norm_label": "readme.md"
-    },
-    {
-      "label": "NpcWithLLM",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "readme_npcwithllm",
-      "community": 18,
-      "community_name": "\u041b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f \u043e\u0446\u0435\u043d\u043a\u0430 `Bonsai 2 27B PTQ1_0`",
-      "norm_label": "npcwithllm"
-    },
-    {
-      "label": "\u0422\u0435\u043a\u0443\u0449\u0438\u0439 \u0441\u0442\u0430\u0442\u0443\u0441",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L5",
-      "_origin": "ast",
-      "id": "readme_\u0442\u0435\u043a\u0443\u0449\u0438\u0439_\u0441\u0442\u0430\u0442\u0443\u0441",
-      "community": 18,
-      "community_name": "\u041b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f \u043e\u0446\u0435\u043d\u043a\u0430 `Bonsai 2 27B PTQ1_0`",
-      "norm_label": "\u0442\u0435\u043a\u0443\u0449\u0438\u0438 \u0441\u0442\u0430\u0442\u0443\u0441"
-    },
-    {
-      "label": "\u0420\u0443\u0447\u043d\u043e\u0439 \u0437\u0430\u043f\u0443\u0441\u043a Bonsai \u0447\u0435\u0440\u0435\u0437 PrismML",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L39",
-      "_origin": "ast",
-      "id": "readme_\u0440\u0443\u0447\u043d\u043e\u0439_\u0437\u0430\u043f\u0443\u0441\u043a_bonsai_\u0447\u0435\u0440\u0435\u0437_prismml",
-      "community": 18,
-      "community_name": "\u041b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f \u043e\u0446\u0435\u043d\u043a\u0430 `Bonsai 2 27B PTQ1_0`",
-      "norm_label": "\u0440\u0443\u0447\u043d\u043e\u0438 \u0437\u0430\u043f\u0443\u0441\u043a bonsai \u0447\u0435\u0440\u0435\u0437 prismml"
-    },
-    {
-      "label": "\u0422\u0435\u0441\u0442\u044b \u0438 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u043a\u0430\u0447\u0435\u0441\u0442\u0432\u0430",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L84",
-      "_origin": "ast",
-      "id": "readme_\u0442\u0435\u0441\u0442\u044b_\u0438_\u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430_\u043a\u0430\u0447\u0435\u0441\u0442\u0432\u0430",
-      "community": 18,
-      "community_name": "\u041b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f \u043e\u0446\u0435\u043d\u043a\u0430 `Bonsai 2 27B PTQ1_0`",
-      "norm_label": "\u0442\u0435\u0441\u0442\u044b \u0438 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u043a\u0430\u0447\u0435\u0441\u0442\u0432\u0430"
-    },
-    {
-      "label": "\u041d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435 \u043f\u0440\u043e\u0435\u043a\u0442\u0430",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L132",
-      "_origin": "ast",
-      "id": "readme_\u043d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435_\u043f\u0440\u043e\u0435\u043a\u0442\u0430",
-      "community": 18,
-      "community_name": "\u041b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f \u043e\u0446\u0435\u043d\u043a\u0430 `Bonsai 2 27B PTQ1_0`",
-      "norm_label": "\u043d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435 \u043f\u0440\u043e\u0435\u043a\u0442\u0430"
-    },
-    {
-      "label": "Godot MCP \u0434\u043b\u044f Codex",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L138",
-      "_origin": "ast",
-      "id": "readme_godot_mcp_\u0434\u043b\u044f_codex",
-      "community": 18,
-      "community_name": "\u041b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f \u043e\u0446\u0435\u043d\u043a\u0430 `Bonsai 2 27B PTQ1_0`",
-      "norm_label": "godot mcp \u0434\u043b\u044f codex"
-    },
-    {
-      "label": "NpcProfile.cs",
-      "file_type": "code",
-      "source_file": "Scripts/Dialogue/NpcProfile.cs",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "scripts_dialogue_npcprofile",
-      "community": 44,
-      "community_name": "LocalLlmConfig",
-      "norm_label": "npcprofile.cs"
-    },
-    {
-      "label": "NpcProfile",
-      "file_type": "code",
-      "source_file": "Scripts/Dialogue/NpcProfile.cs",
-      "source_location": "L3",
-      "_origin": "ast",
-      "id": "scripts_dialogue_npcprofile_npcprofile",
-      "community": 44,
-      "community_name": "LocalLlmConfig",
-      "norm_label": "npcprofile"
-    },
-    {
-      "label": "Resource",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "resource",
-      "community": 44,
-      "community_name": "LocalLlmConfig",
-      "norm_label": "resource"
-    },
-    {
-      "label": ".ToPersona()",
-      "file_type": "code",
-      "source_file": "Scripts/Dialogue/NpcProfile.cs",
-      "source_location": "L33",
-      "_origin": "ast",
-      "id": "scripts_dialogue_npcprofile_npcprofile_topersona",
-      "community": 44,
-      "community_name": "LocalLlmConfig",
-      "norm_label": ".topersona()"
-    },
-    {
-      "label": "NpcPersona",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "npcpersona",
-      "community": 44,
-      "community_name": "LocalLlmConfig",
-      "norm_label": "npcpersona"
-    },
-    {
-      "label": "Main.cs",
-      "file_type": "code",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "scripts_main",
-      "community": 0,
-      "community_name": "Main",
-      "norm_label": "main.cs"
-    },
-    {
-      "label": "Main",
-      "file_type": "code",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L3",
-      "_origin": "ast",
-      "id": "scripts_main_main",
-      "community": 0,
-      "community_name": "Main",
-      "norm_label": "main"
-    },
-    {
-      "label": "Node2D",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "node2d",
-      "community": 0,
-      "community_name": "Main",
-      "norm_label": "node2d"
-    },
-    {
-      "label": "ChatResponder",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "chatresponder",
-      "community": 0,
-      "community_name": "Main",
-      "norm_label": "chatresponder"
-    },
-    {
-      "label": "TextEdit",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "textedit",
-      "community": 0,
-      "community_name": "Main",
-      "norm_label": "textedit"
-    },
-    {
-      "label": "Button",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "button",
-      "community": 0,
-      "community_name": "Main",
-      "norm_label": "button"
-    },
-    {
-      "label": "RichTextLabel",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "richtextlabel",
-      "community": 0,
-      "community_name": "Main",
-      "norm_label": "richtextlabel"
-    },
-    {
-      "label": "Label",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "label",
-      "community": 0,
-      "community_name": "Main",
-      "norm_label": "label"
-    },
-    {
-      "label": "Control",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "control",
-      "community": 0,
-      "community_name": "Main",
-      "norm_label": "control"
-    },
-    {
-      "label": "FocusModeEnum",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "focusmodeenum",
-      "community": 0,
-      "community_name": "Main",
-      "norm_label": "focusmodeenum"
-    },
-    {
-      "label": "bool",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "bool",
-      "community": 0,
-      "community_name": "Main",
-      "norm_label": "bool"
-    },
-    {
-      "label": "Stopwatch",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "stopwatch",
-      "community": 0,
-      "community_name": "Main",
-      "norm_label": "stopwatch"
-    },
-    {
-      "label": "._Ready()",
-      "file_type": "code",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L21",
-      "_origin": "ast",
-      "id": "scripts_main_main_ready",
-      "community": 0,
-      "community_name": "Main",
-      "norm_label": "._ready()"
-    },
-    {
-      "label": "._ExitTree()",
-      "file_type": "code",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L59",
-      "_origin": "ast",
-      "id": "scripts_main_main_exittree",
-      "community": 0,
-      "community_name": "Main",
-      "norm_label": "._exittree()"
-    },
-    {
-      "label": "._Draw()",
-      "file_type": "code",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L73",
-      "_origin": "ast",
-      "id": "scripts_main_main_draw",
-      "community": 0,
-      "community_name": "Main",
-      "norm_label": "._draw()"
-    },
-    {
-      "label": ".OnSendButtonPressed()",
-      "file_type": "code",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L89",
-      "_origin": "ast",
-      "id": "scripts_main_main_onsendbuttonpressed",
-      "community": 0,
-      "community_name": "Main",
-      "norm_label": ".onsendbuttonpressed()"
-    },
-    {
-      "label": ".OnIntroOkPressed()",
-      "file_type": "code",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L91",
-      "_origin": "ast",
-      "id": "scripts_main_main_onintrookpressed",
-      "community": 0,
-      "community_name": "Main",
-      "norm_label": ".onintrookpressed()"
-    },
-    {
-      "label": ".OnMessageInputGuiInput()",
-      "file_type": "code",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L105",
-      "_origin": "ast",
-      "id": "scripts_main_main_onmessageinputguiinput",
-      "community": 0,
-      "community_name": "Main",
-      "norm_label": ".onmessageinputguiinput()"
-    },
-    {
-      "label": "InputEvent",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "inputevent",
-      "community": 0,
-      "community_name": "Main",
-      "norm_label": "inputevent"
-    },
-    {
-      "label": ".SubmitMessage()",
-      "file_type": "code",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L122",
-      "_origin": "ast",
-      "id": "scripts_main_main_submitmessage",
-      "community": 0,
-      "community_name": "Main",
-      "norm_label": ".submitmessage()"
-    },
-    {
-      "label": ".OnResponseStarted()",
-      "file_type": "code",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L142",
-      "_origin": "ast",
-      "id": "scripts_main_main_onresponsestarted",
-      "community": 0,
-      "community_name": "Main",
-      "norm_label": ".onresponsestarted()"
-    },
-    {
-      "label": ".OnPreparationStarted()",
-      "file_type": "code",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L150",
-      "_origin": "ast",
-      "id": "scripts_main_main_onpreparationstarted",
-      "community": 0,
-      "community_name": "Main",
-      "norm_label": ".onpreparationstarted()"
-    },
-    {
-      "label": ".OnPreparationFinished()",
-      "file_type": "code",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L157",
-      "_origin": "ast",
-      "id": "scripts_main_main_onpreparationfinished",
-      "community": 0,
-      "community_name": "Main",
-      "norm_label": ".onpreparationfinished()"
-    },
-    {
-      "label": ".OnResponseChunkReceived()",
-      "file_type": "code",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L169",
-      "_origin": "ast",
-      "id": "scripts_main_main_onresponsechunkreceived",
-      "community": 0,
-      "community_name": "Main",
-      "norm_label": ".onresponsechunkreceived()"
-    },
-    {
-      "label": ".OnResponseReceived()",
-      "file_type": "code",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L182",
-      "_origin": "ast",
-      "id": "scripts_main_main_onresponsereceived",
-      "community": 0,
-      "community_name": "Main",
-      "norm_label": ".onresponsereceived()"
-    },
-    {
-      "label": ".OnResponseFailed()",
-      "file_type": "code",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L190",
-      "_origin": "ast",
-      "id": "scripts_main_main_onresponsefailed",
-      "community": 0,
-      "community_name": "Main",
-      "norm_label": ".onresponsefailed()"
-    },
-    {
-      "label": ".FinishRequest()",
-      "file_type": "code",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L198",
-      "_origin": "ast",
-      "id": "scripts_main_main_finishrequest",
-      "community": 0,
-      "community_name": "Main",
-      "norm_label": ".finishrequest()"
-    },
-    {
-      "label": ".UpdateInteractionEnabled()",
-      "file_type": "code",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L211",
-      "_origin": "ast",
-      "id": "scripts_main_main_updateinteractionenabled",
-      "community": 0,
-      "community_name": "Main",
-      "norm_label": ".updateinteractionenabled()"
-    },
-    {
-      "label": "DialogueSmoke.cs",
-      "file_type": "code",
-      "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "tests_dialoguesmoke",
-      "community": 30,
-      "community_name": "DialogueSmoke",
-      "norm_label": "dialoguesmoke.cs"
-    },
-    {
-      "label": "DialogueSmoke",
-      "file_type": "code",
-      "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L11",
-      "_origin": "ast",
-      "id": "tests_dialoguesmoke_dialoguesmoke",
-      "community": 30,
-      "community_name": "DialogueSmoke",
-      "norm_label": "dialoguesmoke"
-    },
-    {
-      "label": "Node",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "node",
-      "community": 46,
-      "community_name": "Node",
-      "norm_label": "node"
-    },
-    {
-      "label": "._Ready()",
-      "file_type": "code",
-      "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L13",
-      "_origin": "ast",
-      "id": "tests_dialoguesmoke_dialoguesmoke_ready",
-      "community": 30,
-      "community_name": "DialogueSmoke",
-      "norm_label": "._ready()"
-    },
-    {
-      "label": ".StreamsBeforeCompletion()",
-      "file_type": "code",
-      "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L41",
-      "_origin": "ast",
-      "id": "tests_dialoguesmoke_dialoguesmoke_streamsbeforecompletion",
-      "community": 30,
-      "community_name": "DialogueSmoke",
-      "norm_label": ".streamsbeforecompletion()"
-    },
-    {
-      "label": "Task",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "task",
-      "community": 30,
-      "community_name": "DialogueSmoke",
-      "norm_label": "task"
-    },
-    {
-      "label": ".Check()",
-      "file_type": "code",
-      "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L61",
-      "_origin": "ast",
-      "id": "tests_dialoguesmoke_dialoguesmoke_check",
-      "community": 30,
-      "community_name": "DialogueSmoke",
-      "norm_label": ".check()"
-    },
-    {
-      "label": ".RejectsBrokenStreams()",
-      "file_type": "code",
-      "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L66",
-      "_origin": "ast",
-      "id": "tests_dialoguesmoke_dialoguesmoke_rejectsbrokenstreams",
-      "community": 30,
-      "community_name": "DialogueSmoke",
-      "norm_label": ".rejectsbrokenstreams()"
-    },
-    {
-      "label": ".IntroModalBlocksDialogueUntilDismissedAndReady()",
-      "file_type": "code",
-      "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L97",
-      "_origin": "ast",
-      "id": "tests_dialoguesmoke_dialoguesmoke_intromodalblocksdialogueuntildismissedandready",
-      "community": 30,
-      "community_name": "DialogueSmoke",
-      "norm_label": ".intromodalblocksdialogueuntildismissedandready()"
-    },
-    {
-      "label": ".UiStreamsAndPreservesFailedInput()",
-      "file_type": "code",
-      "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L174",
-      "_origin": "ast",
-      "id": "tests_dialoguesmoke_dialoguesmoke_uistreamsandpreservesfailedinput",
-      "community": 30,
-      "community_name": "DialogueSmoke",
-      "norm_label": ".uistreamsandpreservesfailedinput()"
-    },
-    {
-      "label": "ControlledRuntime",
-      "file_type": "code",
-      "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L219",
-      "metadata": {
-        "is_nested_type": true
-      },
-      "_origin": "ast",
-      "id": "tests_dialoguesmoke_controlledruntime",
-      "community": 30,
-      "community_name": "DialogueSmoke",
-      "norm_label": "controlledruntime"
-    },
-    {
-      "label": "ILocalLlmRuntime",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "ilocalllmruntime",
-      "community": 30,
-      "community_name": "DialogueSmoke",
-      "norm_label": "ilocalllmruntime"
-    },
-    {
-      "label": "Action",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "action",
-      "community": 30,
-      "community_name": "DialogueSmoke",
-      "norm_label": "action"
-    },
-    {
-      "label": "TaskCompletionSource",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "taskcompletionsource",
-      "community": 30,
-      "community_name": "DialogueSmoke",
-      "norm_label": "taskcompletionsource"
-    },
-    {
-      "label": "IReadOnlyList",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "ireadonlylist",
-      "community": 53,
-      "community_name": "Bonsai2PrismRuntime",
-      "norm_label": "ireadonlylist"
-    },
-    {
-      "label": "DialogueMessage",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "dialoguemessage",
-      "community": 30,
-      "community_name": "DialogueSmoke",
-      "norm_label": "dialoguemessage"
-    },
-    {
-      "label": ".PrepareAsync()",
-      "file_type": "code",
-      "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L228",
-      "_origin": "ast",
-      "id": "tests_dialoguesmoke_controlledruntime_prepareasync",
-      "community": 30,
-      "community_name": "DialogueSmoke",
-      "norm_label": ".prepareasync()"
-    },
-    {
-      "label": "CancellationToken",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "cancellationtoken",
-      "community": 30,
-      "community_name": "DialogueSmoke",
-      "norm_label": "cancellationtoken"
-    },
-    {
-      "label": ".GenerateAsync()",
-      "file_type": "code",
-      "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L231",
-      "_origin": "ast",
-      "id": "tests_dialoguesmoke_controlledruntime_generateasync",
-      "community": 30,
-      "community_name": "DialogueSmoke",
-      "norm_label": ".generateasync()"
-    },
-    {
-      "label": ".StartupBringsRuntimeUp()",
-      "file_type": "code",
-      "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L241",
-      "_origin": "ast",
-      "id": "tests_dialoguesmoke_dialoguesmoke_startupbringsruntimeup",
-      "community": 30,
-      "community_name": "DialogueSmoke",
-      "norm_label": ".startupbringsruntimeup()"
-    },
-    {
-      "label": ".EndpointAlive()",
-      "file_type": "code",
-      "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L258",
-      "_origin": "ast",
-      "id": "tests_dialoguesmoke_dialoguesmoke_endpointalive",
-      "community": 30,
-      "community_name": "DialogueSmoke",
-      "norm_label": ".endpointalive()"
-    },
-    {
-      "label": ".RealSceneDialogue()",
-      "file_type": "code",
-      "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L272",
-      "_origin": "ast",
-      "id": "tests_dialoguesmoke_dialoguesmoke_realscenedialogue",
-      "community": 30,
-      "community_name": "DialogueSmoke",
-      "norm_label": ".realscenedialogue()"
-    },
-    {
-      "label": "ResponseHandler",
-      "file_type": "code",
-      "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L315",
-      "metadata": {
-        "is_nested_type": true
-      },
-      "_origin": "ast",
-      "id": "tests_dialoguesmoke_responsehandler",
-      "community": 54,
-      "community_name": "Bonsai2PrismRuntimeSmoke",
-      "norm_label": "responsehandler"
-    },
-    {
-      "label": "HttpMessageHandler",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "httpmessagehandler",
-      "community": 54,
-      "community_name": "Bonsai2PrismRuntimeSmoke",
-      "norm_label": "httpmessagehandler"
-    },
-    {
-      "label": ".SendAsync()",
-      "file_type": "code",
-      "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L317",
-      "_origin": "ast",
-      "id": "tests_dialoguesmoke_responsehandler_sendasync",
-      "community": 54,
-      "community_name": "Bonsai2PrismRuntimeSmoke",
-      "norm_label": ".sendasync()"
-    },
-    {
-      "label": "HttpRequestMessage",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "httprequestmessage",
-      "community": 54,
-      "community_name": "Bonsai2PrismRuntimeSmoke",
-      "norm_label": "httprequestmessage"
-    },
-    {
-      "label": "HttpResponseMessage",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "httpresponsemessage",
-      "community": 54,
-      "community_name": "Bonsai2PrismRuntimeSmoke",
-      "norm_label": "httpresponsemessage"
-    },
-    {
-      "label": "DelayedStream",
-      "file_type": "code",
-      "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L321",
-      "metadata": {
-        "is_nested_type": true
-      },
-      "_origin": "ast",
-      "id": "tests_dialoguesmoke_delayedstream",
-      "community": 30,
-      "community_name": "DialogueSmoke",
-      "norm_label": "delayedstream"
-    },
-    {
-      "label": "Stream",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "stream",
-      "community": 30,
-      "community_name": "DialogueSmoke",
-      "norm_label": "stream"
-    },
-    {
-      "label": "int",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "int",
-      "community": 30,
-      "community_name": "DialogueSmoke",
-      "norm_label": "int"
-    },
-    {
-      "label": ".ReadAsync()",
-      "file_type": "code",
-      "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L324",
-      "_origin": "ast",
-      "id": "tests_dialoguesmoke_delayedstream_readasync",
-      "community": 30,
-      "community_name": "DialogueSmoke",
-      "norm_label": ".readasync()"
-    },
-    {
-      "label": "Memory",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "memory",
-      "community": 30,
-      "community_name": "DialogueSmoke",
-      "norm_label": "memory"
-    },
-    {
-      "label": "ValueTask",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "valuetask",
-      "community": 30,
-      "community_name": "DialogueSmoke",
-      "norm_label": "valuetask"
-    },
-    {
-      "label": ".Flush()",
-      "file_type": "code",
-      "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L342",
-      "_origin": "ast",
-      "id": "tests_dialoguesmoke_delayedstream_flush",
-      "community": 30,
-      "community_name": "DialogueSmoke",
-      "norm_label": ".flush()"
-    },
-    {
-      "label": ".Read()",
-      "file_type": "code",
-      "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L343",
-      "_origin": "ast",
-      "id": "tests_dialoguesmoke_delayedstream_read",
-      "community": 30,
-      "community_name": "DialogueSmoke",
-      "norm_label": ".read()"
-    },
-    {
-      "label": ".Seek()",
-      "file_type": "code",
-      "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L344",
-      "_origin": "ast",
-      "id": "tests_dialoguesmoke_delayedstream_seek",
-      "community": 30,
-      "community_name": "DialogueSmoke",
-      "norm_label": ".seek()"
-    },
-    {
-      "label": "SeekOrigin",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "seekorigin",
-      "community": 30,
-      "community_name": "DialogueSmoke",
-      "norm_label": "seekorigin"
-    },
-    {
-      "label": ".SetLength()",
-      "file_type": "code",
-      "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L345",
-      "_origin": "ast",
-      "id": "tests_dialoguesmoke_delayedstream_setlength",
-      "community": 30,
-      "community_name": "DialogueSmoke",
-      "norm_label": ".setlength()"
-    },
-    {
-      "label": ".Write()",
-      "file_type": "code",
-      "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L346",
-      "_origin": "ast",
-      "id": "tests_dialoguesmoke_delayedstream_write",
-      "community": 30,
-      "community_name": "DialogueSmoke",
-      "norm_label": ".write()"
-    },
-    {
       "label": "NpcProfileRead.Tests.ps1",
       "file_type": "code",
       "source_file": "Tests/NpcProfileRead.Tests.ps1",
@@ -1102,15 +180,937 @@
       "norm_label": "npcprofileread.tests.ps1"
     },
     {
+      "label": "CONTEXT.md",
+      "file_type": "document",
+      "source_file": "CONTEXT.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "\u0414\u0438\u0430\u043b\u043e\u0433 \u0441 NPC",
+      "norm_label": "context.md",
+      "id": "context"
+    },
+    {
+      "label": "\u0414\u0438\u0430\u043b\u043e\u0433 \u0441 NPC",
+      "file_type": "document",
+      "source_file": "CONTEXT.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "\u0414\u0438\u0430\u043b\u043e\u0433 \u0441 NPC",
+      "norm_label": "\u0434\u0438\u0430\u043b\u043e\u0433 \u0441 npc",
+      "id": "context_\u0434\u0438\u0430\u043b\u043e\u0433_\u0441_npc"
+    },
+    {
+      "label": "\u0414\u0438\u0430\u043b\u043e\u0433",
+      "file_type": "document",
+      "source_file": "CONTEXT.md",
+      "source_location": "L5",
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "\u0414\u0438\u0430\u043b\u043e\u0433 \u0441 NPC",
+      "norm_label": "\u0434\u0438\u0430\u043b\u043e\u0433",
+      "id": "context_\u0434\u0438\u0430\u043b\u043e\u0433"
+    },
+    {
+      "label": "\u041b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f \u0433\u0435\u043d\u0435\u0440\u0430\u0446\u0438\u044f",
+      "file_type": "document",
+      "source_file": "CONTEXT.md",
+      "source_location": "L68",
+      "_origin": "ast",
+      "community": 13,
+      "community_name": "\u0414\u0438\u0430\u043b\u043e\u0433 \u0441 NPC",
+      "norm_label": "\u043b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f \u0433\u0435\u043d\u0435\u0440\u0430\u0446\u0438\u044f",
+      "id": "context_\u043b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f_\u0433\u0435\u043d\u0435\u0440\u0430\u0446\u0438\u044f"
+    },
+    {
+      "label": "README.md",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "\u041b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f \u043e\u0446\u0435\u043d\u043a\u0430 `Bonsai 2 27B PTQ1_0`",
+      "norm_label": "readme.md",
+      "id": "readme"
+    },
+    {
+      "label": "NpcWithLLM",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "\u041b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f \u043e\u0446\u0435\u043d\u043a\u0430 `Bonsai 2 27B PTQ1_0`",
+      "norm_label": "npcwithllm",
+      "id": "readme_npcwithllm"
+    },
+    {
+      "label": "\u0422\u0435\u043a\u0443\u0449\u0438\u0439 \u0441\u0442\u0430\u0442\u0443\u0441",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L5",
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "\u041b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f \u043e\u0446\u0435\u043d\u043a\u0430 `Bonsai 2 27B PTQ1_0`",
+      "norm_label": "\u0442\u0435\u043a\u0443\u0449\u0438\u0438 \u0441\u0442\u0430\u0442\u0443\u0441",
+      "id": "readme_\u0442\u0435\u043a\u0443\u0449\u0438\u0439_\u0441\u0442\u0430\u0442\u0443\u0441"
+    },
+    {
+      "label": "\u0420\u0443\u0447\u043d\u043e\u0439 \u0437\u0430\u043f\u0443\u0441\u043a Bonsai \u0447\u0435\u0440\u0435\u0437 PrismML",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L39",
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "\u041b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f \u043e\u0446\u0435\u043d\u043a\u0430 `Bonsai 2 27B PTQ1_0`",
+      "norm_label": "\u0440\u0443\u0447\u043d\u043e\u0438 \u0437\u0430\u043f\u0443\u0441\u043a bonsai \u0447\u0435\u0440\u0435\u0437 prismml",
+      "id": "readme_\u0440\u0443\u0447\u043d\u043e\u0439_\u0437\u0430\u043f\u0443\u0441\u043a_bonsai_\u0447\u0435\u0440\u0435\u0437_prismml"
+    },
+    {
+      "label": "\u0422\u0435\u0441\u0442\u044b \u0438 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u043a\u0430\u0447\u0435\u0441\u0442\u0432\u0430",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L84",
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "\u041b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f \u043e\u0446\u0435\u043d\u043a\u0430 `Bonsai 2 27B PTQ1_0`",
+      "norm_label": "\u0442\u0435\u0441\u0442\u044b \u0438 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u043a\u0430\u0447\u0435\u0441\u0442\u0432\u0430",
+      "id": "readme_\u0442\u0435\u0441\u0442\u044b_\u0438_\u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430_\u043a\u0430\u0447\u0435\u0441\u0442\u0432\u0430"
+    },
+    {
+      "label": "\u041d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435 \u043f\u0440\u043e\u0435\u043a\u0442\u0430",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L132",
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "\u041b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f \u043e\u0446\u0435\u043d\u043a\u0430 `Bonsai 2 27B PTQ1_0`",
+      "norm_label": "\u043d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435 \u043f\u0440\u043e\u0435\u043a\u0442\u0430",
+      "id": "readme_\u043d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435_\u043f\u0440\u043e\u0435\u043a\u0442\u0430"
+    },
+    {
+      "label": "Godot MCP \u0434\u043b\u044f Codex",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L138",
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "\u041b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f \u043e\u0446\u0435\u043d\u043a\u0430 `Bonsai 2 27B PTQ1_0`",
+      "norm_label": "godot mcp \u0434\u043b\u044f codex",
+      "id": "readme_godot_mcp_\u0434\u043b\u044f_codex"
+    },
+    {
+      "label": "NpcProfile.cs",
+      "file_type": "code",
+      "source_file": "Scripts/Dialogue/NpcProfile.cs",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 44,
+      "community_name": "LocalLlmConfig",
+      "norm_label": "npcprofile.cs",
+      "id": "scripts_dialogue_npcprofile"
+    },
+    {
+      "label": "NpcProfile",
+      "file_type": "code",
+      "source_file": "Scripts/Dialogue/NpcProfile.cs",
+      "source_location": "L3",
+      "_origin": "ast",
+      "community": 44,
+      "community_name": "LocalLlmConfig",
+      "norm_label": "npcprofile",
+      "id": "scripts_dialogue_npcprofile_npcprofile"
+    },
+    {
+      "label": "Resource",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "community": 44,
+      "community_name": "LocalLlmConfig",
+      "norm_label": "resource",
+      "id": "resource"
+    },
+    {
+      "label": ".ToPersona()",
+      "file_type": "code",
+      "source_file": "Scripts/Dialogue/NpcProfile.cs",
+      "source_location": "L33",
+      "_origin": "ast",
+      "community": 44,
+      "community_name": "LocalLlmConfig",
+      "norm_label": ".topersona()",
+      "id": "scripts_dialogue_npcprofile_npcprofile_topersona"
+    },
+    {
+      "label": "NpcPersona",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "community": 44,
+      "community_name": "LocalLlmConfig",
+      "norm_label": "npcpersona",
+      "id": "npcpersona"
+    },
+    {
+      "label": "Main.cs",
+      "file_type": "code",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Main",
+      "norm_label": "main.cs",
+      "id": "scripts_main"
+    },
+    {
+      "label": "Main",
+      "file_type": "code",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L3",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Main",
+      "norm_label": "main",
+      "id": "scripts_main_main"
+    },
+    {
+      "label": "Node2D",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Main",
+      "norm_label": "node2d",
+      "id": "node2d"
+    },
+    {
+      "label": "ChatResponder",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Main",
+      "norm_label": "chatresponder",
+      "id": "chatresponder"
+    },
+    {
+      "label": "TextEdit",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Main",
+      "norm_label": "textedit",
+      "id": "textedit"
+    },
+    {
+      "label": "Button",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Main",
+      "norm_label": "button",
+      "id": "button"
+    },
+    {
+      "label": "RichTextLabel",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Main",
+      "norm_label": "richtextlabel",
+      "id": "richtextlabel"
+    },
+    {
+      "label": "Label",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Main",
+      "norm_label": "label",
+      "id": "label"
+    },
+    {
+      "label": "Control",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Main",
+      "norm_label": "control",
+      "id": "control"
+    },
+    {
+      "label": "FocusModeEnum",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Main",
+      "norm_label": "focusmodeenum",
+      "id": "focusmodeenum"
+    },
+    {
+      "label": "bool",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Main",
+      "norm_label": "bool",
+      "id": "bool"
+    },
+    {
+      "label": "Stopwatch",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Main",
+      "norm_label": "stopwatch",
+      "id": "stopwatch"
+    },
+    {
+      "label": "._Ready()",
+      "file_type": "code",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L21",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Main",
+      "norm_label": "._ready()",
+      "id": "scripts_main_main_ready"
+    },
+    {
+      "label": "._ExitTree()",
+      "file_type": "code",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L59",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Main",
+      "norm_label": "._exittree()",
+      "id": "scripts_main_main_exittree"
+    },
+    {
+      "label": "._Draw()",
+      "file_type": "code",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L73",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Main",
+      "norm_label": "._draw()",
+      "id": "scripts_main_main_draw"
+    },
+    {
+      "label": ".OnSendButtonPressed()",
+      "file_type": "code",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L89",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Main",
+      "norm_label": ".onsendbuttonpressed()",
+      "id": "scripts_main_main_onsendbuttonpressed"
+    },
+    {
+      "label": ".OnIntroOkPressed()",
+      "file_type": "code",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L91",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Main",
+      "norm_label": ".onintrookpressed()",
+      "id": "scripts_main_main_onintrookpressed"
+    },
+    {
+      "label": ".OnMessageInputGuiInput()",
+      "file_type": "code",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L105",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Main",
+      "norm_label": ".onmessageinputguiinput()",
+      "id": "scripts_main_main_onmessageinputguiinput"
+    },
+    {
+      "label": "InputEvent",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Main",
+      "norm_label": "inputevent",
+      "id": "inputevent"
+    },
+    {
+      "label": ".SubmitMessage()",
+      "file_type": "code",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L122",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Main",
+      "norm_label": ".submitmessage()",
+      "id": "scripts_main_main_submitmessage"
+    },
+    {
+      "label": ".OnResponseStarted()",
+      "file_type": "code",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L142",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Main",
+      "norm_label": ".onresponsestarted()",
+      "id": "scripts_main_main_onresponsestarted"
+    },
+    {
+      "label": ".OnPreparationStarted()",
+      "file_type": "code",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L150",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Main",
+      "norm_label": ".onpreparationstarted()",
+      "id": "scripts_main_main_onpreparationstarted"
+    },
+    {
+      "label": ".OnPreparationFinished()",
+      "file_type": "code",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L157",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Main",
+      "norm_label": ".onpreparationfinished()",
+      "id": "scripts_main_main_onpreparationfinished"
+    },
+    {
+      "label": ".OnResponseChunkReceived()",
+      "file_type": "code",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L169",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Main",
+      "norm_label": ".onresponsechunkreceived()",
+      "id": "scripts_main_main_onresponsechunkreceived"
+    },
+    {
+      "label": ".OnResponseReceived()",
+      "file_type": "code",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L182",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Main",
+      "norm_label": ".onresponsereceived()",
+      "id": "scripts_main_main_onresponsereceived"
+    },
+    {
+      "label": ".OnResponseFailed()",
+      "file_type": "code",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L190",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Main",
+      "norm_label": ".onresponsefailed()",
+      "id": "scripts_main_main_onresponsefailed"
+    },
+    {
+      "label": ".FinishRequest()",
+      "file_type": "code",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L198",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Main",
+      "norm_label": ".finishrequest()",
+      "id": "scripts_main_main_finishrequest"
+    },
+    {
+      "label": ".UpdateInteractionEnabled()",
+      "file_type": "code",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L211",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Main",
+      "norm_label": ".updateinteractionenabled()",
+      "id": "scripts_main_main_updateinteractionenabled"
+    },
+    {
+      "label": "DialogueSmoke.cs",
+      "file_type": "code",
+      "source_file": "Tests/DialogueSmoke.cs",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "DialogueSmoke",
+      "norm_label": "dialoguesmoke.cs",
+      "id": "tests_dialoguesmoke"
+    },
+    {
+      "label": "DialogueSmoke",
+      "file_type": "code",
+      "source_file": "Tests/DialogueSmoke.cs",
+      "source_location": "L11",
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "DialogueSmoke",
+      "norm_label": "dialoguesmoke",
+      "id": "tests_dialoguesmoke_dialoguesmoke"
+    },
+    {
+      "label": "Node",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "community": 46,
+      "community_name": "Node",
+      "norm_label": "node",
+      "id": "node"
+    },
+    {
+      "label": "._Ready()",
+      "file_type": "code",
+      "source_file": "Tests/DialogueSmoke.cs",
+      "source_location": "L13",
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "DialogueSmoke",
+      "norm_label": "._ready()",
+      "id": "tests_dialoguesmoke_dialoguesmoke_ready"
+    },
+    {
+      "label": ".StreamsBeforeCompletion()",
+      "file_type": "code",
+      "source_file": "Tests/DialogueSmoke.cs",
+      "source_location": "L41",
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "DialogueSmoke",
+      "norm_label": ".streamsbeforecompletion()",
+      "id": "tests_dialoguesmoke_dialoguesmoke_streamsbeforecompletion"
+    },
+    {
+      "label": "Task",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "DialogueSmoke",
+      "norm_label": "task",
+      "id": "task"
+    },
+    {
+      "label": ".Check()",
+      "file_type": "code",
+      "source_file": "Tests/DialogueSmoke.cs",
+      "source_location": "L61",
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "DialogueSmoke",
+      "norm_label": ".check()",
+      "id": "tests_dialoguesmoke_dialoguesmoke_check"
+    },
+    {
+      "label": ".RejectsBrokenStreams()",
+      "file_type": "code",
+      "source_file": "Tests/DialogueSmoke.cs",
+      "source_location": "L66",
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "DialogueSmoke",
+      "norm_label": ".rejectsbrokenstreams()",
+      "id": "tests_dialoguesmoke_dialoguesmoke_rejectsbrokenstreams"
+    },
+    {
+      "label": ".IntroModalBlocksDialogueUntilDismissedAndReady()",
+      "file_type": "code",
+      "source_file": "Tests/DialogueSmoke.cs",
+      "source_location": "L97",
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "DialogueSmoke",
+      "norm_label": ".intromodalblocksdialogueuntildismissedandready()",
+      "id": "tests_dialoguesmoke_dialoguesmoke_intromodalblocksdialogueuntildismissedandready"
+    },
+    {
+      "label": ".UiStreamsAndPreservesFailedInput()",
+      "file_type": "code",
+      "source_file": "Tests/DialogueSmoke.cs",
+      "source_location": "L174",
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "DialogueSmoke",
+      "norm_label": ".uistreamsandpreservesfailedinput()",
+      "id": "tests_dialoguesmoke_dialoguesmoke_uistreamsandpreservesfailedinput"
+    },
+    {
+      "label": "ControlledRuntime",
+      "file_type": "code",
+      "source_file": "Tests/DialogueSmoke.cs",
+      "source_location": "L219",
+      "metadata": {
+        "is_nested_type": true
+      },
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "DialogueSmoke",
+      "norm_label": "controlledruntime",
+      "id": "tests_dialoguesmoke_controlledruntime"
+    },
+    {
+      "label": "ILocalLlmRuntime",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "DialogueSmoke",
+      "norm_label": "ilocalllmruntime",
+      "id": "ilocalllmruntime"
+    },
+    {
+      "label": "Action",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "DialogueSmoke",
+      "norm_label": "action",
+      "id": "action"
+    },
+    {
+      "label": "TaskCompletionSource",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "DialogueSmoke",
+      "norm_label": "taskcompletionsource",
+      "id": "taskcompletionsource"
+    },
+    {
+      "label": "IReadOnlyList",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "community": 53,
+      "community_name": "Bonsai2PrismRuntime",
+      "norm_label": "ireadonlylist",
+      "id": "ireadonlylist"
+    },
+    {
+      "label": "DialogueMessage",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "DialogueSmoke",
+      "norm_label": "dialoguemessage",
+      "id": "dialoguemessage"
+    },
+    {
+      "label": ".PrepareAsync()",
+      "file_type": "code",
+      "source_file": "Tests/DialogueSmoke.cs",
+      "source_location": "L228",
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "DialogueSmoke",
+      "norm_label": ".prepareasync()",
+      "id": "tests_dialoguesmoke_controlledruntime_prepareasync"
+    },
+    {
+      "label": "CancellationToken",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "DialogueSmoke",
+      "norm_label": "cancellationtoken",
+      "id": "cancellationtoken"
+    },
+    {
+      "label": ".GenerateAsync()",
+      "file_type": "code",
+      "source_file": "Tests/DialogueSmoke.cs",
+      "source_location": "L231",
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "DialogueSmoke",
+      "norm_label": ".generateasync()",
+      "id": "tests_dialoguesmoke_controlledruntime_generateasync"
+    },
+    {
+      "label": ".StartupBringsRuntimeUp()",
+      "file_type": "code",
+      "source_file": "Tests/DialogueSmoke.cs",
+      "source_location": "L241",
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "DialogueSmoke",
+      "norm_label": ".startupbringsruntimeup()",
+      "id": "tests_dialoguesmoke_dialoguesmoke_startupbringsruntimeup"
+    },
+    {
+      "label": ".EndpointAlive()",
+      "file_type": "code",
+      "source_file": "Tests/DialogueSmoke.cs",
+      "source_location": "L258",
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "DialogueSmoke",
+      "norm_label": ".endpointalive()",
+      "id": "tests_dialoguesmoke_dialoguesmoke_endpointalive"
+    },
+    {
+      "label": ".RealSceneDialogue()",
+      "file_type": "code",
+      "source_file": "Tests/DialogueSmoke.cs",
+      "source_location": "L272",
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "DialogueSmoke",
+      "norm_label": ".realscenedialogue()",
+      "id": "tests_dialoguesmoke_dialoguesmoke_realscenedialogue"
+    },
+    {
+      "label": "ResponseHandler",
+      "file_type": "code",
+      "source_file": "Tests/DialogueSmoke.cs",
+      "source_location": "L315",
+      "metadata": {
+        "is_nested_type": true
+      },
+      "_origin": "ast",
+      "community": 54,
+      "community_name": "Bonsai2PrismRuntimeSmoke",
+      "norm_label": "responsehandler",
+      "id": "tests_dialoguesmoke_responsehandler"
+    },
+    {
+      "label": "HttpMessageHandler",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "community": 54,
+      "community_name": "Bonsai2PrismRuntimeSmoke",
+      "norm_label": "httpmessagehandler",
+      "id": "httpmessagehandler"
+    },
+    {
+      "label": ".SendAsync()",
+      "file_type": "code",
+      "source_file": "Tests/DialogueSmoke.cs",
+      "source_location": "L317",
+      "_origin": "ast",
+      "community": 54,
+      "community_name": "Bonsai2PrismRuntimeSmoke",
+      "norm_label": ".sendasync()",
+      "id": "tests_dialoguesmoke_responsehandler_sendasync"
+    },
+    {
+      "label": "HttpRequestMessage",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "community": 54,
+      "community_name": "Bonsai2PrismRuntimeSmoke",
+      "norm_label": "httprequestmessage",
+      "id": "httprequestmessage"
+    },
+    {
+      "label": "HttpResponseMessage",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "community": 54,
+      "community_name": "Bonsai2PrismRuntimeSmoke",
+      "norm_label": "httpresponsemessage",
+      "id": "httpresponsemessage"
+    },
+    {
+      "label": "DelayedStream",
+      "file_type": "code",
+      "source_file": "Tests/DialogueSmoke.cs",
+      "source_location": "L321",
+      "metadata": {
+        "is_nested_type": true
+      },
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "DialogueSmoke",
+      "norm_label": "delayedstream",
+      "id": "tests_dialoguesmoke_delayedstream"
+    },
+    {
+      "label": "Stream",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "DialogueSmoke",
+      "norm_label": "stream",
+      "id": "stream"
+    },
+    {
+      "label": "int",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "DialogueSmoke",
+      "norm_label": "int",
+      "id": "int"
+    },
+    {
+      "label": ".ReadAsync()",
+      "file_type": "code",
+      "source_file": "Tests/DialogueSmoke.cs",
+      "source_location": "L324",
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "DialogueSmoke",
+      "norm_label": ".readasync()",
+      "id": "tests_dialoguesmoke_delayedstream_readasync"
+    },
+    {
+      "label": "Memory",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "DialogueSmoke",
+      "norm_label": "memory",
+      "id": "memory"
+    },
+    {
+      "label": "ValueTask",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "DialogueSmoke",
+      "norm_label": "valuetask",
+      "id": "valuetask"
+    },
+    {
+      "label": ".Flush()",
+      "file_type": "code",
+      "source_file": "Tests/DialogueSmoke.cs",
+      "source_location": "L342",
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "DialogueSmoke",
+      "norm_label": ".flush()",
+      "id": "tests_dialoguesmoke_delayedstream_flush"
+    },
+    {
+      "label": ".Read()",
+      "file_type": "code",
+      "source_file": "Tests/DialogueSmoke.cs",
+      "source_location": "L343",
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "DialogueSmoke",
+      "norm_label": ".read()",
+      "id": "tests_dialoguesmoke_delayedstream_read"
+    },
+    {
+      "label": ".Seek()",
+      "file_type": "code",
+      "source_file": "Tests/DialogueSmoke.cs",
+      "source_location": "L344",
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "DialogueSmoke",
+      "norm_label": ".seek()",
+      "id": "tests_dialoguesmoke_delayedstream_seek"
+    },
+    {
+      "label": "SeekOrigin",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "DialogueSmoke",
+      "norm_label": "seekorigin",
+      "id": "seekorigin"
+    },
+    {
+      "label": ".SetLength()",
+      "file_type": "code",
+      "source_file": "Tests/DialogueSmoke.cs",
+      "source_location": "L345",
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "DialogueSmoke",
+      "norm_label": ".setlength()",
+      "id": "tests_dialoguesmoke_delayedstream_setlength"
+    },
+    {
+      "label": ".Write()",
+      "file_type": "code",
+      "source_file": "Tests/DialogueSmoke.cs",
+      "source_location": "L346",
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "DialogueSmoke",
+      "norm_label": ".write()",
+      "id": "tests_dialoguesmoke_delayedstream_write"
+    },
+    {
       "label": "Read-NpcProfile.ps1",
       "file_type": "code",
       "source_file": "Tests/Read-NpcProfile.ps1",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "tests_read_npcprofile",
       "community": 37,
       "community_name": "Read-NpcProfile.ps1",
-      "norm_label": "read-npcprofile.ps1"
+      "norm_label": "read-npcprofile.ps1",
+      "id": "tests_read_npcprofile"
     },
     {
       "label": "Read-NpcProfile()",
@@ -1118,10 +1118,10 @@
       "source_file": "Tests/Read-NpcProfile.ps1",
       "source_location": "L4",
       "_origin": "ast",
-      "id": "tests_read_npcprofile_read_npcprofile",
       "community": 37,
       "community_name": "Read-NpcProfile.ps1",
-      "norm_label": "read-npcprofile()"
+      "norm_label": "read-npcprofile()",
+      "id": "tests_read_npcprofile_read_npcprofile"
     },
     {
       "label": "ChatResponder.cs",
@@ -8450,7 +8450,7 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "scratch_npc_local_llm_demo_issues_11_startup_situation_intro_modal",
-      "target": "scratch_npc_local_llm_demo_issues_11_startup_situation_intro_modal_11_\u0432\u0441\u0442\u0443\u043f\u0438\u0442\u0435\u043b\u044c\u043d\u0430\u044f_\u043c\u043e\u0434\u0430\u043b\u043a\u0430_\u043e_\u0441\u0438\u0442\u0443\u0430\u0446\u0438\u0438_npc",
+      "target": "scratch_npc_local_llm_demo_issues_11_startup_situation_intro_modal_11_\u0432\u0441\u0442\u0443\u043f\u0438\u0442\u0435\u043b\u044c\u043d\u0430\u044f_\u043c\u043e\u0434\u0430\u043b\u043a\u0430_\u0434\u043b\u044f_\u0438\u0433\u0440\u043e\u043a\u0430",
       "confidence_score": 1.0
     },
     {
@@ -8460,7 +8460,7 @@
       "source_location": "L22",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "scratch_npc_local_llm_demo_issues_11_startup_situation_intro_modal_11_\u0432\u0441\u0442\u0443\u043f\u0438\u0442\u0435\u043b\u044c\u043d\u0430\u044f_\u043c\u043e\u0434\u0430\u043b\u043a\u0430_\u043e_\u0441\u0438\u0442\u0443\u0430\u0446\u0438\u0438_npc",
+      "source": "scratch_npc_local_llm_demo_issues_11_startup_situation_intro_modal_11_\u0432\u0441\u0442\u0443\u043f\u0438\u0442\u0435\u043b\u044c\u043d\u0430\u044f_\u043c\u043e\u0434\u0430\u043b\u043a\u0430_\u0434\u043b\u044f_\u0438\u0433\u0440\u043e\u043a\u0430",
       "target": "scratch_npc_local_llm_demo_issues_11_startup_situation_intro_modal_comments",
       "confidence_score": 1.0
     },
@@ -8471,7 +8471,7 @@
       "source_location": "L18",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "scratch_npc_local_llm_demo_issues_11_startup_situation_intro_modal_11_\u0432\u0441\u0442\u0443\u043f\u0438\u0442\u0435\u043b\u044c\u043d\u0430\u044f_\u043c\u043e\u0434\u0430\u043b\u043a\u0430_\u043e_\u0441\u0438\u0442\u0443\u0430\u0446\u0438\u0438_npc",
+      "source": "scratch_npc_local_llm_demo_issues_11_startup_situation_intro_modal_11_\u0432\u0441\u0442\u0443\u043f\u0438\u0442\u0435\u043b\u044c\u043d\u0430\u044f_\u043c\u043e\u0434\u0430\u043b\u043a\u0430_\u0434\u043b\u044f_\u0438\u0433\u0440\u043e\u043a\u0430",
       "target": "scratch_npc_local_llm_demo_issues_11_startup_situation_intro_modal_\u043a\u043e\u043d\u0442\u0435\u043a\u0441\u0442",
       "confidence_score": 1.0
     },
@@ -8482,7 +8482,7 @@
       "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "scratch_npc_local_llm_demo_issues_11_startup_situation_intro_modal_11_\u0432\u0441\u0442\u0443\u043f\u0438\u0442\u0435\u043b\u044c\u043d\u0430\u044f_\u043c\u043e\u0434\u0430\u043b\u043a\u0430_\u043e_\u0441\u0438\u0442\u0443\u0430\u0446\u0438\u0438_npc",
+      "source": "scratch_npc_local_llm_demo_issues_11_startup_situation_intro_modal_11_\u0432\u0441\u0442\u0443\u043f\u0438\u0442\u0435\u043b\u044c\u043d\u0430\u044f_\u043c\u043e\u0434\u0430\u043b\u043a\u0430_\u0434\u043b\u044f_\u0438\u0433\u0440\u043e\u043a\u0430",
       "target": "scratch_npc_local_llm_demo_issues_11_startup_situation_intro_modal_\u0442\u0440\u0435\u0431\u043e\u0432\u0430\u043d\u0438\u044f",
       "confidence_score": 1.0
     },
@@ -8592,9 +8592,9 @@
       "source_location": "L1",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "context",
-      "target": "context_\u0434\u0438\u0430\u043b\u043e\u0433_\u0441_npc",
-      "confidence_score": 1.0
+      "target": "context_\u0434\u0438\u0430\u043b\u043e\u0433_\u0441_npc"
     },
     {
       "relation": "contains",
@@ -8603,9 +8603,9 @@
       "source_location": "L5",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "context_\u0434\u0438\u0430\u043b\u043e\u0433_\u0441_npc",
-      "target": "context_\u0434\u0438\u0430\u043b\u043e\u0433",
-      "confidence_score": 1.0
+      "target": "context_\u0434\u0438\u0430\u043b\u043e\u0433"
     },
     {
       "relation": "contains",
@@ -8614,9 +8614,9 @@
       "source_location": "L68",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "context_\u0434\u0438\u0430\u043b\u043e\u0433_\u0441_npc",
-      "target": "context_\u043b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f_\u0433\u0435\u043d\u0435\u0440\u0430\u0446\u0438\u044f",
-      "confidence_score": 1.0
+      "target": "context_\u043b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f_\u0433\u0435\u043d\u0435\u0440\u0430\u0446\u0438\u044f"
     },
     {
       "relation": "contains",
@@ -8625,9 +8625,9 @@
       "source_location": "L1",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "readme",
-      "target": "readme_npcwithllm",
-      "confidence_score": 1.0
+      "target": "readme_npcwithllm"
     },
     {
       "relation": "references",
@@ -8636,9 +8636,9 @@
       "source_location": "L26",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "readme",
-      "target": "scratch_npc_local_llm_demo_reports_10_bonsai_2_27b_evaluation",
-      "confidence_score": 1.0
+      "target": "scratch_npc_local_llm_demo_reports_10_bonsai_2_27b_evaluation"
     },
     {
       "relation": "contains",
@@ -8647,9 +8647,9 @@
       "source_location": "L138",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "readme_npcwithllm",
-      "target": "readme_godot_mcp_\u0434\u043b\u044f_codex",
-      "confidence_score": 1.0
+      "target": "readme_godot_mcp_\u0434\u043b\u044f_codex"
     },
     {
       "relation": "contains",
@@ -8658,9 +8658,9 @@
       "source_location": "L132",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "readme_npcwithllm",
-      "target": "readme_\u043d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435_\u043f\u0440\u043e\u0435\u043a\u0442\u0430",
-      "confidence_score": 1.0
+      "target": "readme_\u043d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435_\u043f\u0440\u043e\u0435\u043a\u0442\u0430"
     },
     {
       "relation": "contains",
@@ -8669,9 +8669,9 @@
       "source_location": "L5",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "readme_npcwithllm",
-      "target": "readme_\u0442\u0435\u043a\u0443\u0449\u0438\u0439_\u0441\u0442\u0430\u0442\u0443\u0441",
-      "confidence_score": 1.0
+      "target": "readme_\u0442\u0435\u043a\u0443\u0449\u0438\u0439_\u0441\u0442\u0430\u0442\u0443\u0441"
     },
     {
       "relation": "contains",
@@ -8680,9 +8680,9 @@
       "source_location": "L84",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "readme_npcwithllm",
-      "target": "readme_\u0442\u0435\u0441\u0442\u044b_\u0438_\u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430_\u043a\u0430\u0447\u0435\u0441\u0442\u0432\u0430",
-      "confidence_score": 1.0
+      "target": "readme_\u0442\u0435\u0441\u0442\u044b_\u0438_\u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430_\u043a\u0430\u0447\u0435\u0441\u0442\u0432\u0430"
     },
     {
       "relation": "contains",
@@ -8691,9 +8691,9 @@
       "source_location": "L39",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "readme_\u0442\u0435\u043a\u0443\u0449\u0438\u0439_\u0441\u0442\u0430\u0442\u0443\u0441",
-      "target": "readme_\u0440\u0443\u0447\u043d\u043e\u0439_\u0437\u0430\u043f\u0443\u0441\u043a_bonsai_\u0447\u0435\u0440\u0435\u0437_prismml",
-      "confidence_score": 1.0
+      "target": "readme_\u0440\u0443\u0447\u043d\u043e\u0439_\u0437\u0430\u043f\u0443\u0441\u043a_bonsai_\u0447\u0435\u0440\u0435\u0437_prismml"
     },
     {
       "relation": "contains",
@@ -8702,9 +8702,9 @@
       "source_location": "L3",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "scripts_dialogue_npcprofile",
-      "target": "scripts_dialogue_npcprofile_npcprofile",
-      "confidence_score": 1.0
+      "target": "scripts_dialogue_npcprofile_npcprofile"
     },
     {
       "relation": "inherits",
@@ -8716,9 +8716,9 @@
         "ref_token": "Resource"
       },
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "scripts_dialogue_npcprofile_npcprofile",
-      "target": "resource",
-      "confidence_score": 1.0
+      "target": "resource"
     },
     {
       "relation": "method",
@@ -8727,9 +8727,9 @@
       "source_location": "L33",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "scripts_dialogue_npcprofile_npcprofile",
-      "target": "scripts_dialogue_npcprofile_npcprofile_topersona",
-      "confidence_score": 1.0
+      "target": "scripts_dialogue_npcprofile_npcprofile_topersona"
     },
     {
       "relation": "inherits",
@@ -8756,9 +8756,9 @@
         "ref_token": "NpcPersona"
       },
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "scripts_dialogue_npcprofile_npcprofile_topersona",
-      "target": "npcpersona",
-      "confidence_score": 1.0
+      "target": "npcpersona"
     },
     {
       "relation": "contains",
@@ -8767,9 +8767,9 @@
       "source_location": "L3",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "scripts_main",
-      "target": "scripts_main_main",
-      "confidence_score": 1.0
+      "target": "scripts_main_main"
     },
     {
       "relation": "references",
@@ -8782,9 +8782,9 @@
         "ref_token": "bool"
       },
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "scripts_main_main",
-      "target": "bool",
-      "confidence_score": 1.0
+      "target": "bool"
     },
     {
       "relation": "references",
@@ -8797,9 +8797,9 @@
         "ref_token": "Button"
       },
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "scripts_main_main",
-      "target": "button",
-      "confidence_score": 1.0
+      "target": "button"
     },
     {
       "relation": "references",
@@ -8812,9 +8812,9 @@
         "ref_token": "ChatResponder"
       },
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "scripts_main_main",
-      "target": "chatresponder",
-      "confidence_score": 1.0
+      "target": "chatresponder"
     },
     {
       "relation": "references",
@@ -8827,9 +8827,9 @@
         "ref_token": "Control"
       },
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "scripts_main_main",
-      "target": "control",
-      "confidence_score": 1.0
+      "target": "control"
     },
     {
       "relation": "references",
@@ -8844,9 +8844,9 @@
         "ref_qualifier": "Control"
       },
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "scripts_main_main",
-      "target": "focusmodeenum",
-      "confidence_score": 1.0
+      "target": "focusmodeenum"
     },
     {
       "relation": "references",
@@ -8859,9 +8859,9 @@
         "ref_token": "Label"
       },
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "scripts_main_main",
-      "target": "label",
-      "confidence_score": 1.0
+      "target": "label"
     },
     {
       "relation": "inherits",
@@ -8873,9 +8873,9 @@
         "ref_token": "Node2D"
       },
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "scripts_main_main",
-      "target": "node2d",
-      "confidence_score": 1.0
+      "target": "node2d"
     },
     {
       "relation": "references",
@@ -8888,9 +8888,9 @@
         "ref_token": "RichTextLabel"
       },
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "scripts_main_main",
-      "target": "richtextlabel",
-      "confidence_score": 1.0
+      "target": "richtextlabel"
     },
     {
       "relation": "method",
@@ -8899,9 +8899,9 @@
       "source_location": "L73",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "scripts_main_main",
-      "target": "scripts_main_main_draw",
-      "confidence_score": 1.0
+      "target": "scripts_main_main_draw"
     },
     {
       "relation": "method",
@@ -8910,9 +8910,9 @@
       "source_location": "L59",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "scripts_main_main",
-      "target": "scripts_main_main_exittree",
-      "confidence_score": 1.0
+      "target": "scripts_main_main_exittree"
     },
     {
       "relation": "method",
@@ -8921,9 +8921,9 @@
       "source_location": "L198",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "scripts_main_main",
-      "target": "scripts_main_main_finishrequest",
-      "confidence_score": 1.0
+      "target": "scripts_main_main_finishrequest"
     },
     {
       "relation": "method",
@@ -8932,9 +8932,9 @@
       "source_location": "L91",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "scripts_main_main",
-      "target": "scripts_main_main_onintrookpressed",
-      "confidence_score": 1.0
+      "target": "scripts_main_main_onintrookpressed"
     },
     {
       "relation": "method",
@@ -8943,9 +8943,9 @@
       "source_location": "L105",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "scripts_main_main",
-      "target": "scripts_main_main_onmessageinputguiinput",
-      "confidence_score": 1.0
+      "target": "scripts_main_main_onmessageinputguiinput"
     },
     {
       "relation": "method",
@@ -8954,9 +8954,9 @@
       "source_location": "L157",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "scripts_main_main",
-      "target": "scripts_main_main_onpreparationfinished",
-      "confidence_score": 1.0
+      "target": "scripts_main_main_onpreparationfinished"
     },
     {
       "relation": "method",
@@ -8965,9 +8965,9 @@
       "source_location": "L150",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "scripts_main_main",
-      "target": "scripts_main_main_onpreparationstarted",
-      "confidence_score": 1.0
+      "target": "scripts_main_main_onpreparationstarted"
     },
     {
       "relation": "method",
@@ -8976,9 +8976,9 @@
       "source_location": "L169",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "scripts_main_main",
-      "target": "scripts_main_main_onresponsechunkreceived",
-      "confidence_score": 1.0
+      "target": "scripts_main_main_onresponsechunkreceived"
     },
     {
       "relation": "method",
@@ -8987,9 +8987,9 @@
       "source_location": "L190",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "scripts_main_main",
-      "target": "scripts_main_main_onresponsefailed",
-      "confidence_score": 1.0
+      "target": "scripts_main_main_onresponsefailed"
     },
     {
       "relation": "method",
@@ -8998,9 +8998,9 @@
       "source_location": "L182",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "scripts_main_main",
-      "target": "scripts_main_main_onresponsereceived",
-      "confidence_score": 1.0
+      "target": "scripts_main_main_onresponsereceived"
     },
     {
       "relation": "method",
@@ -9009,9 +9009,9 @@
       "source_location": "L142",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "scripts_main_main",
-      "target": "scripts_main_main_onresponsestarted",
-      "confidence_score": 1.0
+      "target": "scripts_main_main_onresponsestarted"
     },
     {
       "relation": "method",
@@ -9020,9 +9020,9 @@
       "source_location": "L89",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "scripts_main_main",
-      "target": "scripts_main_main_onsendbuttonpressed",
-      "confidence_score": 1.0
+      "target": "scripts_main_main_onsendbuttonpressed"
     },
     {
       "relation": "method",
@@ -9031,9 +9031,9 @@
       "source_location": "L21",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "scripts_main_main",
-      "target": "scripts_main_main_ready",
-      "confidence_score": 1.0
+      "target": "scripts_main_main_ready"
     },
     {
       "relation": "method",
@@ -9042,9 +9042,9 @@
       "source_location": "L122",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "scripts_main_main",
-      "target": "scripts_main_main_submitmessage",
-      "confidence_score": 1.0
+      "target": "scripts_main_main_submitmessage"
     },
     {
       "relation": "method",
@@ -9053,9 +9053,9 @@
       "source_location": "L211",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "scripts_main_main",
-      "target": "scripts_main_main_updateinteractionenabled",
-      "confidence_score": 1.0
+      "target": "scripts_main_main_updateinteractionenabled"
     },
     {
       "relation": "references",
@@ -9070,9 +9070,9 @@
         "ref_qualifier": "System.Diagnostics"
       },
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "scripts_main_main",
-      "target": "stopwatch",
-      "confidence_score": 1.0
+      "target": "stopwatch"
     },
     {
       "relation": "references",
@@ -9085,9 +9085,9 @@
         "ref_token": "TextEdit"
       },
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "scripts_main_main",
-      "target": "textedit",
-      "confidence_score": 1.0
+      "target": "textedit"
     },
     {
       "relation": "calls",
@@ -9097,9 +9097,9 @@
       "source_location": "L54",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "scripts_main_main_ready",
-      "target": "scripts_main_main_updateinteractionenabled",
-      "confidence_score": 1.0
+      "target": "scripts_main_main_updateinteractionenabled"
     },
     {
       "relation": "calls",
@@ -9109,9 +9109,9 @@
       "source_location": "L89",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "scripts_main_main_onsendbuttonpressed",
-      "target": "scripts_main_main_submitmessage",
-      "confidence_score": 1.0
+      "target": "scripts_main_main_submitmessage"
     },
     {
       "relation": "calls",
@@ -9121,9 +9121,9 @@
       "source_location": "L97",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "scripts_main_main_onintrookpressed",
-      "target": "scripts_main_main_updateinteractionenabled",
-      "confidence_score": 1.0
+      "target": "scripts_main_main_updateinteractionenabled"
     },
     {
       "relation": "references",
@@ -9136,9 +9136,9 @@
         "ref_token": "InputEvent"
       },
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "scripts_main_main_onmessageinputguiinput",
-      "target": "inputevent",
-      "confidence_score": 1.0
+      "target": "inputevent"
     },
     {
       "relation": "calls",
@@ -9148,9 +9148,9 @@
       "source_location": "L119",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "scripts_main_main_onmessageinputguiinput",
-      "target": "scripts_main_main_submitmessage",
-      "confidence_score": 1.0
+      "target": "scripts_main_main_submitmessage"
     },
     {
       "relation": "calls",
@@ -9160,9 +9160,9 @@
       "source_location": "L137",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "scripts_main_main_submitmessage",
-      "target": "scripts_main_main_updateinteractionenabled",
-      "confidence_score": 1.0
+      "target": "scripts_main_main_updateinteractionenabled"
     },
     {
       "relation": "calls",
@@ -9172,9 +9172,9 @@
       "source_location": "L147",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "scripts_main_main_onresponsestarted",
-      "target": "scripts_main_main_updateinteractionenabled",
-      "confidence_score": 1.0
+      "target": "scripts_main_main_updateinteractionenabled"
     },
     {
       "relation": "calls",
@@ -9184,9 +9184,9 @@
       "source_location": "L154",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "scripts_main_main_onpreparationstarted",
-      "target": "scripts_main_main_updateinteractionenabled",
-      "confidence_score": 1.0
+      "target": "scripts_main_main_updateinteractionenabled"
     },
     {
       "relation": "calls",
@@ -9196,9 +9196,9 @@
       "source_location": "L161",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "scripts_main_main_onpreparationfinished",
-      "target": "scripts_main_main_updateinteractionenabled",
-      "confidence_score": 1.0
+      "target": "scripts_main_main_updateinteractionenabled"
     },
     {
       "relation": "calls",
@@ -9208,9 +9208,9 @@
       "source_location": "L187",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "scripts_main_main_onresponsereceived",
-      "target": "scripts_main_main_finishrequest",
-      "confidence_score": 1.0
+      "target": "scripts_main_main_finishrequest"
     },
     {
       "relation": "calls",
@@ -9220,9 +9220,9 @@
       "source_location": "L195",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "scripts_main_main_onresponsefailed",
-      "target": "scripts_main_main_finishrequest",
-      "confidence_score": 1.0
+      "target": "scripts_main_main_finishrequest"
     },
     {
       "relation": "calls",
@@ -9232,9 +9232,9 @@
       "source_location": "L201",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "scripts_main_main_finishrequest",
-      "target": "scripts_main_main_updateinteractionenabled",
-      "confidence_score": 1.0
+      "target": "scripts_main_main_updateinteractionenabled"
     },
     {
       "relation": "contains",
@@ -9243,9 +9243,9 @@
       "source_location": "L11",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke",
-      "target": "tests_dialoguesmoke_dialoguesmoke",
-      "confidence_score": 1.0
+      "target": "tests_dialoguesmoke_dialoguesmoke"
     },
     {
       "relation": "inherits",
@@ -9257,9 +9257,9 @@
         "ref_token": "Node"
       },
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke_dialoguesmoke",
-      "target": "node",
-      "confidence_score": 1.0
+      "target": "node"
     },
     {
       "relation": "contains",
@@ -9268,9 +9268,9 @@
       "source_location": "L219",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke_dialoguesmoke",
-      "target": "tests_dialoguesmoke_controlledruntime",
-      "confidence_score": 1.0
+      "target": "tests_dialoguesmoke_controlledruntime"
     },
     {
       "relation": "contains",
@@ -9279,9 +9279,9 @@
       "source_location": "L321",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke_dialoguesmoke",
-      "target": "tests_dialoguesmoke_delayedstream",
-      "confidence_score": 1.0
+      "target": "tests_dialoguesmoke_delayedstream"
     },
     {
       "relation": "method",
@@ -9290,9 +9290,9 @@
       "source_location": "L61",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke_dialoguesmoke",
-      "target": "tests_dialoguesmoke_dialoguesmoke_check",
-      "confidence_score": 1.0
+      "target": "tests_dialoguesmoke_dialoguesmoke_check"
     },
     {
       "relation": "method",
@@ -9301,9 +9301,9 @@
       "source_location": "L258",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke_dialoguesmoke",
-      "target": "tests_dialoguesmoke_dialoguesmoke_endpointalive",
-      "confidence_score": 1.0
+      "target": "tests_dialoguesmoke_dialoguesmoke_endpointalive"
     },
     {
       "relation": "method",
@@ -9312,9 +9312,9 @@
       "source_location": "L97",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke_dialoguesmoke",
-      "target": "tests_dialoguesmoke_dialoguesmoke_intromodalblocksdialogueuntildismissedandready",
-      "confidence_score": 1.0
+      "target": "tests_dialoguesmoke_dialoguesmoke_intromodalblocksdialogueuntildismissedandready"
     },
     {
       "relation": "method",
@@ -9323,9 +9323,9 @@
       "source_location": "L13",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke_dialoguesmoke",
-      "target": "tests_dialoguesmoke_dialoguesmoke_ready",
-      "confidence_score": 1.0
+      "target": "tests_dialoguesmoke_dialoguesmoke_ready"
     },
     {
       "relation": "method",
@@ -9334,9 +9334,9 @@
       "source_location": "L272",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke_dialoguesmoke",
-      "target": "tests_dialoguesmoke_dialoguesmoke_realscenedialogue",
-      "confidence_score": 1.0
+      "target": "tests_dialoguesmoke_dialoguesmoke_realscenedialogue"
     },
     {
       "relation": "method",
@@ -9345,9 +9345,9 @@
       "source_location": "L66",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke_dialoguesmoke",
-      "target": "tests_dialoguesmoke_dialoguesmoke_rejectsbrokenstreams",
-      "confidence_score": 1.0
+      "target": "tests_dialoguesmoke_dialoguesmoke_rejectsbrokenstreams"
     },
     {
       "relation": "method",
@@ -9356,9 +9356,9 @@
       "source_location": "L241",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke_dialoguesmoke",
-      "target": "tests_dialoguesmoke_dialoguesmoke_startupbringsruntimeup",
-      "confidence_score": 1.0
+      "target": "tests_dialoguesmoke_dialoguesmoke_startupbringsruntimeup"
     },
     {
       "relation": "method",
@@ -9367,9 +9367,9 @@
       "source_location": "L41",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke_dialoguesmoke",
-      "target": "tests_dialoguesmoke_dialoguesmoke_streamsbeforecompletion",
-      "confidence_score": 1.0
+      "target": "tests_dialoguesmoke_dialoguesmoke_streamsbeforecompletion"
     },
     {
       "relation": "method",
@@ -9378,9 +9378,9 @@
       "source_location": "L174",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke_dialoguesmoke",
-      "target": "tests_dialoguesmoke_dialoguesmoke_uistreamsandpreservesfailedinput",
-      "confidence_score": 1.0
+      "target": "tests_dialoguesmoke_dialoguesmoke_uistreamsandpreservesfailedinput"
     },
     {
       "relation": "contains",
@@ -9389,9 +9389,9 @@
       "source_location": "L315",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke_dialoguesmoke",
-      "target": "tests_dialoguesmoke_responsehandler",
-      "confidence_score": 1.0
+      "target": "tests_dialoguesmoke_responsehandler"
     },
     {
       "relation": "inherits",
@@ -9485,9 +9485,9 @@
       "source_location": "L28",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke_dialoguesmoke_ready",
-      "target": "tests_dialoguesmoke_dialoguesmoke_intromodalblocksdialogueuntildismissedandready",
-      "confidence_score": 1.0
+      "target": "tests_dialoguesmoke_dialoguesmoke_intromodalblocksdialogueuntildismissedandready"
     },
     {
       "relation": "calls",
@@ -9497,9 +9497,9 @@
       "source_location": "L30",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke_dialoguesmoke_ready",
-      "target": "tests_dialoguesmoke_dialoguesmoke_realscenedialogue",
-      "confidence_score": 1.0
+      "target": "tests_dialoguesmoke_dialoguesmoke_realscenedialogue"
     },
     {
       "relation": "calls",
@@ -9509,9 +9509,9 @@
       "source_location": "L27",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke_dialoguesmoke_ready",
-      "target": "tests_dialoguesmoke_dialoguesmoke_rejectsbrokenstreams",
-      "confidence_score": 1.0
+      "target": "tests_dialoguesmoke_dialoguesmoke_rejectsbrokenstreams"
     },
     {
       "relation": "calls",
@@ -9521,9 +9521,9 @@
       "source_location": "L21",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke_dialoguesmoke_ready",
-      "target": "tests_dialoguesmoke_dialoguesmoke_startupbringsruntimeup",
-      "confidence_score": 1.0
+      "target": "tests_dialoguesmoke_dialoguesmoke_startupbringsruntimeup"
     },
     {
       "relation": "calls",
@@ -9533,9 +9533,9 @@
       "source_location": "L26",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke_dialoguesmoke_ready",
-      "target": "tests_dialoguesmoke_dialoguesmoke_streamsbeforecompletion",
-      "confidence_score": 1.0
+      "target": "tests_dialoguesmoke_dialoguesmoke_streamsbeforecompletion"
     },
     {
       "relation": "calls",
@@ -9545,9 +9545,9 @@
       "source_location": "L29",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke_dialoguesmoke_ready",
-      "target": "tests_dialoguesmoke_dialoguesmoke_uistreamsandpreservesfailedinput",
-      "confidence_score": 1.0
+      "target": "tests_dialoguesmoke_dialoguesmoke_uistreamsandpreservesfailedinput"
     },
     {
       "relation": "references",
@@ -9560,9 +9560,9 @@
         "ref_token": "Task"
       },
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke_dialoguesmoke_streamsbeforecompletion",
-      "target": "task",
-      "confidence_score": 1.0
+      "target": "task"
     },
     {
       "relation": "calls",
@@ -9572,9 +9572,9 @@
       "source_location": "L55",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke_dialoguesmoke_streamsbeforecompletion",
-      "target": "tests_dialoguesmoke_dialoguesmoke_check",
-      "confidence_score": 1.0
+      "target": "tests_dialoguesmoke_dialoguesmoke_check"
     },
     {
       "relation": "references",
@@ -9602,9 +9602,9 @@
         "ref_token": "Task"
       },
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke_controlledruntime_generateasync",
-      "target": "task",
-      "confidence_score": 1.0
+      "target": "task"
     },
     {
       "relation": "references",
@@ -9617,9 +9617,9 @@
         "ref_token": "Task"
       },
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke_controlledruntime_prepareasync",
-      "target": "task",
-      "confidence_score": 1.0
+      "target": "task"
     },
     {
       "relation": "references",
@@ -9632,9 +9632,9 @@
         "ref_token": "Task"
       },
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke_dialoguesmoke_endpointalive",
-      "target": "task",
-      "confidence_score": 1.0
+      "target": "task"
     },
     {
       "relation": "references",
@@ -9647,9 +9647,9 @@
         "ref_token": "Task"
       },
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke_dialoguesmoke_intromodalblocksdialogueuntildismissedandready",
-      "target": "task",
-      "confidence_score": 1.0
+      "target": "task"
     },
     {
       "relation": "references",
@@ -9662,9 +9662,9 @@
         "ref_token": "Task"
       },
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke_dialoguesmoke_realscenedialogue",
-      "target": "task",
-      "confidence_score": 1.0
+      "target": "task"
     },
     {
       "relation": "references",
@@ -9677,9 +9677,9 @@
         "ref_token": "Task"
       },
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke_dialoguesmoke_rejectsbrokenstreams",
-      "target": "task",
-      "confidence_score": 1.0
+      "target": "task"
     },
     {
       "relation": "references",
@@ -9692,9 +9692,9 @@
         "ref_token": "Task"
       },
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke_dialoguesmoke_startupbringsruntimeup",
-      "target": "task",
-      "confidence_score": 1.0
+      "target": "task"
     },
     {
       "relation": "references",
@@ -9707,9 +9707,9 @@
         "ref_token": "Task"
       },
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke_dialoguesmoke_uistreamsandpreservesfailedinput",
-      "target": "task",
-      "confidence_score": 1.0
+      "target": "task"
     },
     {
       "relation": "references",
@@ -9722,9 +9722,9 @@
         "ref_token": "Task"
       },
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke_responsehandler_sendasync",
-      "target": "task",
-      "confidence_score": 1.0
+      "target": "task"
     },
     {
       "relation": "calls",
@@ -9734,9 +9734,9 @@
       "source_location": "L117",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke_dialoguesmoke_intromodalblocksdialogueuntildismissedandready",
-      "target": "tests_dialoguesmoke_dialoguesmoke_check",
-      "confidence_score": 1.0
+      "target": "tests_dialoguesmoke_dialoguesmoke_check"
     },
     {
       "relation": "calls",
@@ -9746,9 +9746,9 @@
       "source_location": "L302",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke_dialoguesmoke_realscenedialogue",
-      "target": "tests_dialoguesmoke_dialoguesmoke_check",
-      "confidence_score": 1.0
+      "target": "tests_dialoguesmoke_dialoguesmoke_check"
     },
     {
       "relation": "calls",
@@ -9758,9 +9758,9 @@
       "source_location": "L84",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke_dialoguesmoke_rejectsbrokenstreams",
-      "target": "tests_dialoguesmoke_dialoguesmoke_check",
-      "confidence_score": 1.0
+      "target": "tests_dialoguesmoke_dialoguesmoke_check"
     },
     {
       "relation": "calls",
@@ -9770,9 +9770,9 @@
       "source_location": "L245",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke_dialoguesmoke_startupbringsruntimeup",
-      "target": "tests_dialoguesmoke_dialoguesmoke_check",
-      "confidence_score": 1.0
+      "target": "tests_dialoguesmoke_dialoguesmoke_check"
     },
     {
       "relation": "calls",
@@ -9782,9 +9782,9 @@
       "source_location": "L178",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke_dialoguesmoke_uistreamsandpreservesfailedinput",
-      "target": "tests_dialoguesmoke_dialoguesmoke_check",
-      "confidence_score": 1.0
+      "target": "tests_dialoguesmoke_dialoguesmoke_check"
     },
     {
       "relation": "references",
@@ -9797,9 +9797,9 @@
         "ref_token": "Action"
       },
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke_controlledruntime",
-      "target": "action",
-      "confidence_score": 1.0
+      "target": "action"
     },
     {
       "relation": "references",
@@ -9812,9 +9812,9 @@
         "ref_token": "DialogueMessage"
       },
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke_controlledruntime",
-      "target": "dialoguemessage",
-      "confidence_score": 1.0
+      "target": "dialoguemessage"
     },
     {
       "relation": "implements",
@@ -9826,9 +9826,9 @@
         "ref_token": "ILocalLlmRuntime"
       },
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke_controlledruntime",
-      "target": "ilocalllmruntime",
-      "confidence_score": 1.0
+      "target": "ilocalllmruntime"
     },
     {
       "relation": "references",
@@ -9841,9 +9841,9 @@
         "ref_token": "IReadOnlyList"
       },
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke_controlledruntime",
-      "target": "ireadonlylist",
-      "confidence_score": 1.0
+      "target": "ireadonlylist"
     },
     {
       "relation": "references",
@@ -9856,9 +9856,9 @@
         "ref_token": "TaskCompletionSource"
       },
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke_controlledruntime",
-      "target": "taskcompletionsource",
-      "confidence_score": 1.0
+      "target": "taskcompletionsource"
     },
     {
       "relation": "method",
@@ -9867,9 +9867,9 @@
       "source_location": "L231",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke_controlledruntime",
-      "target": "tests_dialoguesmoke_controlledruntime_generateasync",
-      "confidence_score": 1.0
+      "target": "tests_dialoguesmoke_controlledruntime_generateasync"
     },
     {
       "relation": "method",
@@ -9878,9 +9878,9 @@
       "source_location": "L228",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke_controlledruntime",
-      "target": "tests_dialoguesmoke_controlledruntime_prepareasync",
-      "confidence_score": 1.0
+      "target": "tests_dialoguesmoke_controlledruntime_prepareasync"
     },
     {
       "relation": "implements",
@@ -9937,9 +9937,9 @@
         "ref_token": "Action"
       },
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke_controlledruntime_generateasync",
-      "target": "action",
-      "confidence_score": 1.0
+      "target": "action"
     },
     {
       "relation": "references",
@@ -10057,9 +10057,9 @@
         "ref_token": "IReadOnlyList"
       },
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke_controlledruntime_generateasync",
-      "target": "ireadonlylist",
-      "confidence_score": 1.0
+      "target": "ireadonlylist"
     },
     {
       "relation": "references",
@@ -10072,9 +10072,9 @@
         "ref_token": "DialogueMessage"
       },
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke_controlledruntime_generateasync",
-      "target": "dialoguemessage",
-      "confidence_score": 1.0
+      "target": "dialoguemessage"
     },
     {
       "relation": "references",
@@ -10087,9 +10087,9 @@
         "ref_token": "CancellationToken"
       },
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke_controlledruntime_prepareasync",
-      "target": "cancellationtoken",
-      "confidence_score": 1.0
+      "target": "cancellationtoken"
     },
     {
       "relation": "references",
@@ -10102,9 +10102,9 @@
         "ref_token": "CancellationToken"
       },
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke_controlledruntime_generateasync",
-      "target": "cancellationtoken",
-      "confidence_score": 1.0
+      "target": "cancellationtoken"
     },
     {
       "relation": "references",
@@ -10117,9 +10117,9 @@
         "ref_token": "CancellationToken"
       },
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke_delayedstream_readasync",
-      "target": "cancellationtoken",
-      "confidence_score": 1.0
+      "target": "cancellationtoken"
     },
     {
       "relation": "references",
@@ -10132,9 +10132,9 @@
         "ref_token": "CancellationToken"
       },
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke_responsehandler_sendasync",
-      "target": "cancellationtoken",
-      "confidence_score": 1.0
+      "target": "cancellationtoken"
     },
     {
       "relation": "calls",
@@ -10144,9 +10144,9 @@
       "source_location": "L245",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke_dialoguesmoke_startupbringsruntimeup",
-      "target": "tests_dialoguesmoke_dialoguesmoke_endpointalive",
-      "confidence_score": 1.0
+      "target": "tests_dialoguesmoke_dialoguesmoke_endpointalive"
     },
     {
       "relation": "inherits",
@@ -10158,9 +10158,9 @@
         "ref_token": "HttpMessageHandler"
       },
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke_responsehandler",
-      "target": "httpmessagehandler",
-      "confidence_score": 1.0
+      "target": "httpmessagehandler"
     },
     {
       "relation": "method",
@@ -10169,9 +10169,9 @@
       "source_location": "L317",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke_responsehandler",
-      "target": "tests_dialoguesmoke_responsehandler_sendasync",
-      "confidence_score": 1.0
+      "target": "tests_dialoguesmoke_responsehandler_sendasync"
     },
     {
       "relation": "inherits",
@@ -10198,9 +10198,9 @@
         "ref_token": "HttpRequestMessage"
       },
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke_responsehandler_sendasync",
-      "target": "httprequestmessage",
-      "confidence_score": 1.0
+      "target": "httprequestmessage"
     },
     {
       "relation": "references",
@@ -10213,9 +10213,9 @@
         "ref_token": "HttpResponseMessage"
       },
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke_responsehandler_sendasync",
-      "target": "httpresponsemessage",
-      "confidence_score": 1.0
+      "target": "httpresponsemessage"
     },
     {
       "relation": "references",
@@ -10288,9 +10288,9 @@
         "ref_token": "int"
       },
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke_delayedstream",
-      "target": "int",
-      "confidence_score": 1.0
+      "target": "int"
     },
     {
       "relation": "inherits",
@@ -10302,9 +10302,9 @@
         "ref_token": "Stream"
       },
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke_delayedstream",
-      "target": "stream",
-      "confidence_score": 1.0
+      "target": "stream"
     },
     {
       "relation": "method",
@@ -10313,9 +10313,9 @@
       "source_location": "L342",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke_delayedstream",
-      "target": "tests_dialoguesmoke_delayedstream_flush",
-      "confidence_score": 1.0
+      "target": "tests_dialoguesmoke_delayedstream_flush"
     },
     {
       "relation": "method",
@@ -10324,9 +10324,9 @@
       "source_location": "L343",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke_delayedstream",
-      "target": "tests_dialoguesmoke_delayedstream_read",
-      "confidence_score": 1.0
+      "target": "tests_dialoguesmoke_delayedstream_read"
     },
     {
       "relation": "method",
@@ -10335,9 +10335,9 @@
       "source_location": "L324",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke_delayedstream",
-      "target": "tests_dialoguesmoke_delayedstream_readasync",
-      "confidence_score": 1.0
+      "target": "tests_dialoguesmoke_delayedstream_readasync"
     },
     {
       "relation": "method",
@@ -10346,9 +10346,9 @@
       "source_location": "L344",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke_delayedstream",
-      "target": "tests_dialoguesmoke_delayedstream_seek",
-      "confidence_score": 1.0
+      "target": "tests_dialoguesmoke_delayedstream_seek"
     },
     {
       "relation": "method",
@@ -10357,9 +10357,9 @@
       "source_location": "L345",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke_delayedstream",
-      "target": "tests_dialoguesmoke_delayedstream_setlength",
-      "confidence_score": 1.0
+      "target": "tests_dialoguesmoke_delayedstream_setlength"
     },
     {
       "relation": "method",
@@ -10368,9 +10368,9 @@
       "source_location": "L346",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke_delayedstream",
-      "target": "tests_dialoguesmoke_delayedstream_write",
-      "confidence_score": 1.0
+      "target": "tests_dialoguesmoke_delayedstream_write"
     },
     {
       "relation": "references",
@@ -10398,9 +10398,9 @@
         "ref_token": "Memory"
       },
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke_delayedstream_readasync",
-      "target": "memory",
-      "confidence_score": 1.0
+      "target": "memory"
     },
     {
       "relation": "references",
@@ -10413,9 +10413,9 @@
         "ref_token": "ValueTask"
       },
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke_delayedstream_readasync",
-      "target": "valuetask",
-      "confidence_score": 1.0
+      "target": "valuetask"
     },
     {
       "relation": "references",
@@ -10428,9 +10428,9 @@
         "ref_token": "SeekOrigin"
       },
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_dialoguesmoke_delayedstream_seek",
-      "target": "seekorigin",
-      "confidence_score": 1.0
+      "target": "seekorigin"
     },
     {
       "relation": "contains",
@@ -10439,9 +10439,9 @@
       "source_location": "L4",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "tests_read_npcprofile",
-      "target": "tests_read_npcprofile_read_npcprofile",
-      "confidence_score": 1.0
+      "target": "tests_read_npcprofile_read_npcprofile"
     },
     {
       "relation": "contains",
@@ -19575,5 +19575,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "c1d6be156961b0f0fecc43fb31ed263b613a5687"
+  "built_at_commit": "1de17d4c10108996560514afd1c2d232711baa71"
 }

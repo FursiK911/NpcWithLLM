@@ -885,8 +885,8 @@
     "semantic_hash": ""
   },
   ".scratch/npc-local-llm-demo/spec.md": {
-    "mtime": 1790253991.796379,
-    "ast_hash": "48ac78478a0dfa15440f2620964f2e0c",
+    "mtime": 1790254837.719532,
+    "ast_hash": "a8df2ec463ceb5e666ba2d593a28be25",
     "semantic_hash": ""
   },
   "docs/adr/0002-bundled-local-llm-runtime.md": {
@@ -1040,8 +1040,8 @@
     "semantic_hash": ""
   },
   "Tests/NpcProfileRead.Tests.ps1": {
-    "mtime": 1790254281.6319165,
-    "ast_hash": "412bf3ad08c80b17ab7d6cfbd6d257aa",
+    "mtime": 1790254903.0222116,
+    "ast_hash": "fae4f52bf3b5fcf6fbcf5edcfab809fe",
     "semantic_hash": ""
   },
   "Tests/Read-NpcProfile.ps1": {
@@ -1180,8 +1180,8 @@
     "semantic_hash": ""
   },
   ".scratch/npc-local-llm-demo/issues/11-startup-situation-intro-modal.md": {
-    "mtime": 1790254224.7709982,
-    "ast_hash": "abf77333589730333f7d1f6adaaa3f08",
+    "mtime": 1790254837.7383773,
+    "ast_hash": "56e62f41e9a612ea71c922bcce274581",
     "semantic_hash": ""
   },
   "Art/Background/background.png": {
