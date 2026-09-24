@@ -27,8 +27,13 @@ public sealed class LocalLlmRuntime : ILocalLlmRuntime, IDisposable
         _server = server ?? new OllamaServerController(_config.BaseUrl, bundledExecutable, http: _http);
     }
 
-    public async Task PrepareAsync(CancellationToken cancellationToken = default)
+    public Task PrepareAsync(CancellationToken cancellationToken = default)
+        => PrepareAsync(null, cancellationToken);
+
+    public async Task PrepareAsync(Action<RuntimePreparationProgress> reportProgress,
+        CancellationToken cancellationToken = default)
     {
+        reportProgress?.Invoke(new RuntimePreparationProgress(RuntimePreparationStage.StartingRuntime));
         try
         {
             await _server.EnsureServerAvailableAsync(cancellationToken);
@@ -43,8 +48,10 @@ public sealed class LocalLlmRuntime : ILocalLlmRuntime, IDisposable
 
         try
         {
+            reportProgress?.Invoke(new RuntimePreparationProgress(RuntimePreparationStage.CheckingModel));
             await EnsureConfiguredModelAvailableAsync(cancellationToken);
             // A real short generation loads weights and initializes the same context budget as dialogue.
+            reportProgress?.Invoke(new RuntimePreparationProgress(RuntimePreparationStage.LoadingModel));
             await GenerateAsync(new[] { new DialogueMessage("user", "Ответь одним словом: готов.") },
                 cancellationToken, null);
         }

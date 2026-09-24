@@ -49,10 +49,15 @@ public sealed class Bonsai2PrismRuntime : ILocalLlmRuntime, IDisposable
 
     public string ModelId => _modelId;
 
-    public async Task PrepareAsync(CancellationToken cancellationToken = default)
+    public Task PrepareAsync(CancellationToken cancellationToken = default)
+        => PrepareAsync(null, cancellationToken);
+
+    public async Task PrepareAsync(Action<RuntimePreparationProgress> reportProgress,
+        CancellationToken cancellationToken = default)
     {
         if (_prepared) return;
 
+        reportProgress?.Invoke(new RuntimePreparationProgress(RuntimePreparationStage.StartingRuntime));
         using var startupTimeout = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
         startupTimeout.CancelAfter(ServerReadyTimeout);
         var startupTimer = System.Diagnostics.Stopwatch.StartNew();
@@ -82,9 +87,11 @@ public sealed class Bonsai2PrismRuntime : ILocalLlmRuntime, IDisposable
                 $"PrismML llama-server не ответил за {ServerReadyTimeout.TotalSeconds:0} секунд на {_healthUri}.");
         }
 
+        reportProgress?.Invoke(new RuntimePreparationProgress(RuntimePreparationStage.CheckingModel));
         _modelId = await ResolveModelIdAsync(startupTimeout.Token);
 
         // Match the game's preparation flow: issue a tiny local generation before the first dialogue turn.
+        reportProgress?.Invoke(new RuntimePreparationProgress(RuntimePreparationStage.LoadingModel));
         await GenerateWithRecoveryAsync(
             new[] { new DialogueMessage("user", "Ответь одним словом: готов.") },
             startupTimeout.Token,

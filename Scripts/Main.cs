@@ -9,6 +9,9 @@ public partial class Main : Node2D
     private Button _sendButton = null!;
     private RichTextLabel _responseText = null!;
     private Label _statusLabel = null!;
+    private Control _preparationPanel = null!;
+    private Label _preparationStatusLabel = null!;
+    private ProgressBar _preparationProgressBar = null!;
     private TextureRect _background = null!;
     private TextureRect _mechanicPortrait = null!;
     private Control _introOverlay = null!;
@@ -33,6 +36,9 @@ public partial class Main : Node2D
         _sendButton = GetNode<Button>("UiLayer/DialoguePanel/Margin/VBox/Input/SendButton");
         _responseText = GetNode<RichTextLabel>("UiLayer/DialoguePanel/Margin/VBox/ResponseScroll/ResponseText");
         _statusLabel = GetNode<Label>("UiLayer/DialoguePanel/Margin/VBox/StatusLabel");
+        _preparationPanel = GetNode<Control>("UiLayer/PreparationPanel");
+        _preparationStatusLabel = GetNode<Label>("UiLayer/PreparationPanel/Margin/VBox/PreparationStatusLabel");
+        _preparationProgressBar = GetNode<ProgressBar>("UiLayer/PreparationPanel/Margin/VBox/PreparationProgressBar");
         _background = GetNode<TextureRect>("UiLayer/Background");
         _mechanicPortrait = GetNode<TextureRect>("UiLayer/MechanicPortrait");
         _introOverlay = GetNode<Control>("UiLayer/IntroOverlay");
@@ -80,6 +86,7 @@ public partial class Main : Node2D
         _chatResponder.ResponseStarted += OnResponseStarted;
         _chatResponder.ResponseEmotionReceived += OnResponseEmotionReceived;
         _chatResponder.PreparationStarted += OnPreparationStarted;
+        _chatResponder.PreparationProgress += OnPreparationProgress;
         _chatResponder.PreparationFinished += OnPreparationFinished;
         _chatResponder.ResponseReceived += OnResponseReceived;
         _chatResponder.ResponseFailed += OnResponseFailed;
@@ -96,6 +103,7 @@ public partial class Main : Node2D
         _chatResponder.ResponseStarted -= OnResponseStarted;
         _chatResponder.ResponseEmotionReceived -= OnResponseEmotionReceived;
         _chatResponder.PreparationStarted -= OnPreparationStarted;
+        _chatResponder.PreparationProgress -= OnPreparationProgress;
         _chatResponder.PreparationFinished -= OnPreparationFinished;
         _chatResponder.ResponseReceived -= OnResponseReceived;
         _chatResponder.ResponseFailed -= OnResponseFailed;
@@ -165,13 +173,45 @@ public partial class Main : Node2D
     private void OnPreparationStarted()
     {
         _preparationComplete = false;
+        _preparationPanel.Visible = true;
+        _preparationStatusLabel.Text = "Подключение к локальной модели…";
+        _preparationProgressBar.Indeterminate = true;
         _statusLabel.Text = "Подготовка персонажа…";
         UpdateInteractionEnabled();
+    }
+
+    private void OnPreparationProgress(string stageName, double fraction)
+    {
+        if (!Enum.TryParse(stageName, out RuntimePreparationStage stage))
+        {
+            return;
+        }
+
+        string stageText = stage switch
+        {
+            RuntimePreparationStage.StartingRuntime => "Проверка сервиса локальной LLM…",
+            RuntimePreparationStage.CheckingModel => "Проверка установленной модели…",
+            RuntimePreparationStage.LoadingModel => "Загрузка модели в память…",
+            _ => "Подготовка локальной модели…",
+        };
+
+        if (fraction >= 0d && double.IsFinite(fraction))
+        {
+            double clampedFraction = Math.Clamp(fraction, 0d, 1d);
+            _preparationStatusLabel.Text = $"{stageText} {clampedFraction:P0}";
+            _preparationProgressBar.Indeterminate = false;
+            _preparationProgressBar.Value = clampedFraction * 100d;
+            return;
+        }
+
+        _preparationStatusLabel.Text = stageText;
+        _preparationProgressBar.Indeterminate = true;
     }
 
     private void OnPreparationFinished()
     {
         _preparationComplete = true;
+        _preparationPanel.Visible = false;
         _statusLabel.Text = "Готов к диалогу.";
         UpdateInteractionEnabled();
 
@@ -199,7 +239,19 @@ public partial class Main : Node2D
     {
         _mechanicPortrait.Texture = _portraitBeforeRequest ?? _idlePortrait;
         _portraitBeforeRequest = null;
-        _statusLabel.Text = $"Не удалось получить ответ: {error}";
+        if (!_preparationComplete)
+        {
+            string preparationError = $"Не удалось подготовить локальную модель: {error}";
+            _preparationPanel.Visible = true;
+            _preparationStatusLabel.Text = preparationError;
+            _preparationProgressBar.Indeterminate = false;
+            _preparationProgressBar.Value = 0d;
+            _statusLabel.Text = preparationError;
+        }
+        else
+        {
+            _statusLabel.Text = $"Не удалось получить ответ: {error}";
+        }
         FinishRequest();
     }
 

@@ -69,6 +69,34 @@ mouse_filter = 2
 expand_mode = 1
 stretch_mode = 6
 
+[node name="PreparationPanel" type="PanelContainer" parent="UiLayer"]
+anchor_left = 0.25
+anchor_top = 0.02
+anchor_right = 0.75
+anchor_bottom = 0.15
+grow_horizontal = 2
+mouse_filter = 2
+z_index = 20
+theme_override_styles/panel = SubResource("StyleBox_dialogue")
+
+[node name="Margin" type="MarginContainer" parent="UiLayer/PreparationPanel"]
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="UiLayer/PreparationPanel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="PreparationStatusLabel" type="Label" parent="UiLayer/PreparationPanel/Margin/VBox"]
+layout_mode = 2
+text = "Подключение к локальной модели…"
+autowrap_mode = 2
+
+[node name="PreparationProgressBar" type="ProgressBar" parent="UiLayer/PreparationPanel/Margin/VBox"]
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+show_percentage = false
+indeterminate = true
+
 [node name="MechanicPortrait" type="TextureRect" parent="UiLayer"]
 offset_left = 24.0
 offset_top = 100.0

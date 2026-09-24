@@ -27,6 +27,20 @@ public partial class DialogueSmoke : Node
                 GetTree().Quit();
                 return;
             }
+            if (Array.Exists(userArgs, value => value == "--startup-readiness-only"))
+            {
+                await StartupReadinessKeepsStatusVisibleDuringPreparation();
+                GD.Print("PASS: startup readiness UI smoke");
+                GetTree().Quit();
+                return;
+            }
+            if (Array.Exists(userArgs, value => value == "--startup-failure-only"))
+            {
+                await StartupPreparationFailuresRemainVisibleAndLocked();
+                GD.Print("PASS: startup failure UI smoke");
+                GetTree().Quit();
+                return;
+            }
             if (hot || Array.Exists(userArgs, value => value == "--startup-only"))
             {
                 await StartupBringsRuntimeUp(requireColdEndpoint: !hot);
@@ -40,6 +54,8 @@ public partial class DialogueSmoke : Node
             await PreparationFailsWhenWarmupFails();
             await StreamsBeforeCompletion();
             await RejectsBrokenStreams();
+            await StartupReadinessKeepsStatusVisibleDuringPreparation();
+            await StartupPreparationFailuresRemainVisibleAndLocked();
             await IntroModalBlocksDialogueUntilDismissedAndReady();
             await UiWaitsForCompleteJsonAndPreservesFailedInput();
             if (Array.Exists(userArgs, value => value == "--real")) await RealSceneDialogue();
@@ -132,7 +148,14 @@ public partial class DialogueSmoke : Node
         using var client = new System.Net.Http.HttpClient(handler);
         using var runtime = new LocalLlmRuntime(new LocalLlmConfig { ModelName = configuredModel }, client);
 
-        await runtime.PrepareAsync();
+        var preparationStages = new List<RuntimePreparationStage>();
+        await runtime.PrepareAsync(progress => preparationStages.Add(progress.Stage));
+
+        Check(preparationStages.Count == 3
+            && preparationStages[0] == RuntimePreparationStage.StartingRuntime
+            && preparationStages[1] == RuntimePreparationStage.CheckingModel
+            && preparationStages[2] == RuntimePreparationStage.LoadingModel,
+            "Local runtime did not report service, model-check, and model-load preparation stages");
 
         Check(requests.Count == 3
             && requests[0] == "GET /api/tags"
@@ -339,6 +362,103 @@ public partial class DialogueSmoke : Node
         scene.QueueFree();
     }
 
+    private async Task StartupReadinessKeepsStatusVisibleDuringPreparation()
+    {
+        var scene = GD.Load<PackedScene>("res://Main.tscn").Instantiate<Main>();
+        var responder = scene.GetNode<LocalLlmResponder>("ChatResponder");
+        var runtime = new ControlledRuntime { HoldPreparation = true };
+        responder.Configure(runtime, responder.Profile);
+        AddChild(scene);
+
+        var preparationStatus = scene.FindChild("PreparationStatusLabel", recursive: true, owned: false) as Label;
+        var preparationPanel = scene.FindChild("PreparationPanel", recursive: true, owned: false) as Control;
+        var preparationProgress = scene.FindChild("PreparationProgressBar", recursive: true, owned: false) as ProgressBar;
+        var input = scene.GetNode<TextEdit>("UiLayer/DialoguePanel/Margin/VBox/Input/MessageInput");
+        var sendButton = scene.GetNode<Button>("UiLayer/DialoguePanel/Margin/VBox/Input/SendButton");
+        var introOverlay = scene.GetNode<Control>("UiLayer/IntroOverlay");
+        var introOkButton = scene.GetNode<Button>("UiLayer/IntroOverlay/CenterContainer/IntroPanel/Margin/VBox/OkRow/IntroOkButton");
+
+        Check(scene.Visible, "The game scene was hidden while the model was preparing");
+        Check(preparationPanel?.Visible == true && preparationStatus != null,
+            "The player could not see a startup status while the model was preparing");
+        Check(preparationProgress != null, "The startup UI did not show preparation progress");
+        Check(!input.Editable && sendButton.Disabled && runtime.RequestCount == 0,
+            "Dialogue was available before local model preparation finished");
+        introOkButton.EmitSignal(Button.SignalName.Pressed);
+        Check(!introOverlay.Visible && !input.Editable && sendButton.Disabled,
+            "Dismissing the introduction enabled dialogue before model preparation finished");
+
+        runtime.ReportPreparationProgress(RuntimePreparationStage.LoadingModel);
+        Check(preparationStatus.Text.Contains("Загрузка модели", StringComparison.Ordinal)
+            && preparationProgress.Indeterminate,
+            "The startup UI did not identify an in-progress model load without a reported percentage");
+        runtime.ReportPreparationProgress(RuntimePreparationStage.LoadingModel, 0.42d);
+        Check(preparationStatus.Text.Contains("42", StringComparison.Ordinal)
+            && preparationStatus.Text.Contains("%", StringComparison.Ordinal)
+            && !preparationProgress.Indeterminate
+            && Mathf.IsEqualApprox((float)preparationProgress.Value, 42f),
+            $"The startup UI did not display model loading progress when the runtime reported it: text='{preparationStatus.Text}', indeterminate={preparationProgress.Indeterminate}, value={preparationProgress.Value}");
+        Check(!input.Editable && sendButton.Disabled && runtime.RequestCount == 0,
+            "Dialogue became available while the model was still loading");
+
+        runtime.PreparationCompletion.SetResult();
+        await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
+        await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
+        Check(preparationPanel.Visible == false && input.Editable && !sendButton.Disabled,
+            "Dialogue did not become available after local model preparation finished");
+
+        scene.QueueFree();
+    }
+
+    private async Task StartupPreparationFailuresRemainVisibleAndLocked()
+    {
+        await AssertStartupFailureRemainsVisibleAndLocked(
+            LocalLlmRuntimeException.CreateForKind(LocalLlmFailureKind.OllamaExecutableMissing),
+            "программа Ollama");
+        await AssertStartupFailureRemainsVisibleAndLocked(
+            LocalLlmRuntimeException.CreateModelUnavailable("model-not-installed:latest"),
+            "model-not-installed:latest");
+        await AssertStartupFailureRemainsVisibleAndLocked(
+            LocalLlmRuntimeException.CreateForKind(LocalLlmFailureKind.NetworkError),
+            "Проверьте запуск Ollama");
+        await AssertStartupFailureRemainsVisibleAndLocked(
+            LocalLlmRuntimeException.CreateForKind(LocalLlmFailureKind.HttpError),
+            "отклонил запрос");
+    }
+
+    private async Task AssertStartupFailureRemainsVisibleAndLocked(
+        LocalLlmRuntimeException failure,
+        string expectedMessage)
+    {
+        var scene = GD.Load<PackedScene>("res://Main.tscn").Instantiate<Main>();
+        var responder = scene.GetNode<LocalLlmResponder>("ChatResponder");
+        var runtime = new ControlledRuntime { HoldPreparation = true };
+        responder.Configure(runtime, responder.Profile);
+        AddChild(scene);
+
+        var preparationPanel = scene.FindChild("PreparationPanel", recursive: true, owned: false) as Control;
+        var preparationStatus = scene.FindChild("PreparationStatusLabel", recursive: true, owned: false) as Label;
+        var input = scene.GetNode<TextEdit>("UiLayer/DialoguePanel/Margin/VBox/Input/MessageInput");
+        var sendButton = scene.GetNode<Button>("UiLayer/DialoguePanel/Margin/VBox/Input/SendButton");
+        var introOkButton = scene.GetNode<Button>("UiLayer/IntroOverlay/CenterContainer/IntroPanel/Margin/VBox/OkRow/IntroOkButton");
+        introOkButton.EmitSignal(Button.SignalName.Pressed);
+
+        runtime.PreparationCompletion.SetException(failure);
+        await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
+        await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
+
+        Check(scene.Visible && preparationPanel?.Visible == true,
+            "The game scene hid the preparation failure");
+        Check(preparationStatus?.Text.Contains(expectedMessage, StringComparison.Ordinal) == true,
+            $"The player did not receive a clear startup error for {failure.Kind}");
+        Check(!input.Editable && sendButton.Disabled && runtime.RequestCount == 0,
+            $"Dialogue or a fallback responder became available after {failure.Kind}");
+
+        sendButton.EmitSignal(Button.SignalName.Pressed);
+        Check(runtime.RequestCount == 0, $"A dialogue request bypassed the {failure.Kind} startup failure");
+        scene.QueueFree();
+    }
+
     private async Task UiWaitsForCompleteJsonAndPreservesFailedInput()
     {
         var scene = GD.Load<PackedScene>("res://Main.tscn").Instantiate<Main>();
@@ -431,9 +551,20 @@ public partial class DialogueSmoke : Node
         public bool HoldPreparation { get; init; }
         public int RequestCount { get; private set; }
         public IReadOnlyList<DialogueMessage> LastContext { get; private set; }
+        private Action<RuntimePreparationProgress> _reportProgress;
 
         public Task PrepareAsync(CancellationToken cancellationToken = default)
-            => HoldPreparation ? PreparationCompletion.Task : Task.CompletedTask;
+            => PrepareAsync(null, cancellationToken);
+
+        public Task PrepareAsync(Action<RuntimePreparationProgress> reportProgress,
+            CancellationToken cancellationToken = default)
+        {
+            _reportProgress = reportProgress;
+            return HoldPreparation ? PreparationCompletion.Task : Task.CompletedTask;
+        }
+
+        public void ReportPreparationProgress(RuntimePreparationStage stage, double? fraction = null)
+            => _reportProgress?.Invoke(new RuntimePreparationProgress(stage, fraction));
 
         public Task<string> GenerateAsync(IReadOnlyList<DialogueMessage> context,
             CancellationToken cancellationToken = default, Action<string> onText = null)

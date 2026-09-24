@@ -23,6 +23,9 @@ public partial class ChatResponder : Node
     public delegate void PreparationFinishedEventHandler();
 
     [Signal]
+    public delegate void PreparationProgressEventHandler(string stage, double fraction);
+
+    [Signal]
     public delegate void ResponseReceivedEventHandler(string response);
 
     [Signal]

@@ -33,7 +33,7 @@ public partial class LocalLlmResponder : ChatResponder
     {
         try
         {
-            await GetRuntime().PrepareAsync(_lifetime.Token);
+            await GetRuntime().PrepareAsync(ReportPreparationProgress, _lifetime.Token);
             _prepared = true;
             IsBusy = false;
             if (!_lifetime.IsCancellationRequested) EmitSignal(SignalName.PreparationFinished);
@@ -43,6 +43,11 @@ public partial class LocalLlmResponder : ChatResponder
             IsBusy = false;
             ReportFailure(exception);
         }
+    }
+
+    private void ReportPreparationProgress(RuntimePreparationProgress progress)
+    {
+        EmitSignal(SignalName.PreparationProgress, progress.Stage.ToString(), progress.Fraction ?? -1d);
     }
 
     [Export]
@@ -83,7 +88,7 @@ public partial class LocalLlmResponder : ChatResponder
         {
             if (!_prepared)
             {
-                await GetRuntime().PrepareAsync(_lifetime.Token);
+                await GetRuntime().PrepareAsync(ReportPreparationProgress, _lifetime.Token);
                 _prepared = true;
             }
             NpcProfile profile = RequireProfile();
