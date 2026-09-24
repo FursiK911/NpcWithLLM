@@ -80,6 +80,9 @@ Describe 'Dialogue regression' {
             Should Match 'имя игрока: Дмитрий'
         ($context.Messages | ForEach-Object { $_.Content } | Out-String) |
             Should Match 'профессия игрока: программистом'
+        ($context.Messages[0].Content) |
+            Should Match "When asked directly about the visitor's remembered name or profession"
+        ($context.Messages[0].Content) | Should Match 'include both'
     }
 
     It 'includes NPC identity in an explicit identity question' {

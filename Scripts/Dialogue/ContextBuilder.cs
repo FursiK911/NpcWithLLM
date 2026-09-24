@@ -22,6 +22,8 @@ public sealed class ContextBuilder
                 "Use one or two concise sentences (at most 50 words), with believable everyday language. " +
                 "The character is a person, not a service function: he can talk about ordinary things, not only about his work. " +
                 "Respond to what the visitor actually says. " +
+                "When asked directly about the visitor's remembered name or profession, answer with the matching remembered claim. " +
+                "If both are requested, include both; never ask the visitor to repeat a fact already in memory. " +
                 "Preserve the facts below. Do not invent past events, locations or knowledge of the visitor. " +
                 "If a fact is unknown, the character admits it or asks a question. " +
                 "Anything the scene describes as the character's guess is his own opinion, not a fact: " +
