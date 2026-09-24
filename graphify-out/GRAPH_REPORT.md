@@ -1,16 +1,16 @@
 # Graph Report - NpcWithLLM  (2026-09-24)
 
 ## Corpus Check
-- 185 files · ~140,171 words
+- 185 files · ~140,271 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 757 nodes · 925 edges · 81 communities (49 shown, 32 thin omitted)
+- 757 nodes · 925 edges · 83 communities (50 shown, 33 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 21 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `9b586862`
+- Built from commit: `d561db78`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -45,7 +45,7 @@
 - .Create
 - DialogueMessage.cs
 - NpcMemory
-- DialogueSmoke
+- DelayedStream
 - LocalLlmRuntimeException
 - Лист просмотра ответов персонажа
 - Пороги приёмки снимаются, роль переезжает в профиль
@@ -89,6 +89,8 @@
 - DialogueMessage
 - int
 - IReadOnlyList
+- DialogueSmoke
+- Task
 
 ## God Nodes (most connected - your core abstractions)
 1. `Полная беседа` - 33 edges
@@ -105,23 +107,23 @@
 ## Surprising Connections (you probably didn't know these)
 - `LocalLlmResponder` --inherits--> `ChatResponder`  [EXTRACTED]
   Scripts/Dialogue/LocalLlmResponder.cs → Scripts/ChatResponder.cs
+- `MockChatResponder` --inherits--> `ChatResponder`  [EXTRACTED]
+  Scripts/MockChatResponder.cs → Scripts/ChatResponder.cs
 - `Bonsai2PrismRuntime` --references--> `LocalLlmConfig`  [EXTRACTED]
   Scripts/Dialogue/Bonsai2PrismRuntime.cs → Scripts/Dialogue/LocalLlmConfig.cs
 - `FakeLocalLlmRuntime` --references--> `LocalLlmFailureKind`  [EXTRACTED]
   Scripts/Dialogue/FakeLocalLlmRuntime.cs → Scripts/Dialogue/LocalLlmRuntimeException.cs
 - `LocalLlmRuntime` --implements--> `ILocalLlmRuntime`  [EXTRACTED]
   Scripts/Dialogue/LocalLlmRuntime.cs → Scripts/Dialogue/ILocalLlmRuntime.cs
-- `Main` --references--> `ChatResponder`  [EXTRACTED]
-  Scripts/Main.cs → Scripts/ChatResponder.cs
 
 ## Import Cycles
 - None detected.
 
-## Communities (81 total, 32 thin omitted)
+## Communities (83 total, 33 thin omitted)
 
 ### Community 0 - "Main"
-Cohesion: 0.07
-Nodes (17): Button, Control, double, FocusModeEnum, InputEvent, Label, Node2D, RichTextLabel (+9 more)
+Cohesion: 0.09
+Nodes (13): Button, Control, FocusModeEnum, InputEvent, Label, Node2D, RichTextLabel, ChatResponder (+5 more)
 
 ### Community 1 - "DialogueHistory"
 Cohesion: 0.09
@@ -180,8 +182,8 @@ Cohesion: 0.09
 Nodes (20): Godot MCP для Codex, NpcWithLLM, Направление проекта, Ручной запуск Bonsai через PrismML, Текущий статус, Тесты и проверка качества, 10: Локальная оценка Bonsai 2 27B, Comments (+12 more)
 
 ### Community 19 - "OllamaServerController"
-Cohesion: 0.10
-Nodes (20): IDisposable, JsonSerializerOptions, NetHttpClient, object, Process, Action, CancellationToken, DialogueMessage (+12 more)
+Cohesion: 0.11
+Nodes (18): IDisposable, JsonSerializerOptions, NetHttpClient, object, Process, Action, CancellationToken, DialogueMessage (+10 more)
 
 ### Community 20 - "Local LLM Connection"
 Cohesion: 0.22
@@ -211,9 +213,9 @@ Nodes (5): DialogueMessage, IReadOnlyList, LocalLlmGenerationOptions, LocalLlmRe
 Cohesion: 0.24
 Nodes (4): Dictionary, IReadOnlyDictionary, Regex, NpcMemory
 
-### Community 30 - "DialogueSmoke"
-Cohesion: 0.11
-Nodes (14): Action, CancellationToken, DialogueMessage, ILocalLlmRuntime, int, Memory, SeekOrigin, Stream (+6 more)
+### Community 30 - "DelayedStream"
+Cohesion: 0.17
+Nodes (6): int, Memory, SeekOrigin, Stream, DelayedStream, ValueTask
 
 ### Community 35 - "Лист просмотра ответов персонажа"
 Cohesion: 0.09
@@ -248,8 +250,8 @@ Cohesion: 0.11
 Nodes (15): 06: Живая оценка локальной модели, Comments, Вывод и рекомендация, Живая оценка `gemma4-12b-it-q2k-eval` (Gemma 4 12B IT, Q2_K), Оценки, Сравнение с предыдущими прогонами, Условия прогона, Вывод и рекомендация (+7 more)
 
 ### Community 53 - "Bonsai2PrismRuntime"
-Cohesion: 0.12
-Nodes (15): GenerationResult, HttpClient, IReadOnlyList, Bonsai2PrismRuntime, bool, CancellationToken, DialogueMessage, Exception (+7 more)
+Cohesion: 0.09
+Nodes (23): Action, CancellationToken, DialogueMessage, GenerationResult, HttpClient, ILocalLlmRuntime, IReadOnlyList, Bonsai2PrismRuntime (+15 more)
 
 ### Community 54 - "Bonsai2PrismRuntimeSmoke"
 Cohesion: 0.20
@@ -287,30 +289,34 @@ Nodes (3): Оценивать локальную модель живым диа�
 Cohesion: 0.40
 Nodes (4): 11: Вступительная модалка о ситуации NPC, Comments, Контекст, Требования
 
+### Community 81 - "DialogueSmoke"
+Cohesion: 0.24
+Nodes (5): double, MockChatResponder, string, Task, DialogueSmoke
+
 ## Knowledge Gaps
 - **341 isolated node(s):** `Требования`, `Контекст`, `Comments`, `Problem Statement`, `Solution` (+336 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **32 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **33 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Work-memory lessons
 
 **Preferred sources** — corroborated by past sessions; start here.
-- `LocalLlmResponder` (2× useful, score=1.980197959) _(code changed — re-verify)_
-- `LocalLlmRuntime` (2× useful, score=1.980197959)
+- `LocalLlmResponder` (2× useful, score=1.952418093)
+- `LocalLlmRuntime` (2× useful, score=1.952418093)
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `ChatResponder` connect `Main` to `Node`, `LocalLlmResponder`?**
-  _High betweenness centrality (0.041) - this node is a cross-community bridge._
-- **Why does `Bonsai2PrismRuntime` connect `Bonsai2PrismRuntime` to `Bonsai2PrismRuntimeSmoke`, `DialogueHistory`, `OllamaServerController`, `DialogueSmoke`?**
-  _High betweenness centrality (0.030) - this node is a cross-community bridge._
+- **Why does `ChatResponder` connect `Main` to `DialogueSmoke`, `Node`, `LocalLlmResponder`?**
+  _High betweenness centrality (0.040) - this node is a cross-community bridge._
 - **Why does `Bonsai2PrismRuntimeSmoke` connect `Bonsai2PrismRuntimeSmoke` to `Node`?**
+  _High betweenness centrality (0.029) - this node is a cross-community bridge._
+- **Why does `Bonsai2PrismRuntime` connect `Bonsai2PrismRuntime` to `Bonsai2PrismRuntimeSmoke`, `DialogueHistory`, `OllamaServerController`, `DelayedStream`?**
   _High betweenness centrality (0.029) - this node is a cross-community bridge._
 - **What connects `Требования`, `Контекст`, `Comments` to the rest of the system?**
   _341 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Main` be split into smaller, more focused modules?**
-  _Cohesion score 0.07017543859649122 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.08870967741935484 - nodes in this community are weakly interconnected._
 - **Should `DialogueHistory` be split into smaller, more focused modules?**
   _Cohesion score 0.08547008547008547 - nodes in this community are weakly interconnected._
 - **Should `What You Must Do When Invoked` be split into smaller, more focused modules?**

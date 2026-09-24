@@ -25,13 +25,13 @@
     "semantic_hash": "041611b00e653767e666c1288a52b7c0"
   },
   "Scripts/ChatResponder.cs": {
-    "mtime": 1790096566.2738192,
-    "ast_hash": "0bb918798516029cff6afc299f0bd912",
+    "mtime": 1790250428.9312954,
+    "ast_hash": "449c59b122f20d34afea51749d677653",
     "semantic_hash": ""
   },
   "Scripts/Main.cs": {
-    "mtime": 1790096566.276323,
-    "ast_hash": "14a05d048d398056b80778d25742d214",
+    "mtime": 1790250554.490565,
+    "ast_hash": "6d376e4ba43d1865eedcc9313a5d6575",
     "semantic_hash": ""
   },
   "Scripts/MockChatResponder.cs": {
@@ -885,8 +885,8 @@
     "semantic_hash": ""
   },
   ".scratch/npc-local-llm-demo/spec.md": {
-    "mtime": 1790198123.2281976,
-    "ast_hash": "ebabba655fd3a896c7991b41745e0536",
+    "mtime": 1790249955.355661,
+    "ast_hash": "17e3a8a9b30b0c96f9ded3968e5ac030",
     "semantic_hash": ""
   },
   "docs/adr/0002-bundled-local-llm-runtime.md": {
@@ -920,8 +920,8 @@
     "semantic_hash": ""
   },
   "Scripts/Dialogue/LocalLlmResponder.cs": {
-    "mtime": 1790197660.6880834,
-    "ast_hash": "8ea432084870a8728555f6500c4271a5",
+    "mtime": 1790250356.97694,
+    "ast_hash": "5b5e284a3ca9408577c6c21209b2b638",
     "semantic_hash": ""
   },
   "Scripts/Dialogue/NpcMemory.cs": {
@@ -980,8 +980,8 @@
     "semantic_hash": ""
   },
   "Tests/DialogueSmoke.cs": {
-    "mtime": 1790112598.269107,
-    "ast_hash": "9cc8ddd6b8bdec5cdc21d07854380f6b",
+    "mtime": 1790250837.9192824,
+    "ast_hash": "a9491eee2fdd03a50aa224170606e185",
     "semantic_hash": ""
   },
   "Tests/Run-DialogueModelEvaluation.ps1": {
@@ -1177,6 +1177,11 @@
   "graphify-out/memory/query_20260923_211650_how_does_the_game_select_the_local_llm_provider_an.md": {
     "mtime": 1790198210.6861193,
     "ast_hash": "497cbc09273bd659239db3f1a684fdea",
+    "semantic_hash": ""
+  },
+  ".scratch/npc-local-llm-demo/issues/11-startup-situation-intro-modal.md": {
+    "mtime": 1790251087.7284641,
+    "ast_hash": "59e8334d874bb2da6cceb3daf34dd1e8",
     "semantic_hash": ""
   }
 }

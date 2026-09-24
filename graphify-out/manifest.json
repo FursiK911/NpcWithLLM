@@ -885,8 +885,8 @@
     "semantic_hash": ""
   },
   ".scratch/npc-local-llm-demo/spec.md": {
-    "mtime": 1790249955.355661,
-    "ast_hash": "17e3a8a9b30b0c96f9ded3968e5ac030",
+    "mtime": 1790252683.6272874,
+    "ast_hash": "900e9aaed1ff01c055b54f62b6798f7b",
     "semantic_hash": ""
   },
   "docs/adr/0002-bundled-local-llm-runtime.md": {
@@ -980,8 +980,8 @@
     "semantic_hash": ""
   },
   "Tests/DialogueSmoke.cs": {
-    "mtime": 1790250837.9192824,
-    "ast_hash": "a9491eee2fdd03a50aa224170606e185",
+    "mtime": 1790252573.397177,
+    "ast_hash": "56b22cf455a77ed3daae058e6d68dc38",
     "semantic_hash": ""
   },
   "Tests/Run-DialogueModelEvaluation.ps1": {
@@ -1040,8 +1040,8 @@
     "semantic_hash": ""
   },
   "Tests/NpcProfileRead.Tests.ps1": {
-    "mtime": 1790112498.0683734,
-    "ast_hash": "5152457009e01cfe60aa4cabe70c986f",
+    "mtime": 1790252749.893604,
+    "ast_hash": "f274012b1eb6ffdc314c4dfa73a82160",
     "semantic_hash": ""
   },
   "Tests/Read-NpcProfile.ps1": {
@@ -1180,8 +1180,8 @@
     "semantic_hash": ""
   },
   ".scratch/npc-local-llm-demo/issues/11-startup-situation-intro-modal.md": {
-    "mtime": 1790251087.7284641,
-    "ast_hash": "59e8334d874bb2da6cceb3daf34dd1e8",
+    "mtime": 1790252683.6272874,
+    "ast_hash": "6678413a4d64eafd79b87bc53adda72b",
     "semantic_hash": ""
   }
 }
