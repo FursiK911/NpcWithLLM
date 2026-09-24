@@ -30,8 +30,8 @@
     "semantic_hash": ""
   },
   "Scripts/Main.cs": {
-    "mtime": 1790250554.490565,
-    "ast_hash": "6d376e4ba43d1865eedcc9313a5d6575",
+    "mtime": 1790253991.7953796,
+    "ast_hash": "8a2c60f8f66a2c43455152f226e481bc",
     "semantic_hash": ""
   },
   "Scripts/MockChatResponder.cs": {
@@ -825,13 +825,13 @@
     "semantic_hash": ""
   },
   "CONTEXT.md": {
-    "mtime": 1790118502.4647138,
-    "ast_hash": "f2ea2c4e2897425fc7ed9e18e715d121",
+    "mtime": 1790254078.1284902,
+    "ast_hash": "be79613e74bbda6f1a0267d8a6e0aa21",
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1790198070.5409665,
-    "ast_hash": "ae4774bc162f6a95ba15b0882dbad18e",
+    "mtime": 1790254078.1294894,
+    "ast_hash": "5eb4ecbaa222a2dcafe2684a55e4eaf0",
     "semantic_hash": ""
   },
   "docs/adr/0001-local-llm-dialogue-boundary.md": {
@@ -885,8 +885,8 @@
     "semantic_hash": ""
   },
   ".scratch/npc-local-llm-demo/spec.md": {
-    "mtime": 1790252683.6272874,
-    "ast_hash": "900e9aaed1ff01c055b54f62b6798f7b",
+    "mtime": 1790253991.796379,
+    "ast_hash": "48ac78478a0dfa15440f2620964f2e0c",
     "semantic_hash": ""
   },
   "docs/adr/0002-bundled-local-llm-runtime.md": {
@@ -980,8 +980,8 @@
     "semantic_hash": ""
   },
   "Tests/DialogueSmoke.cs": {
-    "mtime": 1790252573.397177,
-    "ast_hash": "56b22cf455a77ed3daae058e6d68dc38",
+    "mtime": 1790254274.1761303,
+    "ast_hash": "a9ccd54d3fd15603b730442cd5ccf786",
     "semantic_hash": ""
   },
   "Tests/Run-DialogueModelEvaluation.ps1": {
@@ -1035,18 +1035,18 @@
     "semantic_hash": ""
   },
   "Scripts/Dialogue/NpcProfile.cs": {
-    "mtime": 1790111798.5945382,
-    "ast_hash": "b42afd61ee4386f174b5a67139b103ce",
+    "mtime": 1790253938.857337,
+    "ast_hash": "6b346c45d3337d614e8165dc3caeb8ec",
     "semantic_hash": ""
   },
   "Tests/NpcProfileRead.Tests.ps1": {
-    "mtime": 1790252749.893604,
-    "ast_hash": "f274012b1eb6ffdc314c4dfa73a82160",
+    "mtime": 1790254281.6319165,
+    "ast_hash": "412bf3ad08c80b17ab7d6cfbd6d257aa",
     "semantic_hash": ""
   },
   "Tests/Read-NpcProfile.ps1": {
-    "mtime": 1790112466.2313209,
-    "ast_hash": "70a90bfd7c076322647919c39bb778b1",
+    "mtime": 1790253938.8613403,
+    "ast_hash": "cb66f3f6d462ba019b7bc76a9a5702a1",
     "semantic_hash": ""
   },
   ".scratch/npc-local-llm-demo/review-qwen35-profile.md": {
@@ -1180,8 +1180,63 @@
     "semantic_hash": ""
   },
   ".scratch/npc-local-llm-demo/issues/11-startup-situation-intro-modal.md": {
-    "mtime": 1790252683.6272874,
-    "ast_hash": "6678413a4d64eafd79b87bc53adda72b",
+    "mtime": 1790254224.7709982,
+    "ast_hash": "abf77333589730333f7d1f6adaaa3f08",
+    "semantic_hash": ""
+  },
+  "Art/Background/background.png": {
+    "mtime": 1790253287.2681892,
+    "ast_hash": "6e99a3bcdd139fe70b5e9e4b6259eb44",
+    "semantic_hash": ""
+  },
+  "Art/Mechanic/angry.png": {
+    "mtime": 1790252741.2311652,
+    "ast_hash": "9af668f73563d78810fe159b30368324",
+    "semantic_hash": ""
+  },
+  "Art/Mechanic/happy.png": {
+    "mtime": 1790252943.4949539,
+    "ast_hash": "b7b27a09f353a136835adb01a4bd5246",
+    "semantic_hash": ""
+  },
+  "Art/Mechanic/idle.png": {
+    "mtime": 1790252930.2313576,
+    "ast_hash": "03fcacd170ea4e8364d45697b6aee77c",
+    "semantic_hash": ""
+  },
+  "Art/Mechanic/sad.png": {
+    "mtime": 1790252918.5633883,
+    "ast_hash": "320489327907a10515041ebc9e0afabb",
+    "semantic_hash": ""
+  },
+  "Art/Mechanic/speak_1.png": {
+    "mtime": 1790252904.9502943,
+    "ast_hash": "64861cf87f6b599a5602bb0b4351477a",
+    "semantic_hash": ""
+  },
+  "Art/Mechanic/speak_2.png": {
+    "mtime": 1790252887.3037634,
+    "ast_hash": "5c18d4cf38f9769aefc2816074d1b812",
+    "semantic_hash": ""
+  },
+  "Art/Mechanic/speak_3.png": {
+    "mtime": 1790252871.107054,
+    "ast_hash": "1b845a66b619d97b8513df59e4c13d92",
+    "semantic_hash": ""
+  },
+  "Art/Mechanic/speak_4.png": {
+    "mtime": 1790252855.8960073,
+    "ast_hash": "c37d44e62d0daa83305d55e996987d18",
+    "semantic_hash": ""
+  },
+  "Art/Mechanic/speak_5.png": {
+    "mtime": 1790252844.1676998,
+    "ast_hash": "485328bd3cd26b2987f9c85a518a72eb",
+    "semantic_hash": ""
+  },
+  "Art/Mechanic/thinking.png": {
+    "mtime": 1790252824.9881165,
+    "ast_hash": "c0b52d90cf4f98deefc4402fee5d0661",
     "semantic_hash": ""
   }
 }

@@ -1,7 +1,7 @@
 # Graph Report - NpcWithLLM  (2026-09-24)
 
 ## Corpus Check
-- 185 files · ~548,070 words
+- 185 files · ~548,132 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `c1d6be15`
+- Built from commit: `1de17d4c`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -82,7 +82,7 @@
 - 08-windows-package-and-docs.md
 - 09-clean-windows-smoke.md
 - LocalLlmConfig
-- 11: Вступительная модалка о ситуации NPC
+- 11: Вступительная модалка для игрока
 - NpcProfile
 - Exception
 - DialogueMessage
@@ -287,9 +287,9 @@ Nodes (4): Answer, Outcome, Q: How does the game select the local LLM provider a
 Cohesion: 0.50
 Nodes (3): Оценивать локальную модель живым диалогом, Последствия, Рассматриваемые варианты
 
-### Community 74 - "11: Вступительная модалка о ситуации NPC"
+### Community 74 - "11: Вступительная модалка для игрока"
 Cohesion: 0.40
-Nodes (4): 11: Вступительная модалка о ситуации NPC, Comments, Контекст, Требования
+Nodes (4): 11: Вступительная модалка для игрока, Comments, Контекст, Требования
 
 ## Knowledge Gaps
 - **341 isolated node(s):** `Требования`, `Контекст`, `Comments`, `Problem Statement`, `Solution` (+336 more)
@@ -299,8 +299,8 @@ Nodes (4): 11: Вступительная модалка о ситуации NPC
 ## Work-memory lessons
 
 **Preferred sources** — corroborated by past sessions; start here.
-- `LocalLlmResponder` (2× useful, score=1.951574182)
-- `LocalLlmRuntime` (2× useful, score=1.951574182)
+- `LocalLlmResponder` (2× useful, score=1.950775869)
+- `LocalLlmRuntime` (2× useful, score=1.950775869)
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
