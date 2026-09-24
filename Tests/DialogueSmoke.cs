@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 using System.Text;
+using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 using Godot;
@@ -16,6 +17,16 @@ public partial class DialogueSmoke : Node
         {
             string[] userArgs = OS.GetCmdlineUserArgs();
             bool hot = Array.Exists(userArgs, value => value == "--startup-hot");
+            if (Array.Exists(userArgs, value => value == "--model-preparation-only"))
+            {
+                await PreparationRejectsMissingConfiguredModel();
+                await PreparationUsesConfiguredInstalledModel();
+                await PreparationReportsModelListFailures();
+                await PreparationFailsWhenWarmupFails();
+                GD.Print("PASS: model preparation smoke");
+                GetTree().Quit();
+                return;
+            }
             if (hot || Array.Exists(userArgs, value => value == "--startup-only"))
             {
                 await StartupBringsRuntimeUp(requireColdEndpoint: !hot);
@@ -23,6 +34,10 @@ public partial class DialogueSmoke : Node
                 GetTree().Quit();
                 return;
             }
+            await PreparationRejectsMissingConfiguredModel();
+            await PreparationUsesConfiguredInstalledModel();
+            await PreparationReportsModelListFailures();
+            await PreparationFailsWhenWarmupFails();
             await StreamsBeforeCompletion();
             await RejectsBrokenStreams();
             await IntroModalBlocksDialogueUntilDismissedAndReady();
@@ -58,9 +73,158 @@ public partial class DialogueSmoke : Node
         Check(await pending == "Иван здесь.", "Final text incorrect");
     }
 
+    private static async Task PreparationRejectsMissingConfiguredModel()
+    {
+        const string configuredModel = "expected-model:local ";
+        var requests = new List<string>();
+        using var handler = new RequestResponseHandler((request, _) =>
+        {
+            requests.Add($"{request.Method} {request.RequestUri?.AbsolutePath}");
+            if (request.Method == HttpMethod.Get)
+            {
+                return Task.FromResult(new HttpResponseMessage(HttpStatusCode.OK)
+                {
+                    Content = new StringContent(
+                        "{\"models\":[{\"name\":\"expected-model:local\"},{\"name\":\"expected-model:local-backup\"},{\"name\":\"Expected-Model:Local\"}]}")
+                });
+            }
+
+            return Task.FromResult(new HttpResponseMessage(HttpStatusCode.OK)
+            {
+                Content = new StringContent("{\"message\":{\"content\":\"готово\"},\"done\":true}")
+            });
+        });
+        using var client = new System.Net.Http.HttpClient(handler);
+        using var runtime = new LocalLlmRuntime(new LocalLlmConfig { ModelName = configuredModel }, client);
+
+        LocalLlmRuntimeException failure = await CapturePreparationFailure(runtime);
+
+        Check(failure != null
+            && failure.Kind == LocalLlmFailureKind.ModelUnavailable
+            && failure.UserMessage.Contains(configuredModel, StringComparison.Ordinal),
+            "Preparation did not identify the exact configured model as unavailable");
+        Check(requests.Count == 2 && requests.TrueForAll(request => request == "GET /api/tags"),
+            "Preparation generated a response or downloaded a model that Ollama did not list");
+    }
+
+    private static async Task PreparationUsesConfiguredInstalledModel()
+    {
+        const string configuredModel = "alternate-npc:local";
+        var requests = new List<string>();
+        string warmupRequest = null;
+        using var handler = new RequestResponseHandler(async (request, cancellationToken) =>
+        {
+            requests.Add($"{request.Method} {request.RequestUri?.AbsolutePath}");
+            if (request.Method == HttpMethod.Get)
+            {
+                return new HttpResponseMessage(HttpStatusCode.OK)
+                {
+                    Content = new StringContent("{\"models\":[{\"name\":\"alternate-npc:local\"}]}")
+                };
+            }
+
+            warmupRequest = await request.Content.ReadAsStringAsync(cancellationToken);
+            return new HttpResponseMessage(HttpStatusCode.OK)
+            {
+                Content = new StringContent("{\"message\":{\"content\":\"готово\"},\"done\":true}\n")
+            };
+        });
+        using var client = new System.Net.Http.HttpClient(handler);
+        using var runtime = new LocalLlmRuntime(new LocalLlmConfig { ModelName = configuredModel }, client);
+
+        await runtime.PrepareAsync();
+
+        Check(requests.Count == 3
+            && requests[0] == "GET /api/tags"
+            && requests[1] == "GET /api/tags"
+            && requests[2] == "POST /api/chat",
+            "Preparation did not verify the configured model before warming it");
+        using var document = JsonDocument.Parse(warmupRequest);
+        Check(document.RootElement.GetProperty("model").GetString() == configuredModel,
+            "Preparation warmed a model other than the configured Ollama model");
+    }
+
+    private static async Task PreparationReportsModelListFailures()
+    {
+        const string configuredModel = "available-model:local";
+        var requests = new List<string>();
+        int tagsRequests = 0;
+        using var handler = new RequestResponseHandler((request, _) =>
+        {
+            requests.Add($"{request.Method} {request.RequestUri?.AbsolutePath}");
+            if (request.Method == HttpMethod.Get)
+            {
+                tagsRequests++;
+                HttpStatusCode status = tagsRequests == 1 ? HttpStatusCode.OK : HttpStatusCode.ServiceUnavailable;
+                return Task.FromResult(new HttpResponseMessage(status)
+                {
+                    Content = new StringContent("{\"models\":[{\"name\":\"available-model:local\"}]}")
+                });
+            }
+
+            return Task.FromResult(new HttpResponseMessage(HttpStatusCode.OK)
+            {
+                Content = new StringContent("{\"message\":{\"content\":\"готово\"},\"done\":true}")
+            });
+        });
+        using var client = new System.Net.Http.HttpClient(handler);
+        using var runtime = new LocalLlmRuntime(new LocalLlmConfig { ModelName = configuredModel }, client);
+
+        LocalLlmRuntimeException failure = await CapturePreparationFailure(runtime);
+
+        Check(failure?.Kind == LocalLlmFailureKind.HttpError,
+            "An Ollama model-list HTTP failure was not reported as a service error");
+        Check(requests.Count == 2 && requests.TrueForAll(request => request == "GET /api/tags"),
+            "Preparation continued after the Ollama model-list request failed");
+    }
+
+    private static async Task PreparationFailsWhenWarmupFails()
+    {
+        const string configuredModel = "available-model:local";
+        var requests = new List<string>();
+        using var handler = new RequestResponseHandler((request, _) =>
+        {
+            requests.Add($"{request.Method} {request.RequestUri?.AbsolutePath}");
+            if (request.Method == HttpMethod.Get)
+            {
+                return Task.FromResult(new HttpResponseMessage(HttpStatusCode.OK)
+                {
+                    Content = new StringContent("{\"models\":[{\"name\":\"available-model:local\"}]}")
+                });
+            }
+
+            return Task.FromResult(new HttpResponseMessage(HttpStatusCode.OK)
+            {
+                Content = new StringContent("{\"error\":\"warmup failed\"}\n")
+            });
+        });
+        using var client = new System.Net.Http.HttpClient(handler);
+        using var runtime = new LocalLlmRuntime(new LocalLlmConfig { ModelName = configuredModel }, client);
+
+        LocalLlmRuntimeException failure = await CapturePreparationFailure(runtime);
+
+        Check(failure?.Kind == LocalLlmFailureKind.HttpError,
+            "A failed model warmup did not prevent runtime preparation");
+        Check(requests.Count == 3 && requests[2] == "POST /api/chat",
+            "Preparation did not validate the model before the failed warmup");
+    }
+
     private static void Check(bool condition, string message)
     {
         if (!condition) throw new Exception(message);
+    }
+
+    private static async Task<LocalLlmRuntimeException> CapturePreparationFailure(LocalLlmRuntime runtime)
+    {
+        try
+        {
+            await runtime.PrepareAsync();
+            return null;
+        }
+        catch (LocalLlmRuntimeException exception)
+        {
+            return exception;
+        }
     }
 
     private static async Task RejectsBrokenStreams()
@@ -359,6 +523,13 @@ public partial class DialogueSmoke : Node
     {
         protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken token)
             => Task.FromResult(respond());
+    }
+
+    private sealed class RequestResponseHandler(
+        Func<HttpRequestMessage, CancellationToken, Task<HttpResponseMessage>> respond) : HttpMessageHandler
+    {
+        protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken token)
+            => respond(request, token);
     }
 
     private sealed class DelayedStream(Task finish) : Stream

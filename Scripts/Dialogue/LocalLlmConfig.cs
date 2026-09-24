@@ -20,7 +20,7 @@ public partial class LocalLlmConfig : Resource
     public string EndpointPath { get; set; } = "/api/chat";
 
     [Export]
-    public string ModelName { get; set; } = "qwen3.5:4b";
+    public string ModelName { get; set; } = "qwen35-9b-q4km-bartowski:local";
 
     [Export(PropertyHint.Range, "1,300,1")]
     public float TimeoutSeconds { get; set; } = 60.0f;

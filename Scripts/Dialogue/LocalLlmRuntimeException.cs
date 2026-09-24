@@ -13,6 +13,7 @@ public enum LocalLlmFailureKind
     OllamaExecutableIntegrity,
     OllamaProcessStart,
     OllamaServerUnavailable,
+    ModelUnavailable,
     PrismServerUnavailable,
     Unknown,
 }
@@ -52,10 +53,20 @@ public sealed class LocalLlmRuntimeException : Exception
             LocalLlmFailureKind.OllamaExecutableIntegrity => "Файл Ollama повреждён или изменён. Восстановите файл поставки.",
             LocalLlmFailureKind.OllamaProcessStart => "Не удалось запустить локальный сервис Ollama.",
             LocalLlmFailureKind.OllamaServerUnavailable => "Локальный сервис Ollama не запустился вовремя.",
+            LocalLlmFailureKind.ModelUnavailable => "Запрошенная модель не найдена в локальной Ollama.",
             LocalLlmFailureKind.PrismServerUnavailable => "Локальный сервер PrismML не запущен. Запустите его и повторите попытку.",
             _ => "Не удалось получить ответ от локальной модели.",
         };
 
         return new LocalLlmRuntimeException(kind, userMessage, technicalDetails);
+    }
+
+    public static LocalLlmRuntimeException CreateModelUnavailable(string modelName)
+    {
+        string configuredName = string.IsNullOrWhiteSpace(modelName) ? "(не указана)" : modelName;
+        return new LocalLlmRuntimeException(
+            LocalLlmFailureKind.ModelUnavailable,
+            $"Модель «{configuredName}» не найдена в локальной Ollama. Установите её и повторите запуск.",
+            $"Configured model '{configuredName}' is not present in the local Ollama model list.");
     }
 }

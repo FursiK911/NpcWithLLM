@@ -43,6 +43,7 @@ public sealed class LocalLlmRuntime : ILocalLlmRuntime, IDisposable
 
         try
         {
+            await EnsureConfiguredModelAvailableAsync(cancellationToken);
             // A real short generation loads weights and initializes the same context budget as dialogue.
             await GenerateAsync(new[] { new DialogueMessage("user", "Ответь одним словом: готов.") },
                 cancellationToken, null);
@@ -54,9 +55,82 @@ public sealed class LocalLlmRuntime : ILocalLlmRuntime, IDisposable
         }
     }
 
+    private async Task EnsureConfiguredModelAvailableAsync(CancellationToken cancellationToken)
+    {
+        Uri modelListEndpoint;
+        try
+        {
+            _config.GetEndpointUri();
+            var serviceBaseUri = new Uri(_config.BaseUrl.TrimEnd('/') + "/", UriKind.Absolute);
+            modelListEndpoint = new Uri(serviceBaseUri, "api/tags");
+        }
+        catch (ArgumentException exception)
+        {
+            throw LocalLlmRuntimeException.CreateForKind(LocalLlmFailureKind.Configuration, exception.Message);
+        }
+
+        using var timeout = CreateRequestTimeout(cancellationToken);
+        try
+        {
+            using var request = new HttpRequestMessage(HttpMethod.Get, modelListEndpoint);
+            using var response = await _http.SendAsync(request, HttpCompletionOption.ResponseHeadersRead, timeout.Token);
+            if (!response.IsSuccessStatusCode)
+                throw LocalLlmRuntimeException.CreateForKind(LocalLlmFailureKind.HttpError,
+                    $"Ollama model list returned HTTP {(int)response.StatusCode}.");
+
+            using var stream = await response.Content.ReadAsStreamAsync(timeout.Token);
+            using var document = await JsonDocument.ParseAsync(stream, cancellationToken: timeout.Token);
+            JsonElement root = document.RootElement;
+            if (root.ValueKind != JsonValueKind.Object ||
+                !root.TryGetProperty("models", out var models) || models.ValueKind != JsonValueKind.Array)
+            {
+                throw new JsonException("Ollama model list is missing the models array.");
+            }
+
+            foreach (JsonElement model in models.EnumerateArray())
+            {
+                if (model.ValueKind == JsonValueKind.Object &&
+                    model.TryGetProperty("name", out var name) && name.ValueKind == JsonValueKind.String &&
+                    string.Equals(name.GetString(), _config.ModelName, StringComparison.Ordinal))
+                {
+                    return;
+                }
+            }
+
+            throw LocalLlmRuntimeException.CreateModelUnavailable(_config.ModelName);
+        }
+        catch (OperationCanceledException) when (cancellationToken.IsCancellationRequested)
+        {
+            throw;
+        }
+        catch (OperationCanceledException)
+        {
+            throw LocalLlmRuntimeException.CreateForKind(LocalLlmFailureKind.Timeout,
+                "Timed out while checking the configured Ollama model.");
+        }
+        catch (Exception exception) when (exception is HttpRequestException or IOException)
+        {
+            _server.MarkServerUnavailable();
+            throw LocalLlmRuntimeException.CreateForKind(LocalLlmFailureKind.NetworkError,
+                "Connection interrupted while checking the configured Ollama model.");
+        }
+        catch (JsonException)
+        {
+            throw LocalLlmRuntimeException.CreateForKind(LocalLlmFailureKind.InvalidJson,
+                "Ollama returned an invalid model list.");
+        }
+    }
+
     public void Shutdown() => Dispose();
 
     public void Dispose() => _server.Dispose();
+
+    private CancellationTokenSource CreateRequestTimeout(CancellationToken cancellationToken)
+    {
+        var timeout = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
+        timeout.CancelAfter(TimeSpan.FromSeconds(_config.TimeoutSeconds));
+        return timeout;
+    }
 
     public async Task<string> GenerateAsync(IReadOnlyList<DialogueMessage> context,
         CancellationToken cancellationToken = default, Action<string> onText = null)
@@ -74,8 +148,7 @@ public sealed class LocalLlmRuntime : ILocalLlmRuntime, IDisposable
             var payload = LocalLlmRequestBuilder.Create(_config.ModelName, context,
                 _config.Temperature, _config.TopP, _config.MaxTokens, think: false, stream: true,
                 contextTokens: _config.ContextTokens, presencePenalty: _config.PresencePenalty);
-            using var timeout = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
-            timeout.CancelAfter(TimeSpan.FromSeconds(_config.TimeoutSeconds));
+            using var timeout = CreateRequestTimeout(cancellationToken);
             using var request = new HttpRequestMessage(HttpMethod.Post, endpoint)
             {
                 Content = new StringContent(JsonSerializer.Serialize(payload, JsonOptions), Encoding.UTF8, "application/json"),
