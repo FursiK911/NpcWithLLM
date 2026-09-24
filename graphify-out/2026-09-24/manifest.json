@@ -830,8 +830,8 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1790123059.844779,
-    "ast_hash": "b6cc4f883da448f073363e94746aa8e0",
+    "mtime": 1790198070.5409665,
+    "ast_hash": "ae4774bc162f6a95ba15b0882dbad18e",
     "semantic_hash": ""
   },
   "docs/adr/0001-local-llm-dialogue-boundary.md": {
@@ -885,8 +885,8 @@
     "semantic_hash": ""
   },
   ".scratch/npc-local-llm-demo/spec.md": {
-    "mtime": 1790118362.939542,
-    "ast_hash": "efd6b6c47ecc2ca83411abadf7e35c35",
+    "mtime": 1790198123.2281976,
+    "ast_hash": "ebabba655fd3a896c7991b41745e0536",
     "semantic_hash": ""
   },
   "docs/adr/0002-bundled-local-llm-runtime.md": {
@@ -920,8 +920,8 @@
     "semantic_hash": ""
   },
   "Scripts/Dialogue/LocalLlmResponder.cs": {
-    "mtime": 1790122882.3484986,
-    "ast_hash": "34c0086883c0ad23b962019f6456b016",
+    "mtime": 1790197660.6880834,
+    "ast_hash": "8ea432084870a8728555f6500c4271a5",
     "semantic_hash": ""
   },
   "Scripts/Dialogue/NpcMemory.cs": {
@@ -935,8 +935,8 @@
     "semantic_hash": ""
   },
   "Scripts/Dialogue/LocalLlmConfig.cs": {
-    "mtime": 1790112261.5924308,
-    "ast_hash": "e23bae520612407371c70a70d1c33222",
+    "mtime": 1790197660.6875815,
+    "ast_hash": "7a49111387d331509cff2c62174161ee",
     "semantic_hash": ""
   },
   "Scripts/Dialogue/LocalLlmRuntime.cs": {
@@ -945,8 +945,8 @@
     "semantic_hash": ""
   },
   "Scripts/Dialogue/LocalLlmRuntimeException.cs": {
-    "mtime": 1790122882.3464968,
-    "ast_hash": "a658c72f94c034a8058e11c436cc4b70",
+    "mtime": 1790197660.6890893,
+    "ast_hash": "15d1f82297cd5002ec3d44cfc3d6d38f",
     "semantic_hash": ""
   },
   ".scratch/npc-local-llm-demo/evaluation-qwen35-concise.json": {
@@ -995,8 +995,8 @@
     "semantic_hash": ""
   },
   "docs/adr/0003-natural-dialogue-model-quality-gate.md": {
-    "mtime": 1790118169.983058,
-    "ast_hash": "ffd21b0af7b3ce97f7e4c756ac5fda8e",
+    "mtime": 1790198123.2271883,
+    "ast_hash": "5cec4c7a22caad572437166e8afa6b38",
     "semantic_hash": ""
   },
   "docs/adr/0004-project-local-godot-mcp.md": {
@@ -1070,8 +1070,8 @@
     "semantic_hash": ""
   },
   ".scratch/npc-local-llm-demo/issues/06-live-dialogue-model-evaluation.md": {
-    "mtime": 1790173766.3570025,
-    "ast_hash": "782e76f02f74799531f65803caa9ac33",
+    "mtime": 1790177454.7901354,
+    "ast_hash": "b701e1b175c99d450c4021ba29060d18",
     "semantic_hash": ""
   },
   ".scratch/npc-local-llm-demo/issues/07-startup-readiness-ui.md": {
@@ -1122,6 +1122,61 @@
   ".scratch/npc-local-llm-demo/reports/06-qwen3-4b-instruct-evaluation.md": {
     "mtime": 1790166354.6767156,
     "ast_hash": "f1d6cb8a86b9efc338b06b6ceef9a10e",
+    "semantic_hash": ""
+  },
+  "Scripts/Dialogue/Bonsai2PrismRuntime.cs": {
+    "mtime": 1790198123.225178,
+    "ast_hash": "2d9f0ecb4e1a7b681464555f6db81b0e",
+    "semantic_hash": ""
+  },
+  "Tests/Bonsai2DefaultProviderSmoke.cs": {
+    "mtime": 1790197719.2984037,
+    "ast_hash": "e12d331759f679aa1f8a9b2d73abbf78",
+    "semantic_hash": ""
+  },
+  "Tests/Bonsai2InteractiveRunner.cs": {
+    "mtime": 1790198123.2261767,
+    "ast_hash": "4386f47e9ac522fb2c30605344a96bdc",
+    "semantic_hash": ""
+  },
+  "Tests/Bonsai2LiveDialogueEvaluationRunner.cs": {
+    "mtime": 1790186058.2016532,
+    "ast_hash": "74949ec04163356a5f88b7d9c45d4c21",
+    "semantic_hash": ""
+  },
+  "Tests/Bonsai2PrismRuntimeSmoke.cs": {
+    "mtime": 1790197719.297404,
+    "ast_hash": "326916dfeca5e8ef241cfdbd0b2c84a6",
+    "semantic_hash": ""
+  },
+  "Tests/LiveDialogueEvaluationRunner.cs": {
+    "mtime": 1790198165.2114117,
+    "ast_hash": "2d08ec6d33541aba4e0ccf2960a9b6f1",
+    "semantic_hash": ""
+  },
+  ".scratch/npc-local-llm-demo/issues/10-bonsai-2-27b-evaluation.md": {
+    "mtime": 1790198285.9218764,
+    "ast_hash": "e1877752dea2d9293408ad21dcb57525",
+    "semantic_hash": ""
+  },
+  ".scratch/npc-local-llm-demo/reports/06-gemma-4-12b-it-q2k-evaluation.md": {
+    "mtime": 1790177600.1553667,
+    "ast_hash": "c4b92328376f7baf6e337e4a050edc27",
+    "semantic_hash": ""
+  },
+  ".scratch/npc-local-llm-demo/reports/10-bonsai-2-27b-evaluation.md": {
+    "mtime": 1790198165.2109048,
+    "ast_hash": "ee27859d247df86ca982180b8bd66c32",
+    "semantic_hash": ""
+  },
+  "docs/adr/0007-bonsai-temporary-default.md": {
+    "mtime": 1790198123.2281976,
+    "ast_hash": "ca0e4cb24105e847639340bec7dc2ef7",
+    "semantic_hash": ""
+  },
+  "graphify-out/memory/query_20260923_211650_how_does_the_game_select_the_local_llm_provider_an.md": {
+    "mtime": 1790198210.6861193,
+    "ast_hash": "497cbc09273bd659239db3f1a684fdea",
     "semantic_hash": ""
   }
 }

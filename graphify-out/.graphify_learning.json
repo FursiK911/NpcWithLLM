@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-23T21:19:03.618717+00:00",
+  "generated_at": "2026-09-24T11:59:35.412017+00:00",
   "nodes": {
     "scripts_dialogue_bonsai2prismruntime_bonsai2prismruntime": {
       "code_fingerprint": "dcc3515451f94e2f5d58c694ac7c1a5346f86117b9f93bb803a8ff541381df87",
@@ -12,13 +12,13 @@
           "q": "How does the game select the local LLM provider and where is the runtime seam?"
         }
       ],
-      "score": 0.999964452,
+      "score": 0.985936118,
       "source_file": "Scripts/Dialogue/Bonsai2PrismRuntime.cs",
       "status": "tentative",
       "uses": 1
     },
     "scripts_dialogue_localllmresponder_localllmresponder": {
-      "code_fingerprint": "35a314a10ad4cf6669da3930afb51e1295ee3cb2d5d4a806ee90b31208b7e953",
+      "code_fingerprint": "c3396022dc0fdd4bd3b2fa12a636bebc30a6f04836277970285ee0432051ce51",
       "label": "LocalLlmResponder",
       "last": "2026-09-23T21:16:50.686259+00:00",
       "provenance": [
@@ -33,7 +33,7 @@
           "q": "How do the current game profile, context, memory, history, and generation settings flow into the local model request?"
         }
       ],
-      "score": 1.980197959,
+      "score": 1.952418093,
       "source_file": "Scripts/Dialogue/LocalLlmResponder.cs",
       "status": "preferred",
       "uses": 2
@@ -54,7 +54,7 @@
           "q": "How do the current game profile, context, memory, history, and generation settings flow into the local model request?"
         }
       ],
-      "score": 1.980197959,
+      "score": 1.952418093,
       "source_file": "Scripts/Dialogue/LocalLlmRuntime.cs",
       "status": "preferred",
       "uses": 2
