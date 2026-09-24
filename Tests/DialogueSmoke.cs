@@ -114,9 +114,9 @@ public partial class DialogueSmoke : Node
         Check(overlay.Visible, "Intro modal was not visible when the game started");
         Check(character.Text == $"{profile.Name} — {profile.Role}", "Intro did not use the active NPC name and role");
         Check(situation.Text == profile.Situation
-            && situation.Text.StartsWith("Вы входите в мастерскую Ивана.")
+            && situation.Text.StartsWith("Вы переступаете порог мастерской Ивана.")
             && situation.Text.Contains("серый фургон")
-            && situation.Text.Contains("Иван предполагает"),
+            && situation.Text.Contains("только догадка"),
             "Intro did not show a narrative of the shared scene facts and attributed assumption");
         Check(!input.Editable && sendButton.Disabled, "Dialogue was available behind the intro modal");
 
