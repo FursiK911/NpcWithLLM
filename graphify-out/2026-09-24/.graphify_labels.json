@@ -29,7 +29,7 @@
   "27": ".Create",
   "28": "DialogueMessage.cs",
   "29": "NpcMemory",
-  "30": "DialogueSmoke",
+  "30": "DelayedStream",
   "31": "DialogueRegression.Tests.ps1",
   "32": "Run-DialogueModelEvaluation.ps1",
   "33": "DialogueResponseFault.ps1",
@@ -79,5 +79,7 @@
   "77": "Exception",
   "78": "DialogueMessage",
   "79": "int",
-  "80": "IReadOnlyList"
+  "80": "IReadOnlyList",
+  "81": "DialogueSmoke",
+  "82": "Task"
 }

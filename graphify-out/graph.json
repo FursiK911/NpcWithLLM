@@ -169,13 +169,497 @@
       "norm_label": "\u0443\u0441\u043b\u043e\u0432\u0438\u0435 \u0441\u043c\u0435\u043d\u044b \u043c\u043e\u0434\u0435\u043b\u0438 \u0438 \u0436\u0438\u0432\u0430\u044f \u043e\u0446\u0435\u043d\u043a\u0430 (2026-09-23)"
     },
     {
+      "label": "CONTEXT.md",
+      "file_type": "document",
+      "source_file": "CONTEXT.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "context",
+      "community": 13,
+      "community_name": "\u0414\u0438\u0430\u043b\u043e\u0433 \u0441 NPC",
+      "norm_label": "context.md"
+    },
+    {
+      "label": "\u0414\u0438\u0430\u043b\u043e\u0433 \u0441 NPC",
+      "file_type": "document",
+      "source_file": "CONTEXT.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "context_\u0434\u0438\u0430\u043b\u043e\u0433_\u0441_npc",
+      "community": 13,
+      "community_name": "\u0414\u0438\u0430\u043b\u043e\u0433 \u0441 NPC",
+      "norm_label": "\u0434\u0438\u0430\u043b\u043e\u0433 \u0441 npc"
+    },
+    {
+      "label": "\u0414\u0438\u0430\u043b\u043e\u0433",
+      "file_type": "document",
+      "source_file": "CONTEXT.md",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "context_\u0434\u0438\u0430\u043b\u043e\u0433",
+      "community": 13,
+      "community_name": "\u0414\u0438\u0430\u043b\u043e\u0433 \u0441 NPC",
+      "norm_label": "\u0434\u0438\u0430\u043b\u043e\u0433"
+    },
+    {
+      "label": "\u041b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f \u0433\u0435\u043d\u0435\u0440\u0430\u0446\u0438\u044f",
+      "file_type": "document",
+      "source_file": "CONTEXT.md",
+      "source_location": "L68",
+      "_origin": "ast",
+      "id": "context_\u043b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f_\u0433\u0435\u043d\u0435\u0440\u0430\u0446\u0438\u044f",
+      "community": 13,
+      "community_name": "\u0414\u0438\u0430\u043b\u043e\u0433 \u0441 NPC",
+      "norm_label": "\u043b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f \u0433\u0435\u043d\u0435\u0440\u0430\u0446\u0438\u044f"
+    },
+    {
+      "label": "README.md",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "readme",
+      "community": 18,
+      "community_name": "\u041b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f \u043e\u0446\u0435\u043d\u043a\u0430 `Bonsai 2 27B PTQ1_0`",
+      "norm_label": "readme.md"
+    },
+    {
+      "label": "NpcWithLLM",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "readme_npcwithllm",
+      "community": 18,
+      "community_name": "\u041b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f \u043e\u0446\u0435\u043d\u043a\u0430 `Bonsai 2 27B PTQ1_0`",
+      "norm_label": "npcwithllm"
+    },
+    {
+      "label": "\u0422\u0435\u043a\u0443\u0449\u0438\u0439 \u0441\u0442\u0430\u0442\u0443\u0441",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "readme_\u0442\u0435\u043a\u0443\u0449\u0438\u0439_\u0441\u0442\u0430\u0442\u0443\u0441",
+      "community": 18,
+      "community_name": "\u041b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f \u043e\u0446\u0435\u043d\u043a\u0430 `Bonsai 2 27B PTQ1_0`",
+      "norm_label": "\u0442\u0435\u043a\u0443\u0449\u0438\u0438 \u0441\u0442\u0430\u0442\u0443\u0441"
+    },
+    {
+      "label": "\u0420\u0443\u0447\u043d\u043e\u0439 \u0437\u0430\u043f\u0443\u0441\u043a Bonsai \u0447\u0435\u0440\u0435\u0437 PrismML",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L39",
+      "_origin": "ast",
+      "id": "readme_\u0440\u0443\u0447\u043d\u043e\u0439_\u0437\u0430\u043f\u0443\u0441\u043a_bonsai_\u0447\u0435\u0440\u0435\u0437_prismml",
+      "community": 18,
+      "community_name": "\u041b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f \u043e\u0446\u0435\u043d\u043a\u0430 `Bonsai 2 27B PTQ1_0`",
+      "norm_label": "\u0440\u0443\u0447\u043d\u043e\u0438 \u0437\u0430\u043f\u0443\u0441\u043a bonsai \u0447\u0435\u0440\u0435\u0437 prismml"
+    },
+    {
+      "label": "\u0422\u0435\u0441\u0442\u044b \u0438 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u043a\u0430\u0447\u0435\u0441\u0442\u0432\u0430",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L84",
+      "_origin": "ast",
+      "id": "readme_\u0442\u0435\u0441\u0442\u044b_\u0438_\u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430_\u043a\u0430\u0447\u0435\u0441\u0442\u0432\u0430",
+      "community": 18,
+      "community_name": "\u041b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f \u043e\u0446\u0435\u043d\u043a\u0430 `Bonsai 2 27B PTQ1_0`",
+      "norm_label": "\u0442\u0435\u0441\u0442\u044b \u0438 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u043a\u0430\u0447\u0435\u0441\u0442\u0432\u0430"
+    },
+    {
+      "label": "\u041d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435 \u043f\u0440\u043e\u0435\u043a\u0442\u0430",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L132",
+      "_origin": "ast",
+      "id": "readme_\u043d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435_\u043f\u0440\u043e\u0435\u043a\u0442\u0430",
+      "community": 18,
+      "community_name": "\u041b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f \u043e\u0446\u0435\u043d\u043a\u0430 `Bonsai 2 27B PTQ1_0`",
+      "norm_label": "\u043d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435 \u043f\u0440\u043e\u0435\u043a\u0442\u0430"
+    },
+    {
+      "label": "Godot MCP \u0434\u043b\u044f Codex",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L138",
+      "_origin": "ast",
+      "id": "readme_godot_mcp_\u0434\u043b\u044f_codex",
+      "community": 18,
+      "community_name": "\u041b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f \u043e\u0446\u0435\u043d\u043a\u0430 `Bonsai 2 27B PTQ1_0`",
+      "norm_label": "godot mcp \u0434\u043b\u044f codex"
+    },
+    {
+      "label": "NpcProfile.cs",
+      "file_type": "code",
+      "source_file": "Scripts/Dialogue/NpcProfile.cs",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "scripts_dialogue_npcprofile",
+      "community": 44,
+      "community_name": "LocalLlmConfig",
+      "norm_label": "npcprofile.cs"
+    },
+    {
+      "label": "NpcProfile",
+      "file_type": "code",
+      "source_file": "Scripts/Dialogue/NpcProfile.cs",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "scripts_dialogue_npcprofile_npcprofile",
+      "community": 44,
+      "community_name": "LocalLlmConfig",
+      "norm_label": "npcprofile"
+    },
+    {
+      "label": "Resource",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "resource",
+      "community": 44,
+      "community_name": "LocalLlmConfig",
+      "norm_label": "resource"
+    },
+    {
+      "label": ".ToPersona()",
+      "file_type": "code",
+      "source_file": "Scripts/Dialogue/NpcProfile.cs",
+      "source_location": "L33",
+      "_origin": "ast",
+      "id": "scripts_dialogue_npcprofile_npcprofile_topersona",
+      "community": 44,
+      "community_name": "LocalLlmConfig",
+      "norm_label": ".topersona()"
+    },
+    {
+      "label": "NpcPersona",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "npcpersona",
+      "community": 44,
+      "community_name": "LocalLlmConfig",
+      "norm_label": "npcpersona"
+    },
+    {
+      "label": "Main.cs",
+      "file_type": "code",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "scripts_main",
+      "community": 0,
+      "community_name": "Main",
+      "norm_label": "main.cs"
+    },
+    {
+      "label": "Main",
+      "file_type": "code",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "scripts_main_main",
+      "community": 0,
+      "community_name": "Main",
+      "norm_label": "main"
+    },
+    {
+      "label": "Node2D",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "node2d",
+      "community": 0,
+      "community_name": "Main",
+      "norm_label": "node2d"
+    },
+    {
+      "label": "ChatResponder",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "chatresponder",
+      "community": 0,
+      "community_name": "Main",
+      "norm_label": "chatresponder"
+    },
+    {
+      "label": "TextEdit",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "textedit",
+      "community": 0,
+      "community_name": "Main",
+      "norm_label": "textedit"
+    },
+    {
+      "label": "Button",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "button",
+      "community": 0,
+      "community_name": "Main",
+      "norm_label": "button"
+    },
+    {
+      "label": "RichTextLabel",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "richtextlabel",
+      "community": 0,
+      "community_name": "Main",
+      "norm_label": "richtextlabel"
+    },
+    {
+      "label": "Label",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "label",
+      "community": 0,
+      "community_name": "Main",
+      "norm_label": "label"
+    },
+    {
+      "label": "Control",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "control",
+      "community": 0,
+      "community_name": "Main",
+      "norm_label": "control"
+    },
+    {
+      "label": "FocusModeEnum",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "focusmodeenum",
+      "community": 0,
+      "community_name": "Main",
+      "norm_label": "focusmodeenum"
+    },
+    {
+      "label": "bool",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "bool",
+      "community": 0,
+      "community_name": "Main",
+      "norm_label": "bool"
+    },
+    {
+      "label": "Stopwatch",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "stopwatch",
+      "community": 0,
+      "community_name": "Main",
+      "norm_label": "stopwatch"
+    },
+    {
+      "label": "._Ready()",
+      "file_type": "code",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L21",
+      "_origin": "ast",
+      "id": "scripts_main_main_ready",
+      "community": 0,
+      "community_name": "Main",
+      "norm_label": "._ready()"
+    },
+    {
+      "label": "._ExitTree()",
+      "file_type": "code",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L59",
+      "_origin": "ast",
+      "id": "scripts_main_main_exittree",
+      "community": 0,
+      "community_name": "Main",
+      "norm_label": "._exittree()"
+    },
+    {
+      "label": "._Draw()",
+      "file_type": "code",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L73",
+      "_origin": "ast",
+      "id": "scripts_main_main_draw",
+      "community": 0,
+      "community_name": "Main",
+      "norm_label": "._draw()"
+    },
+    {
+      "label": ".OnSendButtonPressed()",
+      "file_type": "code",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L89",
+      "_origin": "ast",
+      "id": "scripts_main_main_onsendbuttonpressed",
+      "community": 0,
+      "community_name": "Main",
+      "norm_label": ".onsendbuttonpressed()"
+    },
+    {
+      "label": ".OnIntroOkPressed()",
+      "file_type": "code",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L91",
+      "_origin": "ast",
+      "id": "scripts_main_main_onintrookpressed",
+      "community": 0,
+      "community_name": "Main",
+      "norm_label": ".onintrookpressed()"
+    },
+    {
+      "label": ".OnMessageInputGuiInput()",
+      "file_type": "code",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L105",
+      "_origin": "ast",
+      "id": "scripts_main_main_onmessageinputguiinput",
+      "community": 0,
+      "community_name": "Main",
+      "norm_label": ".onmessageinputguiinput()"
+    },
+    {
+      "label": "InputEvent",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "inputevent",
+      "community": 0,
+      "community_name": "Main",
+      "norm_label": "inputevent"
+    },
+    {
+      "label": ".SubmitMessage()",
+      "file_type": "code",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L122",
+      "_origin": "ast",
+      "id": "scripts_main_main_submitmessage",
+      "community": 0,
+      "community_name": "Main",
+      "norm_label": ".submitmessage()"
+    },
+    {
+      "label": ".OnResponseStarted()",
+      "file_type": "code",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L142",
+      "_origin": "ast",
+      "id": "scripts_main_main_onresponsestarted",
+      "community": 0,
+      "community_name": "Main",
+      "norm_label": ".onresponsestarted()"
+    },
+    {
+      "label": ".OnPreparationStarted()",
+      "file_type": "code",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L150",
+      "_origin": "ast",
+      "id": "scripts_main_main_onpreparationstarted",
+      "community": 0,
+      "community_name": "Main",
+      "norm_label": ".onpreparationstarted()"
+    },
+    {
+      "label": ".OnPreparationFinished()",
+      "file_type": "code",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L157",
+      "_origin": "ast",
+      "id": "scripts_main_main_onpreparationfinished",
+      "community": 0,
+      "community_name": "Main",
+      "norm_label": ".onpreparationfinished()"
+    },
+    {
+      "label": ".OnResponseChunkReceived()",
+      "file_type": "code",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L169",
+      "_origin": "ast",
+      "id": "scripts_main_main_onresponsechunkreceived",
+      "community": 0,
+      "community_name": "Main",
+      "norm_label": ".onresponsechunkreceived()"
+    },
+    {
+      "label": ".OnResponseReceived()",
+      "file_type": "code",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L182",
+      "_origin": "ast",
+      "id": "scripts_main_main_onresponsereceived",
+      "community": 0,
+      "community_name": "Main",
+      "norm_label": ".onresponsereceived()"
+    },
+    {
+      "label": ".OnResponseFailed()",
+      "file_type": "code",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L190",
+      "_origin": "ast",
+      "id": "scripts_main_main_onresponsefailed",
+      "community": 0,
+      "community_name": "Main",
+      "norm_label": ".onresponsefailed()"
+    },
+    {
+      "label": ".FinishRequest()",
+      "file_type": "code",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L198",
+      "_origin": "ast",
+      "id": "scripts_main_main_finishrequest",
+      "community": 0,
+      "community_name": "Main",
+      "norm_label": ".finishrequest()"
+    },
+    {
+      "label": ".UpdateInteractionEnabled()",
+      "file_type": "code",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L211",
+      "_origin": "ast",
+      "id": "scripts_main_main_updateinteractionenabled",
+      "community": 0,
+      "community_name": "Main",
+      "norm_label": ".updateinteractionenabled()"
+    },
+    {
       "label": "DialogueSmoke.cs",
       "file_type": "code",
       "source_file": "Tests/DialogueSmoke.cs",
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_dialoguesmoke",
-      "community": 81,
+      "community": 30,
       "community_name": "DialogueSmoke",
       "norm_label": "dialoguesmoke.cs"
     },
@@ -186,7 +670,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "tests_dialoguesmoke_dialoguesmoke",
-      "community": 81,
+      "community": 30,
       "community_name": "DialogueSmoke",
       "norm_label": "dialoguesmoke"
     },
@@ -208,7 +692,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "tests_dialoguesmoke_dialoguesmoke_ready",
-      "community": 81,
+      "community": 30,
       "community_name": "DialogueSmoke",
       "norm_label": "._ready()"
     },
@@ -219,7 +703,7 @@
       "source_location": "L41",
       "_origin": "ast",
       "id": "tests_dialoguesmoke_dialoguesmoke_streamsbeforecompletion",
-      "community": 81,
+      "community": 30,
       "community_name": "DialogueSmoke",
       "norm_label": ".streamsbeforecompletion()"
     },
@@ -230,7 +714,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "task",
-      "community": 81,
+      "community": 30,
       "community_name": "DialogueSmoke",
       "norm_label": "task"
     },
@@ -241,7 +725,7 @@
       "source_location": "L61",
       "_origin": "ast",
       "id": "tests_dialoguesmoke_dialoguesmoke_check",
-      "community": 81,
+      "community": 30,
       "community_name": "DialogueSmoke",
       "norm_label": ".check()"
     },
@@ -252,7 +736,7 @@
       "source_location": "L66",
       "_origin": "ast",
       "id": "tests_dialoguesmoke_dialoguesmoke_rejectsbrokenstreams",
-      "community": 81,
+      "community": 30,
       "community_name": "DialogueSmoke",
       "norm_label": ".rejectsbrokenstreams()"
     },
@@ -263,7 +747,7 @@
       "source_location": "L97",
       "_origin": "ast",
       "id": "tests_dialoguesmoke_dialoguesmoke_intromodalblocksdialogueuntildismissedandready",
-      "community": 81,
+      "community": 30,
       "community_name": "DialogueSmoke",
       "norm_label": ".intromodalblocksdialogueuntildismissedandready()"
     },
@@ -271,10 +755,10 @@
       "label": ".UiStreamsAndPreservesFailedInput()",
       "file_type": "code",
       "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L158",
+      "source_location": "L174",
       "_origin": "ast",
       "id": "tests_dialoguesmoke_dialoguesmoke_uistreamsandpreservesfailedinput",
-      "community": 81,
+      "community": 30,
       "community_name": "DialogueSmoke",
       "norm_label": ".uistreamsandpreservesfailedinput()"
     },
@@ -282,14 +766,14 @@
       "label": "ControlledRuntime",
       "file_type": "code",
       "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L202",
+      "source_location": "L219",
       "metadata": {
         "is_nested_type": true
       },
       "_origin": "ast",
       "id": "tests_dialoguesmoke_controlledruntime",
-      "community": 53,
-      "community_name": "Bonsai2PrismRuntime",
+      "community": 30,
+      "community_name": "DialogueSmoke",
       "norm_label": "controlledruntime"
     },
     {
@@ -299,8 +783,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "ilocalllmruntime",
-      "community": 53,
-      "community_name": "Bonsai2PrismRuntime",
+      "community": 30,
+      "community_name": "DialogueSmoke",
       "norm_label": "ilocalllmruntime"
     },
     {
@@ -310,8 +794,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "action",
-      "community": 53,
-      "community_name": "Bonsai2PrismRuntime",
+      "community": 30,
+      "community_name": "DialogueSmoke",
       "norm_label": "action"
     },
     {
@@ -321,8 +805,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "taskcompletionsource",
-      "community": 53,
-      "community_name": "Bonsai2PrismRuntime",
+      "community": 30,
+      "community_name": "DialogueSmoke",
       "norm_label": "taskcompletionsource"
     },
     {
@@ -343,19 +827,19 @@
       "source_location": "",
       "_origin": "ast",
       "id": "dialoguemessage",
-      "community": 53,
-      "community_name": "Bonsai2PrismRuntime",
+      "community": 30,
+      "community_name": "DialogueSmoke",
       "norm_label": "dialoguemessage"
     },
     {
       "label": ".PrepareAsync()",
       "file_type": "code",
       "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L211",
+      "source_location": "L228",
       "_origin": "ast",
       "id": "tests_dialoguesmoke_controlledruntime_prepareasync",
-      "community": 53,
-      "community_name": "Bonsai2PrismRuntime",
+      "community": 30,
+      "community_name": "DialogueSmoke",
       "norm_label": ".prepareasync()"
     },
     {
@@ -365,29 +849,29 @@
       "source_location": "",
       "_origin": "ast",
       "id": "cancellationtoken",
-      "community": 53,
-      "community_name": "Bonsai2PrismRuntime",
+      "community": 30,
+      "community_name": "DialogueSmoke",
       "norm_label": "cancellationtoken"
     },
     {
       "label": ".GenerateAsync()",
       "file_type": "code",
       "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L214",
+      "source_location": "L231",
       "_origin": "ast",
       "id": "tests_dialoguesmoke_controlledruntime_generateasync",
-      "community": 53,
-      "community_name": "Bonsai2PrismRuntime",
+      "community": 30,
+      "community_name": "DialogueSmoke",
       "norm_label": ".generateasync()"
     },
     {
       "label": ".StartupBringsRuntimeUp()",
       "file_type": "code",
       "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L224",
+      "source_location": "L241",
       "_origin": "ast",
       "id": "tests_dialoguesmoke_dialoguesmoke_startupbringsruntimeup",
-      "community": 81,
+      "community": 30,
       "community_name": "DialogueSmoke",
       "norm_label": ".startupbringsruntimeup()"
     },
@@ -395,10 +879,10 @@
       "label": ".EndpointAlive()",
       "file_type": "code",
       "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L241",
+      "source_location": "L258",
       "_origin": "ast",
       "id": "tests_dialoguesmoke_dialoguesmoke_endpointalive",
-      "community": 81,
+      "community": 30,
       "community_name": "DialogueSmoke",
       "norm_label": ".endpointalive()"
     },
@@ -406,10 +890,10 @@
       "label": ".RealSceneDialogue()",
       "file_type": "code",
       "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L255",
+      "source_location": "L272",
       "_origin": "ast",
       "id": "tests_dialoguesmoke_dialoguesmoke_realscenedialogue",
-      "community": 81,
+      "community": 30,
       "community_name": "DialogueSmoke",
       "norm_label": ".realscenedialogue()"
     },
@@ -417,7 +901,7 @@
       "label": "ResponseHandler",
       "file_type": "code",
       "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L298",
+      "source_location": "L315",
       "metadata": {
         "is_nested_type": true
       },
@@ -442,7 +926,7 @@
       "label": ".SendAsync()",
       "file_type": "code",
       "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L300",
+      "source_location": "L317",
       "_origin": "ast",
       "id": "tests_dialoguesmoke_responsehandler_sendasync",
       "community": 54,
@@ -475,14 +959,14 @@
       "label": "DelayedStream",
       "file_type": "code",
       "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L304",
+      "source_location": "L321",
       "metadata": {
         "is_nested_type": true
       },
       "_origin": "ast",
       "id": "tests_dialoguesmoke_delayedstream",
       "community": 30,
-      "community_name": "DelayedStream",
+      "community_name": "DialogueSmoke",
       "norm_label": "delayedstream"
     },
     {
@@ -493,7 +977,7 @@
       "_origin": "ast",
       "id": "stream",
       "community": 30,
-      "community_name": "DelayedStream",
+      "community_name": "DialogueSmoke",
       "norm_label": "stream"
     },
     {
@@ -504,18 +988,18 @@
       "_origin": "ast",
       "id": "int",
       "community": 30,
-      "community_name": "DelayedStream",
+      "community_name": "DialogueSmoke",
       "norm_label": "int"
     },
     {
       "label": ".ReadAsync()",
       "file_type": "code",
       "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L307",
+      "source_location": "L324",
       "_origin": "ast",
       "id": "tests_dialoguesmoke_delayedstream_readasync",
       "community": 30,
-      "community_name": "DelayedStream",
+      "community_name": "DialogueSmoke",
       "norm_label": ".readasync()"
     },
     {
@@ -526,7 +1010,7 @@
       "_origin": "ast",
       "id": "memory",
       "community": 30,
-      "community_name": "DelayedStream",
+      "community_name": "DialogueSmoke",
       "norm_label": "memory"
     },
     {
@@ -537,40 +1021,40 @@
       "_origin": "ast",
       "id": "valuetask",
       "community": 30,
-      "community_name": "DelayedStream",
+      "community_name": "DialogueSmoke",
       "norm_label": "valuetask"
     },
     {
       "label": ".Flush()",
       "file_type": "code",
       "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L325",
+      "source_location": "L342",
       "_origin": "ast",
       "id": "tests_dialoguesmoke_delayedstream_flush",
       "community": 30,
-      "community_name": "DelayedStream",
+      "community_name": "DialogueSmoke",
       "norm_label": ".flush()"
     },
     {
       "label": ".Read()",
       "file_type": "code",
       "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L326",
+      "source_location": "L343",
       "_origin": "ast",
       "id": "tests_dialoguesmoke_delayedstream_read",
       "community": 30,
-      "community_name": "DelayedStream",
+      "community_name": "DialogueSmoke",
       "norm_label": ".read()"
     },
     {
       "label": ".Seek()",
       "file_type": "code",
       "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L327",
+      "source_location": "L344",
       "_origin": "ast",
       "id": "tests_dialoguesmoke_delayedstream_seek",
       "community": 30,
-      "community_name": "DelayedStream",
+      "community_name": "DialogueSmoke",
       "norm_label": ".seek()"
     },
     {
@@ -581,29 +1065,29 @@
       "_origin": "ast",
       "id": "seekorigin",
       "community": 30,
-      "community_name": "DelayedStream",
+      "community_name": "DialogueSmoke",
       "norm_label": "seekorigin"
     },
     {
       "label": ".SetLength()",
       "file_type": "code",
       "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L328",
+      "source_location": "L345",
       "_origin": "ast",
       "id": "tests_dialoguesmoke_delayedstream_setlength",
       "community": 30,
-      "community_name": "DelayedStream",
+      "community_name": "DialogueSmoke",
       "norm_label": ".setlength()"
     },
     {
       "label": ".Write()",
       "file_type": "code",
       "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L329",
+      "source_location": "L346",
       "_origin": "ast",
       "id": "tests_dialoguesmoke_delayedstream_write",
       "community": 30,
-      "community_name": "DelayedStream",
+      "community_name": "DialogueSmoke",
       "norm_label": ".write()"
     },
     {
@@ -618,13 +1102,35 @@
       "norm_label": "npcprofileread.tests.ps1"
     },
     {
+      "label": "Read-NpcProfile.ps1",
+      "file_type": "code",
+      "source_file": "Tests/Read-NpcProfile.ps1",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "tests_read_npcprofile",
+      "community": 37,
+      "community_name": "Read-NpcProfile.ps1",
+      "norm_label": "read-npcprofile.ps1"
+    },
+    {
+      "label": "Read-NpcProfile()",
+      "file_type": "code",
+      "source_file": "Tests/Read-NpcProfile.ps1",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "tests_read_npcprofile_read_npcprofile",
+      "community": 37,
+      "community_name": "Read-NpcProfile.ps1",
+      "norm_label": "read-npcprofile()"
+    },
+    {
       "label": "ChatResponder.cs",
       "file_type": "code",
       "source_file": "Scripts/ChatResponder.cs",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 0,
-      "community_name": "Main",
+      "community": 46,
+      "community_name": "Node",
       "norm_label": "chatresponder.cs",
       "id": "scripts_chatresponder"
     },
@@ -634,8 +1140,8 @@
       "source_file": "Scripts/ChatResponder.cs",
       "source_location": "L3",
       "_origin": "ast",
-      "community": 0,
-      "community_name": "Main",
+      "community": 46,
+      "community_name": "Node",
       "norm_label": "chatresponder",
       "id": "scripts_chatresponder_chatresponder"
     },
@@ -645,8 +1151,8 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 0,
-      "community_name": "Main",
+      "community": 46,
+      "community_name": "Node",
       "norm_label": "npcprofile",
       "id": "scripts_chatresponder_cs_npcprofile"
     },
@@ -656,8 +1162,8 @@
       "source_file": "Scripts/ChatResponder.cs",
       "source_location": "L30",
       "_origin": "ast",
-      "community": 0,
-      "community_name": "Main",
+      "community": 46,
+      "community_name": "Node",
       "norm_label": ".prepare()",
       "id": "scripts_chatresponder_chatresponder_prepare"
     },
@@ -667,8 +1173,8 @@
       "source_file": "Scripts/ChatResponder.cs",
       "source_location": "L32",
       "_origin": "ast",
-      "community": 0,
-      "community_name": "Main",
+      "community": 46,
+      "community_name": "Node",
       "norm_label": ".requestresponse()",
       "id": "scripts_chatresponder_chatresponder_requestresponse"
     },
@@ -876,8 +1382,8 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 6,
-      "community_name": "LocalLlmResponder",
+      "community": 53,
+      "community_name": "Bonsai2PrismRuntime",
       "norm_label": "exception",
       "id": "exception"
     },
@@ -904,301 +1410,15 @@
       "id": "scripts_dialogue_localllmresponder_localllmresponder_requireprofile"
     },
     {
-      "label": "Main.cs",
-      "file_type": "code",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "Main",
-      "norm_label": "main.cs",
-      "id": "scripts_main"
-    },
-    {
-      "label": "Main",
-      "file_type": "code",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L3",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "Main",
-      "norm_label": "main",
-      "id": "scripts_main_main"
-    },
-    {
-      "label": "Node2D",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "Main",
-      "norm_label": "node2d",
-      "id": "node2d"
-    },
-    {
-      "label": "TextEdit",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "Main",
-      "norm_label": "textedit",
-      "id": "textedit"
-    },
-    {
-      "label": "Button",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "Main",
-      "norm_label": "button",
-      "id": "button"
-    },
-    {
-      "label": "RichTextLabel",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "Main",
-      "norm_label": "richtextlabel",
-      "id": "richtextlabel"
-    },
-    {
-      "label": "Label",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "Main",
-      "norm_label": "label",
-      "id": "label"
-    },
-    {
-      "label": "Control",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "Main",
-      "norm_label": "control",
-      "id": "control"
-    },
-    {
-      "label": "FocusModeEnum",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "Main",
-      "norm_label": "focusmodeenum",
-      "id": "focusmodeenum"
-    },
-    {
       "label": "bool",
       "file_type": "code",
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 0,
-      "community_name": "Main",
+      "community": 38,
+      "community_name": "bool",
       "norm_label": "bool",
       "id": "scripts_main_cs_bool"
-    },
-    {
-      "label": "Stopwatch",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "Main",
-      "norm_label": "stopwatch",
-      "id": "stopwatch"
-    },
-    {
-      "label": "._Ready()",
-      "file_type": "code",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L22",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "Main",
-      "norm_label": "._ready()",
-      "id": "scripts_main_main_ready"
-    },
-    {
-      "label": "._ExitTree()",
-      "file_type": "code",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L62",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "Main",
-      "norm_label": "._exittree()",
-      "id": "scripts_main_main_exittree"
-    },
-    {
-      "label": "._Draw()",
-      "file_type": "code",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L76",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "Main",
-      "norm_label": "._draw()",
-      "id": "scripts_main_main_draw"
-    },
-    {
-      "label": ".OnSendButtonPressed()",
-      "file_type": "code",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L92",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "Main",
-      "norm_label": ".onsendbuttonpressed()",
-      "id": "scripts_main_main_onsendbuttonpressed"
-    },
-    {
-      "label": ".OnIntroOkPressed()",
-      "file_type": "code",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L94",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "Main",
-      "norm_label": ".onintrookpressed()",
-      "id": "scripts_main_main_onintrookpressed"
-    },
-    {
-      "label": ".OnMessageInputGuiInput()",
-      "file_type": "code",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L108",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "Main",
-      "norm_label": ".onmessageinputguiinput()",
-      "id": "scripts_main_main_onmessageinputguiinput"
-    },
-    {
-      "label": "InputEvent",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "Main",
-      "norm_label": "inputevent",
-      "id": "inputevent"
-    },
-    {
-      "label": ".SubmitMessage()",
-      "file_type": "code",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L125",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "Main",
-      "norm_label": ".submitmessage()",
-      "id": "scripts_main_main_submitmessage"
-    },
-    {
-      "label": ".OnResponseStarted()",
-      "file_type": "code",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L145",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "Main",
-      "norm_label": ".onresponsestarted()",
-      "id": "scripts_main_main_onresponsestarted"
-    },
-    {
-      "label": ".OnPreparationStarted()",
-      "file_type": "code",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L153",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "Main",
-      "norm_label": ".onpreparationstarted()",
-      "id": "scripts_main_main_onpreparationstarted"
-    },
-    {
-      "label": ".OnPreparationFinished()",
-      "file_type": "code",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L160",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "Main",
-      "norm_label": ".onpreparationfinished()",
-      "id": "scripts_main_main_onpreparationfinished"
-    },
-    {
-      "label": ".OnResponseChunkReceived()",
-      "file_type": "code",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L172",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "Main",
-      "norm_label": ".onresponsechunkreceived()",
-      "id": "scripts_main_main_onresponsechunkreceived"
-    },
-    {
-      "label": ".OnResponseReceived()",
-      "file_type": "code",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L185",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "Main",
-      "norm_label": ".onresponsereceived()",
-      "id": "scripts_main_main_onresponsereceived"
-    },
-    {
-      "label": ".OnResponseFailed()",
-      "file_type": "code",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L193",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "Main",
-      "norm_label": ".onresponsefailed()",
-      "id": "scripts_main_main_onresponsefailed"
-    },
-    {
-      "label": ".FinishRequest()",
-      "file_type": "code",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L201",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "Main",
-      "norm_label": ".finishrequest()",
-      "id": "scripts_main_main_finishrequest"
-    },
-    {
-      "label": ".UpdateInteractionEnabled()",
-      "file_type": "code",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L214",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "Main",
-      "norm_label": ".updateinteractionenabled()",
-      "id": "scripts_main_main_updateinteractionenabled"
     },
     {
       "label": "Task",
@@ -2323,127 +2543,6 @@
       "id": "scratch_npc_local_llm_demo_reports_10_bonsai_2_27b_evaluation_\u0432\u044b\u0431\u043e\u0440_bonsai_\u043f\u043e_\u0443\u043c\u043e\u043b\u0447\u0430\u043d\u0438\u044e_\u0438_\u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430_\u043e\u0431\u044b\u0447\u043d\u043e\u0433\u043e_\u0437\u0430\u043f\u0443\u0441\u043a\u0430_2026_09_24"
     },
     {
-      "label": "CONTEXT.md",
-      "file_type": "document",
-      "source_file": "CONTEXT.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "\u0414\u0438\u0430\u043b\u043e\u0433 \u0441 NPC",
-      "norm_label": "context.md",
-      "id": "context"
-    },
-    {
-      "label": "\u0414\u0438\u0430\u043b\u043e\u0433 \u0441 NPC",
-      "file_type": "document",
-      "source_file": "CONTEXT.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "\u0414\u0438\u0430\u043b\u043e\u0433 \u0441 NPC",
-      "norm_label": "\u0434\u0438\u0430\u043b\u043e\u0433 \u0441 npc",
-      "id": "context_\u0434\u0438\u0430\u043b\u043e\u0433_\u0441_npc"
-    },
-    {
-      "label": "\u0414\u0438\u0430\u043b\u043e\u0433",
-      "file_type": "document",
-      "source_file": "CONTEXT.md",
-      "source_location": "L5",
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "\u0414\u0438\u0430\u043b\u043e\u0433 \u0441 NPC",
-      "norm_label": "\u0434\u0438\u0430\u043b\u043e\u0433",
-      "id": "context_\u0434\u0438\u0430\u043b\u043e\u0433"
-    },
-    {
-      "label": "\u041b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f \u0433\u0435\u043d\u0435\u0440\u0430\u0446\u0438\u044f",
-      "file_type": "document",
-      "source_file": "CONTEXT.md",
-      "source_location": "L63",
-      "_origin": "ast",
-      "community": 13,
-      "community_name": "\u0414\u0438\u0430\u043b\u043e\u0433 \u0441 NPC",
-      "norm_label": "\u043b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f \u0433\u0435\u043d\u0435\u0440\u0430\u0446\u0438\u044f",
-      "id": "context_\u043b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f_\u0433\u0435\u043d\u0435\u0440\u0430\u0446\u0438\u044f"
-    },
-    {
-      "label": "README.md",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "\u041b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f \u043e\u0446\u0435\u043d\u043a\u0430 `Bonsai 2 27B PTQ1_0`",
-      "norm_label": "readme.md",
-      "id": "readme"
-    },
-    {
-      "label": "NpcWithLLM",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "\u041b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f \u043e\u0446\u0435\u043d\u043a\u0430 `Bonsai 2 27B PTQ1_0`",
-      "norm_label": "npcwithllm",
-      "id": "readme_npcwithllm"
-    },
-    {
-      "label": "\u0422\u0435\u043a\u0443\u0449\u0438\u0439 \u0441\u0442\u0430\u0442\u0443\u0441",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L5",
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "\u041b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f \u043e\u0446\u0435\u043d\u043a\u0430 `Bonsai 2 27B PTQ1_0`",
-      "norm_label": "\u0442\u0435\u043a\u0443\u0449\u0438\u0438 \u0441\u0442\u0430\u0442\u0443\u0441",
-      "id": "readme_\u0442\u0435\u043a\u0443\u0449\u0438\u0439_\u0441\u0442\u0430\u0442\u0443\u0441"
-    },
-    {
-      "label": "\u0420\u0443\u0447\u043d\u043e\u0439 \u0437\u0430\u043f\u0443\u0441\u043a Bonsai \u0447\u0435\u0440\u0435\u0437 PrismML",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L37",
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "\u041b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f \u043e\u0446\u0435\u043d\u043a\u0430 `Bonsai 2 27B PTQ1_0`",
-      "norm_label": "\u0440\u0443\u0447\u043d\u043e\u0438 \u0437\u0430\u043f\u0443\u0441\u043a bonsai \u0447\u0435\u0440\u0435\u0437 prismml",
-      "id": "readme_\u0440\u0443\u0447\u043d\u043e\u0439_\u0437\u0430\u043f\u0443\u0441\u043a_bonsai_\u0447\u0435\u0440\u0435\u0437_prismml"
-    },
-    {
-      "label": "\u0422\u0435\u0441\u0442\u044b \u0438 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u043a\u0430\u0447\u0435\u0441\u0442\u0432\u0430",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L82",
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "\u041b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f \u043e\u0446\u0435\u043d\u043a\u0430 `Bonsai 2 27B PTQ1_0`",
-      "norm_label": "\u0442\u0435\u0441\u0442\u044b \u0438 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u043a\u0430\u0447\u0435\u0441\u0442\u0432\u0430",
-      "id": "readme_\u0442\u0435\u0441\u0442\u044b_\u0438_\u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430_\u043a\u0430\u0447\u0435\u0441\u0442\u0432\u0430"
-    },
-    {
-      "label": "\u041d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435 \u043f\u0440\u043e\u0435\u043a\u0442\u0430",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L130",
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "\u041b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f \u043e\u0446\u0435\u043d\u043a\u0430 `Bonsai 2 27B PTQ1_0`",
-      "norm_label": "\u043d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435 \u043f\u0440\u043e\u0435\u043a\u0442\u0430",
-      "id": "readme_\u043d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435_\u043f\u0440\u043e\u0435\u043a\u0442\u0430"
-    },
-    {
-      "label": "Godot MCP \u0434\u043b\u044f Codex",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L136",
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "\u041b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f \u043e\u0446\u0435\u043d\u043a\u0430 `Bonsai 2 27B PTQ1_0`",
-      "norm_label": "godot mcp \u0434\u043b\u044f codex",
-      "id": "readme_godot_mcp_\u0434\u043b\u044f_codex"
-    },
-    {
       "label": "Bonsai2PrismRuntime.cs",
       "file_type": "code",
       "source_file": "Scripts/Dialogue/Bonsai2PrismRuntime.cs",
@@ -2493,8 +2592,8 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 53,
-      "community_name": "Bonsai2PrismRuntime",
+      "community": 19,
+      "community_name": "OllamaServerController",
       "norm_label": "timespan",
       "id": "timespan"
     },
@@ -2504,8 +2603,8 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 53,
-      "community_name": "Bonsai2PrismRuntime",
+      "community": 19,
+      "community_name": "OllamaServerController",
       "norm_label": "httpclient",
       "id": "httpclient"
     },
@@ -2581,8 +2680,8 @@
       "source_file": "Scripts/Dialogue/Bonsai2PrismRuntime.cs",
       "source_location": "L97",
       "_origin": "ast",
-      "community": 54,
-      "community_name": "Bonsai2PrismRuntimeSmoke",
+      "community": 53,
+      "community_name": "Bonsai2PrismRuntime",
       "norm_label": ".generateasync()",
       "id": "scripts_dialogue_bonsai2prismruntime_bonsai2prismruntime_generateasync"
     },
@@ -2840,8 +2939,8 @@
       "source_file": "Scripts/Dialogue/LocalLlmConfig.cs",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 1,
-      "community_name": "DialogueHistory",
+      "community": 44,
+      "community_name": "LocalLlmConfig",
       "norm_label": "localllmconfig.cs",
       "id": "scripts_dialogue_localllmconfig"
     },
@@ -2851,8 +2950,8 @@
       "source_file": "Scripts/Dialogue/LocalLlmConfig.cs",
       "source_location": "L4",
       "_origin": "ast",
-      "community": 1,
-      "community_name": "DialogueHistory",
+      "community": 44,
+      "community_name": "LocalLlmConfig",
       "norm_label": "localllmprovider",
       "id": "scripts_dialogue_localllmconfig_localllmprovider"
     },
@@ -2862,21 +2961,10 @@
       "source_file": "Scripts/Dialogue/LocalLlmConfig.cs",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 1,
-      "community_name": "DialogueHistory",
+      "community": 44,
+      "community_name": "LocalLlmConfig",
       "norm_label": "localllmconfig",
       "id": "scripts_dialogue_localllmconfig_localllmconfig"
-    },
-    {
-      "label": "Resource",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "DialogueHistory",
-      "norm_label": "resource",
-      "id": "resource"
     },
     {
       "label": ".GetEndpointUri()",
@@ -2884,8 +2972,8 @@
       "source_file": "Scripts/Dialogue/LocalLlmConfig.cs",
       "source_location": "L49",
       "_origin": "ast",
-      "community": 1,
-      "community_name": "DialogueHistory",
+      "community": 44,
+      "community_name": "LocalLlmConfig",
       "norm_label": ".getendpointuri()",
       "id": "scripts_dialogue_localllmconfig_localllmconfig_getendpointuri"
     },
@@ -2895,21 +2983,10 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 1,
-      "community_name": "DialogueHistory",
+      "community": 44,
+      "community_name": "LocalLlmConfig",
       "norm_label": "uri",
       "id": "scripts_dialogue_localllmconfig_cs_uri"
-    },
-    {
-      "label": "ChatResponder",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "community": 75,
-      "community_name": "ChatResponder",
-      "norm_label": "chatresponder",
-      "id": "chatresponder"
     },
     {
       "label": "NpcProfile",
@@ -4152,8 +4229,8 @@
       "source_file": ".scratch/npc-local-llm-demo/reports/06-qwen3-4b-instruct-evaluation.md",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 62,
-      "community_name": "\u041f\u043e\u043b\u043d\u0430\u044f \u0431\u0435\u0441\u0435\u0434\u0430",
+      "community": 52,
+      "community_name": "\u0416\u0438\u0432\u0430\u044f \u043e\u0446\u0435\u043d\u043a\u0430 `gemma4-12b-it-q2k-eval` (Gemma 4 12B IT, Q2_K)",
       "norm_label": "06-qwen3-4b-instruct-evaluation.md",
       "id": "scratch_npc_local_llm_demo_reports_06_qwen3_4b_instruct_evaluation"
     },
@@ -5285,8 +5362,8 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 81,
-      "community_name": "DialogueSmoke",
+      "community": 46,
+      "community_name": "Node",
       "norm_label": "string",
       "id": "string"
     },
@@ -6039,17 +6116,6 @@
       "id": "scripts_dialogue_localllmresponder_cs_npcmemory"
     },
     {
-      "label": "bool",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "community": 38,
-      "community_name": "bool",
-      "norm_label": "bool",
-      "id": "bool"
-    },
-    {
       "label": "NpcPersona.cs",
       "file_type": "code",
       "source_file": "Scripts/Dialogue/NpcPersona.cs",
@@ -6092,39 +6158,6 @@
       "community_name": "DialogueHistory",
       "norm_label": ".require()",
       "id": "scripts_dialogue_npcpersona_npcpersona_require"
-    },
-    {
-      "label": "NpcProfile.cs",
-      "file_type": "code",
-      "source_file": "Scripts/Dialogue/NpcProfile.cs",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "DialogueHistory",
-      "norm_label": "npcprofile.cs",
-      "id": "scripts_dialogue_npcprofile"
-    },
-    {
-      "label": "NpcProfile",
-      "file_type": "code",
-      "source_file": "Scripts/Dialogue/NpcProfile.cs",
-      "source_location": "L3",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "DialogueHistory",
-      "norm_label": "npcprofile",
-      "id": "scripts_dialogue_npcprofile_npcprofile"
-    },
-    {
-      "label": ".ToPersona()",
-      "file_type": "code",
-      "source_file": "Scripts/Dialogue/NpcProfile.cs",
-      "source_location": "L30",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "DialogueHistory",
-      "norm_label": ".topersona()",
-      "id": "scripts_dialogue_npcprofile_npcprofile_topersona"
     },
     {
       "label": "DialogueRegression.Tests.ps1",
@@ -6202,28 +6235,6 @@
       "community_name": "int",
       "norm_label": "int",
       "id": "tests_dialoguesmoke_cs_int"
-    },
-    {
-      "label": "Read-NpcProfile.ps1",
-      "file_type": "code",
-      "source_file": "Tests/Read-NpcProfile.ps1",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "Read-NpcProfile.ps1",
-      "norm_label": "read-npcprofile.ps1",
-      "id": "tests_read_npcprofile"
-    },
-    {
-      "label": "Read-NpcProfile()",
-      "file_type": "code",
-      "source_file": "Tests/Read-NpcProfile.ps1",
-      "source_location": "L4",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "Read-NpcProfile.ps1",
-      "norm_label": "read-npcprofile()",
-      "id": "tests_read_npcprofile_read_npcprofile"
     },
     {
       "label": "Run-DialogueModelEvaluation.ps1",
@@ -6906,17 +6917,6 @@
       "community_name": "NpcMemory",
       "norm_label": ".isnonprofessionword()",
       "id": "scripts_dialogue_npcmemory_npcmemory_isnonprofessionword"
-    },
-    {
-      "label": "NpcPersona",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "NpcPersona",
-      "norm_label": "npcpersona",
-      "id": "npcpersona"
     },
     {
       "label": "JsonElement",
@@ -8391,9 +8391,9 @@
       "source_file": "Scripts/MockChatResponder.cs",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 81,
+      "community": 46,
       "norm_label": "mockchatresponder.cs",
-      "community_name": "DialogueSmoke",
+      "community_name": "Node",
       "id": "scripts_mockchatresponder"
     },
     {
@@ -8402,9 +8402,9 @@
       "source_file": "Scripts/MockChatResponder.cs",
       "source_location": "L5",
       "_origin": "ast",
-      "community": 81,
+      "community": 46,
       "norm_label": "mockchatresponder",
-      "community_name": "DialogueSmoke",
+      "community_name": "Node",
       "id": "scripts_mockchatresponder_mockchatresponder"
     },
     {
@@ -8413,9 +8413,9 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 81,
+      "community": 46,
       "norm_label": "double",
-      "community_name": "DialogueSmoke",
+      "community_name": "Node",
       "id": "double"
     },
     {
@@ -8424,9 +8424,9 @@
       "source_file": "Scripts/MockChatResponder.cs",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 81,
+      "community": 46,
       "norm_label": ".requestresponse()",
-      "community_name": "DialogueSmoke",
+      "community_name": "Node",
       "id": "scripts_mockchatresponder_mockchatresponder_requestresponse"
     },
     {
@@ -8435,9 +8435,9 @@
       "source_file": "Scripts/MockChatResponder.cs",
       "source_location": "L22",
       "_origin": "ast",
-      "community": 81,
+      "community": 46,
       "norm_label": ".respondafterdelayasync()",
-      "community_name": "DialogueSmoke",
+      "community_name": "Node",
       "id": "scripts_mockchatresponder_mockchatresponder_respondafterdelayasync"
     }
   ],
@@ -8588,6 +8588,657 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "CONTEXT.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "context",
+      "target": "context_\u0434\u0438\u0430\u043b\u043e\u0433_\u0441_npc",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CONTEXT.md",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "context_\u0434\u0438\u0430\u043b\u043e\u0433_\u0441_npc",
+      "target": "context_\u0434\u0438\u0430\u043b\u043e\u0433",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CONTEXT.md",
+      "source_location": "L68",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "context_\u0434\u0438\u0430\u043b\u043e\u0433_\u0441_npc",
+      "target": "context_\u043b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f_\u0433\u0435\u043d\u0435\u0440\u0430\u0446\u0438\u044f",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "readme",
+      "target": "readme_npcwithllm",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L26",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "readme",
+      "target": "scratch_npc_local_llm_demo_reports_10_bonsai_2_27b_evaluation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L138",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "readme_npcwithllm",
+      "target": "readme_godot_mcp_\u0434\u043b\u044f_codex",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L132",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "readme_npcwithllm",
+      "target": "readme_\u043d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435_\u043f\u0440\u043e\u0435\u043a\u0442\u0430",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "readme_npcwithllm",
+      "target": "readme_\u0442\u0435\u043a\u0443\u0449\u0438\u0439_\u0441\u0442\u0430\u0442\u0443\u0441",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L84",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "readme_npcwithllm",
+      "target": "readme_\u0442\u0435\u0441\u0442\u044b_\u0438_\u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430_\u043a\u0430\u0447\u0435\u0441\u0442\u0432\u0430",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L39",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "readme_\u0442\u0435\u043a\u0443\u0449\u0438\u0439_\u0441\u0442\u0430\u0442\u0443\u0441",
+      "target": "readme_\u0440\u0443\u0447\u043d\u043e\u0439_\u0437\u0430\u043f\u0443\u0441\u043a_bonsai_\u0447\u0435\u0440\u0435\u0437_prismml",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Dialogue/NpcProfile.cs",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_dialogue_npcprofile",
+      "target": "scripts_dialogue_npcprofile_npcprofile",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Dialogue/NpcProfile.cs",
+      "source_location": "L3",
+      "weight": 1.0,
+      "metadata": {
+        "ref_token": "Resource"
+      },
+      "_origin": "ast",
+      "source": "scripts_dialogue_npcprofile_npcprofile",
+      "target": "resource",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Dialogue/NpcProfile.cs",
+      "source_location": "L33",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_dialogue_npcprofile_npcprofile",
+      "target": "scripts_dialogue_npcprofile_npcprofile_topersona",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Dialogue/LocalLlmConfig.cs",
+      "source_location": "L10",
+      "weight": 1.0,
+      "metadata": {
+        "ref_token": "Resource"
+      },
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "scripts_dialogue_localllmconfig_localllmconfig",
+      "target": "resource"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Dialogue/NpcProfile.cs",
+      "source_location": "L33",
+      "weight": 1.0,
+      "context": "return_type",
+      "metadata": {
+        "ref_token": "NpcPersona"
+      },
+      "_origin": "ast",
+      "source": "scripts_dialogue_npcprofile_npcprofile_topersona",
+      "target": "npcpersona",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_main",
+      "target": "scripts_main_main",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "field",
+      "metadata": {
+        "ref_token": "bool"
+      },
+      "_origin": "ast",
+      "source": "scripts_main_main",
+      "target": "bool",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L12",
+      "weight": 1.0,
+      "context": "field",
+      "metadata": {
+        "ref_token": "Button"
+      },
+      "_origin": "ast",
+      "source": "scripts_main_main",
+      "target": "button",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L5",
+      "weight": 1.0,
+      "context": "field",
+      "metadata": {
+        "ref_token": "ChatResponder"
+      },
+      "_origin": "ast",
+      "source": "scripts_main_main",
+      "target": "chatresponder",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L10",
+      "weight": 1.0,
+      "context": "field",
+      "metadata": {
+        "ref_token": "Control"
+      },
+      "_origin": "ast",
+      "source": "scripts_main_main",
+      "target": "control",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L14",
+      "weight": 1.0,
+      "context": "field",
+      "metadata": {
+        "ref_token": "FocusModeEnum",
+        "qualified": true,
+        "ref_qualifier": "Control"
+      },
+      "_origin": "ast",
+      "source": "scripts_main_main",
+      "target": "focusmodeenum",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L11",
+      "weight": 1.0,
+      "context": "field",
+      "metadata": {
+        "ref_token": "Label"
+      },
+      "_origin": "ast",
+      "source": "scripts_main_main",
+      "target": "label",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L3",
+      "weight": 1.0,
+      "metadata": {
+        "ref_token": "Node2D"
+      },
+      "_origin": "ast",
+      "source": "scripts_main_main",
+      "target": "node2d",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "field",
+      "metadata": {
+        "ref_token": "RichTextLabel"
+      },
+      "_origin": "ast",
+      "source": "scripts_main_main",
+      "target": "richtextlabel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L73",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_main_main",
+      "target": "scripts_main_main_draw",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L59",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_main_main",
+      "target": "scripts_main_main_exittree",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L198",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_main_main",
+      "target": "scripts_main_main_finishrequest",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L91",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_main_main",
+      "target": "scripts_main_main_onintrookpressed",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L105",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_main_main",
+      "target": "scripts_main_main_onmessageinputguiinput",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L157",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_main_main",
+      "target": "scripts_main_main_onpreparationfinished",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L150",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_main_main",
+      "target": "scripts_main_main_onpreparationstarted",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L169",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_main_main",
+      "target": "scripts_main_main_onresponsechunkreceived",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L190",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_main_main",
+      "target": "scripts_main_main_onresponsefailed",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L182",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_main_main",
+      "target": "scripts_main_main_onresponsereceived",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L142",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_main_main",
+      "target": "scripts_main_main_onresponsestarted",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L89",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_main_main",
+      "target": "scripts_main_main_onsendbuttonpressed",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_main_main",
+      "target": "scripts_main_main_ready",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L122",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_main_main",
+      "target": "scripts_main_main_submitmessage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L211",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_main_main",
+      "target": "scripts_main_main_updateinteractionenabled",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L19",
+      "weight": 1.0,
+      "context": "field",
+      "metadata": {
+        "ref_token": "Stopwatch",
+        "qualified": true,
+        "ref_qualifier": "System.Diagnostics"
+      },
+      "_origin": "ast",
+      "source": "scripts_main_main",
+      "target": "stopwatch",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L6",
+      "weight": 1.0,
+      "context": "field",
+      "metadata": {
+        "ref_token": "TextEdit"
+      },
+      "_origin": "ast",
+      "source": "scripts_main_main",
+      "target": "textedit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L54",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_main_main_ready",
+      "target": "scripts_main_main_updateinteractionenabled",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L89",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_main_main_onsendbuttonpressed",
+      "target": "scripts_main_main_submitmessage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L97",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_main_main_onintrookpressed",
+      "target": "scripts_main_main_updateinteractionenabled",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L105",
+      "weight": 1.0,
+      "context": "parameter_type",
+      "metadata": {
+        "ref_token": "InputEvent"
+      },
+      "_origin": "ast",
+      "source": "scripts_main_main_onmessageinputguiinput",
+      "target": "inputevent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L119",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_main_main_onmessageinputguiinput",
+      "target": "scripts_main_main_submitmessage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L137",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_main_main_submitmessage",
+      "target": "scripts_main_main_updateinteractionenabled",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L147",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_main_main_onresponsestarted",
+      "target": "scripts_main_main_updateinteractionenabled",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L154",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_main_main_onpreparationstarted",
+      "target": "scripts_main_main_updateinteractionenabled",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L161",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_main_main_onpreparationfinished",
+      "target": "scripts_main_main_updateinteractionenabled",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L187",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_main_main_onresponsereceived",
+      "target": "scripts_main_main_finishrequest",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L195",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_main_main_onresponsefailed",
+      "target": "scripts_main_main_finishrequest",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Scripts/Main.cs",
+      "source_location": "L201",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "scripts_main_main_finishrequest",
+      "target": "scripts_main_main_updateinteractionenabled",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "Tests/DialogueSmoke.cs",
       "source_location": "L11",
       "weight": 1.0,
@@ -8614,7 +9265,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L202",
+      "source_location": "L219",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_dialoguesmoke_dialoguesmoke",
@@ -8625,7 +9276,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L304",
+      "source_location": "L321",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_dialoguesmoke_dialoguesmoke",
@@ -8647,7 +9298,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L241",
+      "source_location": "L258",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_dialoguesmoke_dialoguesmoke",
@@ -8680,7 +9331,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L255",
+      "source_location": "L272",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_dialoguesmoke_dialoguesmoke",
@@ -8702,7 +9353,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L224",
+      "source_location": "L241",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_dialoguesmoke_dialoguesmoke",
@@ -8724,7 +9375,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L158",
+      "source_location": "L174",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_dialoguesmoke_dialoguesmoke",
@@ -8735,7 +9386,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L298",
+      "source_location": "L315",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_dialoguesmoke_dialoguesmoke",
@@ -8944,7 +9595,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L214",
+      "source_location": "L231",
       "weight": 1.0,
       "context": "return_type",
       "metadata": {
@@ -8959,7 +9610,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L211",
+      "source_location": "L228",
       "weight": 1.0,
       "context": "return_type",
       "metadata": {
@@ -8974,7 +9625,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L241",
+      "source_location": "L258",
       "weight": 1.0,
       "context": "return_type",
       "metadata": {
@@ -9004,7 +9655,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L255",
+      "source_location": "L272",
       "weight": 1.0,
       "context": "return_type",
       "metadata": {
@@ -9034,7 +9685,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L224",
+      "source_location": "L241",
       "weight": 1.0,
       "context": "return_type",
       "metadata": {
@@ -9049,7 +9700,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L158",
+      "source_location": "L174",
       "weight": 1.0,
       "context": "return_type",
       "metadata": {
@@ -9064,7 +9715,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L300",
+      "source_location": "L317",
       "weight": 1.0,
       "context": "return_type",
       "metadata": {
@@ -9080,7 +9731,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L114",
+      "source_location": "L117",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_dialoguesmoke_dialoguesmoke_intromodalblocksdialogueuntildismissedandready",
@@ -9092,7 +9743,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L285",
+      "source_location": "L302",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_dialoguesmoke_dialoguesmoke_realscenedialogue",
@@ -9116,7 +9767,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L228",
+      "source_location": "L245",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_dialoguesmoke_dialoguesmoke_startupbringsruntimeup",
@@ -9128,7 +9779,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L162",
+      "source_location": "L178",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_dialoguesmoke_dialoguesmoke_uistreamsandpreservesfailedinput",
@@ -9139,7 +9790,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L204",
+      "source_location": "L221",
       "weight": 1.0,
       "context": "field",
       "metadata": {
@@ -9154,7 +9805,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L209",
+      "source_location": "L226",
       "weight": 1.0,
       "context": "generic_arg",
       "metadata": {
@@ -9169,7 +9820,7 @@
       "relation": "implements",
       "confidence": "EXTRACTED",
       "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L202",
+      "source_location": "L219",
       "weight": 1.0,
       "metadata": {
         "ref_token": "ILocalLlmRuntime"
@@ -9183,7 +9834,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L209",
+      "source_location": "L226",
       "weight": 1.0,
       "context": "field",
       "metadata": {
@@ -9198,7 +9849,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L206",
+      "source_location": "L223",
       "weight": 1.0,
       "context": "field",
       "metadata": {
@@ -9213,7 +9864,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L214",
+      "source_location": "L231",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_dialoguesmoke_controlledruntime",
@@ -9224,7 +9875,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L211",
+      "source_location": "L228",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_dialoguesmoke_controlledruntime",
@@ -9279,7 +9930,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L214",
+      "source_location": "L231",
       "weight": 1.0,
       "context": "parameter_type",
       "metadata": {
@@ -9399,7 +10050,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L214",
+      "source_location": "L231",
       "weight": 1.0,
       "context": "parameter_type",
       "metadata": {
@@ -9414,7 +10065,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L214",
+      "source_location": "L231",
       "weight": 1.0,
       "context": "generic_arg",
       "metadata": {
@@ -9429,7 +10080,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L211",
+      "source_location": "L228",
       "weight": 1.0,
       "context": "parameter_type",
       "metadata": {
@@ -9444,7 +10095,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L214",
+      "source_location": "L231",
       "weight": 1.0,
       "context": "parameter_type",
       "metadata": {
@@ -9459,7 +10110,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L307",
+      "source_location": "L324",
       "weight": 1.0,
       "context": "parameter_type",
       "metadata": {
@@ -9474,7 +10125,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L300",
+      "source_location": "L317",
       "weight": 1.0,
       "context": "parameter_type",
       "metadata": {
@@ -9490,7 +10141,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L228",
+      "source_location": "L245",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_dialoguesmoke_dialoguesmoke_startupbringsruntimeup",
@@ -9501,7 +10152,7 @@
       "relation": "inherits",
       "confidence": "EXTRACTED",
       "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L298",
+      "source_location": "L315",
       "weight": 1.0,
       "metadata": {
         "ref_token": "HttpMessageHandler"
@@ -9515,7 +10166,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L300",
+      "source_location": "L317",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_dialoguesmoke_responsehandler",
@@ -9540,7 +10191,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L300",
+      "source_location": "L317",
       "weight": 1.0,
       "context": "parameter_type",
       "metadata": {
@@ -9555,7 +10206,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L300",
+      "source_location": "L317",
       "weight": 1.0,
       "context": "generic_arg",
       "metadata": {
@@ -9630,7 +10281,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L306",
+      "source_location": "L323",
       "weight": 1.0,
       "context": "field",
       "metadata": {
@@ -9645,7 +10296,7 @@
       "relation": "inherits",
       "confidence": "EXTRACTED",
       "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L304",
+      "source_location": "L321",
       "weight": 1.0,
       "metadata": {
         "ref_token": "Stream"
@@ -9659,7 +10310,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L325",
+      "source_location": "L342",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_dialoguesmoke_delayedstream",
@@ -9670,7 +10321,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L326",
+      "source_location": "L343",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_dialoguesmoke_delayedstream",
@@ -9681,7 +10332,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L307",
+      "source_location": "L324",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_dialoguesmoke_delayedstream",
@@ -9692,7 +10343,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L327",
+      "source_location": "L344",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_dialoguesmoke_delayedstream",
@@ -9703,7 +10354,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L328",
+      "source_location": "L345",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_dialoguesmoke_delayedstream",
@@ -9714,7 +10365,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L329",
+      "source_location": "L346",
       "weight": 1.0,
       "_origin": "ast",
       "source": "tests_dialoguesmoke_delayedstream",
@@ -9740,7 +10391,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L307",
+      "source_location": "L324",
       "weight": 1.0,
       "context": "parameter_type",
       "metadata": {
@@ -9755,7 +10406,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L307",
+      "source_location": "L324",
       "weight": 1.0,
       "context": "return_type",
       "metadata": {
@@ -9770,7 +10421,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "Tests/DialogueSmoke.cs",
-      "source_location": "L327",
+      "source_location": "L344",
       "weight": 1.0,
       "context": "parameter_type",
       "metadata": {
@@ -9779,6 +10430,17 @@
       "_origin": "ast",
       "source": "tests_dialoguesmoke_delayedstream_seek",
       "target": "seekorigin",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Tests/Read-NpcProfile.ps1",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "tests_read_npcprofile",
+      "target": "tests_read_npcprofile_read_npcprofile",
       "confidence_score": 1.0
     },
     {
@@ -9844,21 +10506,6 @@
       "target": "scripts_chatresponder_chatresponder"
     },
     {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L5",
-      "weight": 1.0,
-      "context": "field",
-      "metadata": {
-        "ref_token": "ChatResponder"
-      },
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "scripts_main_main",
-      "target": "scripts_chatresponder_chatresponder"
-    },
-    {
       "relation": "inherits",
       "confidence": "EXTRACTED",
       "source_file": "Scripts/MockChatResponder.cs",
@@ -9871,30 +10518,6 @@
       "confidence_score": 1.0,
       "source": "scripts_mockchatresponder_mockchatresponder",
       "target": "scripts_chatresponder_chatresponder"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L59",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "scripts_main_main_ready",
-      "target": "scripts_chatresponder_chatresponder_prepare"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L142",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "scripts_main_main_submitmessage",
-      "target": "scripts_chatresponder_chatresponder_requestresponse"
     },
     {
       "relation": "contains",
@@ -10328,467 +10951,6 @@
       "confidence_score": 1.0,
       "source": "scripts_dialogue_localllmruntimeexception_localllmruntimeexception",
       "target": "exception"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L3",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "scripts_main",
-      "target": "scripts_main_main"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L13",
-      "weight": 1.0,
-      "context": "field",
-      "metadata": {
-        "ref_token": "Button"
-      },
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "scripts_main_main",
-      "target": "button"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L10",
-      "weight": 1.0,
-      "context": "field",
-      "metadata": {
-        "ref_token": "Control"
-      },
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "scripts_main_main",
-      "target": "control"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L15",
-      "weight": 1.0,
-      "context": "field",
-      "metadata": {
-        "ref_token": "FocusModeEnum",
-        "qualified": true,
-        "ref_qualifier": "Control"
-      },
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "scripts_main_main",
-      "target": "focusmodeenum"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L12",
-      "weight": 1.0,
-      "context": "field",
-      "metadata": {
-        "ref_token": "Label"
-      },
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "scripts_main_main",
-      "target": "label"
-    },
-    {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L3",
-      "weight": 1.0,
-      "metadata": {
-        "ref_token": "Node2D"
-      },
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "scripts_main_main",
-      "target": "node2d"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L8",
-      "weight": 1.0,
-      "context": "field",
-      "metadata": {
-        "ref_token": "RichTextLabel"
-      },
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "scripts_main_main",
-      "target": "richtextlabel"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L19",
-      "weight": 1.0,
-      "context": "field",
-      "metadata": {
-        "ref_token": "bool"
-      },
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "scripts_main_main",
-      "target": "scripts_main_cs_bool"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L76",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "scripts_main_main",
-      "target": "scripts_main_main_draw"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L62",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "scripts_main_main",
-      "target": "scripts_main_main_exittree"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L201",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "scripts_main_main",
-      "target": "scripts_main_main_finishrequest"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L94",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "scripts_main_main",
-      "target": "scripts_main_main_onintrookpressed"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L108",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "scripts_main_main",
-      "target": "scripts_main_main_onmessageinputguiinput"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L160",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "scripts_main_main",
-      "target": "scripts_main_main_onpreparationfinished"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L153",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "scripts_main_main",
-      "target": "scripts_main_main_onpreparationstarted"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L172",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "scripts_main_main",
-      "target": "scripts_main_main_onresponsechunkreceived"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L193",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "scripts_main_main",
-      "target": "scripts_main_main_onresponsefailed"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L185",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "scripts_main_main",
-      "target": "scripts_main_main_onresponsereceived"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L145",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "scripts_main_main",
-      "target": "scripts_main_main_onresponsestarted"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L92",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "scripts_main_main",
-      "target": "scripts_main_main_onsendbuttonpressed"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L22",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "scripts_main_main",
-      "target": "scripts_main_main_ready"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L125",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "scripts_main_main",
-      "target": "scripts_main_main_submitmessage"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L214",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "scripts_main_main",
-      "target": "scripts_main_main_updateinteractionenabled"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L20",
-      "weight": 1.0,
-      "context": "field",
-      "metadata": {
-        "ref_token": "Stopwatch",
-        "qualified": true,
-        "ref_qualifier": "System.Diagnostics"
-      },
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "scripts_main_main",
-      "target": "stopwatch"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L6",
-      "weight": 1.0,
-      "context": "field",
-      "metadata": {
-        "ref_token": "TextEdit"
-      },
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "scripts_main_main",
-      "target": "textedit"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L57",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "scripts_main_main_ready",
-      "target": "scripts_main_main_updateinteractionenabled"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L92",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "scripts_main_main_onsendbuttonpressed",
-      "target": "scripts_main_main_submitmessage"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L100",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "scripts_main_main_onintrookpressed",
-      "target": "scripts_main_main_updateinteractionenabled"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L108",
-      "weight": 1.0,
-      "context": "parameter_type",
-      "metadata": {
-        "ref_token": "InputEvent"
-      },
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "scripts_main_main_onmessageinputguiinput",
-      "target": "inputevent"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L122",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "scripts_main_main_onmessageinputguiinput",
-      "target": "scripts_main_main_submitmessage"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L140",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "scripts_main_main_submitmessage",
-      "target": "scripts_main_main_updateinteractionenabled"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L150",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "scripts_main_main_onresponsestarted",
-      "target": "scripts_main_main_updateinteractionenabled"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L157",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "scripts_main_main_onpreparationstarted",
-      "target": "scripts_main_main_updateinteractionenabled"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L164",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "scripts_main_main_onpreparationfinished",
-      "target": "scripts_main_main_updateinteractionenabled"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L190",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "scripts_main_main_onresponsereceived",
-      "target": "scripts_main_main_finishrequest"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L198",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "scripts_main_main_onresponsefailed",
-      "target": "scripts_main_main_finishrequest"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "Scripts/Main.cs",
-      "source_location": "L204",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "scripts_main_main_finishrequest",
-      "target": "scripts_main_main_updateinteractionenabled"
     },
     {
       "relation": "contains",
@@ -11396,17 +11558,6 @@
       "target": "scratch_npc_local_llm_demo_reports_06_gemma_4_12b_it_q2k_evaluation_\u0445\u043e\u0434_9"
     },
     {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L24",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "readme",
-      "target": "scratch_npc_local_llm_demo_reports_10_bonsai_2_27b_evaluation"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": ".scratch/npc-local-llm-demo/reports/10-bonsai-2-27b-evaluation.md",
@@ -11867,105 +12018,6 @@
       "confidence_score": 1.0,
       "source": "scratch_npc_local_llm_demo_reports_10_bonsai_2_27b_evaluation_\u043f\u043e\u043b\u043d\u0430\u044f_\u0431\u0435\u0441\u0435\u0434\u0430",
       "target": "scratch_npc_local_llm_demo_reports_10_bonsai_2_27b_evaluation_\u0445\u043e\u0434_9"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "CONTEXT.md",
-      "source_location": "L1",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "context",
-      "target": "context_\u0434\u0438\u0430\u043b\u043e\u0433_\u0441_npc"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "CONTEXT.md",
-      "source_location": "L5",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "context_\u0434\u0438\u0430\u043b\u043e\u0433_\u0441_npc",
-      "target": "context_\u0434\u0438\u0430\u043b\u043e\u0433"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "CONTEXT.md",
-      "source_location": "L63",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "context_\u0434\u0438\u0430\u043b\u043e\u0433_\u0441_npc",
-      "target": "context_\u043b\u043e\u043a\u0430\u043b\u044c\u043d\u0430\u044f_\u0433\u0435\u043d\u0435\u0440\u0430\u0446\u0438\u044f"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L1",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "readme",
-      "target": "readme_npcwithllm"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L136",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "readme_npcwithllm",
-      "target": "readme_godot_mcp_\u0434\u043b\u044f_codex"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L130",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "readme_npcwithllm",
-      "target": "readme_\u043d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435_\u043f\u0440\u043e\u0435\u043a\u0442\u0430"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L5",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "readme_npcwithllm",
-      "target": "readme_\u0442\u0435\u043a\u0443\u0449\u0438\u0439_\u0441\u0442\u0430\u0442\u0443\u0441"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L82",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "readme_npcwithllm",
-      "target": "readme_\u0442\u0435\u0441\u0442\u044b_\u0438_\u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430_\u043a\u0430\u0447\u0435\u0441\u0442\u0432\u0430"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L37",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "readme_\u0442\u0435\u043a\u0443\u0449\u0438\u0439_\u0441\u0442\u0430\u0442\u0443\u0441",
-      "target": "readme_\u0440\u0443\u0447\u043d\u043e\u0439_\u0437\u0430\u043f\u0443\u0441\u043a_bonsai_\u0447\u0435\u0440\u0435\u0437_prismml"
     },
     {
       "relation": "contains",
@@ -13190,20 +13242,6 @@
       "target": "scripts_dialogue_localllmconfig_localllmprovider"
     },
     {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
-      "source_file": "Scripts/Dialogue/LocalLlmConfig.cs",
-      "source_location": "L10",
-      "weight": 1.0,
-      "metadata": {
-        "ref_token": "Resource"
-      },
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "scripts_dialogue_localllmconfig_localllmconfig",
-      "target": "resource"
-    },
-    {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "Scripts/Dialogue/LocalLlmConfig.cs",
@@ -13228,20 +13266,6 @@
       "confidence_score": 1.0,
       "source": "tests_bonsai2prismruntimesmoke_bonsai2prismruntimesmoke_testconfig",
       "target": "scripts_dialogue_localllmconfig_localllmconfig"
-    },
-    {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
-      "source_file": "Scripts/Dialogue/NpcProfile.cs",
-      "source_location": "L3",
-      "weight": 1.0,
-      "metadata": {
-        "ref_token": "Resource"
-      },
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "scripts_dialogue_npcprofile_npcprofile",
-      "target": "resource"
     },
     {
       "relation": "references",
@@ -17433,43 +17457,6 @@
       "target": "scripts_dialogue_npcpersona_npcpersona_tocontexttext"
     },
     {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "Scripts/Dialogue/NpcProfile.cs",
-      "source_location": "L30",
-      "weight": 1.0,
-      "context": "return_type",
-      "metadata": {
-        "ref_token": "NpcPersona"
-      },
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "scripts_dialogue_npcprofile_npcprofile_topersona",
-      "target": "scripts_dialogue_npcpersona_npcpersona"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "Scripts/Dialogue/NpcProfile.cs",
-      "source_location": "L3",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "scripts_dialogue_npcprofile",
-      "target": "scripts_dialogue_npcprofile_npcprofile"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "Scripts/Dialogue/NpcProfile.cs",
-      "source_location": "L30",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "scripts_dialogue_npcprofile_npcprofile",
-      "target": "scripts_dialogue_npcprofile_npcprofile_topersona"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "Tests/DialogueResponseFault.ps1",
@@ -17479,17 +17466,6 @@
       "confidence_score": 1.0,
       "source": "tests_dialogueresponsefault",
       "target": "tests_dialogueresponsefault_get_dialogueresponsefault"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "Tests/Read-NpcProfile.ps1",
-      "source_location": "L4",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "tests_read_npcprofile",
-      "target": "tests_read_npcprofile_read_npcprofile"
     },
     {
       "relation": "contains",
@@ -19599,5 +19575,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "d561db78c6fb1f65dfa3e729c69d1fccc451f283"
+  "built_at_commit": "c1d6be156961b0f0fecc43fb31ed263b613a5687"
 }
