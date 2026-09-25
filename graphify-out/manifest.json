@@ -935,18 +935,18 @@
     "semantic_hash": ""
   },
   "Scripts/Dialogue/LocalLlmConfig.cs": {
-    "mtime": 1790197660.6875815,
-    "ast_hash": "7a49111387d331509cff2c62174161ee",
+    "mtime": 1790278686.1496775,
+    "ast_hash": "f3958a52404855651d9e2ec4a889312e",
     "semantic_hash": ""
   },
   "Scripts/Dialogue/LocalLlmRuntime.cs": {
-    "mtime": 1790123187.593553,
-    "ast_hash": "f4de6e55d25eb2746b258ab51b68f9cf",
+    "mtime": 1790279231.6221936,
+    "ast_hash": "4c21f7ad8908ec1edbe73f927dc235ab",
     "semantic_hash": ""
   },
   "Scripts/Dialogue/LocalLlmRuntimeException.cs": {
-    "mtime": 1790197660.6890893,
-    "ast_hash": "15d1f82297cd5002ec3d44cfc3d6d38f",
+    "mtime": 1790279231.6231937,
+    "ast_hash": "a58ac7c96d410766462fcf8258d16113",
     "semantic_hash": ""
   },
   ".scratch/npc-local-llm-demo/evaluation-qwen35-concise.json": {
@@ -980,8 +980,8 @@
     "semantic_hash": ""
   },
   "Tests/DialogueSmoke.cs": {
-    "mtime": 1790258322.797116,
-    "ast_hash": "d48e4256d4ef242fa3d79fff5140f50f",
+    "mtime": 1790279231.6231937,
+    "ast_hash": "f2914b8d85c0ebedc5cbfccacbce4864",
     "semantic_hash": ""
   },
   "Tests/Run-DialogueModelEvaluation.ps1": {
@@ -1065,8 +1065,8 @@
     "semantic_hash": ""
   },
   ".scratch/npc-local-llm-demo/issues/05-verified-model-provisioning.md": {
-    "mtime": 1790119955.1134467,
-    "ast_hash": "b1aa3679bb6bcd520d31f9156d457651",
+    "mtime": 1790279293.8068616,
+    "ast_hash": "930b724e08243c671fd872edeac2a617",
     "semantic_hash": ""
   },
   ".scratch/npc-local-llm-demo/issues/06-live-dialogue-model-evaluation.md": {
@@ -1302,6 +1302,11 @@
   "docs/adr/0009-qwen35-9b-default.md": {
     "mtime": 1790276219.066054,
     "ast_hash": "6204027dd59cb2c94b035e888acf5ff2",
+    "semantic_hash": ""
+  },
+  "graphify-out/memory/query_20260924_192511_\u0447\u0442\u043e_\u0434\u0430\u043b\u044c\u0448\u0435_\u043f\u043e_\u043f\u043b\u0430\u043d\u0443_\u043d\u0443\u0436\u043d\u043e_\u0440\u0435\u0430\u043b\u0438\u0437\u043e\u0432\u0430\u0442\u044c.md": {
+    "mtime": 1790277911.3142679,
+    "ast_hash": "b81fa92adc46acef37dae9495cd0e8b3",
     "semantic_hash": ""
   }
 }

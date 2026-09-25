@@ -21,7 +21,7 @@ HTTP или JSON. Для UI-проверок и тестов сохраняют�
 в ресурсе остаются значения по умолчанию из кода. Совпадение ключей проверяет
 `Tests/NpcProfileRead.Tests.ps1`, а привязку профиля к сцене — smoke-сцена.
 
-`LocalLlmConfig.tres` выбирает установленную в Ollama модель `qwen35-9b-q4km-bartowski:local`.
+`LocalLlmConfig.tres` выбирает установленную в Ollama модель `qwen35-9b-q4km-bartowski:latest`.
 В 32-ходовой оценке со схемой JSON она получила 5,5/10; без схемы игровой парсер отклонил ответ на
 втором ходу. Оценка и полный диалог записаны в
 [отчёте](.scratch/npc-local-llm-demo/reports/06-qwen3.5-9b-q4km-evaluation.md). Проверка выполнена
@@ -93,6 +93,12 @@ pwsh -NoProfile -File Tests/OllamaLifecycleSmoke.ps1
 По умолчанию сценарий использует bundled CLI, а при её отсутствии — `ollama.exe` из `PATH`. Для
 проверки повтора endpoint Ollama должен отвечать на `127.0.0.1:11434`; собственный процесс для
 проверки запускается на временном свободном порту.
+
+Проверка тега из `LocalLlmConfig.tres` и реального запроса `/api/chat`:
+
+```text
+pwsh -NoProfile -File Tests/OllamaConfiguredModelSmoke.ps1
+```
 
 `LocalLlmResponder` выбирает транспорт по `Provider`. Bonsai отправляет проверяемый поток OpenAI-
 compatible SSE на `http://127.0.0.1:8080/v1/chat/completions`, игнорирует канал рассуждений и

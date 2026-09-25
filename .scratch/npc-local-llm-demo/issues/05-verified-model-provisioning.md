@@ -1,10 +1,11 @@
 # 05: Проверка и подготовка выбранной модели
 
-**What to build:** Перед диалогом игра проверяет, что модель из `LocalLlmConfig.ModelName` установлена в локальной Ollama, и прогревает её. Игровая конфигурация по умолчанию использует `qwen35-9b-q4km-bartowski:local` согласно ADR-0009.
+**What to build:** Перед диалогом игра проверяет, что модель из `LocalLlmConfig.ModelName` установлена в локальной Ollama, и прогревает её. Игровая конфигурация по умолчанию использует `qwen35-9b-q4km-bartowski:latest` согласно ADR-0009.
 
 **Blocked by:** 04: Скрытый жизненный цикл Ollama
 
 **Status:** ready-for-human
+**Resolution:** confirmed
 
 ## Решение
 
@@ -31,3 +32,5 @@
 ## Comments
 
 - 2026-09-24: Реализованы проверка точного тега Ollama, отдельная ошибка отсутствующей модели и прогрев до готовности. Сборка и целевой headless smoke `DialogueSmoke --model-preparation-only` прошли. Полный `DialogueSmoke` остановился позже на assertion `Intro did not describe the workshop, mechanic, and van` в сценарии вступительной модалки, вне проверки #05.
+
+- 2026-09-25: Тикет закрыт как подтверждённый по явному решению пользователя.
