@@ -1,16 +1,16 @@
 # Graph Report - NpcWithLLM  (2026-09-25)
 
 ## Corpus Check
-- 197 files · ~550,862 words
+- 197 files · ~551,783 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1101 nodes · 1214 edges · 94 communities (82 shown, 12 thin omitted)
-- Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 19 edges (avg confidence: 0.8)
+- 1121 nodes · 1219 edges · 100 communities (84 shown, 16 thin omitted)
+- Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 16 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `11b510e5`
+- Built from commit: `0419f825`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -21,7 +21,7 @@
 - What You Must Do When Invoked
 - Matt Pocock workflow integration
 - hitl-loop.template.sh
-- LocalLlmResponder
+- NpcMemory
 - NpcWithLLM
 - graphify reference: extra exports and benchmark
 - graphify reference: query, path, explain
@@ -91,6 +91,12 @@
 - Q: Удали все лишние файлы, которые не нужны для запуска текущей версии приложения. С bonsai я например вижу есть файлы. Prism ml насколько я вижу нам уже не нужен
 - GLOSSARY.md Format
 - agents/triage-labels.md
+- Сборка автономного Windows-пакета с нуля
+- LocalLlmResponder
+- Uri
+- bool
+- CancellationTokenSource
+- string
 
 ## God Nodes (most connected - your core abstractions)
 1. `Полная беседа` - 33 edges
@@ -105,21 +111,21 @@
 10. `Лист просмотра ответов персонажа` - 21 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `ControlledRuntime` --implements--> `ILocalLlmRuntime`  [EXTRACTED]
-  Tests/DialogueSmoke.cs → Scripts/Dialogue/ILocalLlmRuntime.cs
 - `ControlledRuntime` --references--> `DialogueMessage`  [EXTRACTED]
   Tests/DialogueSmoke.cs → Scripts/Dialogue/DialogueMessage.cs
+- `ControlledRuntime` --implements--> `ILocalLlmRuntime`  [EXTRACTED]
+  Tests/DialogueSmoke.cs → Scripts/Dialogue/ILocalLlmRuntime.cs
+- `LocalLlmResponder` --references--> `LocalLlmConfig`  [EXTRACTED]
+  Scripts/Dialogue/LocalLlmResponder.cs → Scripts/Dialogue/LocalLlmConfig.cs
+- `FakeLocalLlmRuntime` --references--> `LocalLlmFailureKind`  [EXTRACTED]
+  Scripts/Dialogue/FakeLocalLlmRuntime.cs → Scripts/Dialogue/LocalLlmRuntimeException.cs
 - `ChatResponder` --references--> `NpcProfile`  [EXTRACTED]
   Scripts/ChatResponder.cs → Scripts/Dialogue/NpcProfile.cs
-- `LocalLlmResponder` --inherits--> `ChatResponder`  [EXTRACTED]
-  Scripts/Dialogue/LocalLlmResponder.cs → Scripts/ChatResponder.cs
-- `DialogueContext` --references--> `DialogueMessage`  [EXTRACTED]
-  Scripts/Dialogue/ContextBuilder.cs → Scripts/Dialogue/DialogueMessage.cs
 
 ## Import Cycles
 - None detected.
 
-## Communities (94 total, 12 thin omitted)
+## Communities (100 total, 16 thin omitted)
 
 ### Community 0 - "Main"
 Cohesion: 0.06
@@ -145,9 +151,9 @@ Nodes (13): `code-review`, `diagnosing-bugs`, Graphify integration, `grill-with-
 Cohesion: 0.83
 Nodes (3): capture(), hitl-loop.template.sh script, step()
 
-### Community 6 - "LocalLlmResponder"
-Cohesion: 0.05
-Nodes (25): IReadOnlyDictionary, List, Regex, Resource, ContextBuilder, IReadOnlyList, DialogueContext, int (+17 more)
+### Community 6 - "NpcMemory"
+Cohesion: 0.08
+Nodes (13): IReadOnlyDictionary, List, Regex, ContextBuilder, IReadOnlyList, DialogueContext, int, IReadOnlyList (+5 more)
 
 ### Community 7 - "NpcWithLLM"
 Cohesion: 0.67
@@ -187,7 +193,7 @@ Nodes (5): Conventions, Issue tracker: Local Markdown, Wayfinding operations, Wh
 
 ### Community 19 - "OllamaServerController"
 Cohesion: 0.07
-Nodes (27): Exception, ExpectedSha256, HttpClient, IDisposable, JsonSerializerOptions, NetHttpClient, object, Path (+19 more)
+Nodes (29): Exception, ExpectedSha256, HttpClient, IDisposable, JsonSerializerOptions, NetHttpClient, object, Path (+21 more)
 
 ### Community 20 - "Local LLM Connection"
 Cohesion: 0.22
@@ -222,12 +228,12 @@ Cohesion: 0.07
 Nodes (25): 1. State the question, 2. Isolate the logic in a portable module, 3. Build the shareable HTML file, 4. Hand it over, 5. Capture the answer and the prototype, Anti-patterns, Logic Prototype, Process (+17 more)
 
 ### Community 30 - "DialogueSmoke"
-Cohesion: 0.10
-Nodes (20): HttpMessageHandler, HttpRequestMessage, HttpResponseMessage, DialogueMessage, Action, CancellationToken, Exception, IReadOnlyList (+12 more)
+Cohesion: 0.08
+Nodes (25): HttpMessageHandler, HttpRequestMessage, HttpResponseMessage, DialogueMessage, Action, CancellationToken, Exception, IReadOnlyList (+17 more)
 
 ### Community 34 - "Полный адаптивный диалог"
-Cohesion: 0.04
-Nodes (44): Godot MCP для Codex, NpcWithLLM, Standalone Windows-пакет, Направление проекта, Текущий статус, Тесты и проверка качества, Итог, Локальная оценка `Qwen3.5 9B Q4_K_M` (+36 more)
+Cohesion: 0.06
+Nodes (33): Полный адаптивный диалог, Ход 1, Ход 10, Ход 11, Ход 12, Ход 13, Ход 14, Ход 15 (+25 more)
 
 ### Community 35 - "Лист просмотра ответов персонажа"
 Cohesion: 0.09
@@ -303,7 +309,7 @@ Nodes (8): Further Notes, Implementation Decisions, Out of Scope, Problem Statem
 
 ### Community 59 - "Полная беседа"
 Cohesion: 0.05
-Nodes (39): 06: Живая оценка локальной модели, Comments, Вывод и рекомендация, Живая оценка `qwen3.5:4b`, Оценки, Полная беседа, Условия прогона, Ход 1 (+31 more)
+Nodes (37): Вывод и рекомендация, Живая оценка `qwen3.5:4b`, Оценки, Полная беседа, Условия прогона, Ход 1, Ход 10, Ход 11 (+29 more)
 
 ### Community 60 - "3D Dialogue Vertical Slice"
 Cohesion: 0.22
@@ -315,7 +321,7 @@ Nodes (38): Вывод и рекомендация, Живая оценка `qwe
 
 ### Community 63 - "Полная беседа"
 Cohesion: 0.05
-Nodes (37): Живая оценка `ministral-3:8b-instruct-2512-q4_K_M`, Оценки, Полная беседа, Сравнение и рекомендация, Условия прогона, Ход 1, Ход 10, Ход 11 (+29 more)
+Nodes (39): 06: Живая оценка локальной модели, Comments, Живая оценка `ministral-3:8b-instruct-2512-q4_K_M`, Оценки, Полная беседа, Сравнение и рекомендация, Условия прогона, Ход 1 (+31 more)
 
 ### Community 64 - "Bonsai 2 временно выбрана провайдером игры по умолчанию"
 Cohesion: 0.33
@@ -377,10 +383,18 @@ Nodes (4): Answer, Outcome, Q: Удали все лишние файлы, кот
 Cohesion: 0.50
 Nodes (3): GLOSSARY.md Format, Rules, Structure
 
+### Community 94 - "Сборка автономного Windows-пакета с нуля"
+Cohesion: 0.09
+Nodes (21): 1. Установите необходимые программы, 2. Скачайте проект, 3. Подготовьте Godot и шаблоны экспорта, 4. Скачайте закреплённую версию Ollama, 5. Скачайте и подготовьте модель, 6. Соберите игру, 7. Запустите или передайте готовую игру, Godot MCP для Codex (+13 more)
+
+### Community 95 - "LocalLlmResponder"
+Cohesion: 0.15
+Nodes (11): bool, CancellationTokenSource, ChatResponder, ContextBuilder, DialogueHistory, ILocalLlmRuntime, NpcMemory, NpcProfile (+3 more)
+
 ## Knowledge Gaps
-- **624 isolated node(s):** `net8.0`, `Godot.NET.Sdk/4.7.2`, `LocalLlmGenerationOptions`, `The five options`, `The tree` (+619 more)
+- **633 isolated node(s):** `Problem Statement`, `Solution`, `User Stories`, `Implementation Decisions`, `Testing Decisions` (+628 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **12 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **16 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Work-memory lessons
 
@@ -391,12 +405,12 @@ Nodes (3): GLOSSARY.md Format, Rules, Structure
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `ChatResponder` connect `Main` to `LocalLlmResponder`?**
-  _High betweenness centrality (0.021) - this node is a cross-community bridge._
-- **Why does `LocalLlmResponder` connect `LocalLlmResponder` to `Main`?**
-  _High betweenness centrality (0.016) - this node is a cross-community bridge._
-- **What connects `net8.0`, `Godot.NET.Sdk/4.7.2`, `LocalLlmGenerationOptions` to the rest of the system?**
-  _624 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Why does `DialogueSmoke` connect `DialogueSmoke` to `Main`, `DelayedStream`?**
+  _High betweenness centrality (0.018) - this node is a cross-community bridge._
+- **Why does `Живая оценка `gemma4-12b-it-q2k-eval` (Gemma 4 12B IT, Q2_K)` connect `Полная беседа` to `Полная беседа`?**
+  _High betweenness centrality (0.014) - this node is a cross-community bridge._
+- **What connects `Problem Statement`, `Solution`, `User Stories` to the rest of the system?**
+  _633 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Main` be split into smaller, more focused modules?**
   _Cohesion score 0.0563265306122449 - nodes in this community are weakly interconnected._
 - **Should `Issue tracker: GitHub` be split into smaller, more focused modules?**

@@ -19,26 +19,6 @@
     "ast_hash": "a355842d1be697f4115d7075f372d6d1",
     "semantic_hash": "a355842d1be697f4115d7075f372d6d1"
   },
-  "NpcWithLLM.csproj": {
-    "mtime": 1790032355.1998448,
-    "ast_hash": "041611b00e653767e666c1288a52b7c0",
-    "semantic_hash": "041611b00e653767e666c1288a52b7c0"
-  },
-  "Scripts/ChatResponder.cs": {
-    "mtime": 1790255750.7634246,
-    "ast_hash": "ff22c1b24e327f0f541e14154f3a35b8",
-    "semantic_hash": ""
-  },
-  "Scripts/Main.cs": {
-    "mtime": 1790256016.1082408,
-    "ast_hash": "fabfa7d9ba8931c46ee204ecd2f66c6f",
-    "semantic_hash": ""
-  },
-  "Scripts/MockChatResponder.cs": {
-    "mtime": 1790255750.7634246,
-    "ast_hash": "0d641c12aef798ae9ecc04bfccdb8418",
-    "semantic_hash": ""
-  },
   "skills-lock.json": {
     "mtime": 1790028119.5107448,
     "ast_hash": "25be229386c78a5590387d8878680ec3",
@@ -830,8 +810,8 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1790331863.0045767,
-    "ast_hash": "453a0f81b834ab9917e5bf17ba0290c7",
+    "mtime": 1790348535.5580354,
+    "ast_hash": "4b18171354a192184f68bb807fa1ed06",
     "semantic_hash": ""
   },
   "docs/adr/0001-local-llm-dialogue-boundary.md": {
@@ -894,61 +874,6 @@
     "ast_hash": "c550659672b5869377bcb8c910c6787d",
     "semantic_hash": ""
   },
-  "Scripts/Dialogue/ContextBuilder.cs": {
-    "mtime": 1790255750.7619176,
-    "ast_hash": "7b1584949410ec676f8d7486215dbb37",
-    "semantic_hash": ""
-  },
-  "Scripts/Dialogue/DialogueHistory.cs": {
-    "mtime": 1790112247.9296038,
-    "ast_hash": "b969b758fe0e2e8c35aa22529ba8096f",
-    "semantic_hash": ""
-  },
-  "Scripts/Dialogue/DialogueMessage.cs": {
-    "mtime": 1790081519.0067983,
-    "ast_hash": "c1d573e78e97a98864f5103459729716",
-    "semantic_hash": ""
-  },
-  "Scripts/Dialogue/FakeLocalLlmRuntime.cs": {
-    "mtime": 1790096412.431082,
-    "ast_hash": "5f9919915542f42f6b15e224889eda2f",
-    "semantic_hash": ""
-  },
-  "Scripts/Dialogue/ILocalLlmRuntime.cs": {
-    "mtime": 1790122882.3474972,
-    "ast_hash": "fcff6302038eb396ec257c0b755de4de",
-    "semantic_hash": ""
-  },
-  "Scripts/Dialogue/LocalLlmResponder.cs": {
-    "mtime": 1790331094.0997758,
-    "ast_hash": "23728bb6052d67cea0da4233c2cbbe65",
-    "semantic_hash": ""
-  },
-  "Scripts/Dialogue/NpcMemory.cs": {
-    "mtime": 1790097110.942088,
-    "ast_hash": "9f8cbfaa698ab4cc16ffbf96ebebca61",
-    "semantic_hash": ""
-  },
-  "Scripts/Dialogue/NpcPersona.cs": {
-    "mtime": 1790111659.2650585,
-    "ast_hash": "3bfe3c807d35c344a7b0e348192e8d46",
-    "semantic_hash": ""
-  },
-  "Scripts/Dialogue/LocalLlmConfig.cs": {
-    "mtime": 1790331094.0987742,
-    "ast_hash": "0367aee4b0981d3a46ec0e2cd5192725",
-    "semantic_hash": ""
-  },
-  "Scripts/Dialogue/LocalLlmRuntime.cs": {
-    "mtime": 1790296552.9340763,
-    "ast_hash": "dcd7a8e88ed9e7528788f23e8128df9d",
-    "semantic_hash": ""
-  },
-  "Scripts/Dialogue/LocalLlmRuntimeException.cs": {
-    "mtime": 1790331094.1007774,
-    "ast_hash": "d9a3b1925867af90124c93fcdbef78d7",
-    "semantic_hash": ""
-  },
   ".scratch/npc-local-llm-demo/evaluation-qwen35-concise.json": {
     "mtime": 1790096917.2393243,
     "ast_hash": "9e37f29b62fe65b34aa308fb0aa02029",
@@ -969,24 +894,14 @@
     "ast_hash": "b8fce84e4cdb395bf41d15df5bc67175",
     "semantic_hash": ""
   },
-  "Scripts/Dialogue/LocalLlmRequest.cs": {
-    "mtime": 1790276219.0620525,
-    "ast_hash": "171372866b9b4ef56d4d957c8b01df45",
-    "semantic_hash": ""
-  },
   "Tests/DialogueRegression.Tests.ps1": {
-    "mtime": 1790112287.8347075,
-    "ast_hash": "0d7f0ded1a8ed867974f076d74f2a11d",
-    "semantic_hash": ""
-  },
-  "Tests/DialogueSmoke.cs": {
-    "mtime": 1790328131.2859266,
-    "ast_hash": "f3c7f63575f2a90368d6e389db6a119c",
+    "mtime": 1790346122.8296325,
+    "ast_hash": "83fc398ecbdb119ec07ac5a22925418c",
     "semantic_hash": ""
   },
   "Tests/Run-DialogueModelEvaluation.ps1": {
-    "mtime": 1790256367.828705,
-    "ast_hash": "476a1dc038127382dc747acec0aa7133",
+    "mtime": 1790346122.8461542,
+    "ast_hash": "3b6d10e1d57a0d84869818110e33f727",
     "semantic_hash": ""
   },
   ".scratch/npc-local-llm-demo/ContextBuilder.concise.txt": {
@@ -1034,19 +949,14 @@
     "ast_hash": "288894f800d4a296950482f1255f2253",
     "semantic_hash": ""
   },
-  "Scripts/Dialogue/NpcProfile.cs": {
-    "mtime": 1790253938.857337,
-    "ast_hash": "6b346c45d3337d614e8165dc3caeb8ec",
-    "semantic_hash": ""
-  },
   "Tests/NpcProfileRead.Tests.ps1": {
     "mtime": 1790254903.0222116,
     "ast_hash": "fae4f52bf3b5fcf6fbcf5edcfab809fe",
     "semantic_hash": ""
   },
   "Tests/Read-NpcProfile.ps1": {
-    "mtime": 1790253938.8613403,
-    "ast_hash": "cb66f3f6d462ba019b7bc76a9a5702a1",
+    "mtime": 1790346122.8451555,
+    "ast_hash": "f1de80cb55ddfc2e263cef7c30237d71",
     "semantic_hash": ""
   },
   ".scratch/npc-local-llm-demo/review-qwen35-profile.md": {
@@ -1094,14 +1004,9 @@
     "ast_hash": "2990fd5f24f43966af3c19b9aa7dd6b4",
     "semantic_hash": ""
   },
-  "Scripts/Dialogue/OllamaServerController.cs": {
-    "mtime": 1790296342.1700718,
-    "ast_hash": "794280fc5bcc70f7802d8f1b524f78e6",
-    "semantic_hash": ""
-  },
   "Tests/OllamaLifecycleSmoke.ps1": {
-    "mtime": 1790123316.1253493,
-    "ast_hash": "455e32287fbb9369684a3b523ad64a3d",
+    "mtime": 1790346122.838143,
+    "ast_hash": "7f26da07fa13276a9287c851e4f4ec66",
     "semantic_hash": ""
   },
   ".scratch/npc-local-llm-demo/reports/06-live-dialogue-model-evaluation.md": {
@@ -1122,11 +1027,6 @@
   ".scratch/npc-local-llm-demo/reports/06-qwen3-4b-instruct-evaluation.md": {
     "mtime": 1790166354.6767156,
     "ast_hash": "f1d6cb8a86b9efc338b06b6ceef9a10e",
-    "semantic_hash": ""
-  },
-  "Tests/LiveDialogueEvaluationRunner.cs": {
-    "mtime": 1790331094.1018598,
-    "ast_hash": "424d4fd8263f801b46ab87449884d112",
     "semantic_hash": ""
   },
   ".scratch/npc-local-llm-demo/issues/10-bonsai-2-27b-evaluation.md": {
@@ -1244,11 +1144,6 @@
     "ast_hash": "fcd4ab0288f8b5be0db7bc10ec36db46",
     "semantic_hash": ""
   },
-  "Scripts/Dialogue/GeneratedCharacterResponse.cs": {
-    "mtime": 1790256329.410962,
-    "ast_hash": "d6c07e904d9ba4d9e75467066cd83348",
-    "semantic_hash": ""
-  },
   ".scratch/npc-local-llm-demo/issues/12-mechanic-portrait-emotions.md": {
     "mtime": 1790285062.7723637,
     "ast_hash": "447747117790b16d66f62765c8cdff64",
@@ -1285,18 +1180,13 @@
     "semantic_hash": ""
   },
   "Build-WindowsPackage.ps1": {
-    "mtime": 1790328682.8917024,
-    "ast_hash": "31fa91879d90d323b8fb3812b7254c4c",
-    "semantic_hash": ""
-  },
-  "NpcWithLLM.sln": {
-    "mtime": 1790327293.7834928,
-    "ast_hash": "8309539015fb1a4550c4fdc662690bcf",
+    "mtime": 1790348848.7582426,
+    "ast_hash": "419c70fb46d06fc3c8fd84597fa26e71",
     "semantic_hash": ""
   },
   "Tests/OllamaConfiguredModelSmoke.ps1": {
-    "mtime": 1790283737.7466266,
-    "ast_hash": "0d83506a69abc103c995b2efbd86009c",
+    "mtime": 1790346122.8351302,
+    "ast_hash": "71e5be8ca2edd298cab318eaaccb15d6",
     "semantic_hash": ""
   },
   "graphify-out/memory/query_20260925_001816_\u043d\u0430\u0439\u0434\u0438_\u0438_\u043f\u0440\u0435\u0434\u043b\u043e\u0436\u0438_\u0441\u043f\u043e\u0441\u043e\u0431\u044b_\u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c_\u043e\u0442\u0432\u0435\u0442\u044b_\u0438_\u043a\u043e\u043d\u0442\u0435\u043a\u0441.md": {
@@ -1307,6 +1197,96 @@
   "graphify-out/memory/query_20260925_101347_\u0443\u0434\u0430\u043b\u0438_\u0432\u0441\u0435_\u043b\u0438\u0448\u043d\u0438\u0435_\u0444\u0430\u0439\u043b\u044b__\u043a\u043e\u0442\u043e\u0440\u044b\u0435_\u043d\u0435_\u043d\u0443\u0436\u043d\u044b_\u0434\u043b\u044f_\u0437\u0430\u043f\u0443\u0441.md": {
     "mtime": 1790331227.7874827,
     "ast_hash": "d92de203d35cf81f2bd76cac1884d4cc",
+    "semantic_hash": ""
+  },
+  "Package-GodotProject.ps1": {
+    "mtime": 1790348866.2541664,
+    "ast_hash": "c9256a1faf4c4dd8965f3eb5bce33c32",
+    "semantic_hash": ""
+  },
+  "Package-WindowsClient.ps1": {
+    "mtime": 1790348894.8803432,
+    "ast_hash": "74bf636c57ad2f4815560c47b9214d36",
+    "semantic_hash": ""
+  },
+  "Tests/OptionalModelEvaluation/ContextBuilder.cs": {
+    "mtime": 1790346122.8391428,
+    "ast_hash": "7b1584949410ec676f8d7486215dbb37",
+    "semantic_hash": ""
+  },
+  "Tests/OptionalModelEvaluation/DialogueHistory.cs": {
+    "mtime": 1790346122.840143,
+    "ast_hash": "b969b758fe0e2e8c35aa22529ba8096f",
+    "semantic_hash": ""
+  },
+  "Tests/OptionalModelEvaluation/DialogueMessage.cs": {
+    "mtime": 1790346122.8406425,
+    "ast_hash": "c1d573e78e97a98864f5103459729716",
+    "semantic_hash": ""
+  },
+  "Tests/OptionalModelEvaluation/GeneratedCharacterResponse.cs": {
+    "mtime": 1790346122.8411424,
+    "ast_hash": "d6c07e904d9ba4d9e75467066cd83348",
+    "semantic_hash": ""
+  },
+  "Tests/OptionalModelEvaluation/LocalLlmRequest.cs": {
+    "mtime": 1790346122.8416414,
+    "ast_hash": "171372866b9b4ef56d4d957c8b01df45",
+    "semantic_hash": ""
+  },
+  "Tests/OptionalModelEvaluation/LocalLlmRuntimeException.cs": {
+    "mtime": 1790346122.8416414,
+    "ast_hash": "d9a3b1925867af90124c93fcdbef78d7",
+    "semantic_hash": ""
+  },
+  "Tests/OptionalModelEvaluation/NpcMemory.cs": {
+    "mtime": 1790346122.8431568,
+    "ast_hash": "9f8cbfaa698ab4cc16ffbf96ebebca61",
+    "semantic_hash": ""
+  },
+  "Tests/OptionalModelEvaluation/NpcPersona.cs": {
+    "mtime": 1790346122.8436544,
+    "ast_hash": "3bfe3c807d35c344a7b0e348192e8d46",
+    "semantic_hash": ""
+  },
+  "Tests/Run-CleanWindowsSmoke.ps1": {
+    "mtime": 1790348529.471851,
+    "ast_hash": "c8b6b47cf9038f89380772e2bfbbbeee",
+    "semantic_hash": ""
+  },
+  "Tests/Run-GdscriptTests.ps1": {
+    "mtime": 1790346122.846655,
+    "ast_hash": "20574c3854df8f5d1535957f322520ae",
+    "semantic_hash": ""
+  },
+  ".scratch/gdscript-runtime-migration/issues/01-gdscript-executable-runtime.md": {
+    "mtime": 1790346122.7955637,
+    "ast_hash": "9fb492dfcbfc991a5fc6799fc517e98f",
+    "semantic_hash": ""
+  },
+  ".scratch/gdscript-runtime-migration/spec.md": {
+    "mtime": 1790346122.7965653,
+    "ast_hash": "76fdb5a9e9ddb21374f8cdfc893e8178",
+    "semantic_hash": ""
+  },
+  "CLIENT-README.md": {
+    "mtime": 1790347386.7195067,
+    "ast_hash": "8b5d8cc3a80c6b29202f8b4c770a0db7",
+    "semantic_hash": ""
+  },
+  "docs/adr/0010-gdscript-executable-runtime.md": {
+    "mtime": 1790346122.847662,
+    "ast_hash": "257497e2644ee4411d5c1fe845273f43",
+    "semantic_hash": ""
+  },
+  "docs/model-evaluation/qwen3.5-9b-q4km-evaluation.md": {
+    "mtime": 1790274132.9823754,
+    "ast_hash": "ab8479168c2dc9a9166d0c57d4ce5d9a",
+    "semantic_hash": ""
+  },
+  "docs/images/app-preview.png": {
+    "mtime": 1790332437.7960415,
+    "ast_hash": "b709d4b32d475b64d311cfb8c9273adc",
     "semantic_hash": ""
   }
 }

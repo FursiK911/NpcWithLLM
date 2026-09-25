@@ -830,8 +830,8 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1790331094.1028595,
-    "ast_hash": "c3f2a7995ce1f9117073781f328aa33b",
+    "mtime": 1790331863.0045767,
+    "ast_hash": "453a0f81b834ab9917e5bf17ba0290c7",
     "semantic_hash": ""
   },
   "docs/adr/0001-local-llm-dialogue-boundary.md": {

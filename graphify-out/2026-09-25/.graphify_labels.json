@@ -5,7 +5,7 @@
   "3": "What You Must Do When Invoked",
   "4": "Matt Pocock workflow integration",
   "5": "hitl-loop.template.sh",
-  "6": "LocalLlmResponder",
+  "6": "NpcMemory",
   "7": "NpcWithLLM",
   "8": "graphify reference: extra exports and benchmark",
   "9": "graphify reference: query, path, explain",
@@ -92,5 +92,11 @@
   "90": "implement/SKILL.md",
   "91": "research/SKILL.md",
   "92": "resolving-merge-conflicts/SKILL.md",
-  "93": "wait-what/SKILL.md"
+  "93": "wait-what/SKILL.md",
+  "94": "Сборка автономного Windows-пакета с нуля",
+  "95": "LocalLlmResponder",
+  "96": "Uri",
+  "97": "bool",
+  "98": "CancellationTokenSource",
+  "99": "string"
 }

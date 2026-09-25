@@ -1,6 +1,48 @@
 {
-  "generated_at": "2026-09-25T10:35:11.437460+00:00",
+  "generated_at": "2026-09-25T15:49:46.720052+00:00",
   "nodes": {
+    "contextbuilder": {
+      "code_fingerprint": "",
+      "label": "ContextBuilder",
+      "last": "2026-09-25T00:18:16.684610+00:00",
+      "provenance": [
+        {
+          "date": "2026-09-25T00:18:16.684610+00:00",
+          "outcome": "useful",
+          "q": "Найди и предложи способы улучшить ответы и контекст у NPC и при этом не выходить за рамки технических требований"
+        },
+        {
+          "date": "2026-09-23T00:34:47.195246+00:00",
+          "outcome": "useful",
+          "q": "How do the current game profile, context, memory, history, and generation settings flow into the local model request?"
+        }
+      ],
+      "score": 1.926091005,
+      "source_file": "",
+      "status": "preferred",
+      "uses": 2
+    },
+    "dialoguehistory": {
+      "code_fingerprint": "",
+      "label": "DialogueHistory",
+      "last": "2026-09-25T00:18:16.684610+00:00",
+      "provenance": [
+        {
+          "date": "2026-09-25T00:18:16.684610+00:00",
+          "outcome": "useful",
+          "q": "Найди и предложи способы улучшить ответы и контекст у NPC и при этом не выходить за рамки технических требований"
+        },
+        {
+          "date": "2026-09-23T00:34:47.195246+00:00",
+          "outcome": "useful",
+          "q": "How do the current game profile, context, memory, history, and generation settings flow into the local model request?"
+        }
+      ],
+      "score": 1.926091005,
+      "source_file": "",
+      "status": "preferred",
+      "uses": 2
+    },
     "docs_adr_0009_qwen35_9b_default_qwen3_5_9b_выбрана_локальной_моделью_игры": {
       "code_fingerprint": "1d84c144862f582b8f46f2427eb4ff43d66f210598f21b44f6a2bccbec69df20",
       "label": "Qwen3.5 9B выбрана локальной моделью игры",
@@ -12,8 +54,45 @@
           "q": "Удали все лишние файлы, которые не нужны для запуска текущей версии приложения. С bonsai я например вижу есть файлы. Prism ml насколько я вижу нам уже не нужен"
         }
       ],
-      "score": 0.999656788,
+      "score": 0.994623645,
       "source_file": "docs/adr/0009-qwen35-9b-default.md",
+      "status": "tentative",
+      "uses": 1
+    },
+    "npcmemory": {
+      "code_fingerprint": "",
+      "label": "NpcMemory",
+      "last": "2026-09-25T00:18:16.684610+00:00",
+      "provenance": [
+        {
+          "date": "2026-09-25T00:18:16.684610+00:00",
+          "outcome": "useful",
+          "q": "Найди и предложи способы улучшить ответы и контекст у NPC и при этом не выходить за рамки технических требований"
+        },
+        {
+          "date": "2026-09-23T00:34:47.195246+00:00",
+          "outcome": "useful",
+          "q": "How do the current game profile, context, memory, history, and generation settings flow into the local model request?"
+        }
+      ],
+      "score": 1.926091005,
+      "source_file": "",
+      "status": "preferred",
+      "uses": 2
+    },
+    "npcprofile": {
+      "code_fingerprint": "",
+      "label": "NpcProfile",
+      "last": "2026-09-23T00:34:47.195246+00:00",
+      "provenance": [
+        {
+          "date": "2026-09-23T00:34:47.195246+00:00",
+          "outcome": "useful",
+          "q": "How do the current game profile, context, memory, history, and generation settings flow into the local model request?"
+        }
+      ],
+      "score": 0.940925863,
+      "source_file": "",
       "status": "tentative",
       "uses": 1
     },
@@ -28,78 +107,10 @@
           "q": "что дальше по плану нужно реализовать?"
         }
       ],
-      "score": 0.985505028,
+      "score": 0.980543138,
       "source_file": ".scratch/local-llm-connection/spec.md",
       "status": "tentative",
       "uses": 1
-    },
-    "scripts_dialogue_localllmconfig_localllmconfig": {
-      "code_fingerprint": "b5929d3a233be19da9f01b0ef80e3c13b51c35ed2d072a2c445501eb3a4625c4",
-      "label": "LocalLlmConfig",
-      "last": "2026-09-23T21:16:50.686259+00:00",
-      "provenance": [
-        {
-          "date": "2026-09-23T21:16:50.686259+00:00",
-          "outcome": "useful",
-          "q": "How does the game select the local LLM provider and where is the runtime seam?"
-        }
-      ],
-      "score": 0.964722847,
-      "source_file": "Scripts/Dialogue/LocalLlmConfig.cs",
-      "status": "tentative",
-      "uses": 1
-    },
-    "scripts_dialogue_localllmresponder_localllmresponder": {
-      "code_fingerprint": "e1e75a6924691b067e6af5eaee629bb03d455f833f402aede8d8d167be0bc35b",
-      "label": "LocalLlmResponder",
-      "last": "2026-09-25T10:13:47.787006+00:00",
-      "provenance": [
-        {
-          "date": "2026-09-25T10:13:47.787006+00:00",
-          "outcome": "useful",
-          "q": "Удали все лишние файлы, которые не нужны для запуска текущей версии приложения. С bonsai я например вижу есть файлы. Prism ml насколько я вижу нам уже не нужен"
-        },
-        {
-          "date": "2026-09-24T19:25:11.313898+00:00",
-          "outcome": "useful",
-          "q": "что дальше по плану нужно реализовать?"
-        },
-        {
-          "date": "2026-09-23T21:16:50.686259+00:00",
-          "outcome": "useful",
-          "q": "How does the game select the local LLM provider and where is the runtime seam?"
-        },
-        {
-          "date": "2026-09-23T00:34:47.195246+00:00",
-          "outcome": "useful",
-          "q": "How do the current game profile, context, memory, history, and generation settings flow into the local model request?"
-        }
-      ],
-      "score": 3.89557194,
-      "source_file": "Scripts/Dialogue/LocalLlmResponder.cs",
-      "status": "preferred",
-      "uses": 4
-    },
-    "scripts_dialogue_localllmruntime_localllmruntime": {
-      "code_fingerprint": "45d4f7e2a33ecd353f03e5d62d5272be95ae5571eddb9d98ef36b76072fe229a",
-      "label": "LocalLlmRuntime",
-      "last": "2026-09-23T21:16:50.686259+00:00",
-      "provenance": [
-        {
-          "date": "2026-09-23T21:16:50.686259+00:00",
-          "outcome": "useful",
-          "q": "How does the game select the local LLM provider and where is the runtime seam?"
-        },
-        {
-          "date": "2026-09-23T00:34:47.195246+00:00",
-          "outcome": "useful",
-          "q": "How do the current game profile, context, memory, history, and generation settings flow into the local model request?"
-        }
-      ],
-      "score": 1.910410124,
-      "source_file": "Scripts/Dialogue/LocalLlmRuntime.cs",
-      "status": "preferred",
-      "uses": 2
     }
   },
   "version": 1
