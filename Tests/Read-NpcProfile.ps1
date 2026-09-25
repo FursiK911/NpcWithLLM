@@ -1,14 +1,13 @@
-# Читает профиль персонажа из res://NpcProfile.tres, чтобы харнесс оценивал ту же роль,
-# что и игра. Ключи блока [resource] совпадают с именами C#-свойств (Name, Role, …): Godot 4.7
-# не приводит их к нижнему регистру, и ключ «name» был бы проигнорирован молча.
+# Читает профиль персонажа из res://NpcProfile.tres теми же экспортированными именами свойств,
+# которые использует GDScript-ресурс.
 function Read-NpcProfile {
     param(
         [string]$Path = (Join-Path $PSScriptRoot '../NpcProfile.tres')
     )
 
     $required = @(
-        'Name', 'Role', 'PlayerIntroduction', 'Character', 'SpeechStyle',
-        'PlayerAttitude', 'Knowledge', 'BehaviorConstraints', 'Situation'
+        'npc_name', 'role', 'player_introduction', 'character', 'speech_style',
+        'player_attitude', 'knowledge', 'behavior_constraints', 'situation'
     )
     $values = @{}
 
@@ -24,14 +23,14 @@ function Read-NpcProfile {
     }
 
     [pscustomobject]@{
-        Name               = $values['Name']
-        Role               = $values['Role']
-        PlayerIntroduction = $values['PlayerIntroduction']
-        Character          = $values['Character']
-        SpeechStyle        = $values['SpeechStyle']
-        PlayerAttitude     = $values['PlayerAttitude']
-        Knowledge          = $values['Knowledge']
-        BehaviorConstraints = $values['BehaviorConstraints']
-        Situation          = $values['Situation']
+        Name               = $values['npc_name']
+        Role               = $values['role']
+        PlayerIntroduction = $values['player_introduction']
+        Character          = $values['character']
+        SpeechStyle        = $values['speech_style']
+        PlayerAttitude     = $values['player_attitude']
+        Knowledge          = $values['knowledge']
+        BehaviorConstraints = $values['behavior_constraints']
+        Situation          = $values['situation']
     }
 }

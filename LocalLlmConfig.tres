@@ -1,17 +1,17 @@
-[gd_resource type="Resource" script_class="LocalLlmConfig" format=3 uid="uid://brgcuyvqo7qxl"]
+[gd_resource type="Resource" script_class="LocalLlmConfig" load_steps=2 format=3]
 
-[ext_resource type="Script" uid="uid://dsaelogfjbqun" path="res://Scripts/Dialogue/LocalLlmConfig.cs" id="1_config"]
+[ext_resource type="Script" path="res://Scripts/Dialogue/LocalLlmConfig.gd" id="1_config"]
 
 [resource]
 script = ExtResource("1_config")
-BaseUrl = "http://127.0.0.1:11434"
-EndpointPath = "/api/chat"
-ModelName = "qwen35-9b-q4km-bartowski:latest"
-TimeoutSeconds = 60.0
-Temperature = 0.7
-TopP = 0.8
-MaxTokens = 256
-ContextTokens = 8192
-PresencePenalty = 0.0
-MaxHistoryMessages = 32
-MaxHistoryCharacters = 8000
+base_url = "http://127.0.0.1:11434"
+endpoint_path = "/api/chat"
+model_name = "qwen35-9b-q4km-bartowski:latest"
+timeout_seconds = 60.0
+temperature = 0.7
+top_p = 0.8
+max_tokens = 256
+context_tokens = 8192
+presence_penalty = 0.0
+max_history_messages = 32
+max_history_characters = 8000

@@ -22,7 +22,7 @@ $sourceFiles = @(
     'ContextBuilder.cs',
     'LocalLlmRuntimeException.cs',
     'GeneratedCharacterResponse.cs'
-) | ForEach-Object { Join-Path $PSScriptRoot "..\Scripts\Dialogue\$_" }
+) | ForEach-Object { Join-Path $PSScriptRoot "OptionalModelEvaluation\$_" }
 
 Add-Type -Path $sourceFiles
 
@@ -272,7 +272,7 @@ foreach ($case in $cases) {
 }
 $http.Dispose()
 $timestamp = Get-Date -Format o
-$builderHash = (Get-FileHash (Join-Path $PSScriptRoot '../Scripts/Dialogue/ContextBuilder.cs')).Hash
+$builderHash = (Get-FileHash (Join-Path $PSScriptRoot 'OptionalModelEvaluation/ContextBuilder.cs')).Hash
 
 if ($ReportPath) {
     [pscustomobject]@{ Model = $Model; Temperature = $Temperature; TopP = $TopP; ContextTokens = $ContextTokens;
