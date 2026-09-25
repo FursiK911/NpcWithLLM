@@ -24,13 +24,16 @@ if (-not (Test-Path -LiteralPath (Join-Path $ollamaRoot 'lib'))) {
 if (-not (Test-Path -LiteralPath (Join-Path $projectRoot 'export_presets.cfg'))) {
     throw 'В проекте отсутствует export_presets.cfg.'
 }
-if (-not (Test-Path -LiteralPath (Join-Path $projectRoot 'NpcWithLLM.sln'))) {
-    throw 'В проекте отсутствует NpcWithLLM.sln, необходимый Godot .NET exporter.'
+if (-not (Test-Path -LiteralPath (Join-Path $projectRoot 'Scripts/Main.gd'))) {
+    throw 'В проекте отсутствует GDScript-точка входа Scripts/Main.gd.'
+}
+$projectSettings = Get-Content -LiteralPath (Join-Path $projectRoot 'project.godot') -Raw
+if ($projectSettings.Contains('"C#"') -or $projectSettings -match '(?im)^\[dotnet\]') {
+    throw 'project.godot всё ещё объявляет зависимость от Godot .NET.'
 }
 if (Test-Path -LiteralPath $outputRoot) {
     $existingItems = @(Get-ChildItem -LiteralPath $outputRoot -Force)
     $hasExistingPackage = (Test-Path -LiteralPath (Join-Path $outputRoot 'NpcWithLLM.exe')) -and
-        (Test-Path -LiteralPath (Join-Path $outputRoot 'data_NpcWithLLM_windows_x86_64/hostfxr.dll')) -and
         (Test-Path -LiteralPath (Join-Path $outputRoot 'tools/ollama/ollama.exe')) -and
         (Test-Path -LiteralPath (Join-Path $outputRoot 'tools/ollama/models/manifests'))
     if ($existingItems.Count -gt 0 -and -not $hasExistingPackage) {
@@ -44,18 +47,9 @@ if ($actualOllamaHash -ne $ollamaHash) {
 }
 
 $configText = Get-Content -LiteralPath (Join-Path $projectRoot 'LocalLlmConfig.tres') -Raw
-$modelMatch = [regex]::Match($configText, '(?m)^ModelName\s*=\s*"([^"\r\n]+)"')
+$modelMatch = [regex]::Match($configText, '(?m)^model_name\s*=\s*"([^"\r\n]+)"')
 if (-not $modelMatch.Success) {
-    $configSourcePath = Join-Path $projectRoot 'Scripts/Dialogue/LocalLlmConfig.cs'
-    if (Test-Path -LiteralPath $configSourcePath) {
-        $configSourceText = Get-Content -LiteralPath $configSourcePath -Raw
-        $modelMatch = [regex]::Match(
-            $configSourceText,
-            '(?m)^\s*public\s+string\s+ModelName\s*\{\s*get;\s*set;\s*\}\s*=\s*"([^"\r\n]+)"\s*;')
-    }
-}
-if (-not $modelMatch.Success) {
-    throw 'Не удалось прочитать ModelName из LocalLlmConfig.tres или значения по умолчанию в Scripts/Dialogue/LocalLlmConfig.cs.'
+    throw 'Не удалось прочитать model_name из LocalLlmConfig.tres.'
 }
 $modelName = $modelMatch.Groups[1].Value
 $modelParts = $modelName.Split(':', 2)
@@ -90,8 +84,8 @@ foreach ($layer in $layers) {
 }
 
 $godotVersion = (& $godotPath --version | Select-Object -First 1).Trim()
-if ($godotVersion -notmatch '^4\.7\.2') {
-    throw "Требуется Godot .NET 4.7.2; обнаружен '$godotVersion'."
+if ($godotVersion -notmatch '^4\.7\.2' -or $godotVersion -match '\.mono\.') {
+    throw "Требуется обычный Godot 4.7.2 без .NET; обнаружен '$godotVersion'."
 }
 
 New-Item -ItemType Directory -Path $outputRoot -Force | Out-Null
@@ -100,11 +94,6 @@ $runtimeDestination = Join-Path $outputRoot 'tools/ollama'
 
 Push-Location $projectRoot
 try {
-    & dotnet build (Join-Path $projectRoot 'NpcWithLLM.sln') --configuration Release
-    if ($LASTEXITCODE -ne 0) {
-        throw "dotnet build завершился с кодом $LASTEXITCODE."
-    }
-
     Write-Host 'Импорт проекта Godot...'
     $editorOutput = & $godotPath --headless --path $projectRoot --editor --quit 2>&1
     $editorExit = $LASTEXITCODE
@@ -146,9 +135,6 @@ if (-not (Test-Path -LiteralPath (Join-Path $runtimeDestination 'models/manifest
 
 if (-not (Test-Path -LiteralPath $gameExecutable)) {
     throw "Godot не создал исполняемый файл: $gameExecutable"
-}
-if (-not (Test-Path -LiteralPath (Join-Path $outputRoot 'data_NpcWithLLM_windows_x86_64/hostfxr.dll'))) {
-    throw 'В пакете отсутствуют .NET hostfxr и данные Godot.'
 }
 if (-not (Test-Path -LiteralPath (Join-Path $runtimeDestination 'models/manifests'))) {
     throw 'В пакет не попал model store Ollama.'

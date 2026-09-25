@@ -1,6 +1,6 @@
 # NpcWithLLM
 
-Небольшая 2D-сцена Godot 4.7 C# для диалога игрока с placeholder-NPC Иваном.
+Небольшая 2D-сцена Godot 4.7 на GDScript для диалога игрока с placeholder-NPC Иваном.
 
 ![Превью приложения: Иван в мастерской и окно диалога](docs/images/app-preview.png)
 
@@ -23,11 +23,8 @@ Ti с 12 ГБ VRAM; работа на видеокарте с 8 ГБ VRAM пок
   Если в Windows доступна команда `winget`, откройте старый Windows PowerShell или `cmd` и выполните
   `winget install --id Microsoft.PowerShell --source winget`. В дальнейших шагах запускайте именно
   **PowerShell 7** (`pwsh`), а не «Windows PowerShell» версии 5.1.
-- [.NET 8 SDK для Windows x64](https://dotnet.microsoft.com/download/dotnet/8.0) — на странице выберите
-  установщик SDK для Windows x64. Нужен именно SDK, не только Runtime.
-- [Godot .NET 4.7.2](https://godotengine.org/download/archive/4.7.2-stable/) — на странице загрузок
-  выберите **Windows - .NET - x86_64**. Обычная версия Godot без `.NET` не подойдёт, потому что игра
-  написана на C#.
+- [Godot 4.7.2 для Windows x86_64](https://godotengine.org/download/archive/4.7.2-stable/) — выберите
+  обычную сборку **Windows - x86_64**, не вариант `.NET`.
 
 ### 2. Скачайте проект
 
@@ -51,14 +48,14 @@ Get-Item .\project.godot
 ### 3. Подготовьте Godot и шаблоны экспорта
 
 1. Распакуйте архив Godot, например, в `C:\Godot`.
-2. Запустите редактор Godot .NET и откройте `project.godot` из папки репозитория. При первом запуске
+2. Запустите редактор Godot и откройте `project.godot` из папки репозитория. При первом запуске
    Godot может попросить импортировать проект — дождитесь окончания.
 3. В редакторе откройте **Editor → Manage Export Templates…** и установите шаблоны для той же версии
-   Godot. Для Windows выберите .NET-шаблоны. Установка шаблонов также описана в
+   Godot. Для Windows выберите обычные шаблоны, не `.NET`-шаблоны. Установка шаблонов также описана в
    [документации Godot](https://docs.godotengine.org/en/4.7/tutorials/export/exporting_projects.html).
 
 В этом руководстве предполагается, что консольный исполняемый файл Godot находится здесь:
-`C:\Godot\Godot_v4.7.2-stable_mono_win64_console.exe`. Если вы распаковали Godot в другое место,
+`C:\Godot\Godot_v4.7.2-stable_win64_console.exe`. Если вы распаковали Godot в другое место,
 запомните фактический путь к файлу `*_console.exe`: он понадобится на шаге 6.
 
 ### 4. Скачайте закреплённую версию Ollama
@@ -131,7 +128,7 @@ $sourceModel = 'hf.co/bartowski/Qwen_Qwen3.5-9B-GGUF:Q4_K_M'
 В окне PowerShell 7 перейдите в корень репозитория — туда, где лежит `project.godot` — и выполните:
 
 ```powershell
-$godot = 'C:\Godot\Godot_v4.7.2-stable_mono_win64_console.exe'
+$godot = 'C:\Godot\Godot_v4.7.2-stable_win64_console.exe'
 $ollamaDir = Join-Path $env:LOCALAPPDATA 'Programs\Ollama-0.32.15'
 $modelsDir = Join-Path $env:USERPROFILE '.ollama\models'
 .\Build-WindowsPackage.ps1 `
@@ -140,23 +137,23 @@ $modelsDir = Join-Path $env:USERPROFILE '.ollama\models'
     -OllamaModelsDirectory $modelsDir
 ```
 
-Если Godot распакован в другое место, поменяйте значение `$godot`. Сборка автоматически компилирует
-C#, импортирует ресурсы Godot, экспортирует Windows x64 игру, копирует Ollama и модель, затем
-проверяет целостность файлов. Успешное завершение покажет путь к готовому пакету:
+Если Godot распакован в другое место, поменяйте значение `$godot`. Сборка проверяет GDScript,
+импортирует ресурсы Godot, экспортирует Windows x64 игру, копирует Ollama и модель, затем проверяет
+целостность файлов. Успешное завершение покажет путь к готовому пакету:
 `build/windows-standalone`.
 
 ### 7. Запустите или передайте готовую игру
 
 Запустите `build\windows-standalone\NpcWithLLM.exe`. Для переноса на другой компьютер скопируйте или
 заархивируйте **всю папку** `windows-standalone`: одного `.exe` недостаточно. Внутри должны остаться
-`NpcWithLLM.exe`, `data_NpcWithLLM_windows_x86_64` и `tools\ollama`. На компьютере игрока отдельно
+`NpcWithLLM.exe` и `tools\ollama`. На компьютере игрока отдельно
 устанавливать Ollama или скачивать модель не нужно: они уже лежат рядом с игрой.
 
 ### Если что-то не получилось
 
-- **`Требуется Godot .NET 4.7.2`** — проверьте, что скачан вариант Windows `.NET` x86_64 версии 4.7.2,
-  а не обычный Godot и не другая версия.
-- **Не найдены export templates / шаблоны экспорта** — установите .NET-шаблоны через
+- **`Требуется обычный Godot 4.7.2 без .NET`** — проверьте, что скачана стандартная сборка Windows
+  x86_64 версии 4.7.2.
+- **Не найдены export templates / шаблоны экспорта** — установите обычные шаблоны через
   **Editor → Manage Export Templates…** в редакторе Godot.
 - **`Версия Ollama не совпала`** — скачайте именно `ollama-windows-amd64.zip` из релиза `v0.32.15` и
   проверьте SHA-256 командой из шага 4.
@@ -165,24 +162,14 @@ C#, импортирует ресурсы Godot, экспортирует Window
   `-OllamaModelsDirectory` указывает на ту же папку `models`.
 - **Папка результата уже занята или неполная** — выберите новое имя результата, например, добавьте к
   команде сборки `-OutputDirectory 'build/windows-standalone-2'`.
-- **`dotnet` не найден** — установите [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0),
-  закройте и снова откройте PowerShell 7.
-
-### Только скомпилировать C#
-
-Если нужна лишь быстрая проверка компиляции исходников, а не автономная игра, выполните в корне репозитория:
-
-```powershell
-dotnet build .\NpcWithLLM.sln --configuration Release
-```
-
-Эта команда проверяет и компилирует C#-проект, но **не** создаёт готовую игру для передачи другому
-человеку. Для этого выполните шаги 1–7 выше.
+- **Ошибка при запуске тестов** — укажите путь к обычному Godot 4.x параметром
+  `-GodotExecutablePath` или через переменную `GODOT_EXECUTABLE`.
 
 ## Как устроен проект
 
-Это приложение Godot с C#-кодом. Godot описывает сцену и визуальные элементы, а C#-скрипты обрабатывают
-ввод, управляют диалогом и обращаются к локальной Ollama.
+Это приложение Godot 4.7 на GDScript. Сцена и сигналы связывают UI с обработчиком диалога; память,
+история и построение контекста отделены от HTTP-интеграции с локальной Ollama. Для запуска игры не
+нужны Godot .NET, C# или .NET SDK.
 
 ### Где находятся основные части
 
@@ -190,23 +177,22 @@ dotnet build .\NpcWithLLM.sln --configuration Release
 | --- | --- |
 | [`project.godot`](project.godot) | Настройки Godot и название главной сцены, которая запускается при старте. |
 | [`Main.tscn`](Main.tscn) | Главная сцена: окно диалога, поле ввода, вступление, фон, портреты и узел `ChatResponder`. |
-| [`Scripts/Main.cs`](Scripts/Main.cs) | Работа интерфейса: ввод сообщения, блокировка кнопок на время ожидания, текст ответа и смена портрета. |
-| [`Scripts/ChatResponder.cs`](Scripts/ChatResponder.cs) | Общий интерфейс между сценой и разными обработчиками диалога; определяет сигналы начала, успеха и ошибки. |
-| [`Scripts/Dialogue/LocalLlmResponder.cs`](Scripts/Dialogue/LocalLlmResponder.cs) | Основной обработчик диалога: готовит модель, собирает контекст, запрашивает ответ и обновляет историю с памятью. |
-| [`Scripts/Dialogue/LocalLlmRuntime.cs`](Scripts/Dialogue/LocalLlmRuntime.cs) | Проверяет модель и отправляет HTTP-запросы к Ollama на локальном компьютере. |
-| [`Scripts/Dialogue/OllamaServerController.cs`](Scripts/Dialogue/OllamaServerController.cs) | Проверяет адрес Ollama; если локальный сервис не запущен, запускает Ollama из папки игры и останавливает только запущенный игрой процесс. |
-| [`Scripts/Dialogue/ContextBuilder.cs`](Scripts/Dialogue/ContextBuilder.cs) | Собирает инструкции модели, профиль Ивана, обстановку, память, предыдущие реплики и новое сообщение игрока. |
-| [`Scripts/Dialogue/LocalLlmRequest.cs`](Scripts/Dialogue/LocalLlmRequest.cs) | Формирует запрос и JSON Schema: модель должна вернуть поля `message` и `emotion`. |
-| [`Scripts/Dialogue/GeneratedCharacterResponse.cs`](Scripts/Dialogue/GeneratedCharacterResponse.cs) | Разбирает и проверяет JSON-ответ до того, как он попадёт в интерфейс. |
-| [`NpcProfile.tres`](NpcProfile.tres) и `Scripts/Dialogue/NpcProfile.cs` | Сведения о персонаже. `PlayerIntroduction` показывается игроку, `Situation` описывает сцену для модели. |
-| [`LocalLlmConfig.tres`](LocalLlmConfig.tres) и [`Scripts/Dialogue/LocalLlmConfig.cs`](Scripts/Dialogue/LocalLlmConfig.cs) | Настройки подключения, модели, генерации и лимитов диалога. C#-класс задаёт значения по умолчанию, а `.tres` хранит настройки ресурса. В текущем `.tres` явно записаны адрес и путь API, модель, тайм-аут, параметры генерации и лимиты истории. |
-| [`Scripts/Dialogue/DialogueHistory.cs`](Scripts/Dialogue/DialogueHistory.cs) и [`Scripts/Dialogue/NpcMemory.cs`](Scripts/Dialogue/NpcMemory.cs) | История последних реплик и распознанные имя и профессия игрока. Оба хранятся только в памяти процесса. |
+| [`Scripts/Main.gd`](Scripts/Main.gd) | Работа интерфейса: ввод сообщения, ожидание, ответ персонажа и портрет по эмоции. |
+| [`Scripts/ChatResponder.gd`](Scripts/ChatResponder.gd) | Сигнальный интерфейс UI и адаптеров диалога. |
+| [`Scripts/Dialogue/LocalLlmResponder.gd`](Scripts/Dialogue/LocalLlmResponder.gd) | Готовит модель, собирает контекст, запрашивает ответ и обновляет историю с памятью. |
+| [`Scripts/Dialogue/LocalLlmRuntime.gd`](Scripts/Dialogue/LocalLlmRuntime.gd) | Проверяет сервис и модель, выполняет HTTP-запросы к Ollama и разбирает поток JSON. |
+| [`Scripts/Dialogue/OllamaServerController.gd`](Scripts/Dialogue/OllamaServerController.gd) | Переиспользует отвечающий endpoint или запускает bundled Ollama и останавливает только собственный процесс. |
+| [`Scripts/Dialogue/ContextBuilder.gd`](Scripts/Dialogue/ContextBuilder.gd) | Собирает инструкции, профиль Ивана, обстановку, память, историю и новую реплику. |
+| [`Scripts/Dialogue/LocalLlmRequestBuilder.gd`](Scripts/Dialogue/LocalLlmRequestBuilder.gd) и [`Scripts/Dialogue/GeneratedCharacterResponse.gd`](Scripts/Dialogue/GeneratedCharacterResponse.gd) | Формируют запрос со схемой JSON и проверяют `message` и `emotion` в ответе. |
+| [`NpcProfile.tres`](NpcProfile.tres) и [`Scripts/Dialogue/NpcProfile.gd`](Scripts/Dialogue/NpcProfile.gd) | Данные персонажа. `player_introduction` показывается игроку, `situation` описывает сцену для модели. |
+| [`LocalLlmConfig.tres`](LocalLlmConfig.tres) и [`Scripts/Dialogue/LocalLlmConfig.gd`](Scripts/Dialogue/LocalLlmConfig.gd) | Настройки адреса, модели, генерации, тайм-аута и лимитов истории в Godot `Resource`. |
+| [`Scripts/Dialogue/DialogueHistory.gd`](Scripts/Dialogue/DialogueHistory.gd) и [`Scripts/Dialogue/NpcMemory.gd`](Scripts/Dialogue/NpcMemory.gd) | История последних реплик и распознанные имя и профессия игрока; обе существуют только в памяти процесса. |
 | [`Art/`](Art/) | Фон мастерской и изображения персонажа для разных эмоций и состояний. |
-| [`Tests/`](Tests/) | Ручные smoke-сцены, проверки C#-логики и PowerShell-скрипты проверки модели и Ollama. |
+| [`Tests/`](Tests/) | GDScript regression и smoke-сцены, а также PowerShell-проверки модели и Ollama. |
 | [`docs/adr/`](docs/adr/) | Короткие записи о важных решениях по устройству и поведению проекта. |
 | [`Build-WindowsPackage.ps1`](Build-WindowsPackage.ps1) и [`export_presets.cfg`](export_presets.cfg) | Скрипт и настройки экспорта автономной Windows-сборки. |
 
-Короткий словарь: `.cs` — C#-код с логикой; `.tscn` — сцена Godot, то есть дерево узлов интерфейса и
+Короткий словарь: `.gd` — скрипт GDScript; `.tscn` — сцена Godot, то есть дерево узлов интерфейса и
 связи между ними; `.tres` — сохранённый ресурс с данными или настройками; `res://` в коде означает
 «путь от корня проекта», где лежит `project.godot`. Например, `res://Art/...` указывает на файл внутри
 папки `Art` этого репозитория.
@@ -217,22 +203,22 @@ dotnet build .\NpcWithLLM.sln --configuration Release
 профессия — механик»). Это не обучение модели: найденные имя и профессия просто добавляются в контекст
 следующего запроса.
 
-Папки `.godot/`, `bin/`, `obj/` содержат промежуточные файлы редактора и компилятора. `build/` —
-результаты сборки. Они создаются автоматически и исключены из Git; отправлять их вместе с исходным
-репозиторием для его сборки не нужно.
+Папки `.godot/`, `bin/`, `obj/` и `build/` исключены из Git. `.godot/` содержит промежуточные файлы
+редактора, `build/` — результаты экспорта и пакетирования. Необязательные C#-исходники оценки лежат
+в `Tests/OptionalModelEvaluation/`; они не участвуют в экспорте игры.
 
 ### Что происходит при запуске и в диалоге
 
 1. Godot открывает [`Main.tscn`](Main.tscn), указанную в `project.godot`. Сцена назначает узлу
    `ChatResponder` скрипт `LocalLlmResponder` и подключает к нему `NpcProfile.tres` и
    `LocalLlmConfig.tres`.
-2. `Main.cs` загружает фон и портреты, показывает вступление и просит обработчик подготовить диалог.
+2. `Main.gd` загружает фон и портреты, показывает вступление и просит обработчик подготовить диалог.
    Поле ввода становится доступным после закрытия вступления и успешной подготовки модели.
 3. `LocalLlmRuntime` через `OllamaServerController` проверяет `http://127.0.0.1:11434`. Если там уже
    отвечает Ollama, игра использует её; иначе запускает поставленную рядом с игрой Ollama. Затем
    проверяется наличие точного тега модели из `LocalLlmConfig`, и выполняется короткий пробный запрос,
    чтобы загрузить модель в память до начала разговора. Игра не скачивает модель автоматически.
-4. Когда игрок нажимает **Enter** или кнопку отправки, `Main.cs` передаёт текст в
+4. Когда игрок нажимает **Enter** или кнопку отправки, `Main.gd` передаёт текст в
    `LocalLlmResponder`. `Shift+Enter` оставляет перенос строки в поле ввода.
 5. `ContextBuilder` готовит для модели единый контекст: характер и знания Ивана, описание ситуации,
    распознанные факты о собеседнике, последние реплики и новое сообщение.
@@ -240,7 +226,7 @@ dotnet build .\NpcWithLLM.sln --configuration Release
    `message` и одной из эмоций `emotion`. Ответ может приходить частями, но игра показывает его только
    после завершения потока и проверки JSON.
 7. Если ответ корректен, `LocalLlmResponder` добавляет ход в ограниченную историю, обновляет простую
-   память о собеседнике и сообщает результат интерфейсу. `Main.cs` показывает реплику и выбирает
+   память о собеседнике и сообщает результат интерфейсу. `Main.gd` показывает реплику и выбирает
    портрет по эмоции. Если запрос или разбор не удался, ошибка появляется в статусе, а введённый текст
    остаётся в поле для повторной отправки.
 8. При закрытии игры останавливается только процесс Ollama, который запустила сама игра. Уже
@@ -249,7 +235,7 @@ dotnet build .\NpcWithLLM.sln --configuration Release
 ```mermaid
 sequenceDiagram
     actor Player as Игрок
-    participant UI as Main.cs / Main.tscn
+    participant UI as Main.gd / Main.tscn
     participant Responder as LocalLlmResponder
     participant Context as ContextBuilder
     participant Runtime as LocalLlmRuntime
@@ -278,18 +264,15 @@ sequenceDiagram
 ### Что менять для своих задач
 
 - Чтобы поменять имя, характер, отношение к игроку или факты о сцене, редактируйте поля в
-  [`NpcProfile.tres`](NpcProfile.tres). `PlayerIntroduction` — видимый текст вступления; `Situation` —
+  [`NpcProfile.tres`](NpcProfile.tres). `player_introduction` — видимый текст вступления; `situation` —
   контекст, который получает модель.
-- Чтобы поменять модель или параметры по умолчанию, смотрите
-  [`Scripts/Dialogue/LocalLlmConfig.cs`](Scripts/Dialogue/LocalLlmConfig.cs) и
-  [`LocalLlmConfig.tres`](LocalLlmConfig.tres). В ресурсе сейчас заданы `BaseUrl`, `EndpointPath`,
-  `ModelName`, `TimeoutSeconds`, `Temperature`, `TopP`, `MaxTokens`, `ContextTokens`,
-  `PresencePenalty`, `MaxHistoryMessages` и `MaxHistoryCharacters`; C#-инициализаторы служат запасными
-  значениями, если ресурс не задаёт какое-либо свойство. Упаковщик берёт `ModelName` из `.tres`, если
-  он там записан; иначе использует значение по умолчанию из C#.
+- Чтобы поменять модель или параметры, редактируйте [`LocalLlmConfig.tres`](LocalLlmConfig.tres).
+  Ресурс задаёт `base_url`, `endpoint_path`, `model_name`, `timeout_seconds`, `temperature`, `top_p`,
+  `max_tokens`, `context_tokens`, `presence_penalty`, `max_history_messages` и
+  `max_history_characters`.
 - Чтобы поменять расположение элементов UI, редактируйте [`Main.tscn`](Main.tscn); чтобы изменить
-  обработку Enter, статусы или соответствие эмоций портретам — [`Scripts/Main.cs`](Scripts/Main.cs).
-- Чтобы заменить изображения, положите файлы в [`Art/`](Art/) и обновите пути загрузки в `Main.cs`.
+  обработку Enter, статусы или соответствие эмоций портретам — [`Scripts/Main.gd`](Scripts/Main.gd).
+- Чтобы заменить изображения, положите файлы в [`Art/`](Art/) и обновите пути загрузки в `Main.gd`.
 - Чтобы изменить Windows-экспорт и состав готовой папки, смотрите
   [`export_presets.cfg`](export_presets.cfg) и [`Build-WindowsPackage.ps1`](Build-WindowsPackage.ps1).
 
@@ -299,26 +282,29 @@ sequenceDiagram
 `Qwen3.5 9B Q4_K_M`. Запрос требует структурированный JSON по JSON Schema; игра проверяет ответ и
 показывает реплику и эмоцию только после его полного разбора.
 Настройки подключения, модели, timeout, генерации и лимитов по умолчанию заданы в
-`Scripts/Dialogue/LocalLlmConfig.cs`; `LocalLlmConfig.tres` явно задаёт значения, используемые в
+`Scripts/Dialogue/LocalLlmConfig.gd`; `LocalLlmConfig.tres` явно задаёт значения, используемые в
 сцене.
-UI не знает о HTTP или JSON; он обращается к обработчику через `ChatResponder`.
+UI не знает о HTTP или JSON; он обращается к обработчику через `ChatResponder`. Подмены и локальный
+HTTP fixture используются только в smoke-тестах.
 
 Профиль персонажа живёт в одном месте: `NpcProfile.tres` хранит семь свойств персоны, короткое
 вступление игроку и более полный контекст `Situation`, который получает NPC. Вступление описывает
 только видимую сцену при входе; мысли и намерения персонажа остаются в `Situation`. На этот ресурс
 ссылается узел `ChatResponder` в `Main.tscn`, и тот же файл читает
 `Tests/Run-DialogueModelEvaluation.ps1`, поэтому прогон использует тот же контекст NPC, что и игра.
-Имена ключей в блоке `[resource]` обязаны совпадать с именами C#-свойств (`Name`, `SpeechStyle`,
-`Situation`): Godot 4.7 не приводит их к нижнему регистру, а несопавший ключ игнорируется молча, и
-в ресурсе остаются значения по умолчанию из кода. Совпадение ключей проверяет
+Имена ключей в блоке `[resource]` совпадают с экспортированными свойствами GDScript (`npc_name`,
+`speech_style`, `situation`). Совпадение ключей проверяет
 `Tests/NpcProfileRead.Tests.ps1`, а привязку профиля к сцене — smoke-сцена.
 
-По умолчанию `Scripts/Dialogue/LocalLlmConfig.cs` выбирает модель
+По умолчанию `Scripts/Dialogue/LocalLlmConfig.gd` выбирает модель
 `qwen35-9b-q4km-bartowski:latest`.
 В 32-ходовой оценке со схемой JSON она получила 5,5/10; без схемы игровой парсер отклонил ответ на
 втором ходу. Оценка и полный диалог записаны в
 [отчёте](.scratch/npc-local-llm-demo/reports/06-qwen3.5-9b-q4km-evaluation.md). Проверка выполнена
-на RTX 4070 Ti с 12 ГБ VRAM; работу на целевой карте с 8 ГБ она не подтверждает.
+на RTX 4070 Ti с 12 ГБ VRAM; работу на целевой карте с 8 ГБ она не подтверждает. Qwen оставлена
+экспериментальным кандидатом по результату этой диагностической беседы, а не как доказанно лучшая
+модель. JSON Schema нужна, чтобы выдерживать контракт ответа, хотя она не устраняет ошибки в
+содержании.
 Веса не входят в репозиторий, но standalone Windows-пакет включает их вместе с Ollama. Игроку не нужно
 устанавливать или вручную запускать Ollama: игра незаметно поднимает bundled-процесс и завершает его
 при закрытии игры. Уже работающий внешний endpoint переиспользуется и не останавливается игрой.
@@ -331,21 +317,33 @@ UI не знает о HTTP или JSON; он обращается к обраб�
 
 ### Что входит в Windows-пакет
 
-Скрипт [Build-WindowsPackage.ps1](Build-WindowsPackage.ps1) размещает игру, файлы Godot .NET, Ollama
+Скрипт [Build-WindowsPackage.ps1](Build-WindowsPackage.ps1) экспортирует игру GDScript обычным Godot,
+затем размещает Ollama
 CLI с GPU-библиотеками и локальную модель в `build/windows-standalone`. Он проверяет SHA-256 Ollama,
-модели и упакованных файлов. Для другой модели поменяйте `ModelName` в `LocalLlmConfig.tres`, затем
+модели и упакованных файлов. Для другой модели поменяйте `model_name` в `LocalLlmConfig.tres`, затем
 загрузите её в Ollama под тем же именем и соберите пакет заново.
 
-Windows-smoke жизненного цикла (повторное использование endpoint, проверка SHA-256, скрытый запуск
-и завершение собственного процесса):
+Изолированная headless-проверка lifecycle-контроллера без установленной Ollama: повторное
+использование внешнего endpoint, ошибка при отсутствии bundled executable, блокировка executable с
+неверным SHA-256 и завершение дерева тестовых процессов на Windows:
 
 ```text
 pwsh -NoProfile -File Tests/OllamaLifecycleSmoke.ps1
 ```
 
-По умолчанию сценарий использует bundled CLI, а при её отсутствии — `ollama.exe` из `PATH`. Для
-проверки повтора endpoint Ollama должен отвечать на `127.0.0.1:11434`; собственный процесс для
-проверки запускается на временном свободном порту.
+Для проверки GDScript требуется обычный Godot 4.x через `-GodotExecutablePath` или
+`GODOT_EXECUTABLE`. Чтобы отдельно проверить запуск и остановку настоящей bundled Ollama на
+временном loopback-порту, передайте ей исполняемый файл и каталог модели:
+
+```powershell
+pwsh -NoProfile -File Tests/OllamaLifecycleSmoke.ps1 `
+    -GodotExecutablePath 'C:\Godot\Godot_v4.7.2-stable_win64_console.exe' `
+    -OllamaExecutablePath 'build/windows-standalone/tools/ollama/ollama.exe' `
+    -OllamaModelsDirectory 'build/windows-standalone/tools/ollama/models'
+```
+
+Этот дополнительный вариант запускает Ollama и затем проверяет, что игра завершила свой процесс и
+endpoint перестал отвечать.
 
 Проверка тега из `LocalLlmConfig.tres` и реального запроса `/api/chat`:
 
@@ -361,18 +359,21 @@ pwsh -NoProfile -File Tests/OllamaConfiguredModelSmoke.ps1
 
 ## Тесты и проверка качества
 
-Сборка: `dotnet build NpcWithLLM.csproj`.
+Запустите импорт, GDScript regression и smoke-сцены стандартным Godot 4.x:
 
-`Tests/DialogueRegression.Tests.ps1` (Pester) и `Tests/Run-DialogueModelEvaluation.ps1`
-требуют **PowerShell 7**: оба компилируют исходники `Scripts/Dialogue` через `Add-Type`, а там C# 9
-(records, target-typed new) и `System.Text.Json`. Windows PowerShell 5.1 останавливается на компиляции,
-поэтому запускайте их из `pwsh`, например
-`pwsh -NoProfile -File Tests/Run-DialogueModelEvaluation.ps1 -ReportPath <файл>`.
+```powershell
+pwsh -NoProfile -File Tests/Run-GdscriptTests.ps1 `
+    -GodotExecutablePath 'C:\Godot\Godot_v4.7.2-stable_win64_console.exe'
+```
 
-Утверждения в `Tests/DialogueRegression.Tests.ps1` написаны позиционным синтаксисом Pester
-(`Should Be`, `Should Not Match`). Он работает на Pester 3.4/4.x и не работает на Pester 5, где эти
-формы удалены; `Should -Be` в свою очередь не принимает Pester 3.4. На этой машине доступен
-Pester 3.4.0 из `C:\Program Files\WindowsPowerShell\Modules`.
+Проверки UI, памяти, истории, контекста, схемы JSON, полного HTTP-пути `LocalLlmRuntime` и
+поведения контроллера Ollama выполняются в headless Godot. Для игры и этих проверок не нужны
+`.NET SDK`, Godot .NET и Pester.
+
+`Tests/Run-DialogueModelEvaluation.ps1` остаётся необязательным инструментом оценки модели: PowerShell 7
+компилирует его вспомогательные C#-исходники из `Tests/OptionalModelEvaluation/` через `Add-Type`.
+Они не подключены к `Main.tscn`, исключены из Windows-пакета и не участвуют в запуске игры. Для
+игры не нужны C#, .NET SDK или Godot .NET; этот отдельный инструмент для запуска игры не требуется.
 
 Перед прогоном оценки прогрейте модель и удержите её в VRAM (`keep_alive`): сам harness прогрев не
 выполняет, и первый замер времени до первого текста окажется холодным. Порога приёмки по этому
@@ -409,9 +410,10 @@ pwsh -NoProfile -File Tests/Run-DialogueModelEvaluation.ps1 `
 
 ## Направление проекта
 
-- диалог игрока с 2D placeholder-персонажем;
-- локальный запуск языковой модели;
-- дальнейшее подключение игрового интерфейса к локальному LLM-сервису.
+Демонстрация уже подключает UI к локальной модели, передаёт ей контекст персонажа и отдельную память,
+а историю ограничивает по количеству сообщений и символов. Для дальнейшего развития стоит проверить
+фактическое потребление VRAM на целевой 8-ГБ карте, улучшить выделение пользовательских фактов и
+точнее распределять токенный бюджет контекста.
 
 ## Godot MCP для Codex
 

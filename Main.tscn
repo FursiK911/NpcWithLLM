@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3]
 
-[ext_resource type="Script" path="res://Scripts/Main.cs" id="1_main"]
-[ext_resource type="Script" path="res://Scripts/Dialogue/LocalLlmResponder.cs" id="2_local"]
+[ext_resource type="Script" path="res://Scripts/Main.gd" id="1_main"]
+[ext_resource type="Script" path="res://Scripts/Dialogue/LocalLlmResponder.gd" id="2_local"]
 [ext_resource type="Resource" path="res://LocalLlmConfig.tres" id="3_config"]
 [ext_resource type="Resource" path="res://NpcProfile.tres" id="4_profile"]
 
@@ -54,8 +54,8 @@ script = ExtResource("1_main")
 
 [node name="ChatResponder" type="Node" parent="."]
 script = ExtResource("2_local")
-Config = ExtResource("3_config")
-Profile = ExtResource("4_profile")
+config = ExtResource("3_config")
+profile = ExtResource("4_profile")
 
 [node name="UiLayer" type="CanvasLayer" parent="."]
 
