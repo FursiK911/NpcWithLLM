@@ -1,6 +1,8 @@
 # NpcWithLLM
 
-Небольшая 2D-сцена Godot 4.7 на GDScript для диалога игрока с placeholder-NPC Иваном.
+Небольшая 2D-сцена Godot 4.7 на GDScript для диалога игрока с NPC Иваном.
+
+В каталоге build/client-delivery собираются архив исходного проекта Godot и переносимая Windows-версия с локальной Ollama и моделью. Короткая инструкция для игрока включается в Windows-пакет как README.md; полный исходный архив собирается скриптом Package-GodotProject.ps1.
 
 ![Превью приложения: Иван в мастерской и окно диалога](docs/images/app-preview.png)
 
@@ -140,14 +142,23 @@ $modelsDir = Join-Path $env:USERPROFILE '.ollama\models'
 Если Godot распакован в другое место, поменяйте значение `$godot`. Сборка проверяет GDScript,
 импортирует ресурсы Godot, экспортирует Windows x64 игру, копирует Ollama и модель, затем проверяет
 целостность файлов. Успешное завершение покажет путь к готовому пакету:
-`build/windows-standalone`.
+`build/client-delivery/windows-standalone`.
 
 ### 7. Запустите или передайте готовую игру
 
-Запустите `build\windows-standalone\NpcWithLLM.exe`. Для переноса на другой компьютер скопируйте или
+Запустите `build\client-delivery\windows-standalone\NpcWithLLM.exe`. Для переноса на другой компьютер скопируйте или
 заархивируйте **всю папку** `windows-standalone`: одного `.exe` недостаточно. Внутри должны остаться
 `NpcWithLLM.exe` и `tools\ollama`. На компьютере игрока отдельно
-устанавливать Ollama или скачивать модель не нужно: они уже лежат рядом с игрой.
+устанавливать Ollama или скачивать модель не нужно: они уже лежат рядом с игрой. В папке пакета есть
+краткая инструкция README.md.
+
+Чтобы передать исходный проект Godot, запустите Package-GodotProject.ps1. По умолчанию он создаёт
+build/client-delivery/NpcWithLLM-godot-project-final.zip. Архив содержит GDScript-приложение, ресурсы,
+инструкции, модельное обоснование и проверки без .NET-зависимостей.
+
+Чтобы передать готовую Windows-игру одним файлом, после сборки запустите Package-WindowsClient.ps1.
+Он создаёт build/client-delivery/NpcWithLLM-windows-standalone.zip без сжатия игровых и модельных
+данных; архив занимает примерно 9,3 ГБ.
 
 ### Если что-то не получилось
 
@@ -161,7 +172,7 @@ $modelsDir = Join-Path $env:USERPROFILE '.ollama\models'
   `qwen35-9b-q4km-bartowski:latest`; проверьте, что при запуске сборки параметр
   `-OllamaModelsDirectory` указывает на ту же папку `models`.
 - **Папка результата уже занята или неполная** — выберите новое имя результата, например, добавьте к
-  команде сборки `-OutputDirectory 'build/windows-standalone-2'`.
+  команде сборки `-OutputDirectory 'build/client-delivery/windows-standalone-2'`.
 - **Ошибка при запуске тестов** — укажите путь к обычному Godot 4.x параметром
   `-GodotExecutablePath` или через переменную `GODOT_EXECUTABLE`.
 
@@ -199,13 +210,12 @@ $modelsDir = Join-Path $env:USERPROFILE '.ollama\models'
 
 В текущих настройках история хранит целые пары «сообщение игрока — ответ Ивана»: не больше 32
 сообщений (16 пар) и 8 000 символов; при превышении лимита удаляются самые старые пары. Память пока
-распознаёт только простые фразы вроде «меня зовут Алексей» и «я работаю механиком» (или «моя
-профессия — механик»). Это не обучение модели: найденные имя и профессия просто добавляются в контекст
+распознаёт только простые фразы вроде «меня зовут Алексей», «я работаю механиком», «моя профессия —
+механик» или «я тоже механик». Это не обучение модели: найденные имя и профессия просто добавляются в контекст
 следующего запроса.
 
 Папки `.godot/`, `bin/`, `obj/` и `build/` исключены из Git. `.godot/` содержит промежуточные файлы
-редактора, `build/` — результаты экспорта и пакетирования. Необязательные C#-исходники оценки лежат
-в `Tests/OptionalModelEvaluation/`; они не участвуют в экспорте игры.
+редактора, `build/` — результаты экспорта и пакетирования. Необязательный C#-оценщик из полного dev-репозитория не включён в клиентский архив и не участвует в игре.
 
 ### Что происходит при запуске и в диалоге
 
@@ -213,7 +223,9 @@ $modelsDir = Join-Path $env:USERPROFILE '.ollama\models'
    `ChatResponder` скрипт `LocalLlmResponder` и подключает к нему `NpcProfile.tres` и
    `LocalLlmConfig.tres`.
 2. `Main.gd` загружает фон и портреты, показывает вступление и просит обработчик подготовить диалог.
-   Поле ввода становится доступным после закрытия вступления и успешной подготовки модели.
+   Во время запуска Ollama и загрузки модели интерфейс показывает этап подготовки. Поле ввода становится
+   доступным после закрытия вступления и успешной подготовки модели; если подготовка не удалась,
+   причина остаётся видимой, а отправка сообщений заблокирована.
 3. `LocalLlmRuntime` через `OllamaServerController` проверяет `http://127.0.0.1:11434`. Если там уже
    отвечает Ollama, игра использует её; иначе запускает поставленную рядом с игрой Ollama. Затем
    проверяется наличие точного тега модели из `LocalLlmConfig`, и выполняется короткий пробный запрос,
@@ -290,8 +302,7 @@ HTTP fixture используются только в smoke-тестах.
 Профиль персонажа живёт в одном месте: `NpcProfile.tres` хранит семь свойств персоны, короткое
 вступление игроку и более полный контекст `Situation`, который получает NPC. Вступление описывает
 только видимую сцену при входе; мысли и намерения персонажа остаются в `Situation`. На этот ресурс
-ссылается узел `ChatResponder` в `Main.tscn`, и тот же файл читает
-`Tests/Run-DialogueModelEvaluation.ps1`, поэтому прогон использует тот же контекст NPC, что и игра.
+ссылается узел `ChatResponder` в `Main.tscn`, а GDScript-smoke проверяет привязку этого профиля.
 Имена ключей в блоке `[resource]` совпадают с экспортированными свойствами GDScript (`npc_name`,
 `speech_style`, `situation`). Совпадение ключей проверяет
 `Tests/NpcProfileRead.Tests.ps1`, а привязку профиля к сцене — smoke-сцена.
@@ -300,7 +311,7 @@ HTTP fixture используются только в smoke-тестах.
 `qwen35-9b-q4km-bartowski:latest`.
 В 32-ходовой оценке со схемой JSON она получила 5,5/10; без схемы игровой парсер отклонил ответ на
 втором ходу. Оценка и полный диалог записаны в
-[отчёте](.scratch/npc-local-llm-demo/reports/06-qwen3.5-9b-q4km-evaluation.md). Проверка выполнена
+[отчёте](docs/model-evaluation/qwen3.5-9b-q4km-evaluation.md). Проверка выполнена
 на RTX 4070 Ti с 12 ГБ VRAM; работу на целевой карте с 8 ГБ она не подтверждает. Qwen оставлена
 экспериментальным кандидатом по результату этой диагностической беседы, а не как доказанно лучшая
 модель. JSON Schema нужна, чтобы выдерживать контракт ответа, хотя она не устраняет ошибки в
@@ -319,7 +330,7 @@ HTTP fixture используются только в smoke-тестах.
 
 Скрипт [Build-WindowsPackage.ps1](Build-WindowsPackage.ps1) экспортирует игру GDScript обычным Godot,
 затем размещает Ollama
-CLI с GPU-библиотеками и локальную модель в `build/windows-standalone`. Он проверяет SHA-256 Ollama,
+CLI с GPU-библиотеками и локальную модель в `build/client-delivery/windows-standalone`. Он проверяет SHA-256 Ollama,
 модели и упакованных файлов. Для другой модели поменяйте `model_name` в `LocalLlmConfig.tres`, затем
 загрузите её в Ollama под тем же именем и соберите пакет заново.
 
@@ -338,8 +349,8 @@ pwsh -NoProfile -File Tests/OllamaLifecycleSmoke.ps1
 ```powershell
 pwsh -NoProfile -File Tests/OllamaLifecycleSmoke.ps1 `
     -GodotExecutablePath 'C:\Godot\Godot_v4.7.2-stable_win64_console.exe' `
-    -OllamaExecutablePath 'build/windows-standalone/tools/ollama/ollama.exe' `
-    -OllamaModelsDirectory 'build/windows-standalone/tools/ollama/models'
+    -OllamaExecutablePath 'build/client-delivery/windows-standalone/tools/ollama/ollama.exe' `
+    -OllamaModelsDirectory 'build/client-delivery/windows-standalone/tools/ollama/models'
 ```
 
 Этот дополнительный вариант запускает Ollama и затем проверяет, что игра завершила свой процесс и
@@ -359,6 +370,10 @@ pwsh -NoProfile -File Tests/OllamaConfiguredModelSmoke.ps1
 
 ## Тесты и проверка качества
 
+Сквозной сценарий Tests/Run-CleanWindowsSmoke.ps1 проверяет GDScript-проект, ZIP-архив исходников и
+автономный Windows-пакет без Godot .NET. Запустите его из PowerShell 7 с параметром
+GodotExecutablePath, указав обычный консольный Godot 4.7.2.
+
 Запустите импорт, GDScript regression и smoke-сцены стандартным Godot 4.x:
 
 ```powershell
@@ -370,42 +385,6 @@ pwsh -NoProfile -File Tests/Run-GdscriptTests.ps1 `
 поведения контроллера Ollama выполняются в headless Godot. Для игры и этих проверок не нужны
 `.NET SDK`, Godot .NET и Pester.
 
-`Tests/Run-DialogueModelEvaluation.ps1` остаётся необязательным инструментом оценки модели: PowerShell 7
-компилирует его вспомогательные C#-исходники из `Tests/OptionalModelEvaluation/` через `Add-Type`.
-Они не подключены к `Main.tscn`, исключены из Windows-пакета и не участвуют в запуске игры. Для
-игры не нужны C#, .NET SDK или Godot .NET; этот отдельный инструмент для запуска игры не требуется.
-
-Перед прогоном оценки прогрейте модель и удержите её в VRAM (`keep_alive`): сам harness прогрев не
-выполняет, и первый замер времени до первого текста окажется холодным. Порога приёмки по этому
-замеру больше нет — число записывается в отчёт, а пригодность ответа по смыслу и скорость оценивает
-человек (ADR-0005).
-
-Прогон оценки:
-
-```text
-pwsh -NoProfile -File Tests/Run-DialogueModelEvaluation.ps1 `
-    -ReportPath .scratch/npc-local-llm-demo/evaluation-<модель>.json `
-    -ReviewPath .scratch/npc-local-llm-demo/review-<модель>.md
-```
-
-Автоматически проверяется только исправность транспорта: завершение потока, непустой ответ и
-отсутствие дословного повтора сообщения игрока. Отчёт содержит поля `MechanicallyClean` и
-`MechanicalFaults`, а время до первого текста и длина ответа записываются как замеры без вердикта;
-код возврата 1 означает найденный механический дефект, а не непригодность модели.
-
-Смысл ответа, сохранение роли и манеру речи проверяет человек по листу просмотра `-ReviewPath`: там
-повторы одного сценария собраны под одну отметку. Прежние правила поиска «нужного слова» в ответе
-удалены: на свободном русском они отвергали корректные реплики, детали — ADR-0003, уточнение 2.
-Механические правила покрыты тестами в `Tests/DialogueResponseFault.Tests.ps1`.
-
-Отчёты в `.scratch/npc-local-llm-demo/` порождены разными версиями harness'а и разными редакциями
-текста роли. Действующий прогон для текущего кода — `evaluation-qwen35-profile.json` вместе с
-`review-qwen35-profile.md`: роль в нём взята из `NpcProfile.tres`, это 20 сценариев в трёх повторах,
-в отчёте есть `ContextBuilderSha256` и замеры времени и длины без вердикта. Файлы
-`evaluation-qwen35-review.json` и `review-qwen35.md` относятся к прежней редакции текста роли,
-четыре файла от 22 сентября с полями `Pass`/`Failures` — к удалённой автоклассификации; всё это
-исторический материал.
-
 `Tests/DialogueSmoke.tscn` — сцены ручного smoke-проверок в окне Godot.
 
 ## Направление проекта
@@ -414,9 +393,3 @@ pwsh -NoProfile -File Tests/Run-DialogueModelEvaluation.ps1 `
 а историю ограничивает по количеству сообщений и символов. Для дальнейшего развития стоит проверить
 фактическое потребление VRAM на целевой 8-ГБ карте, улучшить выделение пользовательских фактов и
 точнее распределять токенный бюджет контекста.
-
-## Godot MCP для Codex
-
-Репозиторий содержит проектную конфигурацию Codex в `.codex/config.toml`. Она подключает внешний `@coding-solo/godot-mcp@0.1.1` через `npx` и использует путь к локальному Godot из `GODOT_PATH`.
-
-Если Godot установлен в другом месте, замените `GODOT_PATH` в `.codex/config.toml`. После изменения конфигурации перезапустите Codex или начните новую локальную сессию. MCP-сервер работает как инструмент разработки и не добавляется в `project.godot`.

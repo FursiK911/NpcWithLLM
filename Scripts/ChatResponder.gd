@@ -5,6 +5,7 @@ signal response_started
 signal response_chunk_received(text: String)
 signal response_emotion_received(emotion: String)
 signal preparation_started
+signal preparation_progress(stage: String, fraction: float)
 signal preparation_finished
 signal response_received(response: String)
 signal response_failed(error: String)

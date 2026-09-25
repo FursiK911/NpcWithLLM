@@ -100,6 +100,7 @@ func _initialize() -> void:
 
 func _run() -> void:
 	_test_memory_extracts_name_and_profession()
+	_test_memory_extracts_joined_self_introduction()
 	_test_memory_ignores_non_profession_phrases()
 	_test_memory_formats_empty_and_learned_facts()
 	_test_history_keeps_recent_complete_pairs()
@@ -130,6 +131,24 @@ func _test_memory_extracts_name_and_profession() -> void:
 	memory.learn_from("Я работаю программистом.")
 	_check(memory.player_name == "Дмитрий", "память сохраняет имя игрока")
 	_check(memory.player_profession == "программистом", "память сохраняет профессию игрока")
+
+
+func _test_memory_extracts_joined_self_introduction() -> void:
+	var memory = NpcMemory.new()
+	memory.learn_from("Меня зовут Алекс. Я тоже механик.")
+	_check(memory.player_name == "Алекс", "память извлекает имя из объединённого знакомства")
+	_check(memory.player_profession == "механик", "память извлекает профессию из фразы «я тоже механик»")
+
+	var context = ContextBuilder.new().build(
+		NpcPersona.new("Иван", "механик", "спокойный", "коротко", "настороженно", "не знает игрока", "не выдумывает факты"),
+		"Иван в мастерской.",
+		memory,
+		DialogueHistory.new(),
+		"Кем я работаю?"
+	)
+	_check(context[0].content.contains("имя игрока: Алекс"), "память об имени добавляется в следующий системный контекст")
+	_check(context[0].content.contains("профессия игрока: механик"), "память о профессии добавляется в следующий системный контекст")
+	_check(not context[0].content.contains("Меня зовут Алекс"), "исходная реплика не подменяет отдельную память")
 
 
 func _test_memory_ignores_non_profession_phrases() -> void:

@@ -55,7 +55,7 @@ func get_active_profile() -> NpcProfile:
 
 
 func _prepare_runtime_async() -> void:
-	var result: Dictionary = await _get_runtime().prepare_async()
+	var result: Dictionary = await _get_runtime().prepare_async(Callable(self, "_emit_preparation_progress"))
 	if _shutting_down:
 		return
 	is_busy = false
@@ -69,7 +69,7 @@ func _prepare_runtime_async() -> void:
 func _generate_response_async(message: String) -> void:
 	var runtime := _get_runtime()
 	if not _prepared:
-		var preparation: Dictionary = await runtime.prepare_async()
+		var preparation: Dictionary = await runtime.prepare_async(Callable(self, "_emit_preparation_progress"))
 		if preparation.has("error"):
 			_finish_failure(preparation.error)
 			return
@@ -121,6 +121,11 @@ func _report_failure(error: Dictionary) -> void:
 	if _shutting_down:
 		return
 	response_failed.emit(error.get("user_message", "Не удалось получить ответ от локальной модели."))
+
+
+func _emit_preparation_progress(stage: String, fraction: float) -> void:
+	if not _shutting_down:
+		preparation_progress.emit(stage, fraction)
 
 
 func _get_runtime() -> Object:

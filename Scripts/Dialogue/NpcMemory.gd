@@ -3,6 +3,7 @@ extends RefCounted
 
 var _player_name_pattern := RegEx.new()
 var _player_profession_pattern := RegEx.new()
+var _player_profession_identity_pattern := RegEx.new()
 var _facts: Dictionary[String, String] = {}
 
 var player_name: String:
@@ -17,6 +18,7 @@ var player_profession: String:
 func _init() -> void:
 	_player_name_pattern.compile("(?:меня зовут|мо[её] имя)\\s+([а-яёa-z][а-яёa-z-]{1,30})")
 	_player_profession_pattern.compile("(?:(?<![а-яёa-z0-9_])я(?![а-яёa-z0-9_])\\s+работаю\\s+(?:как\\s+)?|моя профессия\\s*[—–:-]?\\s*)([а-яёa-z][а-яёa-z-]{2,})")
+	_player_profession_identity_pattern.compile("(?<![а-яёa-z0-9_])я\\s+(?:тоже\\s+)?(?:[—–:]\\s*)?(механик|программистка?|врач|инженер|учительница?|преподавательница?|водитель|повар|электрик|строитель|слесарь|токарь|бухгалтер|юрист|дизайнер|художник|журналист|студентка?|архитектор)(?![а-яёa-z0-9_])")
 
 
 func learn_from(player_message: String) -> void:
@@ -30,6 +32,8 @@ func learn_from(player_message: String) -> void:
 		_remember("имя игрока", normalized.substr(name_match.get_start(1), name_match.get_end(1) - name_match.get_start(1)))
 
 	var profession_match := _player_profession_pattern.search(comparable)
+	if not profession_match:
+		profession_match = _player_profession_identity_pattern.search(comparable)
 	if profession_match:
 		var profession := normalized.substr(profession_match.get_start(1), profession_match.get_end(1) - profession_match.get_start(1))
 		if not _is_non_profession_word(profession):

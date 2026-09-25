@@ -18,6 +18,9 @@ const SPEAKING_PORTRAITS := [
 @onready var _send_button: Button = $UiLayer/DialoguePanel/Margin/VBox/Input/SendButton
 @onready var _response_text: RichTextLabel = $UiLayer/DialoguePanel/Margin/VBox/ResponseScroll/ResponseText
 @onready var _status_label: Label = $UiLayer/DialoguePanel/Margin/VBox/StatusLabel
+@onready var _preparation_panel: Control = $UiLayer/PreparationPanel
+@onready var _preparation_status_label: Label = $UiLayer/PreparationPanel/Margin/VBox/PreparationStatusLabel
+@onready var _preparation_progress_bar: ProgressBar = $UiLayer/PreparationPanel/Margin/VBox/PreparationProgressBar
 @onready var _background: TextureRect = $UiLayer/Background
 @onready var _mechanic_portrait: TextureRect = $UiLayer/MechanicPortrait
 @onready var _intro_overlay: Control = $UiLayer/IntroOverlay
@@ -75,6 +78,7 @@ func _ready() -> void:
 	_chat_responder.response_started.connect(_on_response_started)
 	_chat_responder.response_emotion_received.connect(_on_response_emotion_received)
 	_chat_responder.preparation_started.connect(_on_preparation_started)
+	_chat_responder.preparation_progress.connect(_on_preparation_progress)
 	_chat_responder.preparation_finished.connect(_on_preparation_finished)
 	_chat_responder.response_received.connect(_on_response_received)
 	_chat_responder.response_failed.connect(_on_response_failed)
@@ -130,12 +134,37 @@ func _on_response_started() -> void:
 
 func _on_preparation_started() -> void:
 	_preparation_complete = false
+	_preparation_panel.visible = true
+	_preparation_status_label.text = "Подключение к локальной модели…"
+	_preparation_progress_bar.indeterminate = true
 	_status_label.text = "Подготовка персонажа…"
 	_update_interaction_enabled()
 
 
+func _on_preparation_progress(stage: String, fraction: float) -> void:
+	var stage_text := "Подготовка локальной модели…"
+	match stage:
+		"StartingRuntime":
+			stage_text = "Запуск сервиса локальной модели…"
+		"CheckingModel":
+			stage_text = "Проверка установленной модели…"
+		"LoadingModel":
+			stage_text = "Загрузка модели в память…"
+
+	if is_finite(fraction) and fraction >= 0.0:
+		var bounded_fraction := clampf(fraction, 0.0, 1.0)
+		_preparation_status_label.text = "%s %d%%" % [stage_text, roundi(bounded_fraction * 100.0)]
+		_preparation_progress_bar.indeterminate = false
+		_preparation_progress_bar.value = bounded_fraction * 100.0
+		return
+
+	_preparation_status_label.text = stage_text
+	_preparation_progress_bar.indeterminate = true
+
+
 func _on_preparation_finished() -> void:
 	_preparation_complete = true
+	_preparation_panel.visible = false
 	_status_label.text = "Готов к диалогу."
 	_update_interaction_enabled()
 	if _can_interact:
@@ -157,7 +186,15 @@ func _on_response_received(response: String) -> void:
 func _on_response_failed(error: String) -> void:
 	_mechanic_portrait.texture = _portrait_before_request if _portrait_before_request != null else _idle_portrait
 	_portrait_before_request = null
-	_status_label.text = "Не удалось получить ответ: %s" % error
+	if not _preparation_complete:
+		var preparation_error := "Не удалось подготовить локальную модель: %s" % error
+		_preparation_panel.visible = true
+		_preparation_status_label.text = preparation_error
+		_preparation_progress_bar.indeterminate = false
+		_preparation_progress_bar.value = 0.0
+		_status_label.text = preparation_error
+	else:
+		_status_label.text = "Не удалось получить ответ: %s" % error
 	_finish_request()
 
 

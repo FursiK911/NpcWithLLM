@@ -3,7 +3,7 @@ param(
     [string]$GodotExecutablePath,
     [string]$OllamaInstallDirectory = (Join-Path $env:LOCALAPPDATA 'Programs/Ollama'),
     [string]$OllamaModelsDirectory = (Join-Path $env:USERPROFILE '.ollama/models'),
-    [string]$OutputDirectory = (Join-Path $PSScriptRoot 'build/windows-standalone')
+    [string]$OutputDirectory = (Join-Path $PSScriptRoot 'build/client-delivery/windows-standalone')
 )
 
 $ErrorActionPreference = 'Stop'
@@ -12,7 +12,12 @@ $projectRoot = [System.IO.Path]::GetFullPath($PSScriptRoot)
 $godotPath = (Resolve-Path -LiteralPath $GodotExecutablePath).Path
 $ollamaRoot = (Resolve-Path -LiteralPath $OllamaInstallDirectory).Path
 $modelsRoot = (Resolve-Path -LiteralPath $OllamaModelsDirectory).Path
-$outputRoot = [System.IO.Path]::GetFullPath((Join-Path $projectRoot $OutputDirectory))
+$outputRoot = if ([System.IO.Path]::IsPathRooted($OutputDirectory)) {
+    [System.IO.Path]::GetFullPath($OutputDirectory)
+}
+else {
+    [System.IO.Path]::GetFullPath((Join-Path $projectRoot $OutputDirectory))
+}
 $ollamaHash = '0A9D42EABC59FDAFDE8D2D3E7964F6050B31A17B3E3795BFACB367C12DF790F4'
 
 if (-not (Test-Path -LiteralPath (Join-Path $ollamaRoot 'ollama.exe'))) {
@@ -27,11 +32,23 @@ if (-not (Test-Path -LiteralPath (Join-Path $projectRoot 'export_presets.cfg')))
 if (-not (Test-Path -LiteralPath (Join-Path $projectRoot 'Scripts/Main.gd'))) {
     throw 'В проекте отсутствует GDScript-точка входа Scripts/Main.gd.'
 }
+if (-not (Test-Path -LiteralPath (Join-Path $projectRoot 'CLIENT-README.md'))) {
+    throw 'В проекте отсутствует CLIENT-README.md для поставляемого пакета.'
+}
 $projectSettings = Get-Content -LiteralPath (Join-Path $projectRoot 'project.godot') -Raw
 if ($projectSettings.Contains('"C#"') -or $projectSettings -match '(?im)^\[dotnet\]') {
     throw 'project.godot всё ещё объявляет зависимость от Godot .NET.'
 }
 if (Test-Path -LiteralPath $outputRoot) {
+    $dotnetArtifacts = @(Get-ChildItem -LiteralPath $outputRoot -Recurse -File -ErrorAction SilentlyContinue |
+        Where-Object {
+            $_.Name -match '^(GodotSharp|GodotSharpEditor|coreclr|hostfxr|hostpolicy|NpcWithLLM)\.dll$' -or
+            $_.Name -match '\.(deps|runtimeconfig)\.json$'
+        })
+    if ($dotnetArtifacts.Count -gt 0) {
+        throw "Каталог результата содержит остатки Godot .NET экспорта. Выберите чистую папку: $outputRoot"
+    }
+
     $existingItems = @(Get-ChildItem -LiteralPath $outputRoot -Force)
     $hasExistingPackage = (Test-Path -LiteralPath (Join-Path $outputRoot 'NpcWithLLM.exe')) -and
         (Test-Path -LiteralPath (Join-Path $outputRoot 'tools/ollama/ollama.exe')) -and
@@ -139,6 +156,7 @@ if (-not (Test-Path -LiteralPath $gameExecutable)) {
 if (-not (Test-Path -LiteralPath (Join-Path $runtimeDestination 'models/manifests'))) {
     throw 'В пакет не попал model store Ollama.'
 }
+Copy-Item -LiteralPath (Join-Path $projectRoot 'CLIENT-README.md') -Destination (Join-Path $outputRoot 'README.md') -Force
 $manifestRelativePath = [System.IO.Path]::GetRelativePath($modelsRoot, $manifestPath)
 $packagedManifestPath = Join-Path (Join-Path $runtimeDestination 'models') $manifestRelativePath
 if (-not (Test-Path -LiteralPath $packagedManifestPath)) {

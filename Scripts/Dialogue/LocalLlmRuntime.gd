@@ -39,24 +39,27 @@ func configure(config: LocalLlmConfig) -> void:
 		_http_request.timeout = _config.timeout_seconds
 
 
-func prepare_async() -> Dictionary:
+func prepare_async(progress_callback: Callable = Callable()) -> Dictionary:
 	if _config == null:
 		return {"error": LocalLlmError.create(LocalLlmError.CONFIGURATION, "LocalLlmConfig is missing.")}
 	var validation := _config.validate_configuration()
 	if not validation.is_empty():
 		return {"error": validation}
+	_report_preparation_progress(progress_callback, "StartingRuntime")
 	var available: Dictionary = await _server.ensure_server_available(_probe_endpoint)
 	if available.has("error"):
 		_server.stop_owned_process()
 		_log_error("preparation", available.error)
 		return available
 
+	_report_preparation_progress(progress_callback, "CheckingModel")
 	var model_result := await _ensure_configured_model_available()
 	if model_result.has("error"):
 		_server.stop_owned_process()
 		return model_result
 
 	# Пробная генерация загружает веса и инициализирует тот же бюджет контекста, что использует диалог.
+	_report_preparation_progress(progress_callback, "LoadingModel")
 	var warmup := await generate_async([DialogueMessageResource.new("user", "Ответь одним словом: готов.")])
 	if warmup.has("error"):
 		_server.stop_owned_process()
@@ -203,6 +206,11 @@ func _format_error_log(operation: String, error: Dictionary) -> String:
 		endpoint,
 		error.get("technical_details", ""),
 	]
+
+
+func _report_preparation_progress(callback: Callable, stage: String) -> void:
+	if callback.is_valid():
+		callback.call(stage, -1.0)
 
 
 func _resolve_ollama_executable() -> Dictionary:
