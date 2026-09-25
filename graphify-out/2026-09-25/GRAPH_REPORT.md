@@ -1,28 +1,28 @@
 # Graph Report - NpcWithLLM  (2026-09-25)
 
 ## Corpus Check
-- 201 files · ~554,970 words
+- 197 files · ~550,862 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 855 nodes · 1056 edges · 89 communities (54 shown, 35 thin omitted)
-- Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 28 edges (avg confidence: 0.8)
+- 1101 nodes · 1214 edges · 94 communities (82 shown, 12 thin omitted)
+- Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 19 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `e79a8c45`
+- Built from commit: `11b510e5`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
 - Main
-- NpcPersona
+- Issue tracker: GitHub
 - template.sh
 - What You Must Do When Invoked
 - Matt Pocock workflow integration
 - hitl-loop.template.sh
 - LocalLlmResponder
-- NpcWithLLM.csproj
+- NpcWithLLM
 - graphify reference: extra exports and benchmark
 - graphify reference: query, path, explain
 - graphify reference: add a URL and watch a folder
@@ -41,10 +41,10 @@
 - 01: Играбельная 2D-сцена диалога
 - 02: Память персонажа и ограниченный контекст
 - Comments
-- FakeLocalLlmRuntime
+- Triage
 - .Create
-- DialogueMessage.cs
-- NpcMemory
+- teach/SKILL.md
+- Process
 - DialogueSmoke
 - Полный адаптивный диалог
 - Лист просмотра ответов персонажа
@@ -53,22 +53,22 @@
 - Полная беседа
 - Quality gate для естественного диалога NPC
 - 0008-structured-character-response.md
-- Node3D
+- Codebase Design
 - 05: Проверка и подготовка выбранной модели
-- OllamaServerController
+- During the session
 - Полная беседа
-- Node
-- Exception
-- Uri
+- HTML Report Format
+- Ask Matt
+- Diagnosing Bugs
 - Project-local Godot MCP
 - Лист просмотра ответов персонажа
-- Bonsai2PrismRuntime
-- DialogueHistory
-- ChatResponder
-- NpcPersona
-- ContextBuilder
+- Test-Driven Development
+- Process
+- writing-for-agents/SKILL.md
+- wayfinder/SKILL.md
+- to-spec/SKILL.md
 - Полная беседа
-- NpcPersona
+- 3D Dialogue Vertical Slice
 - Полная беседа
 - Полная беседа
 - Bonsai 2 временно выбрана провайдером игры по умолчанию
@@ -80,54 +80,54 @@
 - 07-startup-readiness-ui.md
 - 08-windows-package-and-docs.md
 - 09-clean-windows-smoke.md
-- LocalLlmConfig
+- Process
 - 11: Вступительная модалка для игрока
-- DialogueHistory
-- NpcProfile
-- Exception
-- DialogueMessage
-- int
-- NpcMemory
-- Stopwatch
-- Task
-- CancellationToken
-- LocalLlmConfig
-- TextureRect
-- bool
-- Uri
+- <Questionnaire title>
+- Process
+- Domain Docs
+- Agent skills
+- Q: что дальше по плану нужно реализовать?
+- Q: Найди и предложи способы улучшить ответы и контекст у NPC и при этом не выходить за рамки технических требований
+- Q: Удали все лишние файлы, которые не нужны для запуска текущей версии приложения. С bonsai я например вижу есть файлы. Prism ml насколько я вижу нам уже не нужен
+- GLOSSARY.md Format
+- agents/triage-labels.md
 
 ## God Nodes (most connected - your core abstractions)
-1. `Полный адаптивный диалог` - 33 edges
+1. `Полная беседа` - 33 edges
 2. `Полная беседа` - 33 edges
 3. `Полная беседа` - 33 edges
 4. `Полная беседа` - 33 edges
-5. `Полная беседа` - 33 edges
+5. `Полный адаптивный диалог` - 33 edges
 6. `Полная беседа` - 33 edges
 7. `Main` - 30 edges
-8. `Bonsai2PrismRuntime` - 29 edges
-9. `OllamaServerController` - 23 edges
-10. `DialogueSmoke` - 22 edges
+8. `OllamaServerController` - 23 edges
+9. `DialogueSmoke` - 22 edges
+10. `Лист просмотра ответов персонажа` - 21 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `Bonsai2PrismRuntime` --references--> `LocalLlmConfig`  [EXTRACTED]
-  Scripts/Dialogue/Bonsai2PrismRuntime.cs → Scripts/Dialogue/LocalLlmConfig.cs
-- `FakeLocalLlmRuntime` --references--> `LocalLlmFailureKind`  [EXTRACTED]
-  Scripts/Dialogue/FakeLocalLlmRuntime.cs → Scripts/Dialogue/LocalLlmRuntimeException.cs
+- `ControlledRuntime` --implements--> `ILocalLlmRuntime`  [EXTRACTED]
+  Tests/DialogueSmoke.cs → Scripts/Dialogue/ILocalLlmRuntime.cs
+- `ControlledRuntime` --references--> `DialogueMessage`  [EXTRACTED]
+  Tests/DialogueSmoke.cs → Scripts/Dialogue/DialogueMessage.cs
+- `ChatResponder` --references--> `NpcProfile`  [EXTRACTED]
+  Scripts/ChatResponder.cs → Scripts/Dialogue/NpcProfile.cs
 - `LocalLlmResponder` --inherits--> `ChatResponder`  [EXTRACTED]
   Scripts/Dialogue/LocalLlmResponder.cs → Scripts/ChatResponder.cs
-- `LocalLlmRuntime` --references--> `LocalLlmConfig`  [EXTRACTED]
-  Scripts/Dialogue/LocalLlmRuntime.cs → Scripts/Dialogue/LocalLlmConfig.cs
-- `LocalLlmRuntime` --references--> `OllamaServerController`  [EXTRACTED]
-  Scripts/Dialogue/LocalLlmRuntime.cs → Scripts/Dialogue/OllamaServerController.cs
+- `DialogueContext` --references--> `DialogueMessage`  [EXTRACTED]
+  Scripts/Dialogue/ContextBuilder.cs → Scripts/Dialogue/DialogueMessage.cs
 
 ## Import Cycles
 - None detected.
 
-## Communities (89 total, 35 thin omitted)
+## Communities (94 total, 12 thin omitted)
 
 ### Community 0 - "Main"
-Cohesion: 0.07
-Nodes (19): Button, Control, double, FocusModeEnum, InputEvent, Label, Node2D, RandomNumberGenerator (+11 more)
+Cohesion: 0.06
+Nodes (23): Button, Control, double, FocusModeEnum, InputEvent, Label, Node, Node2D (+15 more)
+
+### Community 1 - "Issue tracker: GitHub"
+Cohesion: 0.06
+Nodes (30): Before exploring, read these, Domain Docs, File structure, Flag ADR conflicts, Use the glossary's vocabulary, Conventions, Issue tracker: GitHub, Pull requests as a triage surface (+22 more)
 
 ### Community 2 - "template.sh"
 Cohesion: 0.22
@@ -146,11 +146,11 @@ Cohesion: 0.83
 Nodes (3): capture(), hitl-loop.template.sh script, step()
 
 ### Community 6 - "LocalLlmResponder"
-Cohesion: 0.07
-Nodes (21): CancellationTokenSource, Exception, LocalLlmConfig, LocalLlmRuntimeException, NpcPersona, Resource, ContextBuilder, DialogueHistory (+13 more)
+Cohesion: 0.05
+Nodes (25): IReadOnlyDictionary, List, Regex, Resource, ContextBuilder, IReadOnlyList, DialogueContext, int (+17 more)
 
-### Community 7 - "NpcWithLLM.csproj"
-Cohesion: 1.00
+### Community 7 - "NpcWithLLM"
+Cohesion: 0.67
 Nodes (3): net8.0, NpcWithLLM, Godot.NET.Sdk/4.7.2
 
 ### Community 8 - "graphify reference: extra exports and benchmark"
@@ -186,8 +186,8 @@ Cohesion: 0.33
 Nodes (5): Conventions, Issue tracker: Local Markdown, Wayfinding operations, When a skill says "fetch the relevant ticket", When a skill says "publish to the issue tracker"
 
 ### Community 19 - "OllamaServerController"
-Cohesion: 0.08
-Nodes (25): bool, ExpectedSha256, HttpClient, IDisposable, LocalLlmFailureKind, NetHttpClient, object, Path (+17 more)
+Cohesion: 0.07
+Nodes (27): Exception, ExpectedSha256, HttpClient, IDisposable, JsonSerializerOptions, NetHttpClient, object, Path (+19 more)
 
 ### Community 20 - "Local LLM Connection"
 Cohesion: 0.22
@@ -205,25 +205,29 @@ Nodes (3): Bundled локальный runtime для LLM, Consequences, Consider
 Cohesion: 0.25
 Nodes (7): 03: Настоящий ответ локальной LLM, 2026-09-22 — приёмка разделена: механика автоматически, смысл за человеком, 2026-09-22 — проверяемость тестов и повторный прогон гейта, 2026-09-23 — попытка UI smoke через Godot MCP, 2026-09-23 — роль в профиле, числовые пороги сняты (ADR-0005), 2026-09-23 — успешный end-to-end smoke через headless harness, Comments
 
-### Community 26 - "FakeLocalLlmRuntime"
-Cohesion: 0.13
-Nodes (13): Action, CancellationToken, DialogueMessage, Exception, IReadOnlyList, Task, FakeLocalLlmRuntime, Action (+5 more)
+### Community 26 - "Triage"
+Cohesion: 0.06
+Nodes (29): Bad agent brief, Behavioral, not procedural, Complete acceptance criteria, Durability over precision, Examples, Explicit scope boundaries, Good agent brief (bug), Good agent brief (enhancement) (+21 more)
 
 ### Community 27 - ".Create"
-Cohesion: 0.29
-Nodes (6): JsonElement, DialogueMessage, IReadOnlyList, LocalLlmGenerationOptions, LocalLlmRequestBuilder, LocalLlmRequestPayload
+Cohesion: 0.33
+Nodes (5): JsonElement, IReadOnlyList, LocalLlmGenerationOptions, LocalLlmRequestBuilder, LocalLlmRequestPayload
 
-### Community 29 - "NpcMemory"
-Cohesion: 0.24
-Nodes (4): Dictionary, IReadOnlyDictionary, Regex, NpcMemory
+### Community 28 - "teach/SKILL.md"
+Cohesion: 0.07
+Nodes (25): Learning Record Format, Numbering, Optional sections, Supersession, Template, What does _not_ qualify, When to write a learning record, MISSION.md Format (+17 more)
+
+### Community 29 - "Process"
+Cohesion: 0.07
+Nodes (25): 1. State the question, 2. Isolate the logic in a portable module, 3. Build the shareable HTML file, 4. Hand it over, 5. Capture the answer and the prototype, Anti-patterns, Logic Prototype, Process (+17 more)
 
 ### Community 30 - "DialogueSmoke"
-Cohesion: 0.11
-Nodes (20): HttpMessageHandler, HttpRequestMessage, HttpResponseMessage, ILocalLlmRuntime, List, Queue, TaskCompletionSource, CancellationToken (+12 more)
+Cohesion: 0.10
+Nodes (20): HttpMessageHandler, HttpRequestMessage, HttpResponseMessage, DialogueMessage, Action, CancellationToken, Exception, IReadOnlyList (+12 more)
 
 ### Community 34 - "Полный адаптивный диалог"
 Cohesion: 0.04
-Nodes (45): Godot MCP для Codex, NpcWithLLM, Standalone Windows-пакет, Направление проекта, Ручной запуск Bonsai через PrismML, Текущий статус, Тесты и проверка качества, Итог (+37 more)
+Nodes (44): Godot MCP для Codex, NpcWithLLM, Standalone Windows-пакет, Направление проекта, Текущий статус, Тесты и проверка качества, Итог, Локальная оценка `Qwen3.5 9B Q4_K_M` (+36 more)
 
 ### Community 35 - "Лист просмотра ответов персонажа"
 Cohesion: 0.09
@@ -239,39 +243,71 @@ Nodes (4): 12: Портреты механика и эмоции ответов,
 
 ### Community 39 - "Полная беседа"
 Cohesion: 0.05
-Nodes (40): 06: Живая оценка локальной модели, Comments, Вывод и рекомендация, Живая оценка `gemma4-12b-it-q2k-eval` (Gemma 4 12B IT, Q2_K), Оценки, Полная беседа, Сравнение с предыдущими прогонами, Условия прогона (+32 more)
+Nodes (38): Вывод и рекомендация, Живая оценка `gemma4-12b-it-q2k-eval` (Gemma 4 12B IT, Q2_K), Оценки, Полная беседа, Сравнение с предыдущими прогонами, Условия прогона, Ход 1, Ход 10 (+30 more)
 
 ### Community 40 - "Quality gate для естественного диалога NPC"
 Cohesion: 0.40
 Nodes (4): Quality gate для естественного диалога NPC, Исторические последствия (до уточнения), Уточнение (2) от 2026-09-22: смысловую часть критерия проверяет человек, Уточнение от 2026-09-22
 
+### Community 42 - "Codebase Design"
+Cohesion: 0.09
+Nodes (21): 1. In-process, 2. Local-substitutable, 3. Remote but owned (Ports & Adapters), 4. True external (Mock), Deepening, Dependency categories, Seam discipline, Testing strategy: replace, don't layer (+13 more)
+
 ### Community 43 - "05: Проверка и подготовка выбранной модели"
 Cohesion: 0.25
 Nodes (6): Qwen3.5 9B выбрана локальной моделью игры, 05: Проверка и подготовка выбранной модели, Comments, Готово, когда, Решение, Требования
+
+### Community 44 - "During the session"
+Cohesion: 0.09
+Nodes (19): ADR Format, Numbering, Optional sections, Template, What qualifies, When to offer an ADR, CONTEXT.md Format, Rules (+11 more)
 
 ### Community 45 - "Полная беседа"
 Cohesion: 0.04
 Nodes (47): 10: Локальная оценка Bonsai 2 27B, Comments, Готово, когда, Контекст, Требования, Выбор Bonsai по умолчанию и проверка обычного запуска (2026-09-24), Вывод и рекомендация, Итог (+39 more)
 
-### Community 46 - "Node"
-Cohesion: 0.11
-Nodes (10): Node, Bonsai2DefaultProviderSmoke, Task, Bonsai2InteractiveRunner, Bonsai2LiveDialogueEvaluationRunner, string, Task, string (+2 more)
+### Community 46 - "HTML Report Format"
+Cohesion: 0.10
+Nodes (18): Call-graph collapse, Candidate card, Cross-section (good for layered shallowness), Diagram patterns, Hand-built boxes-and-arrows (when Mermaid's layout fights you), Header, HTML Report Format, Mass diagram (good for "interface as wide as implementation") (+10 more)
+
+### Community 47 - "Ask Matt"
+Cohesion: 0.12
+Nodes (14): Phase boundaries, Primary and secondary sources, The five options, The tree, These are judgement calls, Ask Matt, Codebase health, Context hygiene (+6 more)
+
+### Community 48 - "Diagnosing Bugs"
+Cohesion: 0.13
+Nodes (14): Completion criterion: a tight loop that goes red, Diagnosing Bugs, Minimise, Non-deterministic bugs, Phase 1: Build a feedback loop, Phase 2: Reproduce + minimise, Phase 3: Hypothesise, Phase 4: Instrument (+6 more)
 
 ### Community 51 - "Лист просмотра ответов персонажа"
 Cohesion: 0.10
 Nodes (19): attack_identity, attack_memory, attack_progressive, attack_prompt, attack_roleplay, attack_system, attack_translation, dialogue_history (+11 more)
 
-### Community 53 - "Bonsai2PrismRuntime"
-Cohesion: 0.10
-Nodes (21): Action, Func, GenerationResult, IReadOnlyList, JsonSerializerOptions, Bonsai2PrismRuntime, bool, CancellationToken (+13 more)
+### Community 53 - "Test-Driven Development"
+Cohesion: 0.15
+Nodes (10): Designing for Mockability, When to Mock, Anti-patterns, Rules of the loop, Seams: where tests go, Test-Driven Development, What a good test is, Bad Tests (+2 more)
 
-### Community 54 - "DialogueHistory"
-Cohesion: 0.33
-Nodes (4): DialogueMessage, int, IReadOnlyList, DialogueHistory
+### Community 54 - "Process"
+Cohesion: 0.15
+Nodes (12): 1. Gather context, 2. Explore the codebase (optional), 3. Draft vertical slices, 4. Quiz the user, 5. Publish the tickets to the configured tracker, Acceptance criteria, Blocked by, <NN>: <Ticket title> (+4 more)
+
+### Community 55 - "writing-for-agents/SKILL.md"
+Cohesion: 0.15
+Nodes (11): Context pointers, Information hierarchy, Leading words, Invocation, Router skills, Skill mechanics, Splitting by invocation, Pruning (+3 more)
+
+### Community 56 - "wayfinder/SKILL.md"
+Cohesion: 0.17
+Nodes (11): Chart the map, Fog of war, Invocation, Out of scope, Plan, don't do, Refer by name, The Map, The map body (+3 more)
+
+### Community 58 - "to-spec/SKILL.md"
+Cohesion: 0.22
+Nodes (8): Further Notes, Implementation Decisions, Out of Scope, Problem Statement, Process, Solution, Testing Decisions, User Stories
 
 ### Community 59 - "Полная беседа"
 Cohesion: 0.05
-Nodes (37): Вывод и рекомендация, Живая оценка `qwen3.5:4b`, Оценки, Полная беседа, Условия прогона, Ход 1, Ход 10, Ход 11 (+29 more)
+Nodes (39): 06: Живая оценка локальной модели, Comments, Вывод и рекомендация, Живая оценка `qwen3.5:4b`, Оценки, Полная беседа, Условия прогона, Ход 1 (+31 more)
+
+### Community 60 - "3D Dialogue Vertical Slice"
+Cohesion: 0.22
+Nodes (8): 3D Dialogue Vertical Slice, Further Notes, Implementation Decisions, Out of Scope, Problem Statement, Solution, Testing Decisions, User Stories
 
 ### Community 62 - "Полная беседа"
 Cohesion: 0.05
@@ -299,36 +335,72 @@ Nodes (3): Оценивать локальную модель живым диа�
 
 ### Community 69 - "DelayedStream"
 Cohesion: 0.17
-Nodes (6): int, Memory, SeekOrigin, Stream, DelayedStream, ValueTask
+Nodes (6): Memory, SeekOrigin, Stream, int, DelayedStream, ValueTask
+
+### Community 73 - "Process"
+Cohesion: 0.25
+Nodes (7): 1. Pin the fixed point, 2. Identify the spec source, 3. Identify the standards sources, 4. Spawn both sub-agents in parallel, 5. Aggregate, Process, Why two axes
 
 ### Community 74 - "11: Вступительная модалка для игрока"
 Cohesion: 0.40
 Nodes (4): 11: Вступительная модалка для игрока, Comments, Контекст, Требования
 
+### Community 75 - "<Questionnaire title>"
+Cohesion: 0.25
+Nodes (7): Anything else?, Context, Document structure, How to answer, <Questionnaire title>, <Theme heading>, What load is the system expected to handle at launch?
+
+### Community 76 - "Process"
+Cohesion: 0.29
+Nodes (6): 1. Scope the procedure, 2. Map each stage's journey, 3. Author the wizard, 4. Verify and hand off, Process, Wizard
+
+### Community 77 - "Domain Docs"
+Cohesion: 0.33
+Nodes (5): Before exploring, read these, Domain Docs, File structure, Flag ADR conflicts, Use the glossary's vocabulary
+
+### Community 78 - "Agent skills"
+Cohesion: 0.40
+Nodes (4): Agent skills, Domain docs, Issue tracker, Triage labels
+
+### Community 79 - "Q: что дальше по плану нужно реализовать?"
+Cohesion: 0.40
+Nodes (4): Answer, Outcome, Q: что дальше по плану нужно реализовать?, Source Nodes
+
+### Community 80 - "Q: Найди и предложи способы улучшить ответы и контекст у NPC и при этом не выходить за рамки технических требований"
+Cohesion: 0.40
+Nodes (4): Answer, Outcome, Q: Найди и предложи способы улучшить ответы и контекст у NPC и при этом не выходить за рамки технических требований, Source Nodes
+
+### Community 81 - "Q: Удали все лишние файлы, которые не нужны для запуска текущей версии приложения. С bonsai я например вижу есть файлы. Prism ml насколько я вижу нам уже не нужен"
+Cohesion: 0.40
+Nodes (4): Answer, Outcome, Q: Удали все лишние файлы, которые не нужны для запуска текущей версии приложения. С bonsai я например вижу есть файлы. Prism ml насколько я вижу нам уже не нужен, Source Nodes
+
+### Community 82 - "GLOSSARY.md Format"
+Cohesion: 0.50
+Nodes (3): GLOSSARY.md Format, Rules, Structure
+
 ## Knowledge Gaps
-- **391 isolated node(s):** `Comments`, `Comments`, `2026-09-22 — проверяемость тестов и повторный прогон гейта`, `2026-09-22 — приёмка разделена: механика автоматически, смысл за человеком`, `2026-09-23 — роль в профиле, числовые пороги сняты (ADR-0005)` (+386 more)
+- **624 isolated node(s):** `net8.0`, `Godot.NET.Sdk/4.7.2`, `LocalLlmGenerationOptions`, `The five options`, `The tree` (+619 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **35 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **12 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Work-memory lessons
 
 **Preferred sources** — corroborated by past sessions; start here.
-- `LocalLlmResponder` (3× useful, score=2.93487151)
-- `LocalLlmRuntime` (2× useful, score=1.936109295) _(code changed — re-verify)_
+- `LocalLlmResponder` (3× useful, score=2.897315879) _(code changed — re-verify)_
+- `LocalLlmRuntime` (2× useful, score=1.911334171)
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `ChatResponder` connect `Main` to `Node`, `LocalLlmResponder`?**
-  _High betweenness centrality (0.043) - this node is a cross-community bridge._
-- **Why does `Main` connect `Main` to `NpcMemory`?**
-  _High betweenness centrality (0.028) - this node is a cross-community bridge._
-- **Why does `Bonsai2PrismRuntime` connect `Bonsai2PrismRuntime` to `OllamaServerController`, `DelayedStream`, `DialogueSmoke`?**
-  _High betweenness centrality (0.026) - this node is a cross-community bridge._
-- **What connects `Comments`, `Comments`, `2026-09-22 — проверяемость тестов и повторный прогон гейта` to the rest of the system?**
-  _391 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Why does `ChatResponder` connect `Main` to `LocalLlmResponder`?**
+  _High betweenness centrality (0.021) - this node is a cross-community bridge._
+- **Why does `LocalLlmResponder` connect `LocalLlmResponder` to `Main`?**
+  _High betweenness centrality (0.016) - this node is a cross-community bridge._
+- **What connects `net8.0`, `Godot.NET.Sdk/4.7.2`, `LocalLlmGenerationOptions` to the rest of the system?**
+  _624 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Main` be split into smaller, more focused modules?**
-  _Cohesion score 0.06852497096399536 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.0563265306122449 - nodes in this community are weakly interconnected._
+- **Should `Issue tracker: GitHub` be split into smaller, more focused modules?**
+  _Cohesion score 0.05555555555555555 - nodes in this community are weakly interconnected._
 - **Should `What You Must Do When Invoked` be split into smaller, more focused modules?**
   _Cohesion score 0.08 - nodes in this community are weakly interconnected._
 - **Should `Matt Pocock workflow integration` be split into smaller, more focused modules?**
