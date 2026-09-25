@@ -14,7 +14,6 @@ public enum LocalLlmFailureKind
     OllamaProcessStart,
     OllamaServerUnavailable,
     ModelUnavailable,
-    PrismServerUnavailable,
     Unknown,
 }
 
@@ -54,7 +53,6 @@ public sealed class LocalLlmRuntimeException : Exception
             LocalLlmFailureKind.OllamaProcessStart => "Не удалось запустить локальный сервис Ollama.",
             LocalLlmFailureKind.OllamaServerUnavailable => "Локальный сервис Ollama не запустился вовремя.",
             LocalLlmFailureKind.ModelUnavailable => "Запрошенная модель не найдена в локальной Ollama.",
-            LocalLlmFailureKind.PrismServerUnavailable => "Локальный сервер PrismML не запущен. Запустите его и повторите попытку.",
             _ => "Не удалось получить ответ от локальной модели.",
         };
 

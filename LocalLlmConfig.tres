@@ -1,10 +1,9 @@
-[gd_resource type="Resource" script_class="LocalLlmConfig" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="LocalLlmConfig" format=3 uid="uid://brgcuyvqo7qxl"]
 
-[ext_resource type="Script" path="res://Scripts/Dialogue/LocalLlmConfig.cs" id="1_config"]
+[ext_resource type="Script" uid="uid://dsaelogfjbqun" path="res://Scripts/Dialogue/LocalLlmConfig.cs" id="1_config"]
 
 [resource]
 script = ExtResource("1_config")
-Provider = 0
 BaseUrl = "http://127.0.0.1:11434"
 EndpointPath = "/api/chat"
 ModelName = "qwen35-9b-q4km-bartowski:latest"

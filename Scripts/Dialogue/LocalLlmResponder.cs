@@ -119,11 +119,7 @@ public partial class LocalLlmResponder : ChatResponder
     private ILocalLlmRuntime GetRuntime()
     {
         LocalLlmConfig config = Config ?? new LocalLlmConfig();
-        return _runtime ??= config.Provider switch
-        {
-            LocalLlmProvider.Prism => new Bonsai2PrismRuntime(config),
-            _ => new LocalLlmRuntime(config),
-        };
+        return _runtime ??= new LocalLlmRuntime(config);
     }
 
     private NpcProfile RequireProfile()

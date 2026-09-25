@@ -1,18 +1,9 @@
 using System;
 using Godot;
 
-public enum LocalLlmProvider
-{
-    Ollama,
-    Prism,
-}
-
 [GlobalClass]
 public partial class LocalLlmConfig : Resource
 {
-    [Export]
-    public LocalLlmProvider Provider { get; set; } = LocalLlmProvider.Ollama;
-
     [Export]
     public string BaseUrl { get; set; } = "http://127.0.0.1:11434";
 
@@ -48,11 +39,6 @@ public partial class LocalLlmConfig : Resource
 
     public Uri GetEndpointUri()
     {
-        if (!Enum.IsDefined(Provider))
-        {
-            throw new ArgumentException("Provider должен быть Ollama или Prism.", nameof(Provider));
-        }
-
         if (!Uri.TryCreate(BaseUrl?.TrimEnd('/') + "/", UriKind.Absolute, out Uri baseUri) ||
             (baseUri.Scheme != Uri.UriSchemeHttp && baseUri.Scheme != Uri.UriSchemeHttps) ||
             !baseUri.IsLoopback)

@@ -1,6 +1,6 @@
 # Bonsai 2 временно выбрана провайдером игры по умолчанию
 
-Статус: superseded by ADR-0009
+Статус: superseded by ADR-0009; Prism/Bonsai runtime удалён 2026-09-25
 
 Дата: 2026-09-24
 

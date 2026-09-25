@@ -29,7 +29,6 @@ public partial class LiveDialogueEvaluationRunner : Node
             var responder = main.GetNode<LocalLlmResponder>("ChatResponder");
             var evalConfig = responder.Config.Duplicate(true) as LocalLlmConfig
                 ?? throw new InvalidOperationException("Could not duplicate LocalLlmConfig.tres.");
-            evalConfig.Provider = LocalLlmProvider.Ollama;
             evalConfig.BaseUrl = "http://127.0.0.1:11434";
             evalConfig.EndpointPath = "/api/chat";
             evalConfig.ModelName = ModelName;

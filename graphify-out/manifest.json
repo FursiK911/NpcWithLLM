@@ -830,8 +830,8 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1790328790.602613,
-    "ast_hash": "00f51e004446f5ca118b4ec46b2e969f",
+    "mtime": 1790331094.1028595,
+    "ast_hash": "c3f2a7995ce1f9117073781f328aa33b",
     "semantic_hash": ""
   },
   "docs/adr/0001-local-llm-dialogue-boundary.md": {
@@ -885,8 +885,8 @@
     "semantic_hash": ""
   },
   ".scratch/npc-local-llm-demo/spec.md": {
-    "mtime": 1790283941.9020953,
-    "ast_hash": "ccf179e307c9bf4ac2668f0074d4133d",
+    "mtime": 1790331094.1053708,
+    "ast_hash": "bda90c3fd891778f10822807a0ecf0c2",
     "semantic_hash": ""
   },
   "docs/adr/0002-bundled-local-llm-runtime.md": {
@@ -920,8 +920,8 @@
     "semantic_hash": ""
   },
   "Scripts/Dialogue/LocalLlmResponder.cs": {
-    "mtime": 1790256329.4119606,
-    "ast_hash": "1779edcf14743d34941aa6b158c4aac7",
+    "mtime": 1790331094.0997758,
+    "ast_hash": "23728bb6052d67cea0da4233c2cbbe65",
     "semantic_hash": ""
   },
   "Scripts/Dialogue/NpcMemory.cs": {
@@ -935,8 +935,8 @@
     "semantic_hash": ""
   },
   "Scripts/Dialogue/LocalLlmConfig.cs": {
-    "mtime": 1790283910.5154366,
-    "ast_hash": "159831817e9f162c10eaa5285bd72029",
+    "mtime": 1790331094.0987742,
+    "ast_hash": "0367aee4b0981d3a46ec0e2cd5192725",
     "semantic_hash": ""
   },
   "Scripts/Dialogue/LocalLlmRuntime.cs": {
@@ -945,8 +945,8 @@
     "semantic_hash": ""
   },
   "Scripts/Dialogue/LocalLlmRuntimeException.cs": {
-    "mtime": 1790279231.6231937,
-    "ast_hash": "a58ac7c96d410766462fcf8258d16113",
+    "mtime": 1790331094.1007774,
+    "ast_hash": "d9a3b1925867af90124c93fcdbef78d7",
     "semantic_hash": ""
   },
   ".scratch/npc-local-llm-demo/evaluation-qwen35-concise.json": {
@@ -1124,34 +1124,9 @@
     "ast_hash": "f1d6cb8a86b9efc338b06b6ceef9a10e",
     "semantic_hash": ""
   },
-  "Scripts/Dialogue/Bonsai2PrismRuntime.cs": {
-    "mtime": 1790198123.225178,
-    "ast_hash": "2d9f0ecb4e1a7b681464555f6db81b0e",
-    "semantic_hash": ""
-  },
-  "Tests/Bonsai2DefaultProviderSmoke.cs": {
-    "mtime": 1790197719.2984037,
-    "ast_hash": "e12d331759f679aa1f8a9b2d73abbf78",
-    "semantic_hash": ""
-  },
-  "Tests/Bonsai2InteractiveRunner.cs": {
-    "mtime": 1790198123.2261767,
-    "ast_hash": "4386f47e9ac522fb2c30605344a96bdc",
-    "semantic_hash": ""
-  },
-  "Tests/Bonsai2LiveDialogueEvaluationRunner.cs": {
-    "mtime": 1790186058.2016532,
-    "ast_hash": "74949ec04163356a5f88b7d9c45d4c21",
-    "semantic_hash": ""
-  },
-  "Tests/Bonsai2PrismRuntimeSmoke.cs": {
-    "mtime": 1790197719.297404,
-    "ast_hash": "326916dfeca5e8ef241cfdbd0b2c84a6",
-    "semantic_hash": ""
-  },
   "Tests/LiveDialogueEvaluationRunner.cs": {
-    "mtime": 1790198165.2114117,
-    "ast_hash": "2d08ec6d33541aba4e0ccf2960a9b6f1",
+    "mtime": 1790331094.1018598,
+    "ast_hash": "424d4fd8263f801b46ab87449884d112",
     "semantic_hash": ""
   },
   ".scratch/npc-local-llm-demo/issues/10-bonsai-2-27b-evaluation.md": {
@@ -1170,8 +1145,8 @@
     "semantic_hash": ""
   },
   "docs/adr/0007-bonsai-temporary-default.md": {
-    "mtime": 1790276219.0640528,
-    "ast_hash": "f57a8b1e8430e69ddc0fabcb32444782",
+    "mtime": 1790331094.1043658,
+    "ast_hash": "88c7a6f1b04b024193485b818b1b2f48",
     "semantic_hash": ""
   },
   "graphify-out/memory/query_20260923_211650_how_does_the_game_select_the_local_llm_provider_an.md": {
@@ -1327,6 +1302,11 @@
   "graphify-out/memory/query_20260925_001816_\u043d\u0430\u0439\u0434\u0438_\u0438_\u043f\u0440\u0435\u0434\u043b\u043e\u0436\u0438_\u0441\u043f\u043e\u0441\u043e\u0431\u044b_\u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c_\u043e\u0442\u0432\u0435\u0442\u044b_\u0438_\u043a\u043e\u043d\u0442\u0435\u043a\u0441.md": {
     "mtime": 1790295496.6846814,
     "ast_hash": "c2a7f0aaf1278e31c7341769db04e284",
+    "semantic_hash": ""
+  },
+  "graphify-out/memory/query_20260925_101347_\u0443\u0434\u0430\u043b\u0438_\u0432\u0441\u0435_\u043b\u0438\u0448\u043d\u0438\u0435_\u0444\u0430\u0439\u043b\u044b__\u043a\u043e\u0442\u043e\u0440\u044b\u0435_\u043d\u0435_\u043d\u0443\u0436\u043d\u044b_\u0434\u043b\u044f_\u0437\u0430\u043f\u0443\u0441.md": {
+    "mtime": 1790331227.7874827,
+    "ast_hash": "d92de203d35cf81f2bd76cac1884d4cc",
     "semantic_hash": ""
   }
 }
