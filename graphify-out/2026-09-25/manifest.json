@@ -830,8 +830,8 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1790328790.602613,
-    "ast_hash": "00f51e004446f5ca118b4ec46b2e969f",
+    "mtime": 1790276284.3886447,
+    "ast_hash": "d51e096adcbcee454b230f79867f37fc",
     "semantic_hash": ""
   },
   "docs/adr/0001-local-llm-dialogue-boundary.md": {
@@ -850,8 +850,8 @@
     "semantic_hash": ""
   },
   "docs/agents/issue-tracker.md": {
-    "mtime": 1790284982.1642828,
-    "ast_hash": "4d3ee39bc3a995d37e4ca5d570583753",
+    "mtime": 1790029692.6625776,
+    "ast_hash": "f6ea6281af476a211243069a6cd171f8",
     "semantic_hash": ""
   },
   "docs/agents/triage-labels.md": {
@@ -870,23 +870,23 @@
     "semantic_hash": ""
   },
   ".scratch/npc-local-llm-demo/issues/01-2d-dialogue-scene.md": {
-    "mtime": 1790284982.1529963,
-    "ast_hash": "4b65f20e032dfb254636c4f1e82f52a2",
+    "mtime": 1790081392.8103862,
+    "ast_hash": "36ea7c7d12d27604a640c900edffe4d3",
     "semantic_hash": ""
   },
   ".scratch/npc-local-llm-demo/issues/02-memory-aware-context.md": {
-    "mtime": 1790284982.154996,
-    "ast_hash": "f30f412094b730285eedf5d1ea2b9221",
+    "mtime": 1790113528.4623911,
+    "ast_hash": "9ee8348cdcd16292a352f22d98001ac7",
     "semantic_hash": ""
   },
   ".scratch/npc-local-llm-demo/issues/03-real-local-llm-response.md": {
-    "mtime": 1790284982.156281,
-    "ast_hash": "e0c87889ae0ace385896dce19439190c",
+    "mtime": 1790121538.663683,
+    "ast_hash": "298793563eebd7717a7a5a917bd36a3b",
     "semantic_hash": ""
   },
   ".scratch/npc-local-llm-demo/spec.md": {
-    "mtime": 1790283941.9020953,
-    "ast_hash": "ccf179e307c9bf4ac2668f0074d4133d",
+    "mtime": 1790276219.066054,
+    "ast_hash": "305adfba02bb6f17172b02f59dadc2e3",
     "semantic_hash": ""
   },
   "docs/adr/0002-bundled-local-llm-runtime.md": {
@@ -935,13 +935,13 @@
     "semantic_hash": ""
   },
   "Scripts/Dialogue/LocalLlmConfig.cs": {
-    "mtime": 1790283910.5154366,
-    "ast_hash": "159831817e9f162c10eaa5285bd72029",
+    "mtime": 1790278686.1496775,
+    "ast_hash": "f3958a52404855651d9e2ec4a889312e",
     "semantic_hash": ""
   },
   "Scripts/Dialogue/LocalLlmRuntime.cs": {
-    "mtime": 1790296552.9340763,
-    "ast_hash": "dcd7a8e88ed9e7528788f23e8128df9d",
+    "mtime": 1790279231.6221936,
+    "ast_hash": "4c21f7ad8908ec1edbe73f927dc235ab",
     "semantic_hash": ""
   },
   "Scripts/Dialogue/LocalLlmRuntimeException.cs": {
@@ -980,8 +980,8 @@
     "semantic_hash": ""
   },
   "Tests/DialogueSmoke.cs": {
-    "mtime": 1790328131.2859266,
-    "ast_hash": "f3c7f63575f2a90368d6e389db6a119c",
+    "mtime": 1790279231.6231937,
+    "ast_hash": "f2914b8d85c0ebedc5cbfccacbce4864",
     "semantic_hash": ""
   },
   "Tests/Run-DialogueModelEvaluation.ps1": {
@@ -1060,18 +1060,18 @@
     "semantic_hash": ""
   },
   ".scratch/npc-local-llm-demo/issues/04-hidden-ollama-lifecycle.md": {
-    "mtime": 1790284982.1572776,
-    "ast_hash": "a0763b96419114bc25a885c72204e749",
+    "mtime": 1790119955.112412,
+    "ast_hash": "b3ec8a40a65f31318c02b63a8cb85c42",
     "semantic_hash": ""
   },
   ".scratch/npc-local-llm-demo/issues/05-verified-model-provisioning.md": {
-    "mtime": 1790284982.158277,
-    "ast_hash": "827399df2864fcf058ed0009e7228c99",
+    "mtime": 1790279293.8068616,
+    "ast_hash": "930b724e08243c671fd872edeac2a617",
     "semantic_hash": ""
   },
   ".scratch/npc-local-llm-demo/issues/06-live-dialogue-model-evaluation.md": {
-    "mtime": 1790285038.104225,
-    "ast_hash": "3456326432660348cc3299ae52d5824e",
+    "mtime": 1790276392.0047972,
+    "ast_hash": "42b31b14ae519a77ff38b34d8593e646",
     "semantic_hash": ""
   },
   ".scratch/npc-local-llm-demo/issues/07-startup-readiness-ui.md": {
@@ -1080,8 +1080,8 @@
     "semantic_hash": ""
   },
   ".scratch/npc-local-llm-demo/issues/08-windows-package-and-docs.md": {
-    "mtime": 1790285883.083931,
-    "ast_hash": "4da6225c7269e042cafb58ba57ab9d3e",
+    "mtime": 1790119955.1150227,
+    "ast_hash": "e589f2ee1e03ae86204ba6fd300595fa",
     "semantic_hash": ""
   },
   ".scratch/npc-local-llm-demo/issues/09-clean-windows-smoke.md": {
@@ -1095,8 +1095,8 @@
     "semantic_hash": ""
   },
   "Scripts/Dialogue/OllamaServerController.cs": {
-    "mtime": 1790296342.1700718,
-    "ast_hash": "794280fc5bcc70f7802d8f1b524f78e6",
+    "mtime": 1790123187.5929158,
+    "ast_hash": "e11c185f73aa79cde4a9089ab5057076",
     "semantic_hash": ""
   },
   "Tests/OllamaLifecycleSmoke.ps1": {
@@ -1155,8 +1155,8 @@
     "semantic_hash": ""
   },
   ".scratch/npc-local-llm-demo/issues/10-bonsai-2-27b-evaluation.md": {
-    "mtime": 1790284982.1602767,
-    "ast_hash": "a7e6035e15a91a1a599efd1002853fea",
+    "mtime": 1790276392.0053232,
+    "ast_hash": "eba660da8726be331bcdee2cb5c7f28f",
     "semantic_hash": ""
   },
   ".scratch/npc-local-llm-demo/reports/06-gemma-4-12b-it-q2k-evaluation.md": {
@@ -1180,8 +1180,8 @@
     "semantic_hash": ""
   },
   ".scratch/npc-local-llm-demo/issues/11-startup-situation-intro-modal.md": {
-    "mtime": 1790284982.1612844,
-    "ast_hash": "a40630a915516309bc3bf187ea80526e",
+    "mtime": 1790254837.7383773,
+    "ast_hash": "56e62f41e9a612ea71c922bcce274581",
     "semantic_hash": ""
   },
   "Art/Background/background.png": {
@@ -1275,8 +1275,8 @@
     "semantic_hash": ""
   },
   ".scratch/npc-local-llm-demo/issues/12-mechanic-portrait-emotions.md": {
-    "mtime": 1790285062.7723637,
-    "ast_hash": "447747117790b16d66f62765c8cdff64",
+    "mtime": 1790256665.4059012,
+    "ast_hash": "ed6ff18cfd7bd6c40831d61bf611b500",
     "semantic_hash": ""
   },
   ".scratch/npc-local-llm-demo/qwen35-9b-live-eval-20260924/raw-turn2-diagnostic.txt": {
@@ -1300,33 +1300,13 @@
     "semantic_hash": ""
   },
   "docs/adr/0009-qwen35-9b-default.md": {
-    "mtime": 1790283941.8995824,
-    "ast_hash": "0f0c8884ce64dba4feae2d75fb210160",
+    "mtime": 1790276219.066054,
+    "ast_hash": "6204027dd59cb2c94b035e888acf5ff2",
     "semantic_hash": ""
   },
   "graphify-out/memory/query_20260924_192511_\u0447\u0442\u043e_\u0434\u0430\u043b\u044c\u0448\u0435_\u043f\u043e_\u043f\u043b\u0430\u043d\u0443_\u043d\u0443\u0436\u043d\u043e_\u0440\u0435\u0430\u043b\u0438\u0437\u043e\u0432\u0430\u0442\u044c.md": {
     "mtime": 1790277911.3142679,
     "ast_hash": "b81fa92adc46acef37dae9495cd0e8b3",
-    "semantic_hash": ""
-  },
-  "Build-WindowsPackage.ps1": {
-    "mtime": 1790328682.8917024,
-    "ast_hash": "31fa91879d90d323b8fb3812b7254c4c",
-    "semantic_hash": ""
-  },
-  "NpcWithLLM.sln": {
-    "mtime": 1790327293.7834928,
-    "ast_hash": "8309539015fb1a4550c4fdc662690bcf",
-    "semantic_hash": ""
-  },
-  "Tests/OllamaConfiguredModelSmoke.ps1": {
-    "mtime": 1790283737.7466266,
-    "ast_hash": "0d83506a69abc103c995b2efbd86009c",
-    "semantic_hash": ""
-  },
-  "graphify-out/memory/query_20260925_001816_\u043d\u0430\u0439\u0434\u0438_\u0438_\u043f\u0440\u0435\u0434\u043b\u043e\u0436\u0438_\u0441\u043f\u043e\u0441\u043e\u0431\u044b_\u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c_\u043e\u0442\u0432\u0435\u0442\u044b_\u0438_\u043a\u043e\u043d\u0442\u0435\u043a\u0441.md": {
-    "mtime": 1790295496.6846814,
-    "ast_hash": "c2a7f0aaf1278e31c7341769db04e284",
     "semantic_hash": ""
   }
 }
