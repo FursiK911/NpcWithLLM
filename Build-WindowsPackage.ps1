@@ -46,7 +46,16 @@ if ($actualOllamaHash -ne $ollamaHash) {
 $configText = Get-Content -LiteralPath (Join-Path $projectRoot 'LocalLlmConfig.tres') -Raw
 $modelMatch = [regex]::Match($configText, '(?m)^ModelName\s*=\s*"([^"\r\n]+)"')
 if (-not $modelMatch.Success) {
-    throw 'Не удалось прочитать ModelName из LocalLlmConfig.tres.'
+    $configSourcePath = Join-Path $projectRoot 'Scripts/Dialogue/LocalLlmConfig.cs'
+    if (Test-Path -LiteralPath $configSourcePath) {
+        $configSourceText = Get-Content -LiteralPath $configSourcePath -Raw
+        $modelMatch = [regex]::Match(
+            $configSourceText,
+            '(?m)^\s*public\s+string\s+ModelName\s*\{\s*get;\s*set;\s*\}\s*=\s*"([^"\r\n]+)"\s*;')
+    }
+}
+if (-not $modelMatch.Success) {
+    throw 'Не удалось прочитать ModelName из LocalLlmConfig.tres или значения по умолчанию в Scripts/Dialogue/LocalLlmConfig.cs.'
 }
 $modelName = $modelMatch.Groups[1].Value
 $modelParts = $modelName.Split(':', 2)
