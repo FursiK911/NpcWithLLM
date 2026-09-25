@@ -2,6 +2,8 @@
 
 Небольшая 2D-сцена Godot 4.7 C# для диалога игрока с placeholder-NPC Иваном.
 
+![Превью приложения: Иван в мастерской и окно диалога](docs/images/app-preview.png)
+
 ## Сборка автономного Windows-пакета с нуля
 
 Эта инструкция рассчитана на Windows 10/11 x64 и PowerShell 7. Она собирает папку, которую можно
@@ -177,13 +179,133 @@ dotnet build .\NpcWithLLM.sln --configuration Release
 Эта команда проверяет и компилирует C#-проект, но **не** создаёт готовую игру для передачи другому
 человеку. Для этого выполните шаги 1–7 выше.
 
+## Как устроен проект
+
+Это приложение Godot с C#-кодом. Godot описывает сцену и визуальные элементы, а C#-скрипты обрабатывают
+ввод, управляют диалогом и обращаются к локальной Ollama.
+
+### Где находятся основные части
+
+| Файл или папка | За что отвечает |
+| --- | --- |
+| [`project.godot`](project.godot) | Настройки Godot и название главной сцены, которая запускается при старте. |
+| [`Main.tscn`](Main.tscn) | Главная сцена: окно диалога, поле ввода, вступление, фон, портреты и узел `ChatResponder`. |
+| [`Scripts/Main.cs`](Scripts/Main.cs) | Работа интерфейса: ввод сообщения, блокировка кнопок на время ожидания, текст ответа и смена портрета. |
+| [`Scripts/ChatResponder.cs`](Scripts/ChatResponder.cs) | Общий интерфейс между сценой и разными обработчиками диалога; определяет сигналы начала, успеха и ошибки. |
+| [`Scripts/Dialogue/LocalLlmResponder.cs`](Scripts/Dialogue/LocalLlmResponder.cs) | Основной обработчик диалога: готовит модель, собирает контекст, запрашивает ответ и обновляет историю с памятью. |
+| [`Scripts/Dialogue/LocalLlmRuntime.cs`](Scripts/Dialogue/LocalLlmRuntime.cs) | Проверяет модель и отправляет HTTP-запросы к Ollama на локальном компьютере. |
+| [`Scripts/Dialogue/OllamaServerController.cs`](Scripts/Dialogue/OllamaServerController.cs) | Проверяет адрес Ollama; если локальный сервис не запущен, запускает Ollama из папки игры и останавливает только запущенный игрой процесс. |
+| [`Scripts/Dialogue/ContextBuilder.cs`](Scripts/Dialogue/ContextBuilder.cs) | Собирает инструкции модели, профиль Ивана, обстановку, память, предыдущие реплики и новое сообщение игрока. |
+| [`Scripts/Dialogue/LocalLlmRequest.cs`](Scripts/Dialogue/LocalLlmRequest.cs) | Формирует запрос и JSON Schema: модель должна вернуть поля `message` и `emotion`. |
+| [`Scripts/Dialogue/GeneratedCharacterResponse.cs`](Scripts/Dialogue/GeneratedCharacterResponse.cs) | Разбирает и проверяет JSON-ответ до того, как он попадёт в интерфейс. |
+| [`NpcProfile.tres`](NpcProfile.tres) и `Scripts/Dialogue/NpcProfile.cs` | Сведения о персонаже. `PlayerIntroduction` показывается игроку, `Situation` описывает сцену для модели. |
+| [`LocalLlmConfig.tres`](LocalLlmConfig.tres) и [`Scripts/Dialogue/LocalLlmConfig.cs`](Scripts/Dialogue/LocalLlmConfig.cs) | Настройки подключения, модели, генерации и лимитов диалога. C#-класс задаёт значения по умолчанию, а `.tres` хранит настройки ресурса. В текущем `.tres` явно записаны адрес и путь API, модель, тайм-аут, параметры генерации и лимиты истории. |
+| [`Scripts/Dialogue/DialogueHistory.cs`](Scripts/Dialogue/DialogueHistory.cs) и [`Scripts/Dialogue/NpcMemory.cs`](Scripts/Dialogue/NpcMemory.cs) | История последних реплик и распознанные имя и профессия игрока. Оба хранятся только в памяти процесса. |
+| [`Art/`](Art/) | Фон мастерской и изображения персонажа для разных эмоций и состояний. |
+| [`Tests/`](Tests/) | Ручные smoke-сцены, проверки C#-логики и PowerShell-скрипты проверки модели и Ollama. |
+| [`docs/adr/`](docs/adr/) | Короткие записи о важных решениях по устройству и поведению проекта. |
+| [`Build-WindowsPackage.ps1`](Build-WindowsPackage.ps1) и [`export_presets.cfg`](export_presets.cfg) | Скрипт и настройки экспорта автономной Windows-сборки. |
+
+Короткий словарь: `.cs` — C#-код с логикой; `.tscn` — сцена Godot, то есть дерево узлов интерфейса и
+связи между ними; `.tres` — сохранённый ресурс с данными или настройками; `res://` в коде означает
+«путь от корня проекта», где лежит `project.godot`. Например, `res://Art/...` указывает на файл внутри
+папки `Art` этого репозитория.
+
+`MockChatResponder` и `FakeLocalLlmRuntime` — подмены для тестов и проверки интерфейса без настоящей
+модели. В обычной игре они автоматически не включаются, если Ollama или модель недоступны.
+
+В текущих настройках история хранит целые пары «сообщение игрока — ответ Ивана»: не больше 32
+сообщений (16 пар) и 8 000 символов; при превышении лимита удаляются самые старые пары. Память пока
+распознаёт только простые фразы вроде «меня зовут Алексей» и «я работаю механиком» (или «моя
+профессия — механик»). Это не обучение модели: найденные имя и профессия просто добавляются в контекст
+следующего запроса.
+
+Папки `.godot/`, `bin/`, `obj/` содержат промежуточные файлы редактора и компилятора. `build/` —
+результаты сборки. Они создаются автоматически и исключены из Git; отправлять их вместе с исходным
+репозиторием для его сборки не нужно.
+
+### Что происходит при запуске и в диалоге
+
+1. Godot открывает [`Main.tscn`](Main.tscn), указанную в `project.godot`. Сцена назначает узлу
+   `ChatResponder` скрипт `LocalLlmResponder` и подключает к нему `NpcProfile.tres` и
+   `LocalLlmConfig.tres`.
+2. `Main.cs` загружает фон и портреты, показывает вступление и просит обработчик подготовить диалог.
+   Поле ввода становится доступным после закрытия вступления и успешной подготовки модели.
+3. `LocalLlmRuntime` через `OllamaServerController` проверяет `http://127.0.0.1:11434`. Если там уже
+   отвечает Ollama, игра использует её; иначе запускает поставленную рядом с игрой Ollama. Затем
+   проверяется наличие точного тега модели из `LocalLlmConfig`, и выполняется короткий пробный запрос,
+   чтобы загрузить модель в память до начала разговора. Игра не скачивает модель автоматически.
+4. Когда игрок нажимает **Enter** или кнопку отправки, `Main.cs` передаёт текст в
+   `LocalLlmResponder`. `Shift+Enter` оставляет перенос строки в поле ввода.
+5. `ContextBuilder` готовит для модели единый контекст: характер и знания Ивана, описание ситуации,
+   распознанные факты о собеседнике, последние реплики и новое сообщение.
+6. `LocalLlmRuntime` отправляет этот контекст на локальный `/api/chat`. Запрос требует JSON с репликой
+   `message` и одной из эмоций `emotion`. Ответ может приходить частями, но игра показывает его только
+   после завершения потока и проверки JSON.
+7. Если ответ корректен, `LocalLlmResponder` добавляет ход в ограниченную историю, обновляет простую
+   память о собеседнике и сообщает результат интерфейсу. `Main.cs` показывает реплику и выбирает
+   портрет по эмоции. Если запрос или разбор не удался, ошибка появляется в статусе, а введённый текст
+   остаётся в поле для повторной отправки.
+8. При закрытии игры останавливается только процесс Ollama, который запустила сама игра. Уже
+   работавший до неё локальный сервис остаётся запущенным.
+
+```mermaid
+sequenceDiagram
+    actor Player as Игрок
+    participant UI as Main.cs / Main.tscn
+    participant Responder as LocalLlmResponder
+    participant Context as ContextBuilder
+    participant Runtime as LocalLlmRuntime
+    participant Ollama as Ollama на 127.0.0.1
+
+    UI->>Responder: Подготовить диалог
+    Responder->>Runtime: Проверить сервис и модель, прогреть
+    Runtime->>Ollama: api/tags и короткий пробный запрос
+    Player->>UI: Отправить реплику
+    UI->>Responder: RequestResponse(текст)
+    Responder->>Context: Собрать профиль, память и историю
+    Context-->>Responder: Сообщения для модели
+    Responder->>Runtime: GenerateAsync(контекст)
+    Runtime->>Ollama: POST /api/chat
+    Ollama-->>Runtime: Части JSON-ответа
+    Runtime-->>Responder: Полный ответ после done=true
+    Responder->>Responder: Проверить JSON и записать успешный ход
+    Responder-->>UI: Реплика и эмоция
+    UI-->>Player: Показать текст и портрет
+```
+
+История и память существуют только пока работает игра: текущая версия не записывает их на диск и не
+восстанавливает после перезапуска. Текст диалога отправляется на `127.0.0.1`, то есть локальной Ollama
+на этом же компьютере, а не в облачный сервис.
+
+### Что менять для своих задач
+
+- Чтобы поменять имя, характер, отношение к игроку или факты о сцене, редактируйте поля в
+  [`NpcProfile.tres`](NpcProfile.tres). `PlayerIntroduction` — видимый текст вступления; `Situation` —
+  контекст, который получает модель.
+- Чтобы поменять модель или параметры по умолчанию, смотрите
+  [`Scripts/Dialogue/LocalLlmConfig.cs`](Scripts/Dialogue/LocalLlmConfig.cs) и
+  [`LocalLlmConfig.tres`](LocalLlmConfig.tres). В ресурсе сейчас заданы `BaseUrl`, `EndpointPath`,
+  `ModelName`, `TimeoutSeconds`, `Temperature`, `TopP`, `MaxTokens`, `ContextTokens`,
+  `PresencePenalty`, `MaxHistoryMessages` и `MaxHistoryCharacters`; C#-инициализаторы служат запасными
+  значениями, если ресурс не задаёт какое-либо свойство. Упаковщик берёт `ModelName` из `.tres`, если
+  он там записан; иначе использует значение по умолчанию из C#.
+- Чтобы поменять расположение элементов UI, редактируйте [`Main.tscn`](Main.tscn); чтобы изменить
+  обработку Enter, статусы или соответствие эмоций портретам — [`Scripts/Main.cs`](Scripts/Main.cs).
+- Чтобы заменить изображения, положите файлы в [`Art/`](Art/) и обновите пути загрузки в `Main.cs`.
+- Чтобы изменить Windows-экспорт и состав готовой папки, смотрите
+  [`export_presets.cfg`](export_presets.cfg) и [`Build-WindowsPackage.ps1`](Build-WindowsPackage.ps1).
+
 ## Текущий статус
 
 Сцена использует `LocalLlmResponder` и локальную Ollama с
 `Qwen3.5 9B Q4_K_M`. Запрос требует структурированный JSON по JSON Schema; игра проверяет ответ и
 показывает реплику и эмоцию только после его полного разбора.
-Настройки подключения, модели, timeout и генерации находятся в `LocalLlmConfig.tres`; UI не знает о
-HTTP или JSON. Для UI-проверок и тестов сохраняются `MockChatResponder` и `FakeLocalLlmRuntime`.
+Настройки подключения, модели, timeout, генерации и лимитов по умолчанию заданы в
+`Scripts/Dialogue/LocalLlmConfig.cs`; `LocalLlmConfig.tres` явно задаёт значения, используемые в
+сцене.
+UI не знает о HTTP или JSON. Для UI-проверок и тестов сохраняются `MockChatResponder` и
+`FakeLocalLlmRuntime`.
 
 Профиль персонажа живёт в одном месте: `NpcProfile.tres` хранит семь свойств персоны, короткое
 вступление игроку и более полный контекст `Situation`, который получает NPC. Вступление описывает
@@ -195,7 +317,8 @@ HTTP или JSON. Для UI-проверок и тестов сохраняют�
 в ресурсе остаются значения по умолчанию из кода. Совпадение ключей проверяет
 `Tests/NpcProfileRead.Tests.ps1`, а привязку профиля к сцене — smoke-сцена.
 
-`LocalLlmConfig.tres` выбирает модель `qwen35-9b-q4km-bartowski:latest`.
+По умолчанию `Scripts/Dialogue/LocalLlmConfig.cs` выбирает модель
+`qwen35-9b-q4km-bartowski:latest`.
 В 32-ходовой оценке со схемой JSON она получила 5,5/10; без схемы игровой парсер отклонил ответ на
 втором ходу. Оценка и полный диалог записаны в
 [отчёте](.scratch/npc-local-llm-demo/reports/06-qwen3.5-9b-q4km-evaluation.md). Проверка выполнена
