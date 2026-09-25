@@ -18,6 +18,7 @@ public sealed class OllamaServerController : IDisposable
     private readonly string _baseUrl;
     private readonly string _executablePath;
     private readonly string _expectedSha256;
+    private readonly string _modelsDirectory;
     private readonly TimeSpan _startupTimeout;
     private readonly HttpClient _http;
     private readonly object _stateLock = new();
@@ -32,11 +33,13 @@ public sealed class OllamaServerController : IDisposable
         string executablePath,
         string expectedSha256 = BundledOllamaSha256,
         TimeSpan? startupTimeout = null,
-        HttpClient http = null)
+        HttpClient http = null,
+        string modelsDirectory = null)
     {
         _baseUrl = baseUrl ?? string.Empty;
         _executablePath = executablePath ?? string.Empty;
         _expectedSha256 = expectedSha256 ?? string.Empty;
+        _modelsDirectory = modelsDirectory ?? string.Empty;
         _startupTimeout = startupTimeout ?? TimeSpan.FromSeconds(30);
         if (_startupTimeout <= TimeSpan.Zero)
             throw new ArgumentOutOfRangeException(nameof(startupTimeout), "Startup timeout must be positive.");
@@ -186,7 +189,8 @@ public sealed class OllamaServerController : IDisposable
                 $"Could not read bundled Ollama executable: {exception.GetType().Name}.");
         }
 
-        if (!string.Equals(actualHash, _expectedSha256, StringComparison.OrdinalIgnoreCase))
+        if (!string.IsNullOrWhiteSpace(_expectedSha256) &&
+            !string.Equals(actualHash, _expectedSha256, StringComparison.OrdinalIgnoreCase))
             throw Failure(LocalLlmFailureKind.OllamaExecutableIntegrity,
                 $"Bundled Ollama SHA-256 mismatch. Expected {_expectedSha256}; got {actualHash}.");
 
@@ -200,6 +204,8 @@ public sealed class OllamaServerController : IDisposable
         };
         startInfo.ArgumentList.Add("serve");
         startInfo.Environment["OLLAMA_HOST"] = $"{_baseUri.Host}:{_baseUri.Port}";
+        if (Directory.Exists(_modelsDirectory))
+            startInfo.Environment["OLLAMA_MODELS"] = Path.GetFullPath(_modelsDirectory);
 
         var process = new Process { StartInfo = startInfo, EnableRaisingEvents = true };
         try

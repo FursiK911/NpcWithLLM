@@ -25,19 +25,19 @@
     "semantic_hash": "041611b00e653767e666c1288a52b7c0"
   },
   "Scripts/ChatResponder.cs": {
-    "mtime": 1790250428.9312954,
-    "ast_hash": "449c59b122f20d34afea51749d677653",
+    "mtime": 1790255750.7634246,
+    "ast_hash": "ff22c1b24e327f0f541e14154f3a35b8",
     "semantic_hash": ""
   },
   "Scripts/Main.cs": {
-    "mtime": 1790253991.7953796,
-    "ast_hash": "8a2c60f8f66a2c43455152f226e481bc",
+    "mtime": 1790256016.1082408,
+    "ast_hash": "fabfa7d9ba8931c46ee204ecd2f66c6f",
     "semantic_hash": ""
   },
   "Scripts/MockChatResponder.cs": {
-    "mtime": 1790032905.7207532,
-    "ast_hash": "3927ace37c85ce73ee03e597321441f8",
-    "semantic_hash": "3927ace37c85ce73ee03e597321441f8"
+    "mtime": 1790255750.7634246,
+    "ast_hash": "0d641c12aef798ae9ecc04bfccdb8418",
+    "semantic_hash": ""
   },
   "skills-lock.json": {
     "mtime": 1790028119.5107448,
@@ -825,13 +825,13 @@
     "semantic_hash": ""
   },
   "CONTEXT.md": {
-    "mtime": 1790254078.1284902,
-    "ast_hash": "be79613e74bbda6f1a0267d8a6e0aa21",
+    "mtime": 1790255339.5178685,
+    "ast_hash": "5e565d62e07686e31b019b23102e323d",
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1790254078.1294894,
-    "ast_hash": "5eb4ecbaa222a2dcafe2684a55e4eaf0",
+    "mtime": 1790276284.3886447,
+    "ast_hash": "d51e096adcbcee454b230f79867f37fc",
     "semantic_hash": ""
   },
   "docs/adr/0001-local-llm-dialogue-boundary.md": {
@@ -885,8 +885,8 @@
     "semantic_hash": ""
   },
   ".scratch/npc-local-llm-demo/spec.md": {
-    "mtime": 1790254837.719532,
-    "ast_hash": "a8df2ec463ceb5e666ba2d593a28be25",
+    "mtime": 1790276219.066054,
+    "ast_hash": "305adfba02bb6f17172b02f59dadc2e3",
     "semantic_hash": ""
   },
   "docs/adr/0002-bundled-local-llm-runtime.md": {
@@ -895,8 +895,8 @@
     "semantic_hash": ""
   },
   "Scripts/Dialogue/ContextBuilder.cs": {
-    "mtime": 1790113244.8363986,
-    "ast_hash": "c4b13f008c9d5bbc9a5c4e7a75bbc274",
+    "mtime": 1790255750.7619176,
+    "ast_hash": "7b1584949410ec676f8d7486215dbb37",
     "semantic_hash": ""
   },
   "Scripts/Dialogue/DialogueHistory.cs": {
@@ -920,8 +920,8 @@
     "semantic_hash": ""
   },
   "Scripts/Dialogue/LocalLlmResponder.cs": {
-    "mtime": 1790250356.97694,
-    "ast_hash": "5b5e284a3ca9408577c6c21209b2b638",
+    "mtime": 1790256329.4119606,
+    "ast_hash": "1779edcf14743d34941aa6b158c4aac7",
     "semantic_hash": ""
   },
   "Scripts/Dialogue/NpcMemory.cs": {
@@ -970,8 +970,8 @@
     "semantic_hash": ""
   },
   "Scripts/Dialogue/LocalLlmRequest.cs": {
-    "mtime": 1790096412.4320886,
-    "ast_hash": "d330f5cfc666193f5ee51a7035185039",
+    "mtime": 1790276219.0620525,
+    "ast_hash": "171372866b9b4ef56d4d957c8b01df45",
     "semantic_hash": ""
   },
   "Tests/DialogueRegression.Tests.ps1": {
@@ -980,13 +980,13 @@
     "semantic_hash": ""
   },
   "Tests/DialogueSmoke.cs": {
-    "mtime": 1790254274.1761303,
-    "ast_hash": "a9ccd54d3fd15603b730442cd5ccf786",
+    "mtime": 1790258322.797116,
+    "ast_hash": "d48e4256d4ef242fa3d79fff5140f50f",
     "semantic_hash": ""
   },
   "Tests/Run-DialogueModelEvaluation.ps1": {
-    "mtime": 1790113430.2319043,
-    "ast_hash": "510300766fd2285867ae54659aed557d",
+    "mtime": 1790256367.828705,
+    "ast_hash": "476a1dc038127382dc747acec0aa7133",
     "semantic_hash": ""
   },
   ".scratch/npc-local-llm-demo/ContextBuilder.concise.txt": {
@@ -995,8 +995,8 @@
     "semantic_hash": ""
   },
   "docs/adr/0003-natural-dialogue-model-quality-gate.md": {
-    "mtime": 1790198123.2271883,
-    "ast_hash": "5cec4c7a22caad572437166e8afa6b38",
+    "mtime": 1790256508.5939167,
+    "ast_hash": "bb96612daf20c06da580eb0e8156f119",
     "semantic_hash": ""
   },
   "docs/adr/0004-project-local-godot-mcp.md": {
@@ -1020,8 +1020,8 @@
     "semantic_hash": ""
   },
   "Tests/DialogueResponseFault.ps1": {
-    "mtime": 1790113276.7681594,
-    "ast_hash": "30d7588734897ba7eeab617c7bac1b5e",
+    "mtime": 1790256397.0778718,
+    "ast_hash": "19e77a147f4cf1c5f9ae77ae54f28dcf",
     "semantic_hash": ""
   },
   ".scratch/npc-local-llm-demo/review-qwen35.md": {
@@ -1070,8 +1070,8 @@
     "semantic_hash": ""
   },
   ".scratch/npc-local-llm-demo/issues/06-live-dialogue-model-evaluation.md": {
-    "mtime": 1790177454.7901354,
-    "ast_hash": "b701e1b175c99d450c4021ba29060d18",
+    "mtime": 1790276392.0047972,
+    "ast_hash": "42b31b14ae519a77ff38b34d8593e646",
     "semantic_hash": ""
   },
   ".scratch/npc-local-llm-demo/issues/07-startup-readiness-ui.md": {
@@ -1155,8 +1155,8 @@
     "semantic_hash": ""
   },
   ".scratch/npc-local-llm-demo/issues/10-bonsai-2-27b-evaluation.md": {
-    "mtime": 1790198285.9218764,
-    "ast_hash": "e1877752dea2d9293408ad21dcb57525",
+    "mtime": 1790276392.0053232,
+    "ast_hash": "eba660da8726be331bcdee2cb5c7f28f",
     "semantic_hash": ""
   },
   ".scratch/npc-local-llm-demo/reports/06-gemma-4-12b-it-q2k-evaluation.md": {
@@ -1170,8 +1170,8 @@
     "semantic_hash": ""
   },
   "docs/adr/0007-bonsai-temporary-default.md": {
-    "mtime": 1790198123.2281976,
-    "ast_hash": "ca0e4cb24105e847639340bec7dc2ef7",
+    "mtime": 1790276219.0640528,
+    "ast_hash": "f57a8b1e8430e69ddc0fabcb32444782",
     "semantic_hash": ""
   },
   "graphify-out/memory/query_20260923_211650_how_does_the_game_select_the_local_llm_provider_an.md": {
@@ -1185,58 +1185,123 @@
     "semantic_hash": ""
   },
   "Art/Background/background.png": {
-    "mtime": 1790253287.2681892,
-    "ast_hash": "6e99a3bcdd139fe70b5e9e4b6259eb44",
+    "mtime": 1790258310.4674208,
+    "ast_hash": "a0f5119eeaa8bfee6aba6e595dc919b3",
     "semantic_hash": ""
   },
   "Art/Mechanic/angry.png": {
-    "mtime": 1790252741.2311652,
-    "ast_hash": "9af668f73563d78810fe159b30368324",
+    "mtime": 1790258706.4884632,
+    "ast_hash": "0df0fea54a665724621474bfe0a10e56",
     "semantic_hash": ""
   },
   "Art/Mechanic/happy.png": {
-    "mtime": 1790252943.4949539,
-    "ast_hash": "b7b27a09f353a136835adb01a4bd5246",
+    "mtime": 1790258871.4652314,
+    "ast_hash": "56688bfadc640fff567600fe91cfcf9e",
     "semantic_hash": ""
   },
   "Art/Mechanic/idle.png": {
-    "mtime": 1790252930.2313576,
-    "ast_hash": "03fcacd170ea4e8364d45697b6aee77c",
+    "mtime": 1790258938.034668,
+    "ast_hash": "99734fd46062037623725cae56879050",
     "semantic_hash": ""
   },
   "Art/Mechanic/sad.png": {
-    "mtime": 1790252918.5633883,
-    "ast_hash": "320489327907a10515041ebc9e0afabb",
+    "mtime": 1790259260.9632792,
+    "ast_hash": "6fff10aabda3a4a5a21eff1a67e2c7fa",
     "semantic_hash": ""
   },
   "Art/Mechanic/speak_1.png": {
-    "mtime": 1790252904.9502943,
-    "ast_hash": "64861cf87f6b599a5602bb0b4351477a",
+    "mtime": 1790259088.0807161,
+    "ast_hash": "286ce5cdb480c57518a1944ceb6f1d04",
     "semantic_hash": ""
   },
   "Art/Mechanic/speak_2.png": {
-    "mtime": 1790252887.3037634,
-    "ast_hash": "5c18d4cf38f9769aefc2816074d1b812",
+    "mtime": 1790259160.648919,
+    "ast_hash": "8f1025fec95edca6b5193fd26c67230f",
     "semantic_hash": ""
   },
   "Art/Mechanic/speak_3.png": {
-    "mtime": 1790252871.107054,
-    "ast_hash": "1b845a66b619d97b8513df59e4c13d92",
+    "mtime": 1790259202.624866,
+    "ast_hash": "58c20f89caca457cf2c7f554eca72abd",
     "semantic_hash": ""
   },
   "Art/Mechanic/speak_4.png": {
-    "mtime": 1790252855.8960073,
-    "ast_hash": "c37d44e62d0daa83305d55e996987d18",
+    "mtime": 1790259220.2621307,
+    "ast_hash": "c154e92f9dee342a2c68d96f0256c26b",
     "semantic_hash": ""
   },
   "Art/Mechanic/speak_5.png": {
-    "mtime": 1790252844.1676998,
-    "ast_hash": "485328bd3cd26b2987f9c85a518a72eb",
+    "mtime": 1790259257.4680338,
+    "ast_hash": "9d8f9d2193c880b96f685b14b16f69c8",
     "semantic_hash": ""
   },
   "Art/Mechanic/thinking.png": {
-    "mtime": 1790252824.9881165,
-    "ast_hash": "c0b52d90cf4f98deefc4402fee5d0661",
+    "mtime": 1790258818.1955535,
+    "ast_hash": "46ed67f2cfdca1b19bab93a1fed401ef",
+    "semantic_hash": ""
+  },
+  ".scratch/npc-local-llm-demo/qwen35-9b-live-eval-20260924/last-json-mode-request.json": {
+    "mtime": 1790273828.7544835,
+    "ast_hash": "e131621cc3af8a74063e217b19ac275a",
+    "semantic_hash": ""
+  },
+  ".scratch/npc-local-llm-demo/qwen35-9b-live-eval-20260924/result.json": {
+    "mtime": 1790273830.083648,
+    "ast_hash": "0efec642ca3932b7e9120b643d287620",
+    "semantic_hash": ""
+  },
+  ".scratch/npc-local-llm-demo/qwen35-9b-live-eval-20260924/status-json-mode-first-attempt.json": {
+    "mtime": 1790272826.7930205,
+    "ast_hash": "a693ef290c2472c6356d62ad1e4edb52",
+    "semantic_hash": ""
+  },
+  ".scratch/npc-local-llm-demo/qwen35-9b-live-eval-20260924/status-schema-initial-2-turns.json": {
+    "mtime": 1790273191.6678827,
+    "ast_hash": "cf94c108a96ce3bce5dea0382b657384",
+    "semantic_hash": ""
+  },
+  ".scratch/npc-local-llm-demo/qwen35-9b-live-eval-20260924/status-unconstrained-first-attempt.json": {
+    "mtime": 1790272214.4030192,
+    "ast_hash": "8a166fe21cc80ff2cc4893e799ac1968",
+    "semantic_hash": ""
+  },
+  ".scratch/npc-local-llm-demo/qwen35-9b-live-eval-20260924/status.json": {
+    "mtime": 1790273830.086773,
+    "ast_hash": "fcd4ab0288f8b5be0db7bc10ec36db46",
+    "semantic_hash": ""
+  },
+  "Scripts/Dialogue/GeneratedCharacterResponse.cs": {
+    "mtime": 1790256329.410962,
+    "ast_hash": "d6c07e904d9ba4d9e75467066cd83348",
+    "semantic_hash": ""
+  },
+  ".scratch/npc-local-llm-demo/issues/12-mechanic-portrait-emotions.md": {
+    "mtime": 1790256665.4059012,
+    "ast_hash": "ed6ff18cfd7bd6c40831d61bf611b500",
+    "semantic_hash": ""
+  },
+  ".scratch/npc-local-llm-demo/qwen35-9b-live-eval-20260924/raw-turn2-diagnostic.txt": {
+    "mtime": 1790272478.6487322,
+    "ast_hash": "fb48da0f7039300ede447c0734f7a19f",
+    "semantic_hash": ""
+  },
+  ".scratch/npc-local-llm-demo/qwen35-9b-live-eval-20260924/raw-turn2-jsonmode-diagnostic.txt": {
+    "mtime": 1790273123.408528,
+    "ast_hash": "b440e71461b02b3c665a6e17c1e185cb",
+    "semantic_hash": ""
+  },
+  ".scratch/npc-local-llm-demo/reports/06-qwen3.5-9b-q4km-evaluation.md": {
+    "mtime": 1790274132.9823754,
+    "ast_hash": "ab8479168c2dc9a9166d0c57d4ce5d9a",
+    "semantic_hash": ""
+  },
+  "docs/adr/0008-structured-character-response.md": {
+    "mtime": 1790255339.518867,
+    "ast_hash": "2ffa67bcd404873eef699d86730f93c6",
+    "semantic_hash": ""
+  },
+  "docs/adr/0009-qwen35-9b-default.md": {
+    "mtime": 1790276219.066054,
+    "ast_hash": "6204027dd59cb2c94b035e888acf5ff2",
     "semantic_hash": ""
   }
 }

@@ -6,7 +6,7 @@
 
 **Status:** ready-for-agent
 
-- [ ] ZIP-поставка содержит Godot C# проект, bundled Ollama CLI, реальный файл `qwen3.5:4b` и необходимые служебные файлы.
+- [ ] ZIP-поставка содержит Godot C# проект, bundled Ollama CLI, модель `qwen35-9b-q4km-bartowski:latest` и необходимые служебные файлы.
 - [ ] Для поставленных runtime и модели опубликованы SHA-256 checksums.
 - [ ] README указывает версию Godot, системные требования Windows и целевой ориентир по 8 ГБ VRAM.
 - [ ] README описывает выбранную модель, Ollama, запуск, память NPC, ограничение истории и восстановление bundled-файлов.

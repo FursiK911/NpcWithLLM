@@ -5,6 +5,7 @@
 **Blocked by:** None (can start immediately)
 
 **Status:** ready-for-human
+**Resolution:** confirmed
 
 - [x] Основная сцена запускается в Godot 4.7 C# как 2D-сцена.
 - [x] На сцене присутствуют placeholder-NPC и минимальная панель диалога.
@@ -21,3 +22,5 @@
 ## Comments
 
 Реализовано в коммите `d57499c`: добавлена playable 2D-сцена, проведены сборка, запуск Godot и code review.
+
+- 2026-09-25: Тикет закрыт как подтверждённый по явному решению пользователя.

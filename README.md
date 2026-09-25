@@ -21,20 +21,37 @@ HTTP или JSON. Для UI-проверок и тестов сохраняют�
 в ресурсе остаются значения по умолчанию из кода. Совпадение ключей проверяет
 `Tests/NpcProfileRead.Tests.ps1`, а привязку профиля к сцене — smoke-сцена.
 
-`LocalLlmConfig.tres` выбирает установленную в Ollama модель `qwen35-9b-q4km-bartowski:local`.
+`LocalLlmConfig.tres` выбирает модель `qwen35-9b-q4km-bartowski:latest`.
 В 32-ходовой оценке со схемой JSON она получила 5,5/10; без схемы игровой парсер отклонил ответ на
 втором ходу. Оценка и полный диалог записаны в
 [отчёте](.scratch/npc-local-llm-demo/reports/06-qwen3.5-9b-q4km-evaluation.md). Проверка выполнена
 на RTX 4070 Ti с 12 ГБ VRAM; работу на целевой карте с 8 ГБ она не подтверждает.
-Веса модели не входят в репозиторий или сборку и должны быть предварительно импортированы в локальную
-Ollama под указанным именем.
+Веса не входят в репозиторий, но standalone Windows-пакет включает их вместе с Ollama. Игроку не нужно
+устанавливать или вручную запускать Ollama: игра незаметно поднимает bundled-процесс и завершает его
+при закрытии игры. Уже работающий внешний endpoint переиспользуется и не останавливается игрой.
 
-При старте игра подключается к локальной Ollama на `127.0.0.1:11434` и прогревает модель. Запросы
+При старте игра проверяет локальный endpoint на `127.0.0.1:11434` и прогревает модель. Запросы
 ограничивают поля ответа схемой JSON с `message` и `emotion`; текст диалога остаётся на компьютере.
 
 Ожидаемый SHA-256 CLI версии Ollama 0.32.15:
 `0A9D42EABC59FDAFDE8D2D3E7964F6050B31A17B3E3795BFACB367C12DF790F4`.
-В этом исходном checkout bundled-бинарник пока отсутствует; его добавляет Windows-поставка.
+
+### Standalone Windows-пакет
+
+Скрипт экспортирует игру и необходимые файлы Godot .NET в `build/windows-standalone`, а рядом с ними
+размещает `tools/ollama` с CLI, GPU-библиотеками и проверенным model store. Папка целиком переносима;
+игрок запускает только `NpcWithLLM.exe` из неё. Для текущей модели пакет занимает около 9,3 ГБ.
+
+Для сборки нужны Godot .NET 4.7.2 с установленными export templates, Ollama 0.32.15 и уже
+подготовленная модель из `LocalLlmConfig.tres` в локальном model store сборочной машины. Скрипт
+проверяет SHA-256 Ollama и всех слоёв модели до экспорта:
+
+```powershell
+pwsh -NoProfile -File Build-WindowsPackage.ps1 `
+    -GodotExecutablePath 'C:\Godot\Godot_v4.7.2-stable_mono_win64_console.exe'
+```
+
+Готовая игра появится в `build/windows-standalone/NpcWithLLM.exe`.
 
 ### Ручной запуск Bonsai через PrismML
 
@@ -68,6 +85,12 @@ pwsh -NoProfile -File Tests/OllamaLifecycleSmoke.ps1
 По умолчанию сценарий использует bundled CLI, а при её отсутствии — `ollama.exe` из `PATH`. Для
 проверки повтора endpoint Ollama должен отвечать на `127.0.0.1:11434`; собственный процесс для
 проверки запускается на временном свободном порту.
+
+Проверка тега из `LocalLlmConfig.tres` и реального запроса `/api/chat`:
+
+```text
+pwsh -NoProfile -File Tests/OllamaConfiguredModelSmoke.ps1
+```
 
 `LocalLlmResponder` выбирает транспорт по `Provider`. Bonsai отправляет проверяемый поток OpenAI-
 compatible SSE на `http://127.0.0.1:8080/v1/chat/completions`, игнорирует канал рассуждений и

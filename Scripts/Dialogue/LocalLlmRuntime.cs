@@ -23,8 +23,30 @@ public sealed class LocalLlmRuntime : ILocalLlmRuntime, IDisposable
     {
         _config = config ?? throw new ArgumentNullException(nameof(config));
         _http = http ?? SharedClient;
-        string bundledExecutable = ProjectSettings.GlobalizePath("res://tools/ollama/ollama.exe");
-        _server = server ?? new OllamaServerController(_config.BaseUrl, bundledExecutable, http: _http);
+        var ollama = ResolveOllamaExecutable();
+        string bundledModels = Path.Combine(Path.GetDirectoryName(ollama.Path) ?? string.Empty, "models");
+        _server = server ?? new OllamaServerController(_config.BaseUrl, ollama.Path,
+            expectedSha256: ollama.ExpectedSha256, http: _http, modelsDirectory: bundledModels);
+    }
+
+    private static (string Path, string ExpectedSha256) ResolveOllamaExecutable()
+    {
+        string executableDirectory = Path.GetDirectoryName(OS.GetExecutablePath()) ?? AppContext.BaseDirectory;
+        string besideGame = Path.Combine(executableDirectory, "tools", "ollama", "ollama.exe");
+        if (File.Exists(besideGame))
+            return (besideGame, OllamaServerController.BundledOllamaSha256);
+
+        string projectBundle = ProjectSettings.GlobalizePath("res://tools/ollama/ollama.exe");
+        if (File.Exists(projectBundle))
+            return (projectBundle, OllamaServerController.BundledOllamaSha256);
+
+        string installed = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData),
+            "Programs", "Ollama", "ollama.exe");
+        if (File.Exists(installed))
+            return (installed, string.Empty);
+
+        // Keep the missing bundled path in the diagnostic; this is also where the Windows packager places it.
+        return (besideGame, OllamaServerController.BundledOllamaSha256);
     }
 
     public async Task PrepareAsync(CancellationToken cancellationToken = default)
